@@ -735,14 +735,7 @@
 
     function validateItem(item) {
       if (!item || !item.name || !item.page) return Promise.resolve(null)
-      const checks = [assetExists(item.page)]
-      if (item.previewVideo) checks.push(assetExists(item.previewVideo))
-      else if (item.previewImage) checks.push(assetExists(item.previewImage))
-
-      return Promise.all(checks).then((results) => {
-        if (!results.every(Boolean)) return null
-        return item
-      })
+      return Promise.resolve(item)
     }
 
     lightbox.querySelectorAll('[data-lightbox-close]').forEach((el) => {
