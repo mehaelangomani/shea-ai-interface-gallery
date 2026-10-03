@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQs — wander</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-inner page-faq">
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo">wander</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <div class="nav-center" id="desktopNav">
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="faq.html" class="nav-link nav-link--active" aria-current="page">FAQs</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="index.html" class="plan-button plan-button--link">Plan My Trip</a>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="faq.html" class="mobile-nav-link">FAQs</a>
+        <a href="login.html" class="mobile-nav-link">Login</a>
+        <a href="index.html" class="mobile-nav-link mobile-nav-link--cta">Plan My Trip</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main page-main--faq">
+    <section class="page-hero page-hero--compact" aria-labelledby="faq-heading">
+      <p class="eyebrow">HELP CENTER</p>
+      <h1 id="faq-heading" class="page-heading">Questions? We've got answers.</h1>
+      <p class="page-lead">Everything you need to know about planning your next trip with wander.</p>
+
+      <label class="faq-search" for="faqSearch">
+        <i data-lucide="search" aria-hidden="true"></i>
+        <input type="search" id="faqSearch" placeholder="Search questions..." autocomplete="off">
+      </label>
+    </section>
+
+    <div class="faq-layout" id="faqList">
+      <section class="faq-category" data-category="Planning">
+        <h2 class="faq-category__title">Planning</h2>
+        <div class="accordion" data-accordion-group="faq">
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>What is wander?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>wander is an AI travel planner that turns your preferences into thoughtful day-by-day itineraries, so you spend less time researching and more time exploring.</p>
+            </div>
+          </div>
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>How does the AI trip planner work?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Share where you're going, when, and what you enjoy. wander analyzes your input and builds a personalized itinerary with activities, pacing, and local recommendations.</p>
+            </div>
+          </div>
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Can I plan trips for multiple destinations?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Yes. You can include multiple cities or regions in one trip, and wander will suggest logical routing and balanced time in each place.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-category" data-category="AI Planner">
+        <h2 class="faq-category__title">AI Planner</h2>
+        <div class="accordion" data-accordion-group="faq">
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Can I customize my itinerary?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Absolutely. Regenerate sections, swap activities, or refine your prompt until the plan matches your travel style.</p>
+            </div>
+          </div>
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Can I change my trip after generating it?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Yes. Update dates, interests, or pace anytime and wander will refresh your itinerary while keeping what you already love.</p>
+            </div>
+          </div>
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Does wander work for international travel?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>wander supports international destinations and considers seasonality, local customs, and typical travel patterns for each region.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-category" data-category="Trips">
+        <h2 class="faq-category__title">Trips</h2>
+        <div class="accordion" data-accordion-group="faq">
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Can I save my itinerary?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Saved itineraries are available on Plus and Pro plans. Free users can export or copy plans during their session.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-category" data-category="Account">
+        <h2 class="faq-category__title">Account</h2>
+        <div class="accordion" data-accordion-group="faq">
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Can I cancel my plan?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Yes. You can cancel anytime from your account settings. Your access continues until the end of the current billing period.</p>
+            </div>
+          </div>
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Can I contact the wander team?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Of course. Reach us through the <a href="contact.html">contact page</a> and we'll be happy to help.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-category" data-category="Pricing">
+        <h2 class="faq-category__title">Pricing</h2>
+        <div class="accordion" data-accordion-group="faq">
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>Is wander free?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Yes. The Free plan includes limited monthly itinerary generations so you can try wander before upgrading.</p>
+            </div>
+          </div>
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>What is included in Plus?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Plus includes unlimited generations, longer itineraries, saved trips, smart packing suggestions, and priority support.</p>
+            </div>
+          </div>
+          <div class="accordion-item faq-item" data-faq>
+            <button type="button" class="accordion-trigger" aria-expanded="false">
+              <span>What is included in Pro?</span>
+              <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+            </button>
+            <div class="accordion-panel" hidden>
+              <p>Pro adds advanced AI planning, deeper food and activity recommendations, premium insights, and early access to new features.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <p class="faq-empty" id="faqEmpty" hidden>No questions match your search. Try different keywords.</p>
+
+    <section class="faq-cta" aria-labelledby="faq-cta-heading">
+      <h2 id="faq-cta-heading">Still have questions?</h2>
+      <a href="contact.html" class="btn btn--primary">Contact wander</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo">wander</a>
+      <p class="site-footer__tagline">Thoughtful AI travel planning for every kind of journey.</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQs</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 wander. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

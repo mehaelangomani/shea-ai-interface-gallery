@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — wander</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-inner page-pricing">
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo">wander</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <div class="nav-center" id="desktopNav">
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="pricing.html" class="nav-link nav-link--active" aria-current="page">Pricing</a>
+        <a href="faq.html" class="nav-link">FAQs</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="index.html" class="plan-button plan-button--link">Plan My Trip</a>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="faq.html" class="mobile-nav-link">FAQs</a>
+        <a href="login.html" class="mobile-nav-link">Login</a>
+        <a href="index.html" class="mobile-nav-link mobile-nav-link--cta">Plan My Trip</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main page-main--pricing">
+    <section class="page-hero page-hero--compact" aria-labelledby="pricing-heading">
+      <p class="eyebrow">PRICING</p>
+      <h1 id="pricing-heading" class="page-heading">Choose your way to travel.</h1>
+      <p class="page-lead">Simple plans for effortless trip planning, wherever you're headed.</p>
+
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" class="billing-toggle__btn is-active" data-billing="monthly">Monthly</button>
+        <button type="button" class="billing-toggle__btn" data-billing="yearly">Yearly</button>
+      </div>
+      <p class="billing-savings" id="billingSavings" hidden>Save 2 months with yearly</p>
+    </section>
+
+    <section class="pricing-grid" aria-label="Pricing plans">
+      <article class="pricing-card">
+        <h2 class="pricing-card__name">Free</h2>
+        <p class="pricing-card__price">
+          <span class="pricing-card__amount">$0</span>
+          <span class="pricing-card__period">/ forever</span>
+        </p>
+        <ul class="pricing-card__features">
+          <li>3 itinerary generations / month</li>
+          <li>Up to 14-day itineraries</li>
+          <li>Personalized travel suggestions</li>
+          <li>Basic trip planning</li>
+          <li>Standard support</li>
+        </ul>
+        <button type="button" class="btn btn--outline pricing-card__cta" data-pricing-cta>Start Free</button>
+      </article>
+
+      <article class="pricing-card pricing-card--featured">
+        <span class="pricing-badge">Most Popular</span>
+        <h2 class="pricing-card__name">Plus</h2>
+        <p class="pricing-card__price">
+          <span class="pricing-card__amount" data-price-plus>$9.99</span>
+          <span class="pricing-card__period" data-period-plus>/ month</span>
+        </p>
+        <ul class="pricing-card__features">
+          <li>Unlimited itinerary generations</li>
+          <li>Up to 30-day itineraries</li>
+          <li>Detailed travel recommendations</li>
+          <li>Smart packing suggestions</li>
+          <li>Saved itineraries</li>
+          <li>Priority support</li>
+        </ul>
+        <button type="button" class="btn btn--primary pricing-card__cta" data-pricing-cta>Choose Plus</button>
+      </article>
+
+      <article class="pricing-card">
+        <span class="pricing-badge pricing-badge--subtle">Best Value</span>
+        <h2 class="pricing-card__name">Pro</h2>
+        <p class="pricing-card__price">
+          <span class="pricing-card__amount" data-price-pro>$19.99</span>
+          <span class="pricing-card__period" data-period-pro>/ month</span>
+        </p>
+        <ul class="pricing-card__features">
+          <li>Unlimited trip planning</li>
+          <li>Advanced AI itinerary generation</li>
+          <li>Personalized travel preferences</li>
+          <li>Detailed food and activity recommendations</li>
+          <li>Premium travel insights</li>
+          <li>Priority access to new features</li>
+        </ul>
+        <button type="button" class="btn btn--outline pricing-card__cta" data-pricing-cta>Choose Pro</button>
+      </article>
+    </section>
+
+    <section class="testimonials" aria-label="Customer testimonials">
+      <blockquote class="testimonial">
+        <p>"Planning a trip used to take hours. wander gave me a complete itinerary in minutes."</p>
+        <footer>— Maya R.</footer>
+      </blockquote>
+      <blockquote class="testimonial">
+        <p>"The recommendations actually felt personal instead of generic."</p>
+        <footer>— Arjun K.</footer>
+      </blockquote>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo">wander</a>
+      <p class="site-footer__tagline">Thoughtful AI travel planning for every kind of journey.</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQs</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 wander. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OBJECT AI — AI-powered object identification from images and videos.">
+  <title>OBJECT AI — See what's really there</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="js/theme-init.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/burgundy.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body data-page="home" class="app-wine">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header site-header-wine" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="OBJECT AI home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">OBJECT AI</span>
+      </a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+          <li><a href="analyze.html" class="nav-link" data-nav="analyze">Analyze</a></li>
+          <li><a href="history.html" class="nav-link" data-nav="history">History</a></li>
+          <li><a href="pricing.html" class="nav-link" data-nav="pricing">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-icon theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/></svg>
+          </button>
+          <a href="settings.html" class="btn-icon nav-settings" aria-label="Settings" title="Settings">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l-.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </a>
+          <a href="signin.html" class="btn btn-nav-signin" id="nav-signin-link">Sign In</a>
+          <div class="profile-wrap">
+            <button type="button" class="profile-trigger profile-button profile-trigger-btn" aria-expanded="false" aria-haspopup="true" aria-controls="profile-menu" aria-label="Profile menu">
+              <span class="profile-icon-wrap"><svg class="icon-user" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+              <span class="avatar-initial" hidden></span>
+            </button>
+            <div id="profile-menu" class="profile-dropdown" role="menu" hidden>
+              <div class="profile-menu-logged-out">
+                <p class="profile-menu-hint">New to OBJECT AI?</p>
+                <a href="signup.html" class="profile-dropdown-item" role="menuitem">Create account</a>
+              </div>
+              <div class="profile-menu-logged-in" hidden>
+                <div class="profile-dropdown-header profile-dropdown-header-rich">
+                  <span class="avatar avatar-lg" data-dropdown-initial></span>
+                  <div>
+                    <p class="profile-name"></p>
+                    <p class="profile-email"></p>
+                  </div>
+                </div>
+                <a href="profile.html" class="profile-dropdown-item" role="menuitem">Profile</a>
+                <a href="profile.html#account" class="profile-dropdown-item" role="menuitem">Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-home">
+    <section class="hero hero-premium hero-wine">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-floats" data-parallax-layer aria-hidden="true">
+        <span class="hero-float float-1 depth-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></span>
+        <span class="hero-float float-2 depth-mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 20h8"/></svg></span>
+        <span class="hero-float float-3 depth-front"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/></svg></span>
+        <span class="hero-float float-4 depth-back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M10 2v2M14 2v2M8 8h8M6 4h12v16H6z"/></svg></span>
+        <span class="hero-float float-5 depth-mid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17h14v-5H5zM19 9l-2-4H7L5 9"/></svg></span>
+        <span class="hero-float float-6 depth-front"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 11l18-5v12L3 13v-2z"/></svg></span>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content reveal-up" style="--reveal-delay: 0ms">
+          <p class="eyebrow">AI-POWERED OBJECT IDENTIFICATION</p>
+          <h1 class="hero-title-split editorial">
+            <span>See what's</span>
+            <span>really there.</span>
+          </h1>
+          <p class="hero-lead">Identify objects in images and video with intelligent visual analysis.</p>
+          <div class="hero-cta-row">
+            <a href="analyze.html" class="btn btn-primary btn-lg">Start Analysis</a>
+            <a href="pricing.html" class="btn-secondary-wine">Explore pricing</a>
+          </div>
+        </div>
+        <div class="hero-visual-wrap reveal-right" style="--reveal-delay: 120ms">
+          <div class="hero-panel vision-panel" aria-hidden="true">
+            <span class="tech-label panel-tag">AI VISION</span>
+            <span class="tech-label panel-frame">FRAME 001</span>
+            <div class="vision-scene">
+              <div class="scan-grid"></div>
+              <div class="vision-abstract"></div>
+              <div class="scan-line"></div>
+              <div class="det-box det-anim det-a" data-label="LAPTOP · 98%"></div>
+              <div class="det-box det-anim det-b" data-label="PHONE · 94%"></div>
+              <div class="det-box det-anim det-c" data-label="BOTTLE · 91%"></div>
+              <span class="tech-label vision-coord coord-1">X:248 Y:132</span>
+              <span class="tech-label vision-coord coord-2">W:184 H:216</span>
+            </div>
+            <div class="vision-scan-bar">
+              <span class="tech-label">SCANNING</span>
+              <div class="vision-progress"><div class="vision-progress-fill"></div></div>
+              <span class="tech-label scan-pct">74%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-how" aria-labelledby="how-heading">
+      <div class="container">
+        <h2 id="how-heading" class="section-title reveal-up">How OBJECT AI works</h2>
+        <div class="process-timeline">
+          <div class="process-line" aria-hidden="true"><div class="process-line-fill"></div></div>
+          <article class="process-step reveal-up" style="--reveal-delay: 80ms">
+            <span class="process-step-num">01</span>
+            <span class="process-step-label">UPLOAD</span>
+            <p class="step-desc">Choose an image or video.</p>
+          </article>
+          <article class="process-step reveal-up" style="--reveal-delay: 200ms">
+            <span class="process-step-num">02</span>
+            <span class="process-step-label">ANALYZE</span>
+            <p class="step-desc">AI scans the visual content.</p>
+          </article>
+          <article class="process-step reveal-up" style="--reveal-delay: 320ms">
+            <span class="process-step-num">03</span>
+            <span class="process-step-label">DISCOVER</span>
+            <p class="step-desc">Review detected objects and confidence.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-understanding" aria-labelledby="features-heading">
+      <div class="container understanding-grid">
+        <div class="reveal-up" style="--reveal-delay: 0ms">
+          <p class="eyebrow">OBJECT DETECTION</p>
+          <h2 id="features-heading" class="understanding-title">Built for<br>visual<br>understanding.</h2>
+          <p class="page-subtitle">Three capabilities that power every object identification workflow.</p>
+          <div class="understanding-tabs" role="tablist" aria-label="Visual understanding modes">
+            <button type="button" class="understanding-tab is-active" role="tab" data-mode="detect" aria-selected="true">DETECT</button>
+            <button type="button" class="understanding-tab" role="tab" data-mode="classify" aria-selected="false">CLASSIFY</button>
+            <button type="button" class="understanding-tab" role="tab" data-mode="confidence" aria-selected="false">CONFIDENCE</button>
+          </div>
+        </div>
+        <div class="understanding-visual reveal-right" style="--reveal-delay: 140ms" aria-hidden="true">
+          <div class="scan-grid"></div>
+          <div class="understanding-scene">
+            <div data-layer="detect">
+              <div class="det-box det-a" data-label="LAPTOP"></div>
+              <div class="det-box det-b" data-label="PHONE"></div>
+              <div class="det-box det-c" data-label="BOTTLE"></div>
+            </div>
+            <div data-layer="classify" hidden aria-hidden="true">
+              <p class="tech-label scene-label sl-1">LAPTOP · Electronics</p>
+              <p class="tech-label scene-label sl-2">PHONE · Electronics</p>
+              <p class="tech-label scene-label sl-3">BOTTLE · Container</p>
+            </div>
+            <div data-layer="confidence" hidden aria-hidden="true">
+              <p class="tech-label scene-label sl-1">LAPTOP · 98%</p>
+              <p class="tech-label scene-label sl-2">PHONE · 94%</p>
+              <p class="tech-label scene-label sl-3">BOTTLE · 91%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-demo-red" aria-labelledby="demo-heading">
+      <div class="container">
+        <h2 id="demo-heading" class="section-title reveal-up">Watch the model think.</h2>
+        <div id="home-demo" class="demo-panel vision-panel demo-panel-dark reveal-scale" style="--reveal-delay: 150ms">
+          <div class="scan-grid"></div>
+          <div class="scan-line"></div>
+          <div class="demo-scene">
+            <p class="demo-status tech-label">SCANNING...</p>
+            <p class="demo-count tech-label" hidden></p>
+            <div id="demo-tip" class="demo-tip" hidden></div>
+            <div class="demo-box" data-label="PERSON · 92%" data-category="Human" data-confidence="92%"></div>
+            <div class="demo-box" data-label="LAPTOP · 98%" data-category="Electronics" data-confidence="98%"></div>
+            <div class="demo-box" data-label="PHONE · 94%" data-category="Electronics" data-confidence="94%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-formats" aria-labelledby="formats-heading">
+      <div class="container">
+        <div class="formats-spec-header reveal-up">
+          <p class="eyebrow">INPUT SPECIFICATION</p>
+          <h2 id="formats-heading" class="section-title">Supported input</h2>
+        </div>
+        <div class="formats-split">
+          <div class="formats-card card formats-card-red reveal-up" style="--reveal-delay: 80ms">
+            <div class="formats-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+            <p class="formats-label">IMAGE</p>
+            <p class="formats-value">JPG · PNG · WEBP</p>
+          </div>
+          <div class="formats-card card formats-card-red reveal-up" style="--reveal-delay: 180ms">
+            <div class="formats-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <p class="formats-label">VIDEO</p>
+            <p class="formats-value">MP4 · MOV · WEBM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/detection-ui.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

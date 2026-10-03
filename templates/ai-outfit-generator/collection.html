@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your saved and generated outfit collection." />
+    <title>Collection — FLORA</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("ttg-theme");
+          document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="collection">
+    <header class="site-header">
+      <a href="index.html" class="brand-mark is-visible" aria-label="FLORA home">
+        <svg viewBox="0 0 66 62" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="33" y1="1" x2="33" y2="61" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="3" y1="31" x2="63" y2="31" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="11.8" y1="9.8" x2="54.2" y2="52.2" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="54.2" y1="9.8" x2="11.8" y2="52.2" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+        </svg>
+      </a>
+      <nav class="nav-desktop is-visible" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="generator.html" data-nav="generator">Generator</a>
+        <a href="styles.html" data-nav="styles">Styles</a>
+        <a href="collection.html" data-nav="collection">Collection</a>
+        <a href="payment.html" data-nav="pricing">Pricing</a>
+        <a href="login.html" data-nav="login" data-nav-auth>Login</a>
+      </nav>
+      <div class="header-utils">
+        <a href="generator.html" class="studio-pill is-visible">AI Garment Studio</a>
+        <button type="button" class="theme-toggle" aria-label="Switch theme">☀</button>
+      </div>
+      <button type="button" class="burger" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <div class="mobile-nav-scrim" aria-hidden="true"></div>
+    <aside class="mobile-nav-sheet" aria-label="Mobile navigation">
+      <nav>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="generator.html" data-nav="generator">Generator</a>
+        <a href="styles.html" data-nav="styles">Styles</a>
+        <a href="collection.html" data-nav="collection">Collection</a>
+        <a href="payment.html" data-nav="pricing">Pricing</a>
+        <a href="login.html" data-nav="login" data-nav-auth>Login</a>
+        <a href="about.html">About</a>
+      </nav>
+    </aside>
+
+    <main class="page-inner">
+      <h1 class="page-title">Your <span class="grad">Collection</span></h1>
+      <p class="page-lead">Saved looks from the demo generator. View, favorite, or remove pieces from your local gallery.</p>
+
+      <div class="collection-tabs" role="tablist" aria-label="Collection filters">
+        <button type="button" class="is-active" data-tab="all" role="tab" aria-selected="true">All</button>
+        <button type="button" data-tab="recent" role="tab" aria-selected="false">Recent</button>
+        <button type="button" data-tab="saved" role="tab" aria-selected="false">Saved</button>
+        <button type="button" data-tab="favorites" role="tab" aria-selected="false">Favorites</button>
+      </div>
+
+      <div id="collection-grid" class="collection-grid"></div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

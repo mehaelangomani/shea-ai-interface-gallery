@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — QuizAI</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="botanical auth-botanical--tl botanical--leaf-2" aria-hidden="true">
+      <svg viewBox="0 0 24 28"><path d="M10 4c-2 6-1 12 4 18 5-4 8-10 6-16-4 1-7-1-10-2z" fill="#39AEB4" opacity="0.45"/></svg>
+    </div>
+    <div class="botanical auth-botanical--br botanical--leaf-1" aria-hidden="true">
+      <svg viewBox="0 0 24 28"><path d="M12 2C8 8 6 14 8 22c4-2 8-6 10-12-3-2-4-6-6-8z" fill="#CDEFE7"/></svg>
+    </div>
+
+    <div class="card auth-card">
+      <div class="card__body">
+        <a href="index.html" class="logo auth-card__logo">
+          <img src="assets/logo.svg" alt="" width="40" height="40" /> QuizAI
+        </a>
+        <h1>Create Your Account</h1>
+        <p class="auth-card__sub">Start generating AI quizzes today.</p>
+        <form id="signup-form" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name</label>
+            <input class="form-input" type="text" id="name" name="name" autocomplete="name" placeholder="Meha Sharma" />
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="At least 8 characters" />
+            <span class="form-error"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="confirm">Confirm Password</label>
+            <input class="form-input" type="password" id="confirm" name="confirm" autocomplete="new-password" placeholder="Repeat password" />
+            <span class="form-error"></span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--block">Create Account</button>
+        </form>
+        <div class="divider-text">or continue with</div>
+        <div class="auth-social">
+          <button type="button" class="btn btn--secondary btn--block">Continue with Google</button>
+          <button type="button" class="btn btn--secondary btn--block">Continue with Microsoft</button>
+        </div>
+        <p class="auth-card__footer">Already have an account? <a href="login.html">Login</a></p>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js" defer></script>
+  <script src="js/auth.js" defer></script>
+</body>
+</html>

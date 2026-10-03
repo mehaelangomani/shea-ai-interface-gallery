@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Generate outfit concepts from natural language — Text-to-Garment demo studio." />
+    <title>Generator — FLORA</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("ttg-theme");
+          document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-page="generator">
+    <header class="site-header">
+      <a href="index.html" class="brand-mark is-visible" aria-label="FLORA home">
+        <svg viewBox="0 0 66 62" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="33" y1="1" x2="33" y2="61" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="3" y1="31" x2="63" y2="31" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="11.8" y1="9.8" x2="54.2" y2="52.2" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="54.2" y1="9.8" x2="11.8" y2="52.2" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+        </svg>
+      </a>
+      <nav class="nav-desktop is-visible" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="generator.html" data-nav="generator">Generator</a>
+        <a href="styles.html" data-nav="styles">Styles</a>
+        <a href="collection.html" data-nav="collection">Collection</a>
+        <a href="payment.html" data-nav="pricing">Pricing</a>
+        <a href="login.html" data-nav="login" data-nav-auth>Login</a>
+      </nav>
+      <div class="header-utils">
+        <a href="generator.html" class="studio-pill is-visible">AI Garment Studio</a>
+        <button type="button" class="theme-toggle" aria-label="Switch theme">☀</button>
+      </div>
+      <button type="button" class="burger" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+    <div class="mobile-nav-scrim" aria-hidden="true"></div>
+    <aside class="mobile-nav-sheet" aria-label="Mobile navigation">
+      <nav>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="generator.html" data-nav="generator">Generator</a>
+        <a href="styles.html" data-nav="styles">Styles</a>
+        <a href="collection.html" data-nav="collection">Collection</a>
+        <a href="payment.html" data-nav="pricing">Pricing</a>
+        <a href="login.html" data-nav="login" data-nav-auth>Login</a>
+        <a href="about.html">About</a>
+      </nav>
+    </aside>
+
+    <main class="page-inner">
+      <h1 class="page-title">AI <span class="grad">Generator</span></h1>
+      <p class="page-lead">
+        Describe your look in natural language. This front-end demo simulates an AI garment workflow with curated concepts.
+      </p>
+
+      <form id="generator-form" class="generator-grid">
+        <div>
+          <label class="field-label" for="prompt">Prompt</label>
+          <textarea
+            id="prompt"
+            class="prompt-input"
+            name="prompt"
+            placeholder="An oversized black futuristic blazer with silver metallic details, wide-leg trousers and minimal accessories."
+            required
+          ></textarea>
+          <p id="prompt-error" class="form-error" role="alert"></p>
+
+          <label class="field-label">Garment</label>
+          <div class="chip-group" data-chip-group="garment">
+            <button type="button" class="chip is-selected" data-value="Full Outfit" aria-pressed="true">Full Outfit</button>
+            <button type="button" class="chip" data-value="Dress" aria-pressed="false">Dress</button>
+            <button type="button" class="chip" data-value="Top" aria-pressed="false">Top</button>
+            <button type="button" class="chip" data-value="Bottom" aria-pressed="false">Bottom</button>
+            <button type="button" class="chip" data-value="Outerwear" aria-pressed="false">Outerwear</button>
+            <button type="button" class="chip" data-value="Set" aria-pressed="false">Set</button>
+          </div>
+
+          <label class="field-label">Style</label>
+          <div class="chip-group" data-chip-group="style">
+            <button type="button" class="chip is-selected" data-value="Minimal" aria-pressed="true">Minimal</button>
+            <button type="button" class="chip" data-value="Streetwear" aria-pressed="false">Streetwear</button>
+            <button type="button" class="chip" data-value="Formal" aria-pressed="false">Formal</button>
+            <button type="button" class="chip" data-value="Futuristic" aria-pressed="false">Futuristic</button>
+            <button type="button" class="chip" data-value="Casual" aria-pressed="false">Casual</button>
+            <button type="button" class="chip" data-value="Editorial" aria-pressed="false">Editorial</button>
+          </div>
+
+          <label class="field-label">Color</label>
+          <div class="chip-group" data-chip-group="color">
+            <button type="button" class="chip is-selected" data-value="Black" aria-pressed="true">Black</button>
+            <button type="button" class="chip" data-value="White" aria-pressed="false">White</button>
+            <button type="button" class="chip" data-value="Pink" aria-pressed="false">Pink</button>
+            <button type="button" class="chip" data-value="Silver" aria-pressed="false">Silver</button>
+            <button type="button" class="chip" data-value="Custom" aria-pressed="false">Custom</button>
+          </div>
+
+          <label class="field-label">Fit</label>
+          <div class="chip-group" data-chip-group="fit">
+            <button type="button" class="chip" data-value="Slim" aria-pressed="false">Slim</button>
+            <button type="button" class="chip is-selected" data-value="Regular" aria-pressed="true">Regular</button>
+            <button type="button" class="chip" data-value="Oversized" aria-pressed="false">Oversized</button>
+            <button type="button" class="chip" data-value="Relaxed" aria-pressed="false">Relaxed</button>
+          </div>
+
+          <label class="field-label">Occasion</label>
+          <div class="chip-group" data-chip-group="occasion">
+            <button type="button" class="chip is-selected" data-value="Casual" aria-pressed="true">Casual</button>
+            <button type="button" class="chip" data-value="Work" aria-pressed="false">Work</button>
+            <button type="button" class="chip" data-value="Evening" aria-pressed="false">Evening</button>
+            <button type="button" class="chip" data-value="Party" aria-pressed="false">Party</button>
+            <button type="button" class="chip" data-value="Fashion Editorial" aria-pressed="false">Fashion Editorial</button>
+          </div>
+
+          <button type="submit" class="btn-primary">Generate Outfit</button>
+        </div>
+
+        <aside class="generator-preview" aria-label="Preview">
+          <p>Your generated concept will appear on the result page after a short studio animation.</p>
+          <a href="styles.html" class="btn-ghost">Explore styles first</a>
+        </aside>
+      </form>
+    </main>
+
+    <div id="gen-overlay" class="gen-overlay" aria-hidden="true" role="dialog" aria-labelledby="gen-title">
+      <div class="gen-spinner" aria-hidden="true"></div>
+      <h2 id="gen-title">Generating Your Look</h2>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

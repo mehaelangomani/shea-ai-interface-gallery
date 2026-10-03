@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your OBJECT AI analysis history.">
+  <title>History — OBJECT AI</title>
+  <script src="js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/burgundy.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body data-page="history" class="app-wine">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header site-header-wine" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="OBJECT AI home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">OBJECT AI</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+          <li><a href="analyze.html" class="nav-link" data-nav="analyze">Analyze</a></li>
+          <li><a href="history.html" class="nav-link" data-nav="history">History</a></li>
+          <li><a href="pricing.html" class="nav-link" data-nav="pricing">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-icon theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </button>
+          <a href="settings.html" class="btn-icon nav-settings" aria-label="Settings" title="Settings">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </a>
+          <a href="signin.html" class="btn btn-nav-signin" id="nav-signin-link">Sign In</a>
+          <div class="profile-wrap">
+            <button type="button" class="profile-trigger profile-button profile-trigger-btn" aria-expanded="false" aria-haspopup="true" aria-controls="profile-menu" aria-label="Profile menu">
+              <span class="profile-icon-wrap"><svg class="icon-user" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+              <span class="avatar-initial" hidden></span>
+            </button>
+            <div id="profile-menu" class="profile-dropdown" role="menu" hidden>
+              <div class="profile-menu-logged-out">
+                <p class="profile-menu-hint">New to OBJECT AI?</p>
+                <a href="signup.html" class="profile-dropdown-item" role="menuitem">Create account</a>
+              </div>
+              <div class="profile-menu-logged-in" hidden>
+                <div class="profile-dropdown-header profile-dropdown-header-rich">
+                  <span class="avatar avatar-lg" data-dropdown-initial></span>
+                  <div><p class="profile-name"></p><p class="profile-email"></p></div>
+                </div>
+                <a href="profile.html" class="profile-dropdown-item" role="menuitem">Profile</a>
+                <a href="profile.html#account" class="profile-dropdown-item" role="menuitem">Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-history page-history-red">
+    <div class="container">
+      <header class="history-header">
+        <div>
+          <h1 class="page-title">History</h1>
+          <p class="page-subtitle">Your saved object identifications.</p>
+        </div>
+        <button type="button" class="btn btn-ghost btn-danger-text" id="clear-history-btn" hidden>Clear History</button>
+      </header>
+
+      <div id="history-toolbar" class="history-toolbar" hidden>
+        <label class="search-field">
+          <span class="visually-hidden">Search history</span>
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="search" id="history-search" placeholder="Search history" autocomplete="off">
+        </label>
+        <div class="filter-group" role="group" aria-label="Filter by media type">
+          <button type="button" class="filter-btn is-active" data-filter="all">All</button>
+          <button type="button" class="filter-btn" data-filter="image">Images</button>
+          <button type="button" class="filter-btn" data-filter="video">Videos</button>
+        </div>
+      </div>
+
+      <div id="history-empty" class="empty-state card empty-state-premium">
+        <div class="empty-visual vision-panel" aria-hidden="true">
+          <div class="scan-grid"></div>
+          <div class="empty-frame"></div>
+          <div class="scan-line"></div>
+          <span class="tech-label">NO SIGNAL</span>
+        </div>
+        <p class="empty-title">No analyses yet</p>
+        <p class="empty-desc">Your completed object identifications will appear here.</p>
+        <a href="analyze.html" class="btn btn-primary">Start Analysis</a>
+      </div>
+
+      <ul id="history-list" class="history-list" hidden></ul>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/history.js"></script>
+</body>
+</html>

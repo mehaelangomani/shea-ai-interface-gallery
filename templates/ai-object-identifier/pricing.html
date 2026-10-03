@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing — OBJECT AI</title>
+  <script src="js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/burgundy.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body data-page="pricing" class="app-wine">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header site-header-wine" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark"></span><span class="logo-text">OBJECT AI</span></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+          <li><a href="analyze.html" class="nav-link" data-nav="analyze">Analyze</a></li>
+          <li><a href="history.html" class="nav-link" data-nav="history">History</a></li>
+          <li><a href="pricing.html" class="nav-link" data-nav="pricing">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-icon theme-toggle" aria-label="Switch to dark mode"><svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+          <a href="settings.html" class="btn-icon nav-settings" aria-label="Settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></a>
+          <a href="signin.html" class="btn btn-nav-signin" id="nav-signin-link">Sign In</a>
+          <div class="profile-wrap">
+            <button type="button" class="profile-trigger profile-button profile-trigger-btn" aria-expanded="false" aria-controls="profile-menu" aria-label="Profile menu">
+              <span class="profile-icon-wrap"><svg class="icon-user" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+              <span class="avatar-initial" hidden></span>
+            </button>
+            <div id="profile-menu" class="profile-dropdown" role="menu" hidden>
+              <div class="profile-menu-logged-out"><p class="profile-menu-hint">New to OBJECT AI?</p><a href="signup.html" class="profile-dropdown-item">Create account</a></div>
+              <div class="profile-menu-logged-in" hidden>
+                <div class="profile-dropdown-header profile-dropdown-header-rich"><span class="avatar avatar-lg" data-dropdown-initial></span><div><p class="profile-name"></p><p class="profile-email"></p></div></div>
+                <a href="profile.html" class="profile-dropdown-item">Profile</a>
+                <a href="profile.html#account" class="profile-dropdown-item">Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-pricing page-pricing-red">
+    <div class="container">
+      <header class="pricing-header">
+        <p class="eyebrow">PRICING</p>
+        <h1 class="page-title editorial">Choose the right vision workflow.</h1>
+        <p class="page-subtitle">Start identifying objects today and scale when you need more.</p>
+      </header>
+      <div class="pricing-grid">
+        <article class="pricing-card">
+          <h2 class="pricing-tier">FREE</h2>
+          <p class="pricing-price"><span class="pricing-amount">₹0</span> <span class="pricing-cycle">/ month</span></p>
+          <ul class="pricing-features">
+            <li>50 analyses / month</li>
+            <li>Image analysis</li>
+            <li>Basic detection</li>
+            <li>History</li>
+          </ul>
+          <a href="signup.html" class="btn btn-outline-red btn-block">Get Started</a>
+        </article>
+        <article class="pricing-card pricing-card-featured">
+          <span class="pricing-badge">POPULAR</span>
+          <h2 class="pricing-tier">PRO</h2>
+          <p class="pricing-price"><span class="pricing-amount">₹499</span> <span class="pricing-cycle">/ month</span></p>
+          <ul class="pricing-features">
+            <li>500 analyses / month</li>
+            <li>Image + video analysis</li>
+            <li>Advanced detection</li>
+            <li>Unlimited history</li>
+            <li>Priority processing</li>
+          </ul>
+          <a href="checkout.html?plan=pro" class="btn btn-primary btn-block">Choose Pro</a>
+        </article>
+        <article class="pricing-card">
+          <h2 class="pricing-tier">TEAM</h2>
+          <p class="pricing-price"><span class="pricing-amount">₹1499</span> <span class="pricing-cycle">/ month</span></p>
+          <ul class="pricing-features">
+            <li>Unlimited analyses</li>
+            <li>Team workspace</li>
+            <li>Advanced detection</li>
+            <li>Shared history</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="checkout.html?plan=team" class="btn btn-primary btn-block">Choose Team</a>
+        </article>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer" data-site-footer></footer>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/motion.js"></script>
+</body>
+</html>

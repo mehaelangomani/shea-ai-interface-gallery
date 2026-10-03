@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz — QuizAI</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
+</head>
+<body class="quiz-shell">
+  <header class="quiz-header">
+    <div class="quiz-header__inner">
+      <div class="quiz-header__top">
+        <a href="dashboard.html" class="logo" style="font-size:1rem"><img src="assets/logo.svg" alt="" width="28" height="28" /> QuizAI</a>
+        <div class="quiz-timer" id="quiz-timer-wrap" aria-live="polite">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span id="quiz-timer">00:00</span>
+        </div>
+      </div>
+      <a href="generator.html" class="page-back">← Back to generator</a>
+      <p class="quiz-header__title" id="quiz-title">Quiz</p>
+      <p class="quiz-progress-text" id="quiz-progress-text">Question 1 of 5</p>
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-bar__fill" id="quiz-progress-fill"></div>
+      </div>
+    </div>
+  </header>
+  <main class="quiz-main">
+    <div class="quiz-main__inner">
+      <article class="card quiz-question-card">
+        <h2 id="question-text">Loading question…</h2>
+        <div class="quiz-options" id="quiz-options"></div>
+      </article>
+      <nav class="quiz-nav" aria-label="Quiz navigation">
+        <button type="button" class="btn btn--secondary" id="btn-prev">Previous</button>
+        <div class="btn-group">
+          <button type="button" class="btn btn--secondary" id="btn-next">Next</button>
+        </div>
+      </nav>
+    </div>
+  </main>
+  <script src="js/main.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+</body>
+</html>

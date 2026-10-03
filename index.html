@@ -2,12 +2,190 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SHEA — AI Interface Template Collection</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="app" class="app">
+      <header class="site-header">
+        <div class="site-header__brand">
+          <span class="site-header__name">SHEA</span>
+          <span class="site-header__mark" aria-hidden="true">✱</span>
+        </div>
+
+        <button
+          type="button"
+          id="contact-toggle-desktop"
+          class="site-header__contact site-header__contact--desktop"
+        >
+          Get in touch
+        </button>
+
+        <button
+          type="button"
+          id="menu-toggle"
+          class="site-header__menu-btn"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="site-header__menu-bar"></span>
+          <span class="site-header__menu-bar"></span>
+          <span class="site-header__menu-bar"></span>
+        </button>
+      </header>
+
+      <div
+        id="mobile-menu"
+        class="overlay overlay--mobile"
+        aria-hidden="true"
+      >
+        <nav class="overlay__nav overlay__nav--mobile">
+          <button type="button" id="contact-toggle-mobile" class="overlay__contact-link">
+            Get in touch
+          </button>
+        </nav>
+      </div>
+
+      <div
+        id="contact-overlay"
+        class="overlay overlay--contact"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-label="Get in touch"
+      >
+        <div class="overlay__contact-panel">
+          <p class="overlay__contact-title">Let&apos;s connect!</p>
+
+          <div class="overlay__contact-body">
+            <div class="overlay__contact-block">
+              <p class="overlay__contact-name">Meha</p>
+              <p>
+                <a href="mailto:mehaelangomani22@gmail.com" class="link-underline"
+                  >mehaelangomani22@gmail.com</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://github.com/mehaelangomani"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link-underline"
+                  >mehaelangomani</a
+                >
+              </p>
+            </div>
+
+            <div class="overlay__contact-block">
+              <p class="overlay__contact-name">Sweenija</p>
+              <p>
+                <a href="mailto:sweenijareddy14@gmail.com" class="link-underline"
+                  >sweenijareddy14@gmail.com</a
+                >
+              </p>
+              <p>
+                <a
+                  href="https://github.com/sweenijareddy14-glitch"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link-underline"
+                  >sweenijareddy14-glitch</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-video-wrap">
+        <video
+          id="bg-video"
+          class="bg-video"
+          muted
+          playsinline
+          preload="auto"
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260601_110537_3a579fa0-7bbc-4d94-9d25-0e816c7840f5.mp4"
+        ></video>
+      </div>
+
+      <div class="content-layer">
+        <main id="spade-hero" class="hero">
+          <div class="hero__headline-wrap hero-animate">
+            <h1 id="typewriter-heading" class="hero__title">
+              <span class="hero__title-line">
+                <span id="typewriter-line-1"></span
+                ><span id="typewriter-cursor" class="typewriter-cursor" aria-hidden="true"></span>
+              </span>
+              <span class="hero__title-line" id="typewriter-line-2-wrap" hidden>
+                <span id="typewriter-line-2"></span>
+              </span>
+            </h1>
+          </div>
+
+          <div class="hero__description-wrap hero-animate hero-animate--delay">
+            <p class="hero__description">
+              Discover a curated collection of AI interface templates, designed for the next
+              generation of digital experiences.
+            </p>
+          </div>
+
+        </main>
+      </div>
+
+      <section id="template-gallery" class="template-gallery" aria-labelledby="template-gallery-title">
+        <div class="template-gallery__inner">
+          <header class="template-gallery__header">
+            <h2 id="template-gallery-title" class="template-gallery__title">Interface templates</h2>
+            <p class="template-gallery__subtitle">
+              Explore our AI interface templates. Select a preview to inspect it in detail.
+            </p>
+          </header>
+          <div id="template-gallery-grid" class="template-gallery__grid"></div>
+        </div>
+      </section>
+
+      <div
+        id="template-lightbox"
+        class="template-lightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+        aria-label="Template preview"
+        hidden
+      >
+        <div class="template-lightbox__backdrop" data-lightbox-close></div>
+        <div class="template-lightbox__panel">
+          <button type="button" class="template-lightbox__back" data-lightbox-close>
+            Back
+          </button>
+          <div class="template-lightbox__preview-wrap">
+            <video
+              id="template-lightbox-video"
+              class="template-lightbox__media"
+              muted
+              playsinline
+              loop
+              hidden
+            ></video>
+            <img
+              id="template-lightbox-image"
+              class="template-lightbox__media"
+              alt=""
+              hidden
+            />
+          </div>
+          <div class="template-lightbox__meta">
+            <div class="template-lightbox__copy">
+              <h3 id="template-lightbox-name" class="template-lightbox__name"></h3>
+              <p id="template-lightbox-description" class="template-lightbox__description"></p>
+            </div>
+            <a id="template-lightbox-cta" class="template-lightbox__cta" href="#">View Template</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — wander</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-inner page-contact">
+  <header class="site-header">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo">wander</a>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <i data-lucide="menu"></i>
+      </button>
+
+      <div class="nav-center" id="desktopNav">
+        <a href="contact.html" class="nav-link nav-link--active" aria-current="page">Contact</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="faq.html" class="nav-link">FAQs</a>
+      </div>
+
+      <div class="nav-right">
+        <a href="login.html" class="login-link">Login</a>
+        <a href="index.html" class="plan-button plan-button--link">Plan My Trip</a>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="faq.html" class="mobile-nav-link">FAQs</a>
+        <a href="login.html" class="mobile-nav-link">Login</a>
+        <a href="index.html" class="mobile-nav-link mobile-nav-link--cta">Plan My Trip</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="page-hero page-hero--compact" aria-labelledby="contact-heading">
+      <p class="eyebrow">CONTACT US</p>
+      <h1 id="contact-heading" class="page-heading">We'd love to hear from you.</h1>
+      <p class="page-lead">Have a question about your next adventure? Reach out and we'll get back to you.</p>
+    </section>
+
+    <section class="contact-split" aria-label="Contact form and information">
+      <div class="contact-form-card">
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="form-field">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" name="name" autocomplete="name" required>
+            <p class="form-error" id="contactNameError" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="contactEmail">Email</label>
+            <input type="email" id="contactEmail" name="email" autocomplete="email" required>
+            <p class="form-error" id="contactEmailError" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="contactInterest">Trip interest</label>
+            <select id="contactInterest" name="interest" required>
+              <option value="">Select an option</option>
+              <option value="weekend">Weekend Getaway</option>
+              <option value="adventure">Adventure</option>
+              <option value="food">Food &amp; Culture</option>
+              <option value="nature">Nature</option>
+              <option value="honeymoon">Honeymoon</option>
+              <option value="family">Family Trip</option>
+              <option value="other">Other</option>
+            </select>
+            <p class="form-error" id="contactInterestError" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5" required></textarea>
+            <p class="form-error" id="contactMessageError" hidden></p>
+          </div>
+          <p class="form-success" id="contactSuccess" hidden>Thanks! We'll get back to you soon.</p>
+          <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-info-card">
+        <h2>We're here to help.</h2>
+        <p>Whether you're planning a quick getaway or a long adventure, our team is ready to help.</p>
+        <div class="contact-info-card__image">
+          <img
+            src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+            alt="Traveler looking at a scenic coastal view"
+            width="800"
+            height="520"
+            loading="lazy"
+          >
+        </div>
+        <span class="response-badge">Typical response: within 24 hours</span>
+      </div>
+    </section>
+
+    <section class="reach-section" aria-labelledby="reach-heading">
+      <h2 id="reach-heading" class="section-title">Reach us directly</h2>
+      <div class="reach-grid">
+        <article class="reach-card">
+          <i data-lucide="phone" aria-hidden="true"></i>
+          <h3>Call us</h3>
+          <a href="tel:+911234567890">+91 12345 67890</a>
+        </article>
+        <article class="reach-card">
+          <i data-lucide="mail" aria-hidden="true"></i>
+          <h3>Email us</h3>
+          <a href="mailto:hello@wander.ai">hello@wander.ai</a>
+        </article>
+        <article class="reach-card">
+          <i data-lucide="message-circle" aria-hidden="true"></i>
+          <h3>WhatsApp</h3>
+          <a href="#">Chat with us instantly</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="info-columns" aria-label="Office and hours">
+      <div class="info-block">
+        <h2 class="section-title">Find our office</h2>
+        <p class="info-text">wander Travel Studio<br>12 Horizon Lane, Bandra West<br>Mumbai, Maharashtra 400050</p>
+      </div>
+      <div class="info-block">
+        <h2 class="section-title">Working hours</h2>
+        <p class="info-text">Monday – Friday: 9:00 AM – 6:00 PM IST<br>Saturday: 10:00 AM – 2:00 PM IST<br>Sunday: Closed</p>
+      </div>
+    </section>
+
+    <section class="mini-faq" aria-labelledby="mini-faq-heading">
+      <div class="mini-faq__header">
+        <h2 id="mini-faq-heading" class="section-title">Common questions</h2>
+        <a href="faq.html" class="text-link">View all FAQs</a>
+      </div>
+      <div class="accordion accordion--compact" data-accordion-group="contact">
+        <div class="accordion-item">
+          <button type="button" class="accordion-trigger" aria-expanded="false">
+            <span>How quickly will wander reply?</span>
+            <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion-panel" hidden>
+            <p>We aim to respond within 24 hours on business days. Priority members receive faster support.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-trigger" aria-expanded="false">
+            <span>Can you help plan international trips?</span>
+            <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion-panel" hidden>
+            <p>Yes. wander supports destinations worldwide and adapts recommendations to local seasons and travel style.</p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button type="button" class="accordion-trigger" aria-expanded="false">
+            <span>Where can I see pricing details?</span>
+            <i data-lucide="plus" class="accordion-icon" aria-hidden="true"></i>
+          </button>
+          <div class="accordion-panel" hidden>
+            <p>Visit our <a href="pricing.html">pricing page</a> for Free, Plus, and Pro plan comparisons.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo">wander</a>
+      <p class="site-footer__tagline">Thoughtful AI travel planning for every kind of journey.</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQs</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 wander. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

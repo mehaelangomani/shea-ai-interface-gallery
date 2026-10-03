@@ -1,0 +1,32 @@
+[
+  {
+    "name": "AI Dashboard",
+    "page": "templates/ai-dashboard/nexus-ai/index.html",
+    "previewVideo": "templates/ai-dashboard/preview.mp4"
+  },
+  {
+    "name": "AI Trip Planner",
+    "page": "templates/ai-trip-planner/wandor/index.html",
+    "previewVideo": "templates/ai-trip-planner/preview.mp4"
+  },
+  {
+    "name": "AI Quiz Generator",
+    "page": "templates/ai-quiz-generator/index.html",
+    "previewVideo": "templates/ai-quiz-generator/preview.mp4"
+  },
+  {
+    "name": "AI Prompt Generator",
+    "page": "templates/ai-prompt-generator/index.html",
+    "previewVideo": "templates/ai-prompt-generator/preview.mp4"
+  },
+  {
+    "name": "AI Outfit Generator",
+    "page": "templates/ai-outfit-generator/index.html",
+    "previewVideo": "templates/ai-outfit-generator/preview.mp4"
+  },
+  {
+    "name": "AI Object Identifier",
+    "page": "templates/ai-object-identifier/index.html",
+    "previewVideo": "templates/ai-object-identifier/preview.mp4"
+  }
+]

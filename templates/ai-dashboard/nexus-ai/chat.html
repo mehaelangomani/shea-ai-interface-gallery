@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat — NexusAI</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main" style="padding:0;">
+      <div class="chat-shell">
+        <div class="chat-history-overlay" id="chat-history-overlay" aria-hidden="true"></div>
+        <aside class="chat-sidebar" id="chat-sidebar">
+          <button type="button" class="btn btn-secondary" id="new-chat">New Chat</button>
+          <ul class="chat-list" id="chat-list"></ul>
+        </aside>
+        <div class="chat-main">
+          <header class="chat-topbar">
+            <div class="chat-topbar-left">
+              <button type="button" class="btn btn-ghost btn-sm chat-history-toggle" id="chat-history-toggle" aria-expanded="false" aria-controls="chat-sidebar">History</button>
+              <h2 id="chat-title">Travel website design</h2>
+            </div>
+            <div class="chat-topbar-actions">
+              <select class="model-select" id="model-select" aria-label="Model">
+                <option value="nexus-pro">Nexus Pro</option>
+                <option value="nexus-fast">Nexus Fast</option>
+                <option value="nexus-research">Nexus Research</option>
+              </select>
+              <button type="button" class="btn btn-ghost btn-sm" id="btn-share">Share</button>
+              <div class="dropdown">
+                <button type="button" class="btn btn-ghost btn-sm" data-dropdown-toggle>More</button>
+                <div class="dropdown-menu">
+                  <button type="button" class="dropdown-item" id="clear-chat">Clear chat</button>
+                  <a href="projects.html" class="dropdown-item">View in projects</a>
+                </div>
+              </div>
+            </div>
+          </header>
+          <div class="chat-thread" id="chat-thread"></div>
+          <footer class="chat-composer-wrap">
+            <div class="chat-composer">
+              <label for="chat-input" class="sr-only">Message</label>
+              <textarea id="chat-input" rows="2" placeholder="Message NexusAI…"></textarea>
+              <div class="composer-toolbar">
+                <div class="composer-tools">
+                  <button type="button" class="tool-btn" data-label="Add">+</button>
+                  <button type="button" class="tool-btn" data-label="Search">Search</button>
+                  <button type="button" class="tool-btn" data-label="Create image">Create image</button>
+                  <button type="button" class="tool-btn" data-label="Deep think">Deep think</button>
+                  <button type="button" class="tool-btn" data-label="Attach">Attach</button>
+                  <button type="button" class="tool-btn" data-label="Voice">Voice</button>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" id="chat-send">Send</button>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/global.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>

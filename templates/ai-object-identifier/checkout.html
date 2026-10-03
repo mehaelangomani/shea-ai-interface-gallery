@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — OBJECT AI</title>
+  <script src="js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/burgundy.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body data-page="checkout" class="page-checkout app-wine">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header site-header-wine site-header-minimal" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark"></span><span class="logo-text">OBJECT AI</span></a>
+      <nav class="site-nav site-nav-minimal" aria-label="Checkout">
+        <span class="tech-label checkout-secure">SECURE CHECKOUT</span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="checkout-main">
+    <div class="container checkout-grid" id="checkout-form-wrap">
+      <div class="checkout-form-col">
+        <h1 class="page-title">Complete your plan</h1>
+        <p class="page-subtitle">Simulated payment — no real charges.</p>
+        <form id="checkout-form" class="checkout-form">
+          <label class="field"><span>Cardholder name</span><input type="text" name="name" required autocomplete="cc-name"></label>
+          <label class="field"><span>Card number</span><input type="text" name="card" inputmode="numeric" placeholder="4242 4242 4242 4242" required></label>
+          <div class="field-row">
+            <label class="field"><span>Expiry</span><input type="text" name="expiry" placeholder="MM/YY" required></label>
+            <label class="field"><span>CVV</span><input type="text" name="cvv" inputmode="numeric" required></label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Complete Payment</button>
+        </form>
+      </div>
+      <aside class="checkout-summary card vision-panel">
+        <div class="scan-grid"></div>
+        <span class="tech-label">OBJECT AI</span>
+        <h2 id="checkout-plan-name" class="checkout-plan-title">PRO PLAN</h2>
+        <p class="checkout-plan-meta">Billing: <span id="checkout-summary-price">₹499 / month</span></p>
+        <dl class="checkout-totals">
+          <div><dt>Plan</dt><dd id="checkout-plan-label">PRO</dd></div>
+          <div><dt>Total</dt><dd id="checkout-total">₹499</dd></div>
+        </dl>
+        <p class="checkout-plan-price" id="checkout-plan-price">₹499</p>
+      </aside>
+    </div>
+
+    <div class="container checkout-success" id="checkout-success" hidden>
+      <div class="checkout-success-card card">
+        <span class="tech-label">PAYMENT SIMULATION</span>
+        <h2 class="page-title">Payment setup complete</h2>
+        <p class="page-subtitle">Your plan is now active.</p>
+        <a href="analyze.html" class="btn btn-primary">Go to Analyze</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wander — Where will you go next?</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero" aria-label="wander travel planner hero">
+    <!-- Background video -->
+    <video
+      class="background-video"
+      autoplay
+      muted
+      loop
+      playsinline
+    >
+      <source
+        src="https://pollen-batch-41236914.figma.site/_components/v2/f0ee2dae7671c170c34f12e31c4cb41418976c98/769c564298c132f7919405cd9f17c1b1231f341d.769c5642.mp4"
+        type="video/mp4"
+      >
+    </video>
+
+    <!-- Top white gradient for legibility -->
+    <div class="top-gradient" aria-hidden="true"></div>
+
+    <div class="content-wrapper">
+      <header>
+        <nav class="navbar" aria-label="Main navigation">
+          <a href="index.html" class="logo">wander</a>
+
+          <button
+            type="button"
+            class="nav-toggle"
+            id="navToggle"
+            aria-expanded="false"
+            aria-controls="mobileNav"
+            aria-label="Open menu"
+          >
+            <i data-lucide="menu"></i>
+          </button>
+
+          <div class="nav-center" id="desktopNav">
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="faq.html" class="nav-link">FAQs</a>
+          </div>
+
+          <div class="nav-right">
+            <a href="login.html" class="login-link">Login</a>
+            <button type="button" class="plan-button" data-plan-trip>Plan My Trip</button>
+          </div>
+
+          <div class="mobile-nav" id="mobileNav" hidden>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+            <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+            <a href="faq.html" class="mobile-nav-link">FAQs</a>
+            <a href="login.html" class="mobile-nav-link">Login</a>
+            <button type="button" class="mobile-nav-link mobile-nav-link--cta" data-plan-trip>Plan My Trip</button>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <div class="hero-content">
+          <h1 class="hero-title">Where will you go next?</h1>
+          <p class="hero-subtitle">
+            Tell our AI where you're going and what you love. We'll create a personalized itinerary for you.
+          </p>
+
+          <div class="prompt-card">
+            <p class="prompt-text" id="promptText">
+              I'm planning a 7-day trip to Japan in October. I love food, hidden cafes, scenic hikes, and want to avoid crowds....
+            </p>
+
+            <input
+              id="fileInput"
+              type="file"
+              accept="image/*,.pdf"
+              hidden
+            >
+
+            <button
+              type="button"
+              class="upload-button"
+              id="uploadButton"
+              aria-label="Upload inspiration"
+            >
+              <i data-lucide="upload"></i>
+            </button>
+
+            <button type="button" class="prompt-submit" data-plan-trip>Plan My Trip</button>
+
+            <p class="file-name" id="fileName" hidden></p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <footer class="site-footer site-footer--home">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo">wander</a>
+      <p class="site-footer__tagline">Thoughtful AI travel planning for every kind of journey.</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQs</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 wander. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

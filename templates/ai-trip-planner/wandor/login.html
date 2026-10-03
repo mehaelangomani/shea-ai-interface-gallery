@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — wander</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-login">
+  <div class="login-layout">
+    <aside class="login-visual" aria-hidden="true">
+      <img
+        class="login-visual__bg"
+        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+        alt=""
+        width="1400"
+        height="900"
+      >
+      <div class="login-visual__overlay"></div>
+      <div class="login-visual__content">
+        <a href="index.html" class="login-visual__logo">wander</a>
+        <p class="login-visual__tagline">Your next adventure starts here.</p>
+      </div>
+    </aside>
+
+    <main class="login-panel">
+      <a href="index.html" class="login-back">
+        <i data-lucide="arrow-left" aria-hidden="true"></i>
+        Back to wander
+      </a>
+
+      <div class="login-form-wrap">
+        <h1>Welcome back.</h1>
+        <p class="login-subtitle">Sign in to continue planning your next adventure.</p>
+
+        <form id="loginForm" class="login-form" novalidate>
+          <div class="form-field">
+            <label for="loginEmail">Email address</label>
+            <input type="email" id="loginEmail" name="email" autocomplete="email" required>
+            <p class="form-error" id="loginEmailError" hidden></p>
+          </div>
+          <div class="form-field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" autocomplete="current-password" required>
+            <p class="form-error" id="loginPasswordError" hidden></p>
+          </div>
+
+          <div class="login-form__row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="rememberMe" name="remember">
+              Remember me
+            </label>
+            <button type="button" class="text-button" id="forgotPassword">Forgot password?</button>
+          </div>
+
+          <p class="form-status" id="loginStatus" hidden></p>
+
+          <button type="submit" class="btn btn--primary btn--full">Sign In</button>
+        </form>
+
+        <div class="login-divider"><span>OR</span></div>
+
+        <button type="button" class="btn btn--google" id="googleSignIn">
+          <i data-lucide="chrome" aria-hidden="true"></i>
+          Continue with Google
+        </button>
+
+        <p class="login-signup">
+          Don't have an account?
+          <button type="button" class="text-link-button" id="createAccount">Create account</button>
+        </p>
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer site-footer--login">
+    <div class="site-footer__inner">
+      <a href="index.html" class="site-footer__logo">wander</a>
+      <p class="site-footer__tagline">Thoughtful AI travel planning for every kind of journey.</p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="contact.html">Contact</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQs</a>
+        <a href="login.html">Login</a>
+      </nav>
+      <p class="site-footer__copy">&copy; 2026 wander. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="script.js"></script>
+</body>
+</html>

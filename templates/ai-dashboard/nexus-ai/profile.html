@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — NexusAI</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main">
+      <div class="app-content">
+        <h1 style="font-size:1.5rem;margin-bottom:1.25rem;">Your Profile</h1>
+
+        <div class="profile-header-card">
+          <div class="profile-avatar" id="profile-avatar">M</div>
+          <div style="flex:1;">
+            <h2 id="profile-name" style="font-size:1.25rem;">Meha</h2>
+            <p id="profile-email" style="font-size:0.875rem;">meha@example.com</p>
+          </div>
+          <button type="button" class="btn btn-secondary" id="edit-profile-btn">Edit Profile</button>
+        </div>
+
+        <div class="profile-tabs" role="tablist">
+          <button type="button" class="profile-tab active" data-tab="overview">Overview</button>
+          <button type="button" class="profile-tab" data-tab="subscription">Subscription</button>
+          <button type="button" class="profile-tab" data-tab="usage">Usage</button>
+          <button type="button" class="profile-tab" data-tab="billing">Billing</button>
+        </div>
+
+        <section class="tab-panel active" id="tab-overview">
+          <div class="settings-card card" style="padding:1.5rem;">
+            <h3 style="margin-bottom:0.5rem;">Workspace overview</h3>
+            <p style="font-size:0.875rem;" id="plan-overview-text">You're on the Free plan.</p>
+            <div class="stat-grid">
+              <div class="stat-card">
+                <div class="value">24</div>
+                <div class="label">Active projects</div>
+              </div>
+              <div class="stat-card">
+                <div class="value">1.2k</div>
+                <div class="label">Messages this month</div>
+              </div>
+              <div class="stat-card">
+                <div class="value">48</div>
+                <div class="label">Images generated</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="tab-subscription">
+          <div class="settings-card card" style="padding:1.5rem;">
+            <span class="badge" id="plan-badge">Free Plan</span>
+            <h3 style="margin:0.75rem 0 0.25rem;" id="plan-price">₹0 / month</h3>
+            <p style="font-size:0.875rem;">Renewal date: November 2, 2026</p>
+            <button type="button" class="btn btn-primary btn-sm" style="margin-top:1.25rem;" id="manage-plan">Manage Plan</button>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="tab-usage">
+          <div class="settings-card card" style="padding:1.5rem;">
+            <div class="progress-block">
+              <div class="progress-label"><span>Messages used</span><span>1,240 / Unlimited</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:35%;"></div></div>
+            </div>
+            <div class="progress-block">
+              <div class="progress-label"><span>Images generated</span><span>48 / 200</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:24%;"></div></div>
+            </div>
+            <div class="progress-block">
+              <div class="progress-label"><span>Projects created</span><span>24 / 50</span></div>
+              <div class="progress-bar"><div class="progress-fill" style="width:48%;"></div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="tab-panel" id="tab-billing">
+          <div class="settings-card card" style="padding:1.5rem;margin-bottom:1rem;">
+            <p style="font-size:0.875rem;"><strong>Current plan:</strong> <span id="billing-plan-name">Free</span></p>
+            <p style="font-size:0.875rem;margin-top:0.5rem;"><strong>Payment method:</strong> Visa •••• 4242</p>
+          </div>
+          <div class="billing-wrap card" style="padding:0;overflow:hidden;">
+            <table class="billing-table">
+              <thead>
+                <tr><th>Date</th><th>Invoice</th><th>Amount</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Oct 2, 2026</td><td>INV-1042</td><td id="invoice-amount">₹0</td><td>Paid</td></tr>
+                <tr><td>Sep 2, 2026</td><td>INV-1031</td><td>₹799</td><td>Paid</td></tr>
+                <tr><td>Aug 2, 2026</td><td>INV-1020</td><td>₹799</td><td>Paid</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="edit-profile-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Edit profile</h3>
+        <button type="button" class="modal-close" data-modal-close aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="field">
+          <label for="edit-name">Name</label>
+          <input type="text" id="edit-name" class="input">
+        </div>
+        <div class="field">
+          <label for="edit-email">Email</label>
+          <input type="email" id="edit-email" class="input">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-ghost" data-modal-close>Cancel</button>
+        <button type="button" class="btn btn-primary" id="save-profile-modal">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/global.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

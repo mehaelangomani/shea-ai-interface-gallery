@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Upload and analyze images or videos with OBJECT AI.">
+  <title>Analyze — OBJECT AI</title>
+  <script src="js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/burgundy.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body data-page="analyze" class="app-wine">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header site-header-wine" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="OBJECT AI home">
+        <span class="logo-mark" aria-hidden="true"></span>
+        <span class="logo-text">OBJECT AI</span>
+      </a>
+
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+          <li><a href="analyze.html" class="nav-link" data-nav="analyze">Analyze</a></li>
+          <li><a href="history.html" class="nav-link" data-nav="history">History</a></li>
+          <li><a href="pricing.html" class="nav-link" data-nav="pricing">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-icon theme-toggle" aria-label="Switch to dark mode" title="Toggle theme">
+            <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </button>
+          <a href="settings.html" class="btn-icon nav-settings" aria-label="Settings" title="Settings">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </a>
+          <a href="signin.html" class="btn btn-nav-signin" id="nav-signin-link">Sign In</a>
+          <div class="profile-wrap">
+            <button type="button" class="profile-trigger profile-button profile-trigger-btn" aria-expanded="false" aria-haspopup="true" aria-controls="profile-menu" aria-label="Profile menu">
+              <span class="profile-icon-wrap"><svg class="icon-user" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+              <span class="avatar-initial" hidden></span>
+            </button>
+            <div id="profile-menu" class="profile-dropdown" role="menu" hidden>
+              <div class="profile-menu-logged-out">
+                <p class="profile-menu-hint">New to OBJECT AI?</p>
+                <a href="signup.html" class="profile-dropdown-item" role="menuitem">Create account</a>
+              </div>
+              <div class="profile-menu-logged-in" hidden>
+                <div class="profile-dropdown-header profile-dropdown-header-rich">
+                  <span class="avatar avatar-lg" data-dropdown-initial></span>
+                  <div><p class="profile-name"></p><p class="profile-email"></p></div>
+                </div>
+                <a href="profile.html" class="profile-dropdown-item" role="menuitem">Profile</a>
+                <a href="profile.html#account" class="profile-dropdown-item" role="menuitem">Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-analyze page-analyze-red">
+    <div class="container analyze-container analyze-container-wide">
+      <!-- Upload workspace -->
+      <section id="upload-section" class="analyze-upload-section" aria-labelledby="upload-heading">
+        <h1 id="upload-heading" class="page-title">Analyze</h1>
+        <p class="page-subtitle">Upload your visual content for object detection.</p>
+
+        <div id="drop-zone" class="drop-zone drop-zone-premium" tabindex="0" role="button" aria-label="Upload area. Drop a file or press Enter to browse.">
+          <span class="drop-corner drop-corner-tl" aria-hidden="true"></span>
+          <span class="drop-corner drop-corner-tr" aria-hidden="true"></span>
+          <span class="drop-corner drop-corner-bl" aria-hidden="true"></span>
+          <span class="drop-corner drop-corner-br" aria-hidden="true"></span>
+          <div class="scan-grid scan-grid-local" aria-hidden="true"></div>
+          <input type="file" id="file-input" class="file-input" accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.webm,image/jpeg,image/png,image/webp,video/mp4,video/quicktime,video/webm" aria-describedby="upload-hint upload-meta">
+          <div id="empty-state" class="drop-empty">
+            <p class="tech-label drop-tech">READY FOR INPUT</p>
+            <p class="tech-label drop-tech-sub">IMAGE / VIDEO</p>
+            <div class="drop-icon drop-icon-float" aria-hidden="true">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            </div>
+            <h2 class="drop-title">DROP YOUR VISUAL</h2>
+            <p id="upload-hint" class="drop-hint">Drop an image or video here, or browse your files.</p>
+            <button type="button" class="btn btn-primary" id="choose-file-btn">Choose File</button>
+            <p id="upload-meta" class="drop-meta">Max 50 MB · JPG, PNG, WEBP, MP4, MOV, WEBM</p>
+          </div>
+
+          <div id="preview-state" class="drop-preview" hidden>
+            <div class="preview-media-wrap">
+              <img id="preview-image" class="preview-media" alt="" hidden>
+              <video id="preview-video" class="preview-media" controls hidden></video>
+            </div>
+            <dl class="file-meta">
+              <div><dt>Name</dt><dd id="meta-name">—</dd></div>
+              <div><dt>Size</dt><dd id="meta-size">—</dd></div>
+              <div><dt>Type</dt><dd id="meta-type">—</dd></div>
+            </dl>
+            <div class="preview-actions">
+              <button type="button" class="btn btn-ghost" id="remove-file-btn">Remove</button>
+              <button type="button" class="btn btn-primary" id="analyze-btn">Analyze Object</button>
+            </div>
+          </div>
+        </div>
+
+        <p id="upload-error" class="form-error" role="alert" hidden></p>
+      </section>
+
+      <!-- Analysis progress -->
+      <section id="analysis-section" class="analysis-section" hidden aria-live="polite" aria-labelledby="analysis-heading">
+        <h2 id="analysis-heading" class="visually-hidden">Analysis in progress</h2>
+        <div class="analysis-card card vision-panel">
+          <div class="scan-grid scan-grid-local" aria-hidden="true"></div>
+          <div id="analysis-preview-wrap" class="analysis-preview-wrap" hidden>
+            <img id="analysis-preview-img" class="analysis-preview-media" alt="" hidden>
+            <video id="analysis-preview-video" class="analysis-preview-media" muted playsinline hidden></video>
+            <div class="analysis-scan-overlay"><div class="analysis-scan-line-h"></div></div>
+            <div class="analysis-ghost-box ghost-1"></div>
+            <div class="analysis-ghost-box ghost-2"></div>
+          </div>
+          <p id="analysis-status" class="analysis-status tech-label">SCANNING VISUAL</p>
+          <div class="progress-wrap">
+            <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div id="progress-fill" class="progress-fill"></div>
+            </div>
+            <span id="progress-percent" class="progress-percent">0%</span>
+          </div>
+          <p id="analysis-phase" class="analysis-phase">Scanning visual content</p>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section id="results-section" class="results-section" hidden aria-labelledby="results-heading">
+        <header class="results-header">
+          <h2 id="results-heading" class="page-title">Analysis Results</h2>
+          <dl class="results-summary">
+            <div><dt>File</dt><dd id="result-file-name">—</dd></div>
+            <div><dt>Date</dt><dd id="result-date">—</dd></div>
+            <div><dt>Objects</dt><dd id="result-object-count">—</dd></div>
+          </dl>
+        </header>
+
+        <div class="results-layout">
+          <div class="results-main">
+            <div class="results-preview card vision-panel">
+              <div class="scan-grid scan-grid-local" aria-hidden="true"></div>
+              <div id="result-media-container" class="result-media-container">
+                <img id="result-image" class="result-media" alt="Analyzed image with detections" hidden>
+                <video id="result-video" class="result-media" controls hidden></video>
+                <div id="bounding-layer" class="bounding-layer" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+          <aside class="results-aside detected-panel card">
+            <p id="result-summary-count" class="summary-count tech-label">0 OBJECTS DETECTED</p>
+            <h3 class="panel-title">Detection summary</h3>
+            <ul id="objects-list" class="objects-list"></ul>
+          </aside>
+        </div>
+
+        <div class="results-actions">
+          <button type="button" class="btn btn-ghost" id="new-analysis-btn">New Analysis</button>
+          <button type="button" class="btn btn-primary" id="save-result-btn">Save Result</button>
+        </div>
+        <p id="save-toast" class="save-toast" role="status" hidden>Result saved to history.</p>
+      </section>
+    </div>
+  </main>
+
+  <dialog id="object-detail-modal" class="object-modal" aria-labelledby="modal-object-name">
+    <div class="modal-inner">
+      <button type="button" class="modal-close btn-icon" aria-label="Close details">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <h2 id="modal-object-name" class="modal-title">Object</h2>
+      <dl class="modal-details">
+        <div><dt>Confidence</dt><dd id="modal-confidence">—</dd></div>
+        <div><dt>Category</dt><dd id="modal-category">—</dd></div>
+        <div><dt>Detected</dt><dd id="modal-count">—</dd></div>
+        <div><dt>Location</dt><dd id="modal-location">—</dd></div>
+      </dl>
+    </div>
+  </dialog>
+
+  <footer class="site-footer" data-site-footer></footer>
+
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/detection-ui.js"></script>
+  <script src="js/analyze.js"></script>
+</body>
+</html>

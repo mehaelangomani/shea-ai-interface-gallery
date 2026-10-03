@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — QuizAI</title>
+  <script src="js/theme.js"></script>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <div class="sidebar-overlay" aria-hidden="true"></div>
+  <div class="app-layout">
+    <aside class="app-sidebar" aria-label="Sidebar">
+      <div class="app-sidebar__brand">
+        <a href="dashboard.html" class="logo"><img src="assets/logo.svg" alt="" width="32" height="32" /> QuizAI</a>
+      </div>
+      <nav class="app-sidebar__nav">
+        <a href="dashboard.html" class="app-sidebar__link" data-nav="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Dashboard
+        </a>
+        <a href="generator.html" class="app-sidebar__link" data-nav="generator">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83"/></svg>
+          Generate Quiz
+        </a>
+        <a href="my-quizzes.html" class="app-sidebar__link" data-nav="my-quizzes">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M4 4v15.5M20 6H8a2 2 0 00-2 2v9"/></svg>
+          My Quizzes
+        </a>
+        <a href="history.html" class="app-sidebar__link" data-nav="history">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          History
+        </a>
+        <a href="settings.html" class="app-sidebar__link" data-nav="settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2"/></svg>
+          Settings
+        </a>
+      </nav>
+      <div class="app-sidebar__footer">
+        <button type="button" class="app-sidebar__link" data-logout style="width:100%;border:none;background:none;cursor:pointer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+    <div class="app-main">
+      <header class="app-topbar">
+        <button type="button" class="nav-toggle" data-sidebar-open aria-label="Open menu"><span></span><span></span><span></span></button>
+        <a href="dashboard.html" class="logo"><img src="assets/logo.svg" alt="" width="28" height="28" /> QuizAI</a>
+        <div class="app-topbar__user">
+          <span class="plan-pill" data-user-plan>Free</span>
+          <span class="avatar" data-user-avatar>MS</span>
+        </div>
+      </header>
+      <main class="app-content app-content--dashboard">
+        <div class="botanical dashboard-deco botanical--leaf-3 leaf" aria-hidden="true">
+          <svg viewBox="0 0 24 28"><path d="M14 3c-3 5-4 11-2 18 6-3 9-9 8-15-3 0-5-2-6-3z" fill="#39AEB4" opacity="0.5"/></svg>
+        </div>
+        <header class="dashboard-header">
+          <h1>Welcome back, <span data-user-name>Meha</span>!</h1>
+          <p>Ready to create your next quiz?</p>
+          <a href="generator.html" class="btn btn--primary" style="margin-top:16px">Generate Quiz</a>
+        </header>
+        <div class="stats-grid" id="dashboard-stats">
+          <div class="card stat-card card--hover"><div class="stat-card__value" id="stat-created">0</div><div class="stat-card__label">Quizzes Created</div></div>
+          <div class="card stat-card card--hover"><div class="stat-card__value" id="stat-avg">—</div><div class="stat-card__label">Average Score</div></div>
+          <div class="card stat-card card--hover"><div class="stat-card__value" id="stat-topics">0</div><div class="stat-card__label">Topics Explored</div></div>
+          <div class="card stat-card card--hover"><div class="stat-card__value" id="stat-time">0m</div><div class="stat-card__label">Learning Time</div></div>
+        </div>
+        <div class="quick-actions">
+          <a href="generator.html" class="card quick-action card--hover"><div class="quick-action__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></div><span>Generate Quiz</span></a>
+          <a href="my-quizzes.html" class="card quick-action card--hover"><div class="quick-action__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></svg></div><span>My Quizzes</span></a>
+          <a href="history.html" class="card quick-action card--hover"><div class="quick-action__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><span>View History</span></a>
+          <a href="settings.html" class="card quick-action card--hover"><div class="quick-action__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></div><span>Settings</span></a>
+        </div>
+        <section class="recent-section reveal">
+          <h2>Recent Activity</h2>
+          <p style="font-size:14px;margin:-8px 0 16px">Your latest completed attempts.</p>
+          <div id="recent-empty" class="card empty-state" hidden>
+            <h3>No activity yet</h3>
+            <p>Complete a quiz to see recent activity here.</p>
+            <a href="generator.html" class="btn btn--primary">Generate Quiz</a>
+          </div>
+          <div class="card" id="recent-table-wrap">
+            <table class="quiz-table">
+              <thead>
+                <tr><th>Quiz</th><th>Score</th><th>Date</th><th></th></tr>
+              </thead>
+              <tbody id="recent-activity-body"></tbody>
+            </table>
+          </div>
+          <p style="margin-top:16px;font-size:14px"><a href="history.html">View full history →</a></p>
+        </section>
+      </main>
+    </div>
+  </div>
+  <script src="js/main.js" defer></script>
+  <script src="js/dashboard.js" defer></script>
+</body>
+</html>

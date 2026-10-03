@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — NexusAI</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/settings.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main">
+      <div class="app-content">
+        <h1 style="font-size:1.5rem;margin-bottom:1.5rem;">Settings</h1>
+        <div class="settings-layout">
+          <nav class="settings-nav" aria-label="Settings sections">
+            <button type="button" class="active" data-panel="general">General</button>
+            <button type="button" data-panel="appearance">Appearance</button>
+            <button type="button" data-panel="notifications">Notifications</button>
+            <button type="button" data-panel="privacy">Privacy</button>
+            <button type="button" data-panel="ai">AI Preferences</button>
+            <button type="button" data-panel="language">Language</button>
+            <button type="button" data-panel="apps">Connected Apps</button>
+          </nav>
+          <div class="settings-panels">
+            <section class="settings-panel active" id="panel-general">
+              <h2>General</h2>
+              <div class="settings-card">
+                <div class="avatar-upload" id="settings-avatar">M</div>
+                <div class="field">
+                  <label for="settings-name">Name</label>
+                  <input type="text" id="settings-name" class="input">
+                </div>
+                <div class="field">
+                  <label for="settings-email">Email</label>
+                  <input type="email" id="settings-email" class="input">
+                </div>
+                <p class="hint" style="font-size:0.8125rem;margin-bottom:1rem;">Account type: <strong id="settings-plan-label">Free</strong></p>
+                <button type="button" class="btn btn-primary btn-sm" id="save-general">Save changes</button>
+              </div>
+            </section>
+            <section class="settings-panel" id="panel-appearance">
+              <h2>Appearance</h2>
+              <div class="settings-card">
+                <p style="font-size:0.875rem;margin-bottom:1rem;color:var(--text-secondary);">Choose how NexusAI looks on your device.</p>
+                <div class="theme-options">
+                  <button type="button" class="theme-option" data-theme="light">Light</button>
+                  <button type="button" class="theme-option" data-theme="dark">Dark</button>
+                  <button type="button" class="theme-option" data-theme="system">System</button>
+                </div>
+              </div>
+            </section>
+            <section class="settings-panel" id="panel-notifications">
+              <h2>Notifications</h2>
+              <div class="settings-card">
+                <div class="setting-row">
+                  <div>
+                    <label for="toggle-email">Email notifications</label>
+                    <p class="hint">Activity and account alerts</p>
+                  </div>
+                  <label class="toggle"><input type="checkbox" id="toggle-email" checked><span class="toggle-slider"></span></label>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <label for="toggle-updates">Product updates</label>
+                    <p class="hint">New features and improvements</p>
+                  </div>
+                  <label class="toggle"><input type="checkbox" id="toggle-updates" checked><span class="toggle-slider"></span></label>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <label for="toggle-usage">Usage alerts</label>
+                    <p class="hint">When approaching plan limits</p>
+                  </div>
+                  <label class="toggle"><input type="checkbox" id="toggle-usage"><span class="toggle-slider"></span></label>
+                </div>
+              </div>
+            </section>
+            <section class="settings-panel" id="panel-privacy">
+              <h2>Privacy</h2>
+              <div class="settings-card">
+                <div class="setting-row">
+                  <div>
+                    <label for="toggle-history">Save chat history</label>
+                    <p class="hint">Store conversations in your workspace</p>
+                  </div>
+                  <label class="toggle"><input type="checkbox" id="toggle-history" checked><span class="toggle-slider"></span></label>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <label for="toggle-sharing">Data sharing for improvement</label>
+                    <p class="hint">Help train models (optional)</p>
+                  </div>
+                  <label class="toggle"><input type="checkbox" id="toggle-sharing"><span class="toggle-slider"></span></label>
+                </div>
+              </div>
+            </section>
+            <section class="settings-panel" id="panel-ai">
+              <h2>AI Preferences</h2>
+              <div class="settings-card">
+                <div class="field">
+                  <label for="default-model">Default model</label>
+                  <select id="default-model" class="select">
+                    <option value="nexus-pro">Nexus Pro</option>
+                    <option value="nexus-fast">Nexus Fast</option>
+                    <option value="nexus-research">Nexus Research</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="response-style">Response style</label>
+                  <select id="response-style" class="select">
+                    <option value="concise">Concise</option>
+                    <option value="balanced">Balanced</option>
+                    <option value="detailed">Detailed</option>
+                  </select>
+                </div>
+                <div class="setting-row">
+                  <div>
+                    <label for="toggle-autosave">Auto-save chats</label>
+                  </div>
+                  <label class="toggle"><input type="checkbox" id="toggle-autosave" checked><span class="toggle-slider"></span></label>
+                </div>
+              </div>
+            </section>
+            <section class="settings-panel" id="panel-language">
+              <h2>Language</h2>
+              <div class="settings-card">
+                <div class="field">
+                  <label for="language-select">Interface language</label>
+                  <select id="language-select" class="select">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="es">Spanish</option>
+                  </select>
+                </div>
+              </div>
+            </section>
+            <section class="settings-panel" id="panel-apps">
+              <h2>Connected Apps</h2>
+              <div class="settings-card">
+                <div class="setting-row">
+                  <div><label>Google Drive</label><p class="hint" id="drive-status">Not connected</p></div>
+                  <button type="button" class="btn btn-secondary btn-sm" id="connect-drive">Connect</button>
+                </div>
+                <div class="setting-row">
+                  <div><label>GitHub</label><p class="hint" id="github-status">Connected as @meha</p></div>
+                  <button type="button" class="btn btn-ghost btn-sm" id="github-toggle">Disconnect</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="js/global.js"></script>
+  <script src="js/settings.js"></script>
+</body>
+</html>

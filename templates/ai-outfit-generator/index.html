@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FLORA — describe fashion in words, generate editorial outfit concepts." />
+    <title>FLORA — AI Outfit Generator</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("ttg-theme");
+          document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="page-home" data-page="home">
+    <header class="site-header">
+      <a href="index.html" class="brand-mark" aria-label="FLORA home">
+        <svg viewBox="0 0 66 62" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="33" y1="1" x2="33" y2="61" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="3" y1="31" x2="63" y2="31" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="11.8" y1="9.8" x2="54.2" y2="52.2" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+          <line x1="54.2" y1="9.8" x2="11.8" y2="52.2" stroke="currentColor" stroke-width="5" stroke-linecap="square" />
+        </svg>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="generator.html" data-nav="generator">Generator</a>
+        <a href="styles.html" data-nav="styles">Styles</a>
+        <a href="collection.html" data-nav="collection">Collection</a>
+        <a href="payment.html" data-nav="pricing">Pricing</a>
+        <a href="login.html" data-nav="login" data-nav-auth>Login</a>
+      </nav>
+
+      <div class="header-utils">
+        <a href="generator.html" class="studio-pill">AI Garment Studio</a>
+        <button type="button" class="theme-toggle" aria-label="Switch theme">☀</button>
+      </div>
+
+      <button type="button" class="burger" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <div class="mobile-nav-scrim" aria-hidden="true"></div>
+    <aside class="mobile-nav-sheet" aria-label="Mobile navigation">
+      <nav>
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="generator.html" data-nav="generator">Generator</a>
+        <a href="styles.html" data-nav="styles">Styles</a>
+        <a href="collection.html" data-nav="collection">Collection</a>
+        <a href="payment.html" data-nav="pricing">Pricing</a>
+        <a href="login.html" data-nav="login" data-nav-auth>Login</a>
+        <a href="about.html">About</a>
+      </nav>
+    </aside>
+
+    <main class="hero-stage" aria-label="Interactive hero">
+      <h1 class="hero-wordmark hero-wordmark--flora" aria-label="FLORA">
+        <span class="line"><span class="line-inner">FLORA</span></span>
+      </h1>
+
+      <div class="lily-wrap" aria-hidden="true">
+        <div class="lily-layer lily-layer--reveal">
+          <img src="" alt="" width="1280" height="1700" decoding="async" />
+        </div>
+        <div class="lily-layer lily-layer--front">
+          <img src="" alt="Editorial garment lily — interactive reveal" width="1280" height="1700" decoding="async" />
+        </div>
+        <canvas class="lily-canvas" data-mask="front" aria-hidden="true"></canvas>
+        <canvas class="lily-canvas" data-mask="reveal" aria-hidden="true"></canvas>
+      </div>
+
+      <div class="hero-copy-row">
+        <p class="hero-copy hero-copy--left">Describe it.<br />We'll design it.</p>
+        <p class="hero-copy hero-copy--right">Less searching.<br />More creating.</p>
+      </div>
+
+      <a href="generator.html" class="hero-cta">Create Your Outfit →</a>
+    </main>
+
+    <footer class="site-footer-min">
+      <a href="about.html">About</a>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

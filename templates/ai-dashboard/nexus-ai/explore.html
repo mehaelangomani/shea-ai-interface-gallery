@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Templates — NexusAI</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/explore.css">
+</head>
+<body>
+  <div class="app-shell">
+    <main class="app-main">
+      <div class="app-content">
+        <header class="page-header">
+          <h1>Explore AI templates</h1>
+          <p>Start faster with ready-to-use workflows.</p>
+        </header>
+        <div class="explore-search">
+          <input type="search" class="input" id="template-search" placeholder="Search templates…" aria-label="Search templates">
+        </div>
+        <div class="category-tabs">
+          <button type="button" class="category-tab active" data-category="all">All</button>
+          <button type="button" class="category-tab" data-category="writing">Writing</button>
+          <button type="button" class="category-tab" data-category="design">Design</button>
+          <button type="button" class="category-tab" data-category="productivity">Productivity</button>
+          <button type="button" class="category-tab" data-category="education">Education</button>
+          <button type="button" class="category-tab" data-category="business">Business</button>
+          <button type="button" class="category-tab" data-category="lifestyle">Lifestyle</button>
+          <button type="button" class="category-tab" data-category="code">Code</button>
+        </div>
+        <div class="templates-grid" id="templates-grid"></div>
+      </div>
+    </main>
+  </div>
+  <script src="js/global.js"></script>
+  <script src="js/explore.js"></script>
+</body>
+</html>

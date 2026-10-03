@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile — OBJECT AI</title>
+  <script src="js/theme-init.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/burgundy.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body data-page="profile" class="page-profile page-settings-bg">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header site-header-wine" role="banner">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><span class="logo-mark"></span><span class="logo-text">OBJECT AI</span></a>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link" data-nav="home">Home</a></li>
+          <li><a href="analyze.html" class="nav-link" data-nav="analyze">Analyze</a></li>
+          <li><a href="history.html" class="nav-link" data-nav="history">History</a></li>
+          <li><a href="pricing.html" class="nav-link" data-nav="pricing">Pricing</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button type="button" class="btn-icon theme-toggle" aria-label="Switch to dark mode"><svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/></svg></button>
+          <a href="settings.html" class="btn-icon nav-settings" aria-label="Settings"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg></a>
+          <a href="signin.html" class="btn btn-nav-signin" id="nav-signin-link">Sign In</a>
+          <div class="profile-wrap">
+            <button type="button" class="profile-trigger profile-button profile-trigger-btn" aria-expanded="false" aria-controls="profile-menu" aria-label="Profile menu">
+              <span class="profile-icon-wrap"><svg class="icon-user" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg></span>
+              <span class="avatar-initial" hidden></span>
+            </button>
+            <div id="profile-menu" class="profile-dropdown" role="menu" hidden>
+              <div class="profile-menu-logged-out"><p class="profile-menu-hint">New to OBJECT AI?</p><a href="signup.html" class="profile-dropdown-item">Create account</a></div>
+              <div class="profile-menu-logged-in" hidden>
+                <div class="profile-dropdown-header profile-dropdown-header-rich"><span class="avatar avatar-lg" data-dropdown-initial></span><div><p class="profile-name"></p><p class="profile-email"></p></div></div>
+                <a href="profile.html" class="profile-dropdown-item">Profile</a>
+                <a href="profile.html#account" class="profile-dropdown-item">Account</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="profile-main">
+    <div class="container profile-container">
+      <header class="profile-hero card">
+        <span class="avatar avatar-xl" id="profile-avatar-lg">M</span>
+        <div>
+          <h1 class="page-title" id="profile-display-name">—</h1>
+          <p class="page-subtitle" id="profile-display-email">—</p>
+        </div>
+      </header>
+
+      <section class="settings-section card" id="account" aria-labelledby="acct-info">
+        <h2 id="acct-info" class="settings-section-title settings-section-title-red">Account information</h2>
+        <dl class="profile-dl">
+          <div><dt>Name</dt><dd id="profile-info-name">—</dd></div>
+          <div><dt>Email</dt><dd id="profile-info-email">—</dd></div>
+        </dl>
+      </section>
+
+      <section class="settings-section card" aria-labelledby="acct-status">
+        <h2 id="acct-status" class="settings-section-title settings-section-title-red">Account status</h2>
+        <dl class="profile-dl">
+          <div><dt>Plan</dt><dd id="profile-plan">Free</dd></div>
+          <div><dt>Member since</dt><dd id="profile-since">—</dd></div>
+        </dl>
+      </section>
+
+      <section class="settings-section card" aria-labelledby="usage-heading">
+        <h2 id="usage-heading" class="settings-section-title settings-section-title-red">Usage</h2>
+        <p class="setting-label">Analyses used: <span id="profile-usage-text">0 / 50</span></p>
+        <div class="confidence-bar-wrap profile-usage-bar"><div class="confidence-bar" id="profile-usage-bar"></div></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer site-footer-red" data-site-footer></footer>
+  <script src="js/auth.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/shell.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/profile-page.js"></script>
+</body>
+</html>

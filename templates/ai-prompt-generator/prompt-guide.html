@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prompt Guide — Promptly</title>
+  <script src="js/theme-init.js"></script>
+  <style>html{background-color:#0d0b1f;color-scheme:dark}html[data-theme=light]{background-color:#f7f7ff;color-scheme:light}</style>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-inner">
+  <header>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="nav__logo"><svg class="nav__logo-icon" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/></svg> Promptly</a>
+      <div class="nav__links">
+        <a href="index.html" class="nav__link" data-nav="home">Home</a>
+        <a href="templates.html" class="nav__link" data-nav="templates">Templates</a>
+        <a href="how-it-works.html" class="nav__link" data-nav="how-it-works">How it works</a>
+        <a href="pricing.html" class="nav__link" data-nav="pricing">Pricing</a>
+        <a href="blog.html" class="nav__link" data-nav="blog">Blog</a>
+      </div>
+      <div class="nav__actions">
+        <button type="button" class="nav__theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Switch to light mode"><svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+        <a href="login.html" class="nav__sign-in">Sign In</a>
+        <button type="button" class="nav__burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-panel"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+    <div class="nav__mobile-panel" id="nav-mobile-panel" role="dialog" aria-label="Mobile navigation">
+      <a href="index.html" class="nav__link" data-nav="home">Home</a><a href="templates.html" class="nav__link" data-nav="templates">Templates</a><a href="how-it-works.html" class="nav__link" data-nav="how-it-works">How it works</a><a href="pricing.html" class="nav__link" data-nav="pricing">Pricing</a><a href="blog.html" class="nav__link" data-nav="blog">Blog</a><a href="login.html" class="nav__link">Sign In</a>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <header class="page-hero">
+      <h1 class="page-hero__title">The Prompt Guide</h1>
+      <p class="page-hero__desc">A simple framework for writing prompts that are clear, reusable, and easier for AI tools to follow.</p>
+    </header>
+
+    <div class="framework-grid">
+      <div class="framework-item glass-card"><h3>Role</h3><p>Give the AI a role.</p></div>
+      <div class="framework-item glass-card"><h3>Task</h3><p>Clearly describe what you want.</p></div>
+      <div class="framework-item glass-card"><h3>Context</h3><p>Provide useful background.</p></div>
+      <div class="framework-item glass-card"><h3>Constraints</h3><p>Specify limits.</p></div>
+      <div class="framework-item glass-card" style="grid-column:1/-1;"><h3>Format</h3><p>Tell the AI how the output should look.</p></div>
+    </div>
+
+    <section aria-label="Prompt comparison example">
+      <h2 class="template-card__title" style="margin-bottom:16px;">Before and after</h2>
+      <div class="prompt-compare">
+        <div class="prompt-compare__box prompt-compare__box--weak">
+          <p class="hiw-demo__label">Weak prompt</p>
+          <p>"Write a marketing post."</p>
+        </div>
+        <div class="prompt-compare__box prompt-compare__box--strong">
+          <p class="hiw-demo__label">Improved prompt</p>
+          <p>"You are a digital marketing specialist. Create a concise LinkedIn post announcing a new productivity app for university students. Use a professional but approachable tone, include one hook and finish with a short call to action."</p>
+        </div>
+      </div>
+      <a href="generator.html" class="btn-primary" style="max-width:280px;margin-top:8px;">Try this prompt →</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div><p class="footer__brand"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 7.2L22 12l-7.6 2.8L12 22l-2.4-7.2L2 12l7.6-2.8L12 2z"/></svg> Promptly</p><p class="footer__tagline">Give us your idea. We help turn it into a better prompt.</p></div>
+        <div class="footer__col"><h4>Product</h4><a href="templates.html">Templates</a><a href="how-it-works.html">How it works</a><a href="pricing.html">Pricing</a></div>
+        <div class="footer__col"><h4>Resources</h4><a href="blog.html">Blog</a><a href="prompt-guide.html">Prompt Guide</a></div>
+        <div class="footer__col"><h4>Company</h4><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+        <div class="footer__col"><h4>Social</h4><a href="#">GitHub</a><a href="#">LinkedIn</a></div>
+        <div class="footer__col"><h4>Legal</h4><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
+      </div>
+      <p class="footer__bottom">© 2026 Promptly. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
+</body>
+</html>

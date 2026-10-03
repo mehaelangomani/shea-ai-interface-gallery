@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — OBJECT AI</title>
+  <script src="js/theme-init.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/burgundy.css">
+  <link rel="stylesheet" href="css/polish.css">
+</head>
+<body data-page="signup" class="auth-page app-wine">
+  <div class="auth-split">
+    <div class="auth-visual auth-visual-red" aria-hidden="true">
+      <h2 class="auth-visual-headline editorial">Object detection, built for vision.</h2>
+      <div class="scan-grid"></div>
+      <span class="tech-label">OBJECT DETECTION</span>
+      <span class="tech-label auth-tag-ready">ANALYZING</span>
+      <div class="auth-visual-scene">
+        <div class="scan-line"></div>
+        <div class="det-box det-c" data-label="CONFIDENCE 98%"></div>
+      </div>
+      <p class="auth-visual-logo">OBJECT AI</p>
+    </div>
+    <div class="auth-form-wrap auth-form-card">
+      <a href="index.html" class="auth-back text-link">← Back to home</a>
+      <h1 class="auth-title">Create your account</h1>
+      <p class="auth-subtitle">Start identifying objects with OBJECT AI.</p>
+      <form id="signup-form" class="auth-form" novalidate>
+        <label class="field">
+          <span>Full name</span>
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" name="password" id="password" required autocomplete="new-password" minlength="8">
+          <div class="password-strength" aria-live="polite">
+            <div class="password-strength-track"><div id="password-strength-bar" class="password-strength-bar"></div></div>
+            <span id="password-strength-label" class="tech-label">Enter a password</span>
+          </div>
+        </label>
+        <label class="field">
+          <span>Confirm password</span>
+          <input type="password" name="confirm" required autocomplete="new-password">
+        </label>
+        <p id="signup-error" class="form-error" role="alert" hidden></p>
+        <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+      </form>
+      <p class="auth-switch">Already have an account? <a href="signin.html">Sign in</a></p>
+    </div>
+  </div>
+  <script src="js/auth.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/auth-pages.js"></script>
+</body>
+</html>
