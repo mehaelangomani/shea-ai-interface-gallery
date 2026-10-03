@@ -665,7 +665,24 @@
 
     function observePreviewVideos() {
       const videos = grid.querySelectorAll('.template-card__preview video')
-      if (!videos.length || !('IntersectionObserver' in window)) return
+      if (!videos.length) return
+
+      videos.forEach((video) => {
+        if (!(video instanceof HTMLVideoElement)) return
+        video.playbackRate = Number(video.dataset.playbackRate) || 1
+        video.addEventListener('error', () => {
+          video.style.visibility = 'hidden'
+        })
+      })
+
+      if (!('IntersectionObserver' in window)) {
+        videos.forEach((video) => {
+          if (video instanceof HTMLVideoElement) {
+            video.play().catch(() => {})
+          }
+        })
+        return
+      }
 
       const observer = new IntersectionObserver(
         (entries) => {
@@ -674,13 +691,16 @@
             if (!(video instanceof HTMLVideoElement)) return
 
             if (entry.isIntersecting) {
-              const src = video.dataset.previewSrc
-              if (src && !video.getAttribute('src')) {
-                video.src = src
-                video.load()
-              }
               video.playbackRate = Number(video.dataset.playbackRate) || 1
-              video.play().catch(() => {})
+              const tryPlay = () => {
+                video.playbackRate = Number(video.dataset.playbackRate) || 1
+                video.play().catch(() => {})
+              }
+              if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+                tryPlay()
+              } else {
+                video.addEventListener('loadeddata', tryPlay, { once: true })
+              }
             } else {
               video.pause()
             }
@@ -703,14 +723,17 @@
       if (item.previewVideo) {
         const video = document.createElement('video')
         video.muted = true
+        video.defaultMuted = true
         video.playsInline = true
         video.loop = true
-        video.preload = 'none'
+        video.autoplay = true
+        video.preload = 'metadata'
         const previewRate = 0.5
         video.playbackRate = previewRate
         video.dataset.playbackRate = String(previewRate)
         video.setAttribute('playsinline', '')
-        video.dataset.previewSrc = item.previewVideo
+        video.setAttribute('webkit-playsinline', '')
+        video.src = item.previewVideo
         preview.appendChild(video)
       } else if (item.previewImage) {
         const img = document.createElement('img')
