@@ -593,6 +593,12 @@
     }, TYPEWRITER_START_DELAY)
   }
 
+  function sitePath(relativePath) {
+    if (!relativePath) return relativePath
+    const trimmed = String(relativePath).replace(/^\/+/, '')
+    return new URL(trimmed, document.baseURI).href
+  }
+
   function initTemplateGallery() {
     const grid = document.getElementById('template-gallery-grid')
     const lightbox = document.getElementById('template-lightbox')
@@ -631,7 +637,7 @@
       lightboxImage.removeAttribute('src')
 
       if (item.previewVideo) {
-        lightboxVideo.src = item.previewVideo
+        lightboxVideo.src = sitePath(item.previewVideo)
         lightboxVideo.hidden = false
         lightboxVideo.play().catch(() => {})
         return
@@ -648,7 +654,7 @@
       activeItem = item
       lightboxName.textContent = item.name
       lightboxDescription.textContent = item.description || ''
-      lightboxCta.href = item.page
+      lightboxCta.href = sitePath(item.page)
       setLightboxMedia(item)
       lightbox.hidden = false
       lightbox.setAttribute('aria-hidden', 'false')
@@ -733,7 +739,7 @@
         video.dataset.playbackRate = String(previewRate)
         video.setAttribute('playsinline', '')
         video.setAttribute('webkit-playsinline', '')
-        video.src = item.previewVideo
+        video.src = sitePath(item.previewVideo)
         preview.appendChild(video)
       } else if (item.previewImage) {
         const img = document.createElement('img')
@@ -769,7 +775,7 @@
       if (event.key === 'Escape' && !lightbox.hidden) closeLightbox()
     })
 
-    fetch('assets/gallery.json')
+    fetch(sitePath('assets/gallery.json'))
       .then((response) => (response.ok ? response.json() : []))
       .catch(() => [])
       .then((items) => {

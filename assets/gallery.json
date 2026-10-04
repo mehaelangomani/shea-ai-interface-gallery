@@ -1,12 +1,12 @@
 [
   {
     "name": "AI Dashboard",
-    "page": "templates/ai-dashboard/nexus-ai/index.html",
+    "page": "templates/ai-dashboard/index.html",
     "previewVideo": "templates/ai-dashboard/preview.mp4"
   },
   {
     "name": "AI Trip Planner",
-    "page": "templates/ai-trip-planner/wandor/index.html",
+    "page": "templates/ai-trip-planner/index.html",
     "previewVideo": "templates/ai-trip-planner/preview.mp4"
   },
   {
