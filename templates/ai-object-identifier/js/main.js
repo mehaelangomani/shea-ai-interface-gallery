@@ -28,7 +28,7 @@ const ObjectAI = {
     return (
       localStorage.getItem(STORAGE_KEYS.theme) ||
       localStorage.getItem(STORAGE_KEYS.themeLegacy) ||
-      'light'
+      'dark'
     );
 
   },

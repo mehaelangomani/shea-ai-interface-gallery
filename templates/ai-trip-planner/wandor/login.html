@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="page-login">
+<body class="page-inner page-login">
   <div class="login-layout">
     <aside class="login-visual" aria-hidden="true">
       <img
@@ -20,9 +20,23 @@
         height="900"
       >
       <div class="login-visual__overlay"></div>
+      <div class="login-floating-card login-floating-card--one">
+        <span class="login-floating-card__dot"></span>
+        <div><strong>Kyoto</strong><small>7 day itinerary</small></div>
+        <span class="login-floating-card__arrow">↗</span>
+      </div>
+      <div class="login-floating-card login-floating-card--two">
+        <span class="login-floating-card__icon">✦</span>
+        <div><strong>Hidden gems</strong><small>Curated for you</small></div>
+      </div>
+      <div class="login-floating-card login-floating-card--three">
+        <span class="login-floating-card__icon">⌁</span>
+        <div><strong>Slow travel</strong><small>Wander differently</small></div>
+      </div>
+
       <div class="login-visual__content">
         <a href="index.html" class="login-visual__logo">wander</a>
-        <p class="login-visual__tagline">Your next adventure starts here.</p>
+        <p class="login-visual__tagline"><span>YOUR NEXT ADVENTURE</span><br>STARTS HERE.</p>
       </div>
     </aside>
 
@@ -33,7 +47,7 @@
       </a>
 
       <div class="login-form-wrap">
-        <h1>Welcome back.</h1>
+        <h1><span class="login-heading-line">Welcome</span> <span class="login-heading-accent">back.</span></h1>
         <p class="login-subtitle">Sign in to continue planning your next adventure.</p>
 
         <form id="loginForm" class="login-form" novalidate>

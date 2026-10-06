@@ -676,6 +676,7 @@
       videos.forEach((video) => {
         if (!(video instanceof HTMLVideoElement)) return
         video.playbackRate = Number(video.dataset.playbackRate) || 1
+
         video.addEventListener('error', () => {
           video.style.visibility = 'hidden'
         })
@@ -734,9 +735,12 @@
         video.loop = true
         video.autoplay = true
         video.preload = 'metadata'
-        const previewRate = 0.5
-        video.playbackRate = previewRate
-        video.dataset.playbackRate = String(previewRate)
+        const previewRate = item.name.toLowerCase().includes('prompt generator')
+  ? 0.5
+  : 1;
+
+video.playbackRate = previewRate;
+video.dataset.playbackRate = String(previewRate);
         video.setAttribute('playsinline', '')
         video.setAttribute('webkit-playsinline', '')
         video.src = sitePath(item.previewVideo)

@@ -1,64 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Quizzes — QuizAI</title>
-  <script src="js/theme.js"></script>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/dashboard.css" />
-  <link rel="stylesheet" href="css/generator.css" />
-</head>
-<body>
-  <div class="sidebar-overlay"></div>
-  <div class="app-layout">
-    <aside class="app-sidebar">
-      <div class="app-sidebar__brand"><a href="dashboard.html" class="logo"><img src="assets/logo.svg" alt="" width="32" height="32" /> QuizAI</a></div>
-      <nav class="app-sidebar__nav">
-        <a href="dashboard.html" class="app-sidebar__link" data-nav="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
-        <a href="generator.html" class="app-sidebar__link" data-nav="generator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/></svg>Generate Quiz</a>
-        <a href="my-quizzes.html" class="app-sidebar__link" data-nav="my-quizzes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></svg>My Quizzes</a>
-        <a href="history.html" class="app-sidebar__link" data-nav="history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>History</a>
-        <a href="settings.html" class="app-sidebar__link" data-nav="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</a>
-      </nav>
-      <div class="app-sidebar__footer"><button type="button" class="app-sidebar__link" data-logout style="width:100%;border:none;background:none;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>Logout</button></div>
-    </aside>
-    <div class="app-main">
-      <header class="app-topbar">
-        <button type="button" class="nav-toggle" data-sidebar-open aria-label="Open menu"><span></span><span></span><span></span></button>
-        <a href="dashboard.html" class="logo"><img src="assets/logo.svg" alt="" width="28" height="28" /> QuizAI</a>
-        <div class="app-topbar__user"><span class="plan-pill" data-user-plan>Free</span><span class="avatar" data-user-avatar>MS</span></div>
-      </header>
-      <main class="app-content">
-        <h1 style="font-size:2rem;margin-bottom:8px">My Quizzes</h1>
-        <p style="margin-bottom:24px">Quizzes you have generated and saved.</p>
-        <div class="card card__body" style="margin-bottom:24px">
-          <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center">
-            <div class="form-group" style="flex:1;min-width:200px;margin:0">
-              <label class="form-label" for="quiz-search">Search</label>
-              <input class="form-input" id="quiz-search" type="search" placeholder="Search by title or topic…" />
-            </div>
-            <div class="form-group" style="margin:0">
-              <span class="form-label">Filter</span>
-              <div class="option-pills" id="library-filters">
-                <button type="button" class="option-pill is-selected" data-filter="all">All</button>
-                <button type="button" class="option-pill" data-filter="completed">Completed</button>
-                <button type="button" class="option-pill" data-filter="in-progress">In Progress</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="library-empty" class="card empty-state" hidden>
-          <h3>No quizzes yet</h3>
-          <p>Create your first quiz to see it here.</p>
-          <a href="generator.html" class="btn btn--primary">Generate Quiz</a>
-        </div>
-        <div class="quiz-card-grid" id="library-grid"></div>
-      </main>
-    </div>
-  </div>
-  <script src="js/main.js" defer></script>
-  <script src="js/my-quizzes.js" defer></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>My Quizzes — Quizpath</title><link rel="stylesheet" href="style.css"></head><body><div class="page"><video class="page-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260703_053131_1ec3dd1c-d627-44fb-ab20-6e1fce41b0d5.mp4" autoplay loop muted playsinline></video><div class="page-overlay"></div><div class="page-content"><nav class="navbar">
+<a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 28 28" fill="none"><path d="M14 2L24 14L14 26L4 14Z" fill="white" fill-opacity=".9"/><path d="M14 7L20 14L14 21L8 14Z" fill="white" fill-opacity=".5" transform="translate(4 0)"/></svg><span>quizpath</span></a>
+<div class="desktop-nav">
+<a class="nav-button" href="generate.html">Generate</a>
+<div class="nav-group"><button class="nav-button">Explore <span class="chevron">⌄</span></button><div class="dropdown"><a href="features.html">Features</a><a href="about.html">About</a></div></div>
+<div class="nav-group"><button class="nav-button">My Quizzes <span class="chevron">⌄</span></button><div class="dropdown"><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div></div>
+
+</div>
+<div class="desktop-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+<button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="icon menu-icon">☰</span><span class="icon close-icon">×</span></button>
+<div class="mobile-menu">
+<div class="mobile-section"><a href="generate.html">Generate</a></div>
+<div class="mobile-section"><a href="features.html">Explore</a><a href="features.html">Features</a><a href="about.html">About</a></div>
+<div class="mobile-section"><a href="my-quizzes.html">My Quizzes</a><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div>
+
+<div class="mobile-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+</div>
+</nav><main class="shell"><div class="eyebrow">MY QUIZZES</div><h1 class="page-title">Your quiz<br><span>workspace.</span></h1><section class="section grid grid-3"><div class="stat" data-reactive-card><strong id="created">0</strong><span>Quizzes Created</span></div><div class="stat" data-reactive-card><strong id="questions">0</strong><span>Questions Generated</span></div><div class="stat" data-reactive-card><strong id="avg">—</strong><span>Average Score</span></div></section><section class="section panel"><h2 class="section-title">Recent activity</h2><div class="table-wrap"><table><thead><tr><th>Quiz</th><th>Status</th><th>Score</th></tr></thead><tbody><tr><td>Latest generated quiz</td><td><span class="badge">Completed</span></td><td id="last">—</td></tr></tbody></table></div></section></main><script>(function(){const s=JSON.parse(localStorage.getItem("quizpathStats")||'{"created":0,"questions":0,"scores":[]}');document.getElementById("created").textContent=s.created;document.getElementById("questions").textContent=s.questions;document.getElementById("avg").textContent=s.scores.length?Math.round(s.scores.reduce((a,b)=>a+b,0)/s.scores.length)+"%":"—";document.getElementById("last").textContent=localStorage.getItem("quizpathLastScore")||"—"})()</script></div><footer class="footer">Quizpath — AI-powered quiz creation.</footer></div><div class="toast" id="toast"></div><script src="script.js"></script></body></html>

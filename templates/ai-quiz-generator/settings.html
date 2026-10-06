@@ -1,120 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Settings — QuizAI</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <script src="js/theme.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/settings.css" />
-</head>
-<body>
-  <div class="sidebar-overlay"></div>
-  <div class="app-layout">
-    <aside class="app-sidebar">
-      <div class="app-sidebar__brand"><a href="dashboard.html" class="logo"><img src="assets/logo.svg" alt="" width="32" height="32" /> QuizAI</a></div>
-      <nav class="app-sidebar__nav">
-        <a href="dashboard.html" class="app-sidebar__link" data-nav="dashboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</a>
-        <a href="generator.html" class="app-sidebar__link" data-nav="generator"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/></svg>Generate Quiz</a>
-        <a href="my-quizzes.html" class="app-sidebar__link" data-nav="my-quizzes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/></svg>My Quizzes</a>
-        <a href="history.html" class="app-sidebar__link" data-nav="history"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>History</a>
-        <a href="settings.html" class="app-sidebar__link" data-nav="settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</a>
-      </nav>
-      <div class="app-sidebar__footer"><button type="button" class="app-sidebar__link" data-logout style="width:100%;border:none;background:none;cursor:pointer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>Logout</button></div>
-    </aside>
-    <div class="app-main">
-      <header class="app-topbar">
-        <button type="button" class="nav-toggle" data-sidebar-open aria-label="Open menu"><span></span><span></span><span></span></button>
-        <a href="dashboard.html" class="logo"><img src="assets/logo.svg" alt="" width="28" height="28" /> QuizAI</a>
-        <div class="app-topbar__user"><span class="plan-pill" data-user-plan>Free</span><span class="avatar" data-user-avatar>MS</span></div>
-      </header>
-      <main class="app-content">
-        <a href="dashboard.html" class="page-back">← Dashboard</a>
-        <h1 style="font-size:2rem;margin-bottom:32px">Account Settings</h1>
-        <div class="settings-layout">
-          <nav class="settings-nav" aria-label="Settings sections">
-            <button type="button" class="is-active" data-settings-tab="profile">Profile</button>
-            <button type="button" data-settings-tab="account">Account</button>
-            <button type="button" data-settings-tab="appearance">Appearance</button>
-            <button type="button" data-settings-tab="notifications">Notifications</button>
-            <button type="button" data-settings-tab="subscription">Subscription</button>
-          </nav>
-          <div>
-            <section class="settings-panel is-active card card__body" id="panel-profile">
-              <h2>Profile</h2>
-              <div class="avatar-upload">
-                <span class="avatar avatar--lg" data-user-avatar>MS</span>
-                <div>
-                  <p style="margin:0;font-weight:500;color:var(--text)">Profile photo</p>
-                  <p class="form-hint" style="margin:4px 0 0">Avatar uses your initials in this demo.</p>
-                </div>
-              </div>
-              <form id="profile-form">
-                <div class="form-group">
-                  <label class="form-label" for="profile-name">Full Name</label>
-                  <input class="form-input" id="profile-name" name="name" type="text" required />
-                  <span class="form-error">Please enter your name.</span>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="profile-email">Email Address</label>
-                  <input class="form-input" id="profile-email" name="email" type="email" required />
-                  <span class="form-error">Please enter a valid email.</span>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="profile-bio">Bio</label>
-                  <textarea class="form-textarea" id="profile-bio" name="bio" placeholder="Tell us about your learning goals…"></textarea>
-                </div>
-                <button type="submit" class="btn btn--primary">Save Changes</button>
-              </form>
-            </section>
-            <section class="settings-panel card card__body" id="panel-account">
-              <h2>Account</h2>
-              <p style="font-size:14px">Manage password and security preferences.</p>
-              <div class="form-group" style="margin-top:20px">
-                <label class="form-label" for="new-password">New Password</label>
-                <input class="form-input" id="new-password" type="password" placeholder="••••••••" />
-              </div>
-              <button type="button" class="btn btn--secondary" onclick="QuizAI.showToast('Password update is a demo action.')">Update Password</button>
-            </section>
-            <section class="settings-panel card card__body" id="panel-appearance">
-              <h2>Appearance</h2>
-              <p class="form-hint" style="margin-bottom:8px">Choose how QuizAI looks across every page.</p>
-              <div class="theme-picker" role="group" aria-label="Theme">
-                <button type="button" class="theme-picker__btn" data-theme-option="light" aria-pressed="false">Light</button>
-                <button type="button" class="theme-picker__btn" data-theme-option="dark" aria-pressed="false">Dark</button>
-              </div>
-            </section>
-            <section class="settings-panel card card__body" id="panel-notifications">
-              <h2>Notifications</h2>
-              <div class="toggle-row">
-                <label for="n-quiz">Quiz reminders</label>
-                <label class="toggle-switch"><input type="checkbox" id="n-quiz" checked /><span class="toggle-switch__slider"></span></label>
-              </div>
-              <div class="toggle-row">
-                <label for="n-results">Results notifications</label>
-                <label class="toggle-switch"><input type="checkbox" id="n-results" checked /><span class="toggle-switch__slider"></span></label>
-              </div>
-              <div class="toggle-row">
-                <label for="n-updates">Product updates</label>
-                <label class="toggle-switch"><input type="checkbox" id="n-updates" /><span class="toggle-switch__slider"></span></label>
-              </div>
-              <button type="button" class="btn btn--primary" id="btn-save-notifications" style="margin-top:16px">Save Preferences</button>
-            </section>
-            <section class="settings-panel card card__body" id="panel-subscription">
-              <h2>Subscription</h2>
-              <div class="subscription-box">
-                <strong>Current plan: <span id="current-plan-name">Free</span></strong>
-                <p style="font-size:14px;margin:8px 0 0">Upgrade for unlimited quizzes and advanced features.</p>
-              </div>
-              <a href="pricing.html" class="btn btn--primary">Upgrade plan</a>
-            </section>
-          </div>
-        </div>
-      </main>
-    </div>
-  </div>
-  <script src="js/main.js" defer></script>
-  <script src="js/settings.js" defer></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Settings — Quizpath</title><link rel="stylesheet" href="style.css"></head><body><div class="page"><video class="page-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260703_053131_1ec3dd1c-d627-44fb-ab20-6e1fce41b0d5.mp4" autoplay loop muted playsinline></video><div class="page-overlay"></div><div class="page-content"><nav class="navbar">
+<a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 28 28" fill="none"><path d="M14 2L24 14L14 26L4 14Z" fill="white" fill-opacity=".9"/><path d="M14 7L20 14L14 21L8 14Z" fill="white" fill-opacity=".5" transform="translate(4 0)"/></svg><span>quizpath</span></a>
+<div class="desktop-nav">
+<a class="nav-button" href="generate.html">Generate</a>
+<div class="nav-group"><button class="nav-button">Explore <span class="chevron">⌄</span></button><div class="dropdown"><a href="features.html">Features</a><a href="about.html">About</a></div></div>
+<div class="nav-group"><button class="nav-button">My Quizzes <span class="chevron">⌄</span></button><div class="dropdown"><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div></div>
+
+</div>
+<div class="desktop-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+<button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="icon menu-icon">☰</span><span class="icon close-icon">×</span></button>
+<div class="mobile-menu">
+<div class="mobile-section"><a href="generate.html">Generate</a></div>
+<div class="mobile-section"><a href="features.html">Explore</a><a href="features.html">Features</a><a href="about.html">About</a></div>
+<div class="mobile-section"><a href="my-quizzes.html">My Quizzes</a><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div>
+
+<div class="mobile-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+</div>
+</nav><main class="shell"><div class="eyebrow">SETTINGS</div><h1 class="page-title">Quiz<br><span>preferences.</span></h1><section class="section panel"><div class="card" data-reactive-card><h3>Learning experience</h3><p style="margin-bottom:20px">These preferences are saved in your browser.</p><label style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:14px">Show explanations<input id="explain" type="checkbox" checked></label><label style="display:flex;justify-content:space-between;align-items:center;padding:15px 0;font-size:14px">Shuffle answer choices<input id="shuffle" type="checkbox" checked></label></div></section></main><script>["explain","shuffle"].forEach(id=>{const x=document.getElementById(id);x.checked=localStorage.getItem(id)!=="false";x.onchange=()=>localStorage.setItem(id,x.checked)})</script></div><footer class="footer">Quizpath — AI-powered quiz creation.</footer></div><div class="toast" id="toast"></div><script src="script.js"></script></body></html>

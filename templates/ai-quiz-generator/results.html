@@ -1,53 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Results — QuizAI</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <script src="js/theme.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <canvas class="confetti-canvas" id="confetti-canvas" aria-hidden="true"></canvas>
-  <div class="results-page">
-    <div class="botanical" style="top:10%;left:5%;width:60px" aria-hidden="true">
-      <svg class="botanical--leaf-1" viewBox="0 0 24 28"><path d="M12 2C8 8 6 14 8 22c4-2 8-6 10-12-3-2-4-6-6-8z" fill="#39AEB4" opacity="0.45"/></svg>
-    </div>
-    <div class="botanical" style="bottom:12%;right:6%;width:70px" aria-hidden="true">
-      <svg class="botanical--leaf-2" viewBox="0 0 24 28"><path d="M10 4c-2 6-1 12 4 18 5-4 8-10 6-16-4 1-7-1-10-2z" fill="#CDEFE7"/></svg>
-    </div>
-    <div class="results-inner">
-      <a href="dashboard.html" class="logo" style="justify-content:center;margin-bottom:24px">
-        <img src="assets/logo.svg" alt="" width="32" height="32" /> QuizAI
-      </a>
-      <h1>Great job!</h1>
-      <p id="results-title" style="font-size:15px;margin-bottom:8px">Quiz Complete</p>
-      <p id="results-score-text" style="font-size:18px;font-weight:600;color:var(--text)">4 out of 5</p>
-      <div class="score-ring-wrap">
-        <svg class="score-ring" width="160" height="160" viewBox="0 0 160 160">
-          <circle class="score-ring__bg" cx="80" cy="80" r="70" />
-          <circle class="score-ring__fill" id="score-ring-fill" cx="80" cy="80" r="70" />
-        </svg>
-        <div class="score-ring__text">
-          <strong id="results-percent">80%</strong>
-          <span>Score</span>
-        </div>
-      </div>
-      <div class="results-stats">
-        <div class="card results-stat"><strong id="stat-correct">4</strong><span>Correct</span></div>
-        <div class="card results-stat"><strong id="stat-incorrect">1</strong><span>Incorrect</span></div>
-        <div class="card results-stat"><strong id="stat-total">5</strong><span>Total Questions</span></div>
-      </div>
-      <div class="results-actions">
-        <a href="generator.html" class="btn btn--primary">Generate Another Quiz</a>
-        <button type="button" class="btn btn--outline" id="btn-review">Review Answers</button>
-        <a href="dashboard.html" class="btn btn--secondary">Dashboard</a>
-      </div>
-      <div id="review-section" hidden style="margin-top:40px;text-align:left;max-width:640px;margin-left:auto;margin-right:auto"></div>
-    </div>
-  </div>
-  <script src="js/main.js" defer></script>
-  <script src="js/results.js" defer></script>
-</body>
-</html>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Results — Quizpath</title><link rel="stylesheet" href="style.css"></head><body><div class="page"><video class="page-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260703_053131_1ec3dd1c-d627-44fb-ab20-6e1fce41b0d5.mp4" autoplay loop muted playsinline></video><div class="page-overlay"></div><div class="page-content"><nav class="navbar">
+<a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 28 28" fill="none"><path d="M14 2L24 14L14 26L4 14Z" fill="white" fill-opacity=".9"/><path d="M14 7L20 14L14 21L8 14Z" fill="white" fill-opacity=".5" transform="translate(4 0)"/></svg><span>quizpath</span></a>
+<div class="desktop-nav">
+<a class="nav-button" href="generate.html">Generate</a>
+<div class="nav-group"><button class="nav-button">Explore <span class="chevron">⌄</span></button><div class="dropdown"><a href="features.html">Features</a><a href="about.html">About</a></div></div>
+<div class="nav-group"><button class="nav-button">My Quizzes <span class="chevron">⌄</span></button><div class="dropdown"><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div></div>
+
+</div>
+<div class="desktop-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+<button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="icon menu-icon">☰</span><span class="icon close-icon">×</span></button>
+<div class="mobile-menu">
+<div class="mobile-section"><a href="generate.html">Generate</a></div>
+<div class="mobile-section"><a href="features.html">Explore</a><a href="features.html">Features</a><a href="about.html">About</a></div>
+<div class="mobile-section"><a href="my-quizzes.html">My Quizzes</a><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div>
+
+<div class="mobile-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+</div>
+</nav><main class="shell"><div class="eyebrow">RESULTS</div><h1 class="page-title">Your latest<br><span>quiz result.</span></h1><section class="section grid grid-3"><div class="stat" data-reactive-card><strong id="score">—</strong><span>Latest Score</span></div><div class="stat" data-reactive-card><strong>Instant</strong><span>Feedback</span></div><div class="stat" data-reactive-card><strong>100%</strong><span>Local Demo</span></div></section><section class="section"><a class="primary-button" href="generate.html">Take another quiz</a></section></main><script>document.getElementById('score').textContent=localStorage.getItem('quizpathLastScore')||'No quiz yet';</script></div><footer class="footer">Quizpath — AI-powered quiz creation.</footer></div><div class="toast" id="toast"></div><script src="script.js"></script></body></html>

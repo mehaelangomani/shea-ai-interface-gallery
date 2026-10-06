@@ -1,104 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pricing — QuizAI</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <script src="js/theme.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/pricing.css" />
-</head>
-<body>
-  <header class="site-header">
-    <div class="site-header__inner">
-      <a href="index.html" class="logo"><img src="assets/logo.svg" alt="" width="36" height="36" /> QuizAI</a>
-      <nav class="site-nav" aria-label="Main">
-        <a href="index.html" data-public-nav="home">Home</a>
-        <a href="features.html" data-public-nav="features">Features</a>
-        <a href="pricing.html" data-public-nav="pricing">Pricing</a>
-        <a href="login.html" data-public-nav="login">Login</a>
-      </nav>
-      <div class="site-header__actions">
-        <a href="signup.html" class="btn btn--primary">Get Started</a>
-        <button type="button" class="nav-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
-      </div>
-    </div>
-  </header>
-  <nav class="mobile-nav" aria-label="Mobile">
-    <a href="index.html" data-public-nav="home">Home</a>
-    <a href="features.html" data-public-nav="features">Features</a>
-    <a href="pricing.html" data-public-nav="pricing">Pricing</a>
-    <a href="login.html" data-public-nav="login">Login</a>
-    <a href="signup.html" class="btn btn--primary btn--block">Get Started</a>
-  </nav>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Pricing — Quizpath</title><link rel="stylesheet" href="style.css"></head><body><div class="page"><video class="page-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260703_053131_1ec3dd1c-d627-44fb-ab20-6e1fce41b0d5.mp4" autoplay loop muted playsinline></video><div class="page-overlay"></div><div class="page-content"><nav class="navbar">
+<a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 28 28" fill="none"><path d="M14 2L24 14L14 26L4 14Z" fill="white" fill-opacity=".9"/><path d="M14 7L20 14L14 21L8 14Z" fill="white" fill-opacity=".5" transform="translate(4 0)"/></svg><span>quizpath</span></a>
+<div class="desktop-nav">
+<a class="nav-button" href="generate.html">Generate</a>
+<div class="nav-group"><button class="nav-button">Explore <span class="chevron">⌄</span></button><div class="dropdown"><a href="features.html">Features</a><a href="about.html">About</a></div></div>
+<div class="nav-group"><button class="nav-button">My Quizzes <span class="chevron">⌄</span></button><div class="dropdown"><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div></div>
 
-  <main>
-    <section class="pricing-hero">
-      <div class="botanical pricing-botanical--left botanical--leaf-2" aria-hidden="true">
-        <svg viewBox="0 0 24 28"><path d="M10 4c-2 6-1 12 4 18 5-4 8-10 6-16-4 1-7-1-10-2z" fill="#39AEB4" opacity="0.5"/></svg>
-      </div>
-      <div class="botanical pricing-botanical--right botanical--leaf-1" aria-hidden="true">
-        <svg viewBox="0 0 24 28"><path d="M12 2C8 8 6 14 8 22c4-2 8-6 10-12-3-2-4-6-6-8z" fill="#CDEFE7"/></svg>
-      </div>
-      <h1>Choose the plan that fits your learning goals.</h1>
-      <p style="max-width:480px;margin:0 auto">Simple pricing for students, educators, and lifelong learners.</p>
-      <div class="pricing-toggle">
-        <button type="button" class="is-active" data-billing="monthly">Monthly</button>
-        <button type="button" data-billing="yearly">Yearly</button>
-        <span class="pricing-toggle__save">Save 20%</span>
-      </div>
-    </section>
+</div>
+<div class="desktop-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+<button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="icon menu-icon">☰</span><span class="icon close-icon">×</span></button>
+<div class="mobile-menu">
+<div class="mobile-section"><a href="generate.html">Generate</a></div>
+<div class="mobile-section"><a href="features.html">Explore</a><a href="features.html">Features</a><a href="about.html">About</a></div>
+<div class="mobile-section"><a href="my-quizzes.html">My Quizzes</a><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div>
 
-    <div class="pricing-grid">
-      <article class="card pricing-card card--hover">
-        <h3>Free</h3>
-        <p class="pricing-card__price" data-price-plan="free">$0 <span data-period>/ month</span></p>
-        <ul class="pricing-card__features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>5 quizzes per month</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Basic topics</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>MCQ questions</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Standard support</li>
-        </ul>
-        <button type="button" class="btn btn--secondary btn--block" data-select-plan="free">Get Started</button>
-      </article>
-
-      <article class="card pricing-card pricing-card--featured card--hover">
-        <span class="badge badge--popular pricing-card__badge">Most Popular</span>
-        <h3>Pro</h3>
-        <p class="pricing-card__price"><span data-price-plan="pro">$9</span> <span data-period>/ month</span></p>
-        <ul class="pricing-card__features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Unlimited quizzes</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>All topics</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>MCQ, True/False, Mixed</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Detailed explanations</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Quiz history</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Priority support</li>
-        </ul>
-        <button type="button" class="btn btn--primary btn--block" data-select-plan="pro">Choose Pro</button>
-      </article>
-
-      <article class="card pricing-card card--hover">
-        <h3>Premium</h3>
-        <p class="pricing-card__price"><span data-price-plan="premium">$19</span> <span data-period>/ month</span></p>
-        <ul class="pricing-card__features">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Everything in Pro</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Advanced AI quiz modes</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Custom question sets</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Export quizzes</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Early access to new features</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Dedicated support</li>
-        </ul>
-        <button type="button" class="btn btn--outline btn--block" data-select-plan="premium">Choose Premium</button>
-      </article>
-    </div>
-  </main>
-
-  <footer class="site-footer" style="margin-top:0">
-    <div class="container site-footer__bottom">© 2025 QuizAI. All rights reserved.</div>
-  </footer>
-  <script src="js/main.js" defer></script>
-  <script src="js/plans.js" defer></script>
-  <script src="js/pricing.js" defer></script>
-</body>
-</html>
+<div class="mobile-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+</div>
+</nav><main class="shell"><div class="eyebrow">PRICING</div><h1 class="page-title">Choose your<br><span>quiz workflow.</span></h1><p class="page-subtitle">Simple plans for individual learners. Demo checkout is handled entirely in the browser.</p><section class="section grid grid-3">
+<div class="card" data-reactive-card><h3>Free</h3><div class="plan-price">$0 <small>/ month</small></div><ul class="feature-list"><li>5 quizzes / month</li><li>Basic question types</li><li>Instant scoring</li></ul><button class="primary-button" data-plan="free">Choose Free</button></div>
+<div class="card" data-reactive-card><h3>Pro</h3><div class="plan-price">$9 <small>/ month</small></div><ul class="feature-list"><li>Unlimited quizzes</li><li>All question types</li><li>Progress tracking</li></ul><button class="primary-button" data-plan="pro">Choose Pro</button></div>
+<div class="card" data-reactive-card><h3>Study</h3><div class="plan-price">$19 <small>/ month</small></div><ul class="feature-list"><li>Unlimited generation</li><li>Advanced practice</li><li>Priority features</li></ul><button class="primary-button" data-plan="study">Choose Study</button></div>
+</section></main></div><footer class="footer">Quizpath — AI-powered quiz creation.</footer></div><div class="toast" id="toast"></div><script src="script.js"></script></body></html>

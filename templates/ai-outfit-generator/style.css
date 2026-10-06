@@ -1515,3 +1515,488 @@ a.studio-pill {
     padding-bottom: 3rem;
   }
 }
+
+
+/* =========================================================
+   Global inner-page motion + neon interaction upgrade
+   Mirrors the home-page "rise into place" reveal.
+   ========================================================= */
+
+:root {
+  --hot-pink: #ff2bd6;
+  --pink: #ff5ce1;
+  --gradient-pink: linear-gradient(180deg, #ff9bea 0%, #ff2bd6 100%);
+  --neon-pink-soft: rgba(255, 43, 214, 0.22);
+  --neon-pink-medium: rgba(255, 43, 214, 0.42);
+  --neon-pink-strong: rgba(255, 43, 214, 0.72);
+}
+
+/* Text / icons / controls on every page except the already-animated home hero */
+body:not(.page-home) .page-reveal-item {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: opacity, transform;
+}
+
+body:not(.page-home) .page-reveal-item.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.82s ease var(--reveal-delay, 0ms),
+    transform 0.95s var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+/* Neon cards */
+body:not(.page-home) .neon-card {
+  position: relative;
+  isolation: isolate;
+  border-color: rgba(255, 43, 214, 0.58) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 43, 214, 0.08),
+    0 0 18px rgba(255, 43, 214, 0.10),
+    0 0 42px rgba(255, 43, 214, 0.055);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    transform 0.35s var(--ease-out),
+    background-color 0.35s ease;
+  animation: neonCardFloat 6s ease-in-out infinite;
+  animation-delay: var(--float-delay, 0ms);
+}
+
+body:not(.page-home) .neon-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0.22;
+  background:
+    radial-gradient(
+      180px circle at var(--mx, 50%) var(--my, 50%),
+      rgba(255, 43, 214, 0.65),
+      transparent 68%
+    );
+  filter: blur(10px);
+  transition: opacity 0.25s ease;
+}
+
+body:not(.page-home) .neon-card:hover {
+  border-color: var(--hot-pink) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 43, 214, 0.20),
+    0 0 20px rgba(255, 43, 214, 0.30),
+    0 0 55px rgba(255, 43, 214, 0.16);
+  transform: translateY(-6px);
+  animation-play-state: paused;
+}
+
+body:not(.page-home) .neon-card:hover::before {
+  opacity: 0.55;
+}
+
+body:not(.page-home) .neon-card svg {
+  transition: transform 0.35s var(--ease-out), filter 0.35s ease;
+}
+
+body:not(.page-home) .neon-card:hover svg {
+  transform: translateY(-2px) scale(1.04);
+  filter:
+    drop-shadow(0 0 5px rgba(255, 43, 214, 0.75))
+    drop-shadow(0 0 12px rgba(255, 43, 214, 0.45));
+}
+
+@keyframes neonCardFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* Make the existing pink UI accents actually read as neon. */
+body:not(.page-home) .grad {
+  text-shadow:
+    0 0 8px rgba(255, 43, 214, 0.28),
+    0 0 22px rgba(255, 43, 214, 0.14);
+}
+
+body:not(.page-home) .form-error,
+body:not(.page-home) .pricing-badge,
+body:not(.page-home) .auth-error {
+  text-shadow: 0 0 10px rgba(255, 43, 214, 0.42);
+}
+
+body:not(.page-home) .btn-ghost:hover,
+body:not(.page-home) .collection-tabs button:hover,
+body:not(.page-home) .collection-card-actions button:hover,
+body:not(.page-home) .chip:hover {
+  color: var(--hot-pink);
+  box-shadow:
+    0 0 12px rgba(255, 43, 214, 0.16),
+    inset 0 0 10px rgba(255, 43, 214, 0.04);
+}
+
+body:not(.page-home) input:focus,
+body:not(.page-home) textarea:focus,
+body:not(.page-home) select:focus {
+  box-shadow:
+    0 0 0 1px rgba(255, 43, 214, 0.20),
+    0 0 18px rgba(255, 43, 214, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.page-home) .page-reveal-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  body:not(.page-home) .neon-card {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   Cursor-reactive 3D card depth + cinematic page transition
+   ========================================================= */
+body:not(.page-home) .neon-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, box-shadow;
+  animation: none;
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+  box-shadow:
+    var(--shadow-x, 0px) var(--shadow-y, 6px) 0 1px rgba(255, 43, 214, 0.12),
+    0 0 18px rgba(255, 43, 214, 0.10),
+    0 0 42px rgba(255, 43, 214, 0.055);
+}
+
+body:not(.page-home) .neon-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.045) 42%,
+    rgba(255, 43, 214, 0.14) 50%,
+    transparent 64%
+  );
+  background-size: 240% 240%;
+  background-position: var(--mx, 50%) var(--my, 50%);
+  mix-blend-mode: screen;
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+body:not(.page-home) .neon-card:hover {
+  border-color: var(--hot-pink) !important;
+  box-shadow:
+    var(--shadow-x, 0px) var(--shadow-y, 6px) 0 1px rgba(255, 43, 214, 0.24),
+    0 0 24px rgba(255, 43, 214, 0.34),
+    0 0 60px rgba(255, 43, 214, 0.18);
+}
+
+body:not(.page-home) .neon-card:hover::after {
+  opacity: 0.9;
+}
+
+/* The exit is deliberately longer than the old 280ms snap, so navigation
+   feels like one continuous cinematic transition. */
+body.page-leaving {
+  opacity: 0;
+  transform: translateY(10px) scale(0.992);
+  filter: brightness(0.82);
+  transition:
+    opacity 0.48s var(--ease-out),
+    transform 0.48s var(--ease-out),
+    filter 0.48s ease;
+}
+
+body.page-leaving::before {
+  content: "";
+  position: fixed;
+  inset: -15%;
+  z-index: 9999;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(255, 43, 214, 0.22), transparent 25%),
+    linear-gradient(105deg, transparent 34%, rgba(255, 43, 214, 0.18) 48%, rgba(255, 155, 234, 0.08) 52%, transparent 66%);
+  transform: translateX(-35%) skewX(-10deg);
+  animation: pageLightSweep 0.48s var(--ease-out) forwards;
+}
+
+body.page-enter {
+  animation: pageEnter 0.48s var(--ease-out) both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.994);
+    filter: brightness(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes pageLightSweep {
+  from { opacity: 0; transform: translateX(-45%) skewX(-10deg); }
+  35% { opacity: 1; }
+  to { opacity: 0; transform: translateX(45%) skewX(-10deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.page-leaving,
+  body.page-enter {
+    animation: none;
+    transition: none;
+  }
+
+  body.page-leaving::before {
+    animation: none;
+    display: none;
+  }
+
+  body:not(.page-home) .neon-card {
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   Refined login composition + deeper 3D card system
+   ========================================================= */
+
+.page-login {
+  background:
+    radial-gradient(circle at 18% 48%, rgba(255, 43, 214, 0.075), transparent 28%),
+    radial-gradient(circle at 82% 50%, rgba(255, 43, 214, 0.10), transparent 34%),
+    var(--bg);
+}
+
+.page-login .login-layout {
+  grid-template-columns: minmax(0, 0.92fr) minmax(430px, 1.08fr);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.page-login .login-brand {
+  position: relative;
+  overflow: hidden;
+  border-right: 1px solid rgba(255, 43, 214, 0.18);
+  background:
+    radial-gradient(circle at 45% 48%, rgba(255, 43, 214, 0.11), transparent 30%),
+    linear-gradient(135deg, rgba(255,255,255,0.012), transparent 60%);
+}
+
+.page-login .login-brand::before,
+.page-login .login-brand::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(50px);
+}
+
+.page-login .login-brand::before {
+  width: 260px;
+  height: 260px;
+  left: 12%;
+  top: 38%;
+  background: rgba(255, 43, 214, 0.10);
+}
+
+.page-login .login-brand::after {
+  width: 180px;
+  height: 180px;
+  right: 8%;
+  bottom: 12%;
+  background: rgba(255, 155, 234, 0.07);
+}
+
+.page-login .login-brand-title,
+.page-login .login-brand-tagline {
+  position: relative;
+  z-index: 1;
+}
+
+.page-login .login-brand-title {
+  text-shadow:
+    0 0 14px rgba(255,255,255,0.05),
+    0 0 40px rgba(255,43,214,0.10);
+}
+
+.page-login .login-brand-tagline {
+  letter-spacing: -0.015em;
+}
+
+.page-login .login-panel {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.page-login .auth-view {
+  position: relative;
+  width: min(100%, 470px);
+  max-width: 470px;
+  padding: clamp(2rem, 4vw, 3rem);
+  border: 1px solid rgba(255, 43, 214, 0.28);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.045), rgba(255,43,214,0.025) 52%, rgba(255,255,255,0.018)),
+    rgba(14, 14, 16, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow:
+    0 0 0 1px rgba(255,43,214,0.045),
+    0 18px 70px rgba(0,0,0,0.38),
+    0 0 34px rgba(255,43,214,0.10);
+}
+
+.page-login .auth-view::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255,43,214,0.12),
+    transparent 68%
+  );
+  opacity: 0.8;
+}
+
+.page-login .auth-view > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-login .auth-heading {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+  line-height: 1;
+  margin-bottom: 0.7rem;
+}
+
+.page-login .auth-lead {
+  margin-bottom: 2.25rem;
+}
+
+.page-login .auth-field input {
+  min-height: 52px;
+  background: rgba(255,255,255,0.018);
+  border-color: rgba(255,255,255,0.16);
+  transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.page-login .auth-field input:hover {
+  border-color: rgba(255,43,214,0.34);
+}
+
+.page-login .auth-field input:focus {
+  background: rgba(255,43,214,0.025);
+  border-color: var(--hot-pink);
+  box-shadow:
+    0 0 0 1px rgba(255,43,214,0.18),
+    0 0 22px rgba(255,43,214,0.14),
+    inset 0 0 18px rgba(255,43,214,0.025);
+}
+
+.page-login .auth-submit {
+  min-height: 54px;
+  box-shadow: 0 8px 26px rgba(255,43,214,0.10);
+}
+
+.page-login .auth-google {
+  min-height: 52px;
+  border-color: rgba(255,255,255,0.18);
+}
+
+/* Stronger 3D depth for every interactive card. */
+body:not(.page-home) .neon-card {
+  transform-style: preserve-3d;
+  perspective: 1050px;
+  overflow: hidden;
+  border-color: rgba(255,43,214,0.42) !important;
+  box-shadow:
+    var(--shadow-x, 0px) var(--shadow-y, 8px) 0 rgba(255,43,214,0.11),
+    0 18px 42px rgba(0,0,0,0.24),
+    0 0 22px rgba(255,43,214,0.11),
+    0 0 70px rgba(255,43,214,0.055);
+  transition: border-color .28s ease, box-shadow .28s ease, background-color .28s ease;
+}
+
+body:not(.page-home) .neon-card::before {
+  inset: -10%;
+  background:
+    radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(255,43,214,0.34), transparent 66%),
+    radial-gradient(120px circle at var(--mx, 50%) var(--my, 50%), rgba(255,255,255,0.09), transparent 72%);
+  filter: blur(18px);
+  opacity: .42;
+}
+
+body:not(.page-home) .neon-card::after {
+  z-index: 0;
+  background:
+    linear-gradient(125deg,
+      transparent 18%,
+      rgba(255,255,255,0.035) 34%,
+      rgba(255,43,214,0.18) 49%,
+      rgba(255,255,255,0.05) 54%,
+      transparent 70%);
+  background-size: 260% 260%;
+  background-position: var(--mx, 50%) var(--my, 50%);
+  opacity: .58;
+  mix-blend-mode: screen;
+}
+
+body:not(.page-home) .neon-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+body:not(.page-home) .neon-card:hover {
+  border-color: rgba(255,43,214,0.95) !important;
+  box-shadow:
+    var(--shadow-x, 0px) var(--shadow-y, 10px) 0 rgba(255,43,214,0.22),
+    0 24px 52px rgba(0,0,0,0.34),
+    0 0 28px rgba(255,43,214,0.34),
+    0 0 90px rgba(255,43,214,0.14);
+}
+
+@media (max-width: 900px) {
+  .page-login .login-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .page-login .login-brand {
+    min-height: 38vh;
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,43,214,0.18);
+  }
+
+  .page-login .login-panel {
+    padding: 2rem 1rem 3rem;
+  }
+
+  .page-login .auth-view {
+    max-width: 520px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.page-home) .neon-card {
+    transform: none !important;
+  }
+}

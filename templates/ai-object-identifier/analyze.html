@@ -70,14 +70,14 @@
     </div>
   </header>
 
-  <main id="main-content" class="page-analyze page-analyze-red">
+  <main id="main-content" class="page-analyze page-analyze-red reveal">
     <div class="container analyze-container analyze-container-wide">
       <!-- Upload workspace -->
-      <section id="upload-section" class="analyze-upload-section" aria-labelledby="upload-heading">
-        <h1 id="upload-heading" class="page-title">Analyze</h1>
+      <section id="upload-section" class="analyze-upload-section reveal-up" style="--reveal-delay: 80ms" aria-labelledby="upload-heading">
+        <h1 id="upload-heading" class="page-title reveal-up" style="--reveal-delay: 0ms">Analyze</h1>
         <p class="page-subtitle">Upload your visual content for object detection.</p>
 
-        <div id="drop-zone" class="drop-zone drop-zone-premium" tabindex="0" role="button" aria-label="Upload area. Drop a file or press Enter to browse.">
+        <div id="drop-zone" class="drop-zone drop-zone-premium reveal-scale" style="--reveal-delay: 160ms" tabindex="0" role="button" aria-label="Upload area. Drop a file or press Enter to browse.">
           <span class="drop-corner drop-corner-tl" aria-hidden="true"></span>
           <span class="drop-corner drop-corner-tr" aria-hidden="true"></span>
           <span class="drop-corner drop-corner-bl" aria-hidden="true"></span>
@@ -119,7 +119,7 @@
       <!-- Analysis progress -->
       <section id="analysis-section" class="analysis-section" hidden aria-live="polite" aria-labelledby="analysis-heading">
         <h2 id="analysis-heading" class="visually-hidden">Analysis in progress</h2>
-        <div class="analysis-card card vision-panel">
+        <div class="analysis-card card vision-panel reveal-up" style="--reveal-delay: 120ms">
           <div class="scan-grid scan-grid-local" aria-hidden="true"></div>
           <div id="analysis-preview-wrap" class="analysis-preview-wrap" hidden>
             <img id="analysis-preview-img" class="analysis-preview-media" alt="" hidden>
@@ -142,7 +142,7 @@
       <!-- Results -->
       <section id="results-section" class="results-section" hidden aria-labelledby="results-heading">
         <header class="results-header">
-          <h2 id="results-heading" class="page-title">Analysis Results</h2>
+          <h2 id="results-heading" class="page-title reveal-up" style="--reveal-delay: 80ms"> Results</h2>
           <dl class="results-summary">
             <div><dt>File</dt><dd id="result-file-name">—</dd></div>
             <div><dt>Date</dt><dd id="result-date">—</dd></div>
@@ -152,7 +152,7 @@
 
         <div class="results-layout">
           <div class="results-main">
-            <div class="results-preview card vision-panel">
+            <div class="results-preview card vision-panel reveal-right" style="--reveal-delay: 160ms">
               <div class="scan-grid scan-grid-local" aria-hidden="true"></div>
               <div id="result-media-container" class="result-media-container">
                 <img id="result-image" class="result-media" alt="Analyzed image with detections" hidden>
@@ -161,7 +161,7 @@
               </div>
             </div>
           </div>
-          <aside class="results-aside detected-panel card">
+          <aside class="results-aside detected-panel card reveal-right" style="--reveal-delay: 260ms">
             <p id="result-summary-count" class="summary-count tech-label">0 OBJECTS DETECTED</p>
             <h3 class="panel-title">Detection summary</h3>
             <ul id="objects-list" class="objects-list"></ul>

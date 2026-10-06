@@ -1545,3 +1545,944 @@ body {
     padding: 28px 20px;
   }
 }
+
+
+/* ==========================================================================\n   WANDER — illustrated travel palette for inner pages\n   Inspired by the landing artwork: parchment cream, terracotta, olive,\n   burnt sienna and deep espresso. Keeps the original layout/UX intact.\n   ========================================================================== */
+
+:root {
+  --wander-cream: #f3ead8;
+  --wander-paper: #eadfc9;
+  --wander-sand: #d7c49f;
+  --wander-rust: #a95235;
+  --wander-terracotta: #b96645;
+  --wander-olive: #65684d;
+  --wander-olive-dark: #454936;
+  --wander-brown: #3a2922;
+  --wander-ink: #2b211d;
+  --wander-muted: #75695e;
+}
+
+/* Shared inner-page canvas */
+.page-inner {
+  background-color: var(--wander-cream);
+  background-image:
+    radial-gradient(ellipse 65% 45% at 8% 12%, rgba(101,104,77,.22) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 40% at 96% 18%, rgba(169,82,53,.20) 0%, transparent 68%),
+    radial-gradient(ellipse 70% 45% at 75% 92%, rgba(101,104,77,.16) 0%, transparent 68%),
+    linear-gradient(135deg, #f4ecdc 0%, #efe3cc 48%, #e7d6ba 100%);
+  color: var(--wander-ink);
+}
+
+.page-inner::before {
+  opacity: .24;
+  background-image:
+    radial-gradient(circle at 15% 22%, rgba(58,41,34,.22) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 72% 68%, rgba(58,41,34,.16) 0 1px, transparent 1.5px),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 150 C45 128 34 92 68 72 C91 58 117 72 166 18' fill='none' stroke='%2365684d' stroke-width='1.5' opacity='.18'/%3E%3Cpath d='M16 36 C50 50 74 30 106 42 C128 50 146 73 172 82' fill='none' stroke='%23a95235' stroke-width='1.2' opacity='.14'/%3E%3C/svg%3E");
+}
+
+.site-header {
+  background: rgba(243,234,216,.90);
+  border-bottom: 1px solid rgba(69,73,54,.20);
+  box-shadow: 0 8px 30px rgba(58,41,34,.08);
+}
+
+.logo,
+.nav-link,
+.login-link {
+  color: var(--wander-brown);
+}
+
+.nav-link:hover,
+.login-link:hover {
+  color: var(--wander-rust);
+  opacity: 1;
+}
+
+.nav-link--active {
+  color: var(--wander-rust);
+  opacity: 1;
+  position: relative;
+}
+
+.nav-link--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--wander-rust);
+}
+
+.plan-button,
+.mobile-nav-link--cta,
+.btn--primary,
+.billing-toggle__btn.is-active,
+.pricing-badge {
+  background: var(--wander-brown);
+}
+
+.plan-button:hover,
+.btn--primary:hover {
+  background: var(--wander-rust);
+}
+
+.mobile-nav {
+  background: var(--wander-cream);
+  border-bottom-color: rgba(69,73,54,.18);
+}
+
+.mobile-nav-link {
+  color: var(--wander-brown);
+  border-bottom-color: rgba(69,73,54,.14);
+}
+
+.page-hero {
+  position: relative;
+  padding-top: 72px;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  left: 3%;
+  top: 34px;
+  border-radius: 50% 46% 54% 48%;
+  background: rgba(101,104,77,.18);
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 64px;
+  right: 4%;
+  top: 62px;
+  border-radius: 70% 30% 65% 35%;
+  background: rgba(169,82,53,.16);
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+.eyebrow,
+.page-pricing .eyebrow,
+.page-contact .eyebrow,
+.page-faq .eyebrow {
+  color: var(--wander-rust);
+}
+
+.page-heading,
+.section-title,
+.form-field label,
+.pricing-card__amount,
+.pricing-card__features li,
+.accordion-trigger,
+.faq-cta h2 {
+  color: var(--wander-ink);
+}
+
+.page-lead,
+.info-text,
+.faq-empty,
+.accordion-panel p,
+.login-subtitle {
+  color: var(--wander-muted);
+}
+
+.text-link,
+.accordion-panel a,
+.text-button,
+.text-link-button {
+  color: var(--wander-rust);
+}
+
+.btn--outline {
+  color: var(--wander-brown);
+  border-color: rgba(69,73,54,.35);
+  background: rgba(255,250,238,.35);
+}
+
+.btn--outline:hover {
+  border-color: var(--wander-rust);
+  background: rgba(255,250,238,.72);
+}
+
+/* Forms */
+.form-field input,
+.form-field select,
+.form-field textarea {
+  background: rgba(255,249,235,.76);
+  color: var(--wander-ink);
+  border-color: rgba(69,73,54,.25);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.55);
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--wander-olive);
+  box-shadow: 0 0 0 3px rgba(101,104,77,.15);
+}
+
+.form-success {
+  background: rgba(101,104,77,.14);
+  color: var(--wander-olive-dark);
+}
+
+/* Pricing */
+.billing-toggle {
+  background: rgba(255,249,235,.65);
+  border-color: rgba(69,73,54,.20);
+}
+
+.billing-savings {
+  color: var(--wander-olive-dark);
+}
+
+.pricing-grid {
+  position: relative;
+}
+
+.pricing-card {
+  background: rgba(250,243,228,.92);
+  border: 1px solid rgba(69,73,54,.18);
+  box-shadow: 0 14px 36px rgba(58,41,34,.10);
+}
+
+.pricing-card:nth-child(1) {
+  background: linear-gradient(155deg, #f7efdf 0%, #eadcc2 100%);
+}
+
+.pricing-card:nth-child(2) {
+  background: linear-gradient(155deg, #a95235 0%, #8e432d 100%);
+  color: #fff8e9;
+  border-color: rgba(69,39,29,.45);
+  transform: translateY(-8px) rotate(-.4deg);
+}
+
+.pricing-card:nth-child(2) .pricing-card__name,
+.pricing-card:nth-child(2) .pricing-card__period,
+.pricing-card:nth-child(2) .pricing-card__features li,
+.pricing-card:nth-child(2) .pricing-card__amount {
+  color: #fff3df;
+}
+
+.pricing-card:nth-child(2) .pricing-card__features li::before {
+  color: #e5d2a9;
+}
+
+.pricing-card:nth-child(2) .pricing-badge {
+  background: #f0d8a9;
+  color: var(--wander-brown);
+}
+
+.pricing-card:nth-child(3) {
+  background: linear-gradient(155deg, #707354 0%, #555941 100%);
+  color: #fff8e9;
+  border-color: rgba(57,61,42,.45);
+}
+
+.pricing-card:nth-child(3) .pricing-card__name,
+.pricing-card:nth-child(3) .pricing-card__period,
+.pricing-card:nth-child(3) .pricing-card__features li,
+.pricing-card:nth-child(3) .pricing-card__amount {
+  color: #f7efd9;
+}
+
+.pricing-card:nth-child(3) .pricing-card__features li::before {
+  color: #dfc996;
+}
+
+.pricing-card--featured {
+  border: 2px solid var(--wander-brown);
+  box-shadow: 0 20px 48px rgba(58,41,34,.20);
+}
+
+.pricing-card__features li::before {
+  color: var(--wander-rust);
+}
+
+.testimonial {
+  background: rgba(248,239,220,.88);
+  border-color: rgba(69,73,54,.16);
+  box-shadow: 0 10px 28px rgba(58,41,34,.08);
+}
+
+.testimonial:nth-child(2) {
+  background: rgba(101,104,77,.13);
+  border-color: rgba(101,104,77,.25);
+}
+
+/* Contact */
+.contact-form-card {
+  background: rgba(249,240,222,.92);
+  border-color: rgba(69,73,54,.20);
+  box-shadow: 0 14px 36px rgba(58,41,34,.10);
+}
+
+.contact-info-card {
+  background: linear-gradient(160deg, #65684d 0%, #454936 100%);
+  box-shadow: 0 14px 36px rgba(58,41,34,.16);
+}
+
+.contact-info-card__image {
+  border: 5px solid rgba(243,234,216,.28);
+}
+
+.response-badge {
+  background: rgba(243,234,216,.16);
+  border-color: rgba(243,234,216,.30);
+}
+
+.reach-card,
+.accordion-item,
+.faq-search,
+.faq-cta {
+  background: rgba(249,240,222,.88);
+  border-color: rgba(69,73,54,.18);
+  box-shadow: 0 10px 28px rgba(58,41,34,.07);
+}
+
+.reach-card:nth-child(2) {
+  background: rgba(169,82,53,.12);
+  border-color: rgba(169,82,53,.22);
+}
+
+.reach-card:nth-child(3) {
+  background: rgba(101,104,77,.14);
+  border-color: rgba(101,104,77,.24);
+}
+
+.reach-card svg,
+.accordion-icon,
+.faq-search svg {
+  color: var(--wander-rust);
+}
+
+.reach-card a {
+  color: var(--wander-brown);
+}
+
+.faq-category__title {
+  color: var(--wander-olive-dark);
+}
+
+.faq-cta {
+  background: linear-gradient(135deg, rgba(169,82,53,.16), rgba(101,104,77,.18));
+}
+
+/* Footer — deep brown rather than generic black */
+.site-footer,
+.page-inner .site-footer {
+  background: var(--wander-brown);
+  color: #f5ead4;
+  border-top: 5px solid var(--wander-rust);
+}
+
+.site-footer__logo,
+.site-footer__tagline,
+.site-footer__copy,
+.site-footer__links a {
+  color: #f5ead4;
+}
+
+.site-footer__links a:hover {
+  color: #e0c995;
+}
+
+/* Login */
+.page-login {
+  background: var(--wander-cream);
+}
+
+.login-visual__overlay {
+  background: linear-gradient(180deg, rgba(69,73,54,.18) 0%, rgba(58,41,34,.82) 100%);
+}
+
+.login-panel {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(169,82,53,.14), transparent 32%),
+    radial-gradient(circle at 10% 90%, rgba(101,104,77,.14), transparent 34%),
+    #f3ead8;
+}
+
+.login-back {
+  color: var(--wander-muted);
+}
+
+.login-back:hover,
+.login-form-wrap h1,
+.checkbox-label {
+  color: var(--wander-brown);
+}
+
+.login-form-wrap .btn--primary {
+  background: var(--wander-brown);
+}
+
+.login-form-wrap .btn--primary:hover {
+  background: var(--wander-rust);
+}
+
+.btn--google {
+  background: rgba(255,249,235,.72);
+  border-color: rgba(69,73,54,.22);
+  color: var(--wander-brown);
+}
+
+.btn--google:hover {
+  background: rgba(101,104,77,.10);
+}
+
+.login-divider::before,
+.login-divider::after {
+  background: rgba(69,73,54,.20);
+}
+
+/* Keep the featured pricing card visually rich but stable on small screens. */
+@media (max-width: 960px) {
+  .pricing-card:nth-child(2) {
+    transform: none;
+  }
+}
+
+/* ==========================================================================\n   Dynamic page motion — subtle, organic, and lightweight\n   ========================================================================== */
+
+.page-inner {
+  position: relative;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+/* Slowly drifting color fields keep the illustrated palette alive without\n   competing with the content. */
+.page-inner::before,
+.page-inner::after {
+  content: "";
+  position: fixed;
+  width: 34vw;
+  height: 34vw;
+  min-width: 280px;
+  min-height: 280px;
+  border-radius: 46% 54% 58% 42% / 42% 46% 54% 58%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(28px);
+  opacity: .24;
+  will-change: transform;
+}
+
+.page-inner::before {
+  top: 8vh;
+  right: -12vw;
+  background: radial-gradient(circle at 40% 40%, rgba(169,82,53,.34), transparent 68%);
+  animation: wanderDriftOne 18s ease-in-out infinite alternate;
+}
+
+.page-inner::after {
+  left: -13vw;
+  bottom: 4vh;
+  background: radial-gradient(circle at 60% 50%, rgba(101,104,77,.32), transparent 68%);
+  animation: wanderDriftTwo 22s ease-in-out infinite alternate;
+}
+
+.site-header,
+.page-main,
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
+/* Page-load entrance */
+.page-inner .navbar {
+  animation: wanderNavIn .7s cubic-bezier(.2,.75,.25,1) both;
+}
+
+.page-inner .page-hero > * {
+  opacity: 0;
+  animation: wanderRise .75s cubic-bezier(.2,.75,.25,1) forwards;
+}
+
+.page-inner .page-hero > :nth-child(1) { animation-delay: .08s; }
+.page-inner .page-hero > :nth-child(2) { animation-delay: .16s; }
+.page-inner .page-hero > :nth-child(3) { animation-delay: .24s; }
+.page-inner .page-hero > :nth-child(4) { animation-delay: .32s; }
+
+.page-inner .page-main > section:not(.page-hero) {
+  animation: wanderSectionIn .8s cubic-bezier(.2,.75,.25,1) both;
+  animation-delay: .18s;
+}
+
+/* Cards enter one after another rather than appearing all at once. */
+.page-inner .pricing-card,
+.page-inner .reach-card,
+.page-inner .contact-form-card,
+.page-inner .contact-info-card,
+.page-inner .faq-category,
+.page-inner .faq-search,
+.page-inner .faq-cta,
+.page-inner .info-block,
+.page-inner .accordion-item,
+.page-inner .mini-faq,
+.page-inner .login-panel,
+.page-inner .login-visual {
+  opacity: 0;
+  animation: wanderCardIn .72s cubic-bezier(.2,.75,.25,1) forwards;
+}
+
+.page-inner .pricing-card:nth-child(1),
+.page-inner .reach-card:nth-child(1),
+.page-inner .accordion-item:nth-child(1) { animation-delay: .20s; }
+
+.page-inner .pricing-card:nth-child(2),
+.page-inner .reach-card:nth-child(2),
+.page-inner .accordion-item:nth-child(2) { animation-delay: .30s; }
+
+.page-inner .pricing-card:nth-child(3),
+.page-inner .reach-card:nth-child(3),
+.page-inner .accordion-item:nth-child(3) { animation-delay: .40s; }
+
+.page-inner .contact-form-card { animation-delay: .18s; }
+.page-inner .contact-info-card { animation-delay: .30s; }
+.page-inner .faq-category:nth-child(1) { animation-delay: .20s; }
+.page-inner .faq-category:nth-child(2) { animation-delay: .30s; }
+.page-inner .faq-category:nth-child(3) { animation-delay: .40s; }
+.page-inner .faq-search { animation-delay: .16s; }
+.page-inner .faq-cta { animation-delay: .48s; }
+.page-inner .info-block:nth-child(1) { animation-delay: .20s; }
+.page-inner .info-block:nth-child(2) { animation-delay: .30s; }
+.page-inner .login-visual { animation-delay: .12s; }
+.page-inner .login-panel { animation-delay: .24s; }
+
+/* Gentle hover lift — deliberately restrained so the site still feels\n   editorial rather than like a dashboard full of bouncing widgets. */
+.page-inner .pricing-card,
+.page-inner .reach-card,
+.page-inner .contact-form-card,
+.page-inner .contact-info-card,
+.page-inner .faq-category,
+.page-inner .faq-cta {
+  transition: transform .35s cubic-bezier(.2,.75,.25,1), box-shadow .35s ease;
+  will-change: transform;
+}
+
+.page-inner .pricing-card:hover,
+.page-inner .reach-card:hover,
+.page-inner .contact-form-card:hover,
+.page-inner .contact-info-card:hover,
+.page-inner .faq-category:hover,
+.page-inner .faq-cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(58,41,34,.12);
+}
+
+/* Featured pricing card already has its own lift/offset; preserve it. */
+.page-inner .pricing-card--featured:hover {
+  transform: translateY(-8px);
+}
+
+/* Tiny text reveal for headings. */
+.page-inner .section-title,
+.page-inner .page-heading {
+  text-wrap: balance;
+}
+
+@keyframes wanderRise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wanderCardIn {
+  from { opacity: 0; transform: translateY(24px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes wanderSectionIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wanderNavIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes wanderDriftOne {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(-4vw, 3vh, 0) rotate(8deg) scale(1.08); }
+  100% { transform: translate3d(-1vw, 7vh, 0) rotate(-5deg) scale(1.02); }
+}
+
+@keyframes wanderDriftTwo {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(5vw, -4vh, 0) rotate(-7deg) scale(1.06); }
+  100% { transform: translate3d(2vw, -8vh, 0) rotate(6deg) scale(1.01); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-inner::before,
+  .page-inner::after,
+  .page-inner .navbar,
+  .page-inner .page-hero > *,
+  .page-inner .page-main > section:not(.page-hero),
+  .page-inner .pricing-card,
+  .page-inner .reach-card,
+  .page-inner .contact-form-card,
+  .page-inner .contact-info-card,
+  .page-inner .faq-category,
+  .page-inner .faq-search,
+  .page-inner .faq-cta,
+  .page-inner .info-block,
+  .page-inner .accordion-item,
+  .page-inner .mini-faq,
+  .page-inner .login-panel,
+  .page-inner .login-visual {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   Continuous floating motion — keeps the inner pages feeling alive
+   ========================================================================== */
+
+.page-inner .pricing-card,
+.page-inner .reach-card,
+.page-inner .contact-form-card,
+.page-inner .contact-info-card,
+.page-inner .faq-category,
+.page-inner .faq-cta,
+.page-inner .info-block,
+.page-inner .mini-faq {
+  animation-name: wanderCardIn, wanderFloat;
+  animation-duration: .72s, 6.5s;
+  animation-timing-function: cubic-bezier(.2,.75,.25,1), ease-in-out;
+  animation-fill-mode: forwards, both;
+  animation-iteration-count: 1, infinite;
+  animation-delay: .2s, 1.1s;
+}
+
+.page-inner .pricing-card:nth-child(2),
+.page-inner .reach-card:nth-child(2),
+.page-inner .faq-category:nth-child(2) {
+  animation-delay: .3s, 1.35s;
+}
+
+.page-inner .pricing-card:nth-child(3),
+.page-inner .reach-card:nth-child(3),
+.page-inner .faq-category:nth-child(3) {
+  animation-delay: .4s, 1.6s;
+}
+
+.page-inner .pricing-card:hover,
+.page-inner .reach-card:hover,
+.page-inner .contact-form-card:hover,
+.page-inner .contact-info-card:hover,
+.page-inner .faq-category:hover,
+.page-inner .faq-cta:hover {
+  animation-play-state: paused;
+  transform: translateY(-8px) scale(1.01);
+}
+
+@keyframes wanderFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  25% { transform: translate3d(0, -5px, 0) rotate(.18deg); }
+  50% { transform: translate3d(0, -9px, 0) rotate(-.18deg); }
+  75% { transform: translate3d(0, -4px, 0) rotate(.12deg); }
+}
+
+/* ==========================================================================
+   Sign-in page — animated editorial composition
+   ========================================================================== */
+
+.page-login {
+  --login-cream: #f6eedf;
+  --login-rust: #a95235;
+  --login-olive: #65684d;
+  --login-brown: #453b31;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(169,82,53,.12), transparent 25%),
+    radial-gradient(circle at 18% 80%, rgba(101,104,77,.13), transparent 28%),
+    var(--login-cream);
+}
+
+.page-login .login-layout {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  background: var(--login-cream);
+}
+
+.page-login .login-layout::before,
+.page-login .login-layout::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.page-login .login-layout::before {
+  width: 320px;
+  height: 320px;
+  left: 42%;
+  top: -120px;
+  background: rgba(169,82,53,.10);
+  animation: loginAmbientOne 13s ease-in-out infinite alternate;
+}
+
+.page-login .login-layout::after {
+  width: 280px;
+  height: 280px;
+  right: 5%;
+  bottom: -100px;
+  background: rgba(101,104,77,.12);
+  animation: loginAmbientTwo 16s ease-in-out infinite alternate;
+}
+
+.page-login .login-visual,
+.page-login .login-panel {
+  position: relative;
+  z-index: 2;
+}
+
+.page-login .login-visual {
+  overflow: hidden;
+}
+
+.page-login .login-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(69,59,49,.06), transparent 55%, rgba(169,82,53,.18));
+  pointer-events: none;
+}
+
+.page-login .login-visual__content {
+  animation: loginContentIn 1s cubic-bezier(.2,.8,.2,1) .35s both;
+}
+
+.page-login .login-visual__logo {
+  display: inline-block;
+  animation: loginLogoFloat 5.5s ease-in-out 1.2s infinite;
+}
+
+.page-login .login-visual__tagline {
+  animation: loginTaglineIn .9s cubic-bezier(.2,.8,.2,1) .65s both;
+}
+
+.page-login .login-visual__tagline span {
+  color: var(--login-rust);
+  letter-spacing: .12em;
+  font-size: .72em;
+}
+
+.page-login .login-panel {
+  animation: loginPanelIn .9s cubic-bezier(.2,.8,.2,1) .15s both;
+}
+
+.page-login .login-form-wrap h1 {
+  animation: loginTextIn .8s cubic-bezier(.2,.8,.2,1) .38s both;
+}
+
+.page-login .login-heading-accent {
+  color: var(--login-rust);
+  display: inline-block;
+  animation: loginAccentIn .7s cubic-bezier(.2,.8,.2,1) .62s both;
+}
+
+.page-login .login-subtitle {
+  animation: loginTextIn .8s cubic-bezier(.2,.8,.2,1) .56s both;
+}
+
+.page-login .login-form {
+  animation: loginFormIn .85s cubic-bezier(.2,.8,.2,1) .68s both;
+}
+
+.page-login .login-form .form-field:nth-child(1) { animation-delay: .78s; }
+.page-login .login-form .form-field:nth-child(2) { animation-delay: .88s; }
+.page-login .login-form .form-field,
+.page-login .login-form__row,
+.page-login .login-form > .btn,
+.page-login .login-divider,
+.page-login .btn--google,
+.page-login .login-signup {
+  opacity: 0;
+  animation: loginFormItemIn .65s cubic-bezier(.2,.8,.2,1) forwards;
+}
+
+.page-login .login-form .form-field { animation-delay: .78s; }
+.page-login .login-form .form-field + .form-field { animation-delay: .88s; }
+.page-login .login-form__row { animation-delay: .98s; }
+.page-login .login-form > .btn { animation-delay: 1.08s; }
+.page-login .login-divider { animation-delay: 1.18s; }
+.page-login .btn--google { animation-delay: 1.28s; }
+.page-login .login-signup { animation-delay: 1.38s; }
+
+/* Floating travel cards on the image side. */
+.login-floating-card {
+  position: absolute;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 185px;
+  padding: 13px 15px;
+  border: 1px solid rgba(255,255,255,.35);
+  border-radius: 16px;
+  color: #fff;
+  background: rgba(69,59,49,.62);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 45px rgba(35,25,19,.20);
+  transform-origin: center;
+  animation: loginCardFloat 7s ease-in-out infinite;
+}
+
+.login-floating-card strong,
+.login-floating-card small {
+  display: block;
+}
+
+.login-floating-card strong {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .01em;
+}
+
+.login-floating-card small {
+  margin-top: 3px;
+  color: rgba(255,255,255,.72);
+  font-size: 10px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.login-floating-card__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c67a58;
+  box-shadow: 0 0 0 5px rgba(198,122,88,.14);
+  flex: 0 0 auto;
+}
+
+.login-floating-card__icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(246,238,223,.16);
+  color: #f6eedf;
+}
+
+.login-floating-card__arrow {
+  margin-left: auto;
+  color: #d69a7e;
+}
+
+.login-floating-card--one { top: 24%; right: 8%; animation-delay: -.8s; }
+.login-floating-card--two { bottom: 27%; left: 7%; animation-delay: -3.2s; }
+.login-floating-card--three { bottom: 12%; right: 13%; animation-delay: -5.1s; }
+
+@keyframes loginCardFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1deg); }
+  30% { transform: translate3d(5px, -10px, 0) rotate(.7deg); }
+  60% { transform: translate3d(-4px, -16px, 0) rotate(-.4deg); }
+  80% { transform: translate3d(3px, -7px, 0) rotate(.4deg); }
+}
+
+@keyframes loginContentIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loginTaglineIn {
+  from { opacity: 0; transform: translateY(12px); letter-spacing: .02em; }
+  to { opacity: 1; transform: translateY(0); letter-spacing: normal; }
+}
+
+@keyframes loginPanelIn {
+  from { opacity: 0; transform: translateX(28px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes loginTextIn {
+  from { opacity: 0; transform: translateY(16px); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes loginAccentIn {
+  from { opacity: 0; transform: translateY(10px) rotate(2deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+@keyframes loginFormIn {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loginFormItemIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loginLogoFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes loginAmbientOne {
+  from { transform: translate3d(-20px, 0, 0) scale(1); }
+  to { transform: translate3d(70px, 60px, 0) scale(1.18); }
+}
+
+@keyframes loginAmbientTwo {
+  from { transform: translate3d(0, 10px, 0) scale(1); }
+  to { transform: translate3d(-65px, -45px, 0) scale(1.12); }
+}
+
+@media (max-width: 900px) {
+  .login-floating-card--one { right: 5%; top: 16%; }
+  .login-floating-card--two { left: 5%; bottom: 20%; }
+  .login-floating-card--three { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-inner .pricing-card,
+  .page-inner .reach-card,
+  .page-inner .contact-form-card,
+  .page-inner .contact-info-card,
+  .page-inner .faq-category,
+  .page-inner .faq-cta,
+  .page-inner .info-block,
+  .page-inner .mini-faq,
+  .page-login .login-layout::before,
+  .page-login .login-layout::after,
+  .page-login .login-visual__content,
+  .page-login .login-visual__logo,
+  .page-login .login-visual__tagline,
+  .page-login .login-panel,
+  .page-login .login-form-wrap h1,
+  .page-login .login-heading-accent,
+  .page-login .login-subtitle,
+  .page-login .login-form,
+  .page-login .login-form .form-field,
+  .page-login .login-form__row,
+  .page-login .login-form > .btn,
+  .page-login .login-divider,
+  .page-login .btn--google,
+  .page-login .login-signup,
+  .login-floating-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

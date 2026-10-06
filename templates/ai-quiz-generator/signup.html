@@ -1,63 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sign Up — QuizAI</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
-  <script src="js/theme.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/auth.css" />
-</head>
-<body>
-  <div class="auth-page">
-    <div class="botanical auth-botanical--tl botanical--leaf-2" aria-hidden="true">
-      <svg viewBox="0 0 24 28"><path d="M10 4c-2 6-1 12 4 18 5-4 8-10 6-16-4 1-7-1-10-2z" fill="#39AEB4" opacity="0.45"/></svg>
-    </div>
-    <div class="botanical auth-botanical--br botanical--leaf-1" aria-hidden="true">
-      <svg viewBox="0 0 24 28"><path d="M12 2C8 8 6 14 8 22c4-2 8-6 10-12-3-2-4-6-6-8z" fill="#CDEFE7"/></svg>
-    </div>
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Signup — Quizpath</title><link rel="stylesheet" href="style.css"></head><body><div class="page"><video class="page-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260703_053131_1ec3dd1c-d627-44fb-ab20-6e1fce41b0d5.mp4" autoplay loop muted playsinline></video><div class="page-overlay"></div><div class="page-content"><nav class="navbar">
+<a href="index.html" class="logo"><svg class="logo-mark" viewBox="0 0 28 28" fill="none"><path d="M14 2L24 14L14 26L4 14Z" fill="white" fill-opacity=".9"/><path d="M14 7L20 14L14 21L8 14Z" fill="white" fill-opacity=".5" transform="translate(4 0)"/></svg><span>quizpath</span></a>
+<div class="desktop-nav">
+<a class="nav-button" href="generate.html">Generate</a>
+<div class="nav-group"><button class="nav-button">Explore <span class="chevron">⌄</span></button><div class="dropdown"><a href="features.html">Features</a><a href="about.html">About</a></div></div>
+<div class="nav-group"><button class="nav-button">My Quizzes <span class="chevron">⌄</span></button><div class="dropdown"><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div></div>
 
-    <div class="card auth-card">
-      <div class="card__body">
-        <a href="index.html" class="logo auth-card__logo">
-          <img src="assets/logo.svg" alt="" width="40" height="40" /> QuizAI
-        </a>
-        <h1>Create Your Account</h1>
-        <p class="auth-card__sub">Start generating AI quizzes today.</p>
-        <form id="signup-form" novalidate>
-          <div class="form-group">
-            <label class="form-label" for="name">Full Name</label>
-            <input class="form-input" type="text" id="name" name="name" autocomplete="name" placeholder="Meha Sharma" />
-            <span class="form-error"></span>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address</label>
-            <input class="form-input" type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" />
-            <span class="form-error"></span>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="password">Password</label>
-            <input class="form-input" type="password" id="password" name="password" autocomplete="new-password" placeholder="At least 8 characters" />
-            <span class="form-error"></span>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="confirm">Confirm Password</label>
-            <input class="form-input" type="password" id="confirm" name="confirm" autocomplete="new-password" placeholder="Repeat password" />
-            <span class="form-error"></span>
-          </div>
-          <button type="submit" class="btn btn--primary btn--block">Create Account</button>
-        </form>
-        <div class="divider-text">or continue with</div>
-        <div class="auth-social">
-          <button type="button" class="btn btn--secondary btn--block">Continue with Google</button>
-          <button type="button" class="btn btn--secondary btn--block">Continue with Microsoft</button>
-        </div>
-        <p class="auth-card__footer">Already have an account? <a href="login.html">Login</a></p>
-      </div>
-    </div>
-  </div>
-  <script src="js/main.js" defer></script>
-  <script src="js/auth.js" defer></script>
-</body>
-</html>
+</div>
+<div class="desktop-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+<button class="mobile-toggle" aria-label="Toggle menu" aria-expanded="false"><span class="icon menu-icon">☰</span><span class="icon close-icon">×</span></button>
+<div class="mobile-menu">
+<div class="mobile-section"><a href="generate.html">Generate</a></div>
+<div class="mobile-section"><a href="features.html">Explore</a><a href="features.html">Features</a><a href="about.html">About</a></div>
+<div class="mobile-section"><a href="my-quizzes.html">My Quizzes</a><a href="my-quizzes.html">Recent quizzes</a><a href="results.html">Performance</a></div>
+
+<div class="mobile-actions"><a href="signin.html" class="login">Log in</a><a href="pricing.html" class="glass glass-pill">Try it free</a></div>
+</div>
+</nav><main class="auth-page"><section class="panel data-reactive-card auth-card"><div class="eyebrow">GET STARTED</div><h1>Create your account</h1><p class="muted">Start generating personalized quizzes.</p><form class="form" data-auth-form data-redirect="generate.html" style="margin-top:22px"><label>Name<input type="text" placeholder="Your name" required></label><label>Email<input type="email" placeholder="you@example.com" required></label><label>Password<input type="password" placeholder="Create a password" required></label><button class="primary-button" type="submit">Create account</button></form><div class="auth-footer">Already have an account? <a href="signin.html">Sign in</a></div></section></main></div><footer class="footer">Quizpath — AI-powered quiz creation.</footer></div><div class="toast" id="toast"></div><script src="script.js"></script></body></html>

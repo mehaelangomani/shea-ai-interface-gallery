@@ -708,3 +708,122 @@ body > * {
     animation: none;
   }
 }
+
+/* Dark theme background image */
+[data-theme="dark"] body {
+  background-image: url("../assets/dark-theme-background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
+/* Dark theme: use the satin image as the page background without burgundy page layers. */
+[data-theme="dark"] body,
+[data-theme="dark"] body.app-wine {
+  background-color: #000 !important;
+  background-image: url("../assets/dark-theme-background.png") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+
+[data-theme="dark"] .hero-red,
+[data-theme="dark"] .hero-wine,
+[data-theme="dark"] .hero-red .hero-bg,
+[data-theme="dark"] .hero-wine .hero-bg,
+[data-theme="dark"] .section-how,
+[data-theme="dark"] .section-features,
+[data-theme="dark"] .section-demo-red,
+[data-theme="dark"] .section-formats,
+[data-theme="dark"] .section-understanding,
+[data-theme="dark"] .site-footer-red,
+[data-theme="dark"] .page-analyze-red,
+[data-theme="dark"] .page-history-red,
+[data-theme="dark"] .page-pricing-red,
+[data-theme="dark"] .page-settings-bg,
+[data-theme="dark"] .page-profile.page-settings-bg,
+[data-theme="dark"] .auth-visual-red {
+  background: transparent !important;
+}
+
+/* Dark theme dusty-rose preview: buttons and visual detection accents only. */
+[data-theme="dark"] {
+  --preview-dusty-rose: #DFA1AD;
+  --preview-dusty-rose-hover: #E8B1BC;
+}
+
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .hero-wine .btn-primary,
+[data-theme="dark"] .hero-red .btn-primary {
+  background: var(--preview-dusty-rose) !important;
+  color: #fff !important;
+  border-color: var(--preview-dusty-rose) !important;
+}
+
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-primary:focus-visible,
+[data-theme="dark"] .hero-wine .btn-primary:hover,
+[data-theme="dark"] .hero-red .btn-primary:hover {
+  background: var(--preview-dusty-rose-hover) !important;
+  color: #fff !important;
+  border-color: var(--preview-dusty-rose-hover) !important;
+}
+
+[data-theme="dark"] .btn-ghost,
+[data-theme="dark"] .btn-secondary-wine {
+  color: #fff !important;
+  border-color: var(--preview-dusty-rose) !important;
+}
+
+[data-theme="dark"] .btn-ghost:hover,
+[data-theme="dark"] .btn-ghost:focus-visible,
+[data-theme="dark"] .btn-secondary-wine:hover {
+  color: #fff !important;
+  background: rgba(223, 161, 173, 0.14) !important;
+  border-color: var(--preview-dusty-rose-hover) !important;
+}
+
+/* Detection / visual illustration accents */
+[data-theme="dark"] .hero-float,
+[data-theme="dark"] .hero-red .scan-line,
+[data-theme="dark"] .hero-wine .scan-line,
+[data-theme="dark"] .scan-line,
+[data-theme="dark"] .analysis-scan-line,
+[data-theme="dark"] .analysis-scan-line-h {
+  color: var(--preview-dusty-rose) !important;
+  background-color: var(--preview-dusty-rose) !important;
+}
+
+[data-theme="dark"] .det-box,
+[data-theme="dark"] .bbox {
+  border-color: var(--preview-dusty-rose) !important;
+}
+
+[data-theme="dark"] .det-box::after,
+[data-theme="dark"] .bbox-label {
+  color: #fff !important;
+  background: var(--preview-dusty-rose) !important;
+}
+
+[data-theme="dark"] .process-line-fill,
+[data-theme="dark"] .process-step-num,
+[data-theme="dark"] .process-step-label,
+[data-theme="dark"] .feature-row-num,
+[data-theme="dark"] .feature-row-icon,
+[data-theme="dark"] .formats-card-red .formats-icon,
+[data-theme="dark"] .tech-label,
+[data-theme="dark"] .panel-frame,
+[data-theme="dark"] .scan-pct {
+  color: var(--preview-dusty-rose) !important;
+}
+
+[data-theme="dark"] .process-line-fill {
+  background: var(--preview-dusty-rose) !important;
+}
+
+[data-theme="dark"] .bbox.is-highlighted {
+  box-shadow: 0 0 0 2px rgba(223, 161, 173, 0.45) !important;
+}

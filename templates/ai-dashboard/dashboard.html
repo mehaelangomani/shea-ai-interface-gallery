@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nexus AI — Dashboard</title>
+
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+    <!-- REALISTIC CLOUD BACKGROUND -->
+<div class="dashboard-clouds" aria-hidden="true">
+  <video
+    src="clouds.mp4"
+    autoplay
+    muted
+    loop
+    playsinline
+  ></video>
+
+  <div class="cloud-overlay"></div>
+</div>
+
+  <div class="dashboard-shell">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="brand">
+        <div class="brand-mark">NX</div>
+        <span>NEXUS AI</span>
+      </div>
+
+      <button class="new-chat" id="newChatBtn">
+        <span>＋</span>
+        <span>New Chat</span>
+      </button>
+
+      <nav class="sidebar-nav">
+
+        <button class="nav-item active" data-page="home">
+          <span class="nav-icon">⌂</span>
+          <span>Home</span>
+        </button>
+
+        <button class="nav-item" data-page="chats">
+          <span class="nav-icon">◌</span>
+          <span>Conversations</span>
+        </button>
+
+        <button class="nav-item" data-page="research">
+          <span class="nav-icon">⌕</span>
+          <span>Research</span>
+        </button>
+
+        <button class="nav-item" data-page="create">
+          <span class="nav-icon">✦</span>
+          <span>Create</span>
+        </button>
+
+        <button class="nav-item" data-page="projects">
+          <span class="nav-icon">□</span>
+          <span>Projects</span>
+        </button>
+
+        <button class="nav-item" data-page="files">
+          <span class="nav-icon">▱</span>
+          <span>Files</span>
+        </button>
+
+      </nav>
+
+      <div class="sidebar-bottom">
+
+        <button class="nav-item" data-page="settings">
+          <span class="nav-icon">⚙</span>
+          <span>Settings</span>
+        </button>
+
+        <div class="profile">
+          <div class="profile-avatar">ME</div>
+
+          <div class="profile-info">
+            <strong>Meha</strong>
+            <span>Personal workspace</span>
+          </div>
+
+          <span class="profile-more">•••</span>
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main-content">
+
+      <!-- TOP BAR -->
+      <header class="topbar">
+
+        <div class="mobile-brand">
+          <div class="brand-mark">NX</div>
+          <span>NEXUS AI</span>
+        </div>
+
+        <div class="topbar-right">
+
+          <button class="top-icon" id="searchBtn">
+            ⌕
+          </button>
+
+          <button class="top-icon" id="notificationBtn">
+            ◇
+          </button>
+
+          <button class="upgrade-btn" id="upgradeBtn">
+            Upgrade
+          </button>
+
+        </div>
+
+      </header>
+
+
+      <!-- HOME -->
+      <section class="page active-page" id="home">
+
+        <div class="welcome">
+
+          <div class="eyebrow">
+            PERSONAL WORKSPACE
+          </div>
+
+          <h1>
+            What will we<br>
+            <span>create today?</span>
+          </h1>
+
+          <p>
+            Think, research, create and build — all in one intelligent workspace.
+          </p>
+
+        </div>
+
+
+        <!-- AI COMPOSER -->
+        <div class="composer-card">
+
+          <div class="composer-top">
+
+            <textarea
+              id="promptInput"
+              placeholder="Ask Nexus AI anything..."
+            ></textarea>
+
+          </div>
+
+          <div class="composer-bottom">
+
+            <div class="composer-tools">
+
+              <button class="composer-tool" id="attachBtn">
+                ＋ Attach
+              </button>
+
+              <button class="composer-tool">
+                ✦ Research
+              </button>
+
+              <button class="composer-tool">
+                ◇ Create
+              </button>
+
+            </div>
+
+            <button class="send-btn" id="sendBtn">
+              →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+        <div class="section-heading">
+          <span>START SOMETHING</span>
+        </div>
+
+        <div class="action-grid">
+
+          <button class="action-card" data-action="chat">
+
+            <div class="action-symbol">◌</div>
+
+            <div>
+              <h3>Chat</h3>
+              <p>Think through ideas, questions and problems.</p>
+            </div>
+
+            <span class="action-arrow">↗</span>
+
+          </button>
+
+
+          <button class="action-card" data-action="research">
+
+            <div class="action-symbol">⌕</div>
+
+            <div>
+              <h3>Research</h3>
+              <p>Explore topics and uncover deeper insights.</p>
+            </div>
+
+            <span class="action-arrow">↗</span>
+
+          </button>
+
+
+          <button class="action-card" data-action="create">
+
+            <div class="action-symbol">✦</div>
+
+            <div>
+              <h3>Create</h3>
+              <p>Generate content, ideas, images and concepts.</p>
+            </div>
+
+            <span class="action-arrow">↗</span>
+
+          </button>
+
+
+          <button class="action-card" data-action="build">
+
+            <div class="action-symbol">⌘</div>
+
+            <div>
+              <h3>Build</h3>
+              <p>Turn ideas into code, websites and products.</p>
+            </div>
+
+            <span class="action-arrow">↗</span>
+
+          </button>
+
+        </div>
+
+
+        <!-- RECENT -->
+        <div class="section-heading recent-heading">
+          <span>RECENT WORK</span>
+          <button id="viewAllBtn">VIEW ALL →</button>
+        </div>
+
+        <div class="recent-grid">
+
+          <article class="recent-card">
+
+            <div class="recent-type">BUILD</div>
+
+            <h3>AI Interface Gallery</h3>
+
+            <p>
+              Exploring a collection of modern AI interface concepts.
+            </p>
+
+            <div class="recent-footer">
+              <span>Today</span>
+              <span>→</span>
+            </div>
+
+          </article>
+
+
+          <article class="recent-card">
+
+            <div class="recent-type">RESEARCH</div>
+
+            <h3>Future of AI Interfaces</h3>
+
+            <p>
+              Research notes, references and collected insights.
+            </p>
+
+            <div class="recent-footer">
+              <span>Yesterday</span>
+              <span>→</span>
+            </div>
+
+          </article>
+
+
+          <article class="recent-card">
+
+            <div class="recent-type">CREATE</div>
+
+            <h3>Nexus AI Concepts</h3>
+
+            <p>
+              Visual directions and ideas for the next generation.
+            </p>
+
+            <div class="recent-footer">
+              <span>2 days ago</span>
+              <span>→</span>
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- OTHER PAGES -->
+
+      <section class="page" id="chats">
+        <div class="inner-page">
+          <div class="eyebrow">CONVERSATIONS</div>
+          <h2>Your conversations.</h2>
+          <p>All your AI conversations will appear here.</p>
+
+          <div class="empty-card">
+            <span>◌</span>
+            <h3>No conversations yet</h3>
+            <p>Start a new chat from the sidebar.</p>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="page" id="research">
+        <div class="inner-page">
+          <div class="eyebrow">RESEARCH</div>
+          <h2>Go deeper.</h2>
+          <p>Research topics, compare sources and organize your findings.</p>
+
+          <div class="research-box">
+            <input
+              type="text"
+              placeholder="What do you want to research?"
+              id="researchInput"
+            >
+            <button id="researchBtn">RESEARCH →</button>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="page" id="create">
+        <div class="inner-page">
+          <div class="eyebrow">CREATE</div>
+          <h2>Make something.</h2>
+          <p>Turn ideas into content, concepts and creative outputs.</p>
+
+          <div class="create-grid">
+
+            <button class="tool-card">
+              <span>✦</span>
+              <strong>Generate content</strong>
+              <small>Write, rewrite and refine</small>
+            </button>
+
+            <button class="tool-card">
+              <span>◈</span>
+              <strong>Generate image</strong>
+              <small>Turn ideas into visuals</small>
+            </button>
+
+            <button class="tool-card">
+              <span>⌘</span>
+              <strong>Generate code</strong>
+              <small>Build functional interfaces</small>
+            </button>
+
+          </div>
+        </div>
+      </section>
+
+
+      <section class="page" id="projects">
+        <div class="inner-page">
+          <div class="eyebrow">PROJECTS</div>
+          <h2>Your projects.</h2>
+          <p>Keep your work organized in one place.</p>
+
+          <div class="project-grid">
+
+            <article class="project-card">
+              <span>NX</span>
+              <h3>Nexus AI</h3>
+              <p>Current project</p>
+            </article>
+
+            <button class="project-card add-project">
+              <span>＋</span>
+              <h3>New project</h3>
+            </button>
+
+          </div>
+        </div>
+      </section>
+
+
+      <section class="page" id="files">
+        <div class="inner-page">
+          <div class="eyebrow">FILES</div>
+          <h2>Your files.</h2>
+          <p>Documents and assets used across your workspace.</p>
+
+          <div class="empty-card">
+            <span>▱</span>
+            <h3>No files uploaded</h3>
+            <p>Attach a file when starting a conversation.</p>
+          </div>
+        </div>
+      </section>
+
+
+<section class="page" id="settings">
+  <div class="inner-page">
+
+    <div class="eyebrow">SETTINGS</div>
+    <h2>Workspace settings.</h2>
+
+    <p class="settings-intro">
+      Manage your Nexus AI account, privacy, files and preferences.
+    </p>
+
+    <!-- PROFILE -->
+    <button class="settings-card settings-link" data-settings-page="profile-settings">
+      <div class="settings-card-icon">👤</div>
+      <div class="settings-card-content">
+        <strong>Profile</strong>
+        <p>Manage your name, email address and account information.</p>
+      </div>
+      <span class="settings-action">Manage →</span>
+    </button>
+
+    <!-- NOTIFICATIONS -->
+    <button class="settings-card settings-link" data-settings-page="notification-settings">
+      <div class="settings-card-icon">🔔</div>
+      <div class="settings-card-content">
+        <strong>Notifications</strong>
+        <p>Control research updates, project activity and important alerts.</p>
+      </div>
+      <span class="settings-action">Manage →</span>
+    </button>
+
+    <!-- PRIVACY & SECURITY -->
+    <button class="settings-card settings-link" data-settings-page="privacy-settings">
+      <div class="settings-card-icon">🔒</div>
+      <div class="settings-card-content">
+        <strong>Privacy &amp; Security</strong>
+        <p>Manage your data, sessions and account security.</p>
+      </div>
+      <span class="settings-action">Manage →</span>
+    </button>
+
+    <!-- FILES & STORAGE -->
+    <button class="settings-card settings-link" data-settings-page="storage-settings">
+      <div class="settings-card-icon">📁</div>
+      <div class="settings-card-content">
+        <strong>Files &amp; Storage</strong>
+        <p>Manage uploaded files, storage usage and file preferences.</p>
+      </div>
+      <span class="settings-action">Manage →</span>
+    </button>
+
+    <!-- PLAN & USAGE -->
+    <button class="settings-card settings-link" data-settings-page="plan-settings">
+      <div class="settings-card-icon">💳</div>
+      <div class="settings-card-content">
+        <strong>Plan &amp; Usage</strong>
+        <p>View your current plan, usage limits and subscription details.</p>
+      </div>
+      <span class="settings-action">View →</span>
+    </button>
+
+    <!-- APPEARANCE -->
+    <button class="settings-card settings-link" data-settings-page="appearance-settings">
+      <div class="settings-card-icon">🎨</div>
+      <div class="settings-card-content">
+        <strong>Appearance</strong>
+        <p>Customize the visual style and interface appearance.</p>
+      </div>
+      <span class="settings-action">Customize →</span>
+    </button>
+
+  </div>
+</section>
+
+<!-- =========================================
+     SETTINGS SUB-PAGES
+     ========================================= -->
+
+<!-- PROFILE -->
+<section class="page settings-subpage" id="profile-settings">
+  <div class="inner-page">
+
+    <button class="settings-back" data-back-settings>
+      ← Back to Settings
+    </button>
+
+    <div class="eyebrow">PROFILE</div>
+    <h2>Your profile.</h2>
+    <p class="settings-intro">
+      Manage your personal information and workspace identity.
+    </p>
+
+    <div class="settings-detail-card">
+      <div class="profile-large-avatar">ME</div>
+
+      <div class="profile-detail">
+        <span class="detail-label">NAME</span>
+        <h3>Meha</h3>
+
+        <span class="detail-label">EMAIL</span>
+        <p>mehaelangomani22@gmail.com</p>
+
+        <span class="detail-label">WORKSPACE</span>
+        <p>Personal workspace</p>
+      </div>
+    </div>
+
+    <div class="settings-detail-card">
+      <div>
+        <strong>Account information</strong>
+        <p>Update your name and account details.</p>
+      </div>
+
+      <button class="detail-button" id="editProfileBtn">Edit Profile</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- NOTIFICATIONS -->
+<section class="page settings-subpage" id="notification-settings">
+  <div class="inner-page">
+
+    <button class="settings-back" data-back-settings>
+      ← Back to Settings
+    </button>
+
+    <div class="eyebrow">NOTIFICATIONS</div>
+    <h2>Stay informed.</h2>
+    <p class="settings-intro">
+      Choose what Nexus AI should notify you about.
+    </p>
+
+    <div class="settings-detail-card notification-row">
+      <div>
+        <strong>Research updates</strong>
+        <p>Get notified when your research is complete.</p>
+      </div>
+
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="settings-detail-card notification-row">
+      <div>
+        <strong>Project activity</strong>
+        <p>Receive updates about your projects and workspace.</p>
+      </div>
+
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="settings-detail-card notification-row">
+      <div>
+        <strong>Important alerts</strong>
+        <p>Receive important account and security notifications.</p>
+      </div>
+
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PRIVACY -->
+<section class="page settings-subpage" id="privacy-settings">
+  <div class="inner-page">
+
+    <button class="settings-back" data-back-settings>
+      ← Back to Settings
+    </button>
+
+    <div class="eyebrow">PRIVACY &amp; SECURITY</div>
+    <h2>Protect your workspace.</h2>
+    <p class="settings-intro">
+      Manage your data and account security.
+    </p>
+
+    <div class="settings-detail-card">
+      <div>
+        <strong>Data controls</strong>
+        <p>Control how your conversations and workspace data are handled.</p>
+      </div>
+
+      <button class="detail-button" id="manageDataBtn">Manage</button>
+    </div>
+
+    <div class="settings-detail-card">
+      <div>
+        <strong>Active sessions</strong>
+        <p>Review devices currently signed into your account.</p>
+      </div>
+
+      <button class="detail-button" id="viewSessionsBtn">View Sessions</button>
+    </div>
+
+    <div class="settings-detail-card danger-card">
+      <div>
+        <strong>Delete account</strong>
+        <p>Permanently remove your Nexus AI account and data.</p>
+      </div>
+
+      <button class="detail-button" id="deleteAccountBtn">Delete Account</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FILES & STORAGE -->
+<section class="page settings-subpage" id="storage-settings">
+  <div class="inner-page">
+
+    <button class="settings-back" data-back-settings>
+      ← Back to Settings
+    </button>
+
+    <div class="eyebrow">FILES &amp; STORAGE</div>
+    <h2>Your storage.</h2>
+    <p class="settings-intro">
+      Manage your uploaded files and workspace storage.
+    </p>
+
+    <div class="settings-detail-card storage-card">
+      <div class="storage-info">
+        <strong>Storage used</strong>
+        <p>1.2 GB of 5 GB used</p>
+      </div>
+
+      <div class="storage-bar">
+        <div class="storage-progress"></div>
+      </div>
+
+      <span class="storage-percent">24%</span>
+    </div>
+
+    <div class="settings-detail-card">
+      <div>
+        <strong>Uploaded files</strong>
+        <p>View and manage documents and assets.</p>
+      </div>
+
+      <button class="detail-button" id="viewFilesBtn">View Files</button>
+    </div>
+
+    <div class="settings-detail-card">
+      <div>
+        <strong>File preferences</strong>
+        <p>Manage upload and storage behaviour.</p>
+      </div>
+
+      <button class="detail-button" id="manageFilePreferencesBtn">Manage</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PLAN & USAGE -->
+<section class="page settings-subpage" id="plan-settings">
+  <div class="inner-page">
+
+    <button class="settings-back" data-back-settings>
+      ← Back to Settings
+    </button>
+
+    <div class="eyebrow">PLAN &amp; USAGE</div>
+    <h2>Your plan.</h2>
+    <p class="settings-intro">
+      View your current plan and workspace usage.
+    </p>
+
+    <div class="plan-highlight">
+      <div>
+        <span class="detail-label">CURRENT PLAN</span>
+        <h3>Free</h3>
+        <p>Perfect for exploring Nexus AI.</p>
+      </div>
+
+     <button class="upgrade-settings-btn" id="upgradeProBtn">
+  Upgrade to Pro →
+</button>
+    </div>
+
+    <div class="usage-grid">
+
+      <div class="usage-card">
+        <span>MESSAGES</span>
+        <strong>12 / 20</strong>
+        <p>Daily usage</p>
+      </div>
+
+      <div class="usage-card">
+        <span>RESEARCH</span>
+        <strong>4 / 10</strong>
+        <p>Monthly usage</p>
+      </div>
+
+      <div class="usage-card">
+        <span>STORAGE</span>
+        <strong>1.2 GB</strong>
+        <p>Of 5 GB</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- APPEARANCE -->
+<section class="page settings-subpage" id="appearance-settings">
+  <div class="inner-page">
+
+    <button class="settings-back" data-back-settings>
+      ← Back to Settings
+    </button>
+
+    <div class="eyebrow">APPEARANCE</div>
+    <h2>Make it yours.</h2>
+    <p class="settings-intro">
+      Customize the way Nexus AI looks and feels.
+    </p>
+
+    <div class="settings-detail-card notification-row">
+      <div>
+        <strong>Dark theme</strong>
+        <p>Keep the cinematic dark Nexus AI interface enabled.</p>
+      </div>
+
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="settings-detail-card notification-row">
+      <div>
+        <strong>Glass effects</strong>
+        <p>Use translucent glass surfaces throughout the interface.</p>
+      </div>
+
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+    <div class="settings-detail-card notification-row">
+      <div>
+        <strong>Motion effects</strong>
+        <p>Enable floating and transition animations.</p>
+      </div>
+
+      <label class="toggle">
+        <input type="checkbox" checked>
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+
+  </div>
+</section>
+
+    </main>
+
+  </div>
+
+
+  <!-- TOAST -->
+  <div id="toast" class="toast"></div>
+
+  <script src="dashboard.js"></script>
+
+</body>
+</html>

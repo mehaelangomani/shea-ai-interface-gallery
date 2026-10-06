@@ -61,9 +61,9 @@
         e.preventDefault();
         document.body.classList.add("page-leaving");
         document.body.classList.remove("page-enter");
-        setTimeout(() => {
+        window.setTimeout(() => {
           window.location.href = link.href;
-        }, 280);
+        }, 480);
       });
     });
   }
@@ -1102,10 +1102,201 @@
     });
   }
 
+
+  /* ===== Global inner-page reveal + neon interactions ===== */
+  function initGlobalPageMotion() {
+    if (document.body?.dataset.page === "home") return;
+
+    const revealSelector = [
+      ".page-inner > .page-title",
+      ".page-inner > .page-lead",
+      ".page-inner > .generator-grid",
+      ".page-inner > .collection-tabs",
+      ".page-inner > .collection-grid",
+      ".page-inner > .about-steps",
+      ".page-inner > .style-grid",
+      ".page-inner > .style-actions",
+      ".page-inner > .payment-panel",
+      ".page-inner > .payment-state-card",
+      ".login-brand-title",
+      ".login-brand-tagline",
+      ".auth-heading",
+      ".auth-lead",
+      ".auth-form > *",
+      ".auth-divider",
+      ".auth-switch",
+      ".payment-app > .pricing-intro",
+      ".payment-app > .pricing-grid",
+      ".payment-app > .payment-panel",
+      ".site-footer-min"
+    ].join(", ");
+
+    const fineRevealSelector = [
+      ".page-inner .page-title",
+      ".page-inner .page-lead",
+      ".page-inner h2",
+      ".page-inner h3",
+      ".page-inner p",
+      ".page-inner label",
+      ".page-inner li",
+      ".page-inner dt",
+      ".page-inner dd",
+      ".page-inner .field-label",
+      ".page-inner .pricing-badge",
+      ".page-inner .btn-primary",
+      ".page-inner .btn-ghost",
+      ".page-inner .chip",
+      ".page-inner .collection-tabs button",
+      ".page-inner .collection-card-actions button",
+      ".login-brand-title",
+      ".login-brand-tagline",
+      ".auth-heading",
+      ".auth-lead",
+      ".auth-field",
+      ".auth-row",
+      ".auth-divider",
+      ".auth-switch",
+      ".auth-submit"
+    ].join(", ");
+
+    const cardSelector = [
+      ".style-tile",
+      ".collection-card",
+      ".collection-card-visual",
+      ".generator-preview",
+      ".pricing-card",
+      ".payment-state-card",
+      ".auth-view",
+      ".about-step",
+      ".outfit-visual",
+      ".result-meta",
+      ".result-actions"
+    ].join(", ");
+
+    function markElements() {
+      const revealItems = document.querySelectorAll(revealSelector);
+      const fineItems = document.querySelectorAll(fineRevealSelector);
+
+      [...revealItems, ...fineItems].forEach((el) => {
+        if (el.closest(".site-header")) return;
+        el.classList.add("page-reveal-item");
+      });
+
+      document.querySelectorAll(cardSelector).forEach((card, index) => {
+        if (card.closest(".site-header")) return;
+        card.classList.add("neon-card", "page-reveal-item");
+        if (!card.style.getPropertyValue("--float-delay")) {
+          card.style.setProperty("--float-delay", `${(index % 7) * -180}ms`);
+        }
+      });
+    }
+
+    function revealAll() {
+      const items = document.querySelectorAll(".page-reveal-item");
+      items.forEach((el, index) => {
+        if (el.dataset.revealDone === "1") return;
+        el.dataset.revealDone = "1";
+        el.style.setProperty("--reveal-delay", `${Math.min(index * 55, 700)}ms`);
+        requestAnimationFrame(() => el.classList.add("is-revealed"));
+      });
+    }
+
+    const motionCards = new Map();
+    let motionFrame = 0;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    function bindNeonPointer(card) {
+      if (card.dataset.neonBound === "1") return;
+      card.dataset.neonBound = "1";
+
+      const state = {
+        tx: 0, ty: 0, rx: 0, ry: 0,
+        currentRx: 0, currentRy: 0, currentLift: 0,
+        phase: Math.random() * Math.PI * 2,
+      };
+      motionCards.set(card, state);
+
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+        const nx = (x - 50) / 50;
+        const ny = (y - 50) / 50;
+
+        card.style.setProperty("--mx", `${x}%`);
+        card.style.setProperty("--my", `${y}%`);
+        state.tx = nx;
+        state.ty = ny;
+        state.rx = ny * -8.5;
+        state.ry = nx * 11;
+      });
+
+      const reset = () => {
+        state.tx = 0;
+        state.ty = 0;
+        state.rx = 0;
+        state.ry = 0;
+        state.currentZ = 0;
+        card.style.setProperty("--mx", "50%");
+        card.style.setProperty("--my", "50%");
+      };
+
+      card.addEventListener("pointerleave", reset);
+      card.addEventListener("blur", reset, true);
+    }
+
+    function animateCards(time) {
+      motionCards.forEach((state, card) => {
+        if (!card.isConnected) {
+          motionCards.delete(card);
+          return;
+        }
+
+        const targetRx = reducedMotion.matches ? 0 : state.rx;
+        const targetRy = reducedMotion.matches ? 0 : state.ry;
+        state.currentRx += (targetRx - state.currentRx) * 0.12;
+        state.currentRy += (targetRy - state.currentRy) * 0.12;
+
+        const hovering = state.rx !== 0 || state.ry !== 0;
+        const hoverLift = hovering ? -10 : 0;
+        const floatY = reducedMotion.matches ? 0 : Math.sin(time / 1150 + state.phase) * 2.2;
+        const lift = hoverLift + floatY;
+        const targetZ = reducedMotion.matches ? 0 : (hovering ? 18 : 0);
+        state.currentZ += (targetZ - state.currentZ) * 0.14;
+
+        card.style.transform = `perspective(1050px) rotateX(${state.currentRx}deg) rotateY(${state.currentRy}deg) translate3d(0, ${lift}px, ${state.currentZ}px)`;
+        card.style.setProperty("--shadow-x", `${state.currentRy * 0.7}px`);
+        card.style.setProperty("--shadow-y", `${Math.max(2, -state.currentRx * 0.55 + 6)}px`);
+      });
+      motionFrame = requestAnimationFrame(animateCards);
+    }
+
+    function bindAll() {
+      markElements();
+      document.querySelectorAll(".neon-card").forEach(bindNeonPointer);
+      revealAll();
+      if (!motionFrame) motionFrame = requestAnimationFrame(animateCards);
+    }
+
+    bindAll();
+
+    const observer = new MutationObserver(() => {
+      markElements();
+      document.querySelectorAll(".neon-card").forEach(bindNeonPointer);
+      revealAll();
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
   /* ===== Boot ===== */
   document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     initPageTransitions();
+    initGlobalPageMotion();
     initMobileNav();
     initAuthNav();
     markCurrentNav();
