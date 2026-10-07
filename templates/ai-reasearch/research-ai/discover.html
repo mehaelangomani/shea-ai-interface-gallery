@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResearchAI — Discover</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .workspace-page-content {
+            padding: 42px;
+        }
+
+        .page-intro {
+            margin-bottom: 30px;
+        }
+
+        .page-intro .small-label {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .page-intro h3 {
+            font-size: 34px;
+            margin: 0 0 10px;
+        }
+
+        .page-intro p {
+            color: #a5a5b3;
+            max-width: 700px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .discover-search {
+            display: flex;
+            gap: 12px;
+            padding: 8px;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 16px;
+            background: rgba(255,255,255,.025);
+            margin-bottom: 28px;
+        }
+
+        .discover-search input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px;
+            font-size: 15px;
+        }
+
+        .discover-search button {
+            border: none;
+            background: white;
+            color: #111;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .discover-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .discover-card {
+            padding: 24px;
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 18px;
+            background: rgba(255,255,255,.035);
+            transition: .25s ease;
+        }
+
+        .discover-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(130,100,255,.45);
+            background: rgba(255,255,255,.055);
+        }
+
+        .discover-card span {
+            color: #9a7cff;
+            font-size: 12px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .discover-card h4 {
+            font-size: 20px;
+            margin: 12px 0 10px;
+        }
+
+        .discover-card p {
+            color: #9999a6;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .discover-card .meta {
+            display: flex;
+            gap: 18px;
+            margin-top: 18px;
+            color: #777785;
+            font-size: 13px;
+        }
+
+        @media (max-width: 800px) {
+            .workspace-page-content {
+                padding: 24px;
+            }
+
+            .discover-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="background-layer"></div>
+<div class="background-overlay"></div>
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <span class="logo-text">
+            Research<span>AI</span>
+        </span>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html" class="nav-link">
+            Home
+        </a>
+
+        <a href="index.html#resources" class="nav-link">
+            Resources
+        </a>
+
+        <a href="index.html#pricing" class="nav-link">
+            Pricing
+        </a>
+        <a href="solutions.html" class="nav-link active">
+            Solutions
+        </a>
+        <a href="settings.html" class="nav-link">
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+        <button class="search-button">⌕</button>
+        <button class="signin-button">Sign in</button>
+        <button class="primary-small">Get started</button>
+        <a href="profile.html" class="profile-nav-link" aria-label="Open profile">
+                <span class="profile-avatar">
+                    S
+                </span>
+            </a>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="workspace-section">
+
+    <div class="section-heading">
+
+        <span>AI RESEARCH WORKSPACE</span>
+
+        <h2>
+            Discover
+            <em>new knowledge.</em>
+        </h2>
+
+        <p>
+            Find relevant papers, emerging topics, researchers and ideas
+            across your field of interest.
+        </p>
+
+    </div>
+
+
+    <div class="workspace">
+
+        <aside class="workspace-sidebar">
+
+            <div class="workspace-title">
+                Research
+            </div>
+
+            <a href="solutions.html" class="workspace-item">
+                ✦ Overview
+            </a>
+
+            <a href="discover.html" class="workspace-item active">
+                ⌕ Discover
+            </a>
+
+            <a href="sources.html" class="workspace-item">
+                ◈ Sources
+            </a>
+
+            <a href="notes.html" class="workspace-item">
+                ✎ Notes
+            </a>
+
+            <a href="insights.html" class="workspace-item">
+                ◉ Insights
+            </a>
+
+        </aside>
+
+
+        <div class="workspace-main">
+
+            <div class="workspace-page-content">
+
+                <div class="page-intro">
+
+                    <span class="small-label">
+                        DISCOVER RESEARCH
+                    </span>
+
+                    <h3>
+                        Explore what's happening in research.
+                    </h3>
+
+                    <p>
+                        Search across topics, papers and research areas
+                        to discover useful knowledge for your next project.
+                    </p>
+
+                </div>
+
+
+                <div class="discover-search">
+
+                    <input
+                        type="text"
+                        id="discoverInput"
+                        placeholder="Search papers, topics, researchers..."
+                    >
+
+                    <button id="discoverButton">
+                        Discover
+                    </button>
+
+                </div>
+
+
+                <div class="discover-grid">
+
+                    <div class="discover-card">
+
+                        <span>Artificial Intelligence</span>
+
+                        <h4>
+                            Generative AI in Higher Education
+                        </h4>
+
+                        <p>
+                            Explore recent research on AI-assisted learning,
+                            assessment and academic workflows.
+                        </p>
+
+                        <div class="meta">
+                            <span>2026</span>
+                            <span>Research Paper</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="discover-card">
+
+                        <span>Technology</span>
+
+                        <h4>
+                            Large Language Models for Discovery
+                        </h4>
+
+                        <p>
+                            Research exploring how language models can support
+                            literature review and scientific discovery.
+                        </p>
+
+                        <div class="meta">
+                            <span>2026</span>
+                            <span>Research Paper</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="discover-card">
+
+                        <span>Education</span>
+
+                        <h4>
+                            Personalized Learning with AI
+                        </h4>
+
+                        <p>
+                            Discover studies examining adaptive learning
+                            systems and personalized education.
+                        </p>
+
+                        <div class="meta">
+                            <span>2025</span>
+                            <span>Journal Article</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="discover-card">
+
+                        <span>Emerging Topic</span>
+
+                        <h4>
+                            Human-AI Collaboration
+                        </h4>
+
+                        <p>
+                            Explore how researchers are studying collaboration
+                            between humans and intelligent systems.
+                        </p>
+
+                        <div class="meta">
+                            <span>2025</span>
+                            <span>Research Report</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        Research<span>AI</span>
+    </div>
+
+    <p>
+        Research smarter. Discover deeper.
+    </p>
+
+    <span>
+        © 2026 ResearchAI
+    </span>
+
+</footer>
+
+
+<script>
+
+const discoverInput = document.getElementById("discoverInput");
+const discoverButton = document.getElementById("discoverButton");
+
+discoverButton.addEventListener("click", () => {
+
+    const value = discoverInput.value.trim();
+
+    if (!value) {
+        discoverInput.focus();
+        return;
+    }
+
+    alert("Searching ResearchAI for: " + value);
+
+});
+
+</script>
+
+</body>
+</html>

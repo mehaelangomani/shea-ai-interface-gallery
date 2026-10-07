@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#000"
+  >
+
+  <title>
+    Premium — LingoLens
+  </title>
+
+  <meta
+    name="description"
+    content="Compare the Free and Premium LingoLens plans."
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <script
+    src="script.js"
+    defer
+  ></script>
+
+</head>
+
+
+<body>
+
+  <main class="page pricing-page">
+
+    <!-- BACKGROUND VIDEO -->
+
+    <video
+      class="background"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+
+      <source
+        src="assets/background.webm"
+        type="video/webm"
+      >
+
+      <source
+        src="assets/background.mp4"
+        type="video/mp4"
+      >
+
+    </video>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="LingoLens home"
+      >
+        LL
+      </a>
+
+
+      <div
+        class="header-actions"
+        id="headerActions"
+      >
+
+        <nav
+          class="nav"
+          aria-label="Main navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="scan.html">
+            Scan &amp; Translate
+          </a>
+
+          <a href="conversation.html">
+            Conversation
+          </a>
+
+          <a class="active" aria-current="page" href="pricing.html">Premium</a>
+
+          <a href="settings.html">
+            Settings
+          </a>
+
+        </nav>
+<a
+          class="signin-link"
+          href="signin.html"
+        >
+          Sign In
+        </a>
+
+      </div>
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="headerActions"
+      >
+
+        <span
+          class="burger"
+          aria-hidden="true"
+        >
+
+          <i></i>
+          <i></i>
+          <i></i>
+
+        </span>
+
+      </button>
+
+    </header>
+
+
+    <!-- PRICING CONTENT -->
+
+    <section class="page-content pricing-content">
+<!-- PRICING HEADING -->
+
+      <div class="pricing-head">
+
+        <div class="eyebrow">
+          PREMIUM
+        </div>
+
+        <h1>
+          Translate without limits.
+        </h1>
+
+        <p class="lead">
+          Choose the experience that fits the way you move through the world.
+        </p>
+
+      </div>
+
+
+      <!-- PRICING CARDS -->
+
+      <div class="pricing-grid">
+
+
+        <!-- FREE PLAN -->
+
+        <article class="price-option card">
+
+          <span>
+            FREE
+          </span>
+
+          <strong>
+            $0
+          </strong>
+
+          <p>
+            For trying LingoLens on everyday scans.
+          </p>
+
+          <ul>
+
+            <li>
+              Limited scans
+            </li>
+
+            <li>
+              Core language detection
+            </li>
+
+            <li>
+              Phrasebook
+            </li>
+
+          </ul>
+
+          <a
+            class="light-button"
+            href="scan.html"
+          >
+            Get Started
+          </a>
+
+        </article>
+
+
+        <!-- PREMIUM PLAN -->
+
+        <article class="price-option card featured">
+
+          <span>
+            PREMIUM
+          </span>
+
+          <strong>
+            $9<span>/mo</span>
+          </strong>
+
+          <p>
+            For frequent travelers, learners, and global teams.
+          </p>
+
+          <ul>
+
+            <li>
+              Unlimited scans
+            </li>
+
+            <li>
+              Conversation mode
+            </li>
+
+            <li>
+              Expanded language support
+            </li>
+
+            <li>
+              Unlimited Visual Library
+            </li>
+
+          </ul>
+
+          <button
+            class="light-button"
+            id="premiumStart"
+            type="button"
+          >
+            Get Started
+          </button>
+
+        </article>
+
+      </div>
+
+
+      <!-- STATUS -->
+
+      <p
+        class="status"
+        id="pricingStatus"
+        aria-live="polite"
+      ></p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <span class="footer-brand">
+        LL
+      </span>
+
+      <span>
+        © 2026 LingoLens · Scan to translate
+      </span>
+
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

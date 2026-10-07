@@ -1,0 +1,2054 @@
+[hidden]{display:none!important}
+@font-face{font-family:"Reference Display";src:url("assets/display.ttf") format("truetype");font-weight:400 900;font-display:swap}@font-face{font-family:"Reference Sans";src:url("assets/sans.ttf") format("truetype");font-weight:100 900;font-display:swap}:root{--fg:#f4f4f4;--muted:rgba(244,244,244,.76);--copy:rgba(244,244,244,.86);--ink:#111414;--border:rgba(255,255,255,.18);--glass:rgba(14,17,18,.68);--gutter:clamp(24px,4.18vw,96px);--top:clamp(20px,2.26vh,30px);font-family:"Reference Sans",Arial,sans-serif;color:var(--fg);color-scheme:dark}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#000;color:var(--fg)}body{overflow-x:hidden}button,input,a{font:inherit}button,a{cursor:pointer;-webkit-tap-highlight-color:transparent}a{color:inherit;text-decoration:none}button{border:0}.page{position:relative;min-height:100svh;isolation:isolate;overflow:hidden;background:#000}.background{position:fixed;inset:0;z-index:-1;width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none;user-select:none}.header{position:fixed;left:var(--gutter);right:var(--gutter);top:var(--top);height:48px;display:flex;align-items:flex-start;z-index:10;white-space:nowrap}.brand{position:relative;top:10px;width:25px;height:25px;display:block;flex:none}.brand svg{width:100%;height:100%}.header-actions{display:flex;align-items:flex-start;flex:1}.nav{display:flex;gap:clamp(18px,2.4vw,40px);margin-left:clamp(28px,3.03vw,48px);position:relative;top:9px}.nav a,.header-link,.signin-link{font-size:14px;color:rgba(255,255,255,.78);text-shadow:0 1px 3px #000}.nav a.active{color:#fff}.nav a.active:after{content:"";display:block;margin-top:7px;width:30px;height:1px;background:#fff}.header-link{margin-left:auto;position:relative;top:8px}.signin-link{margin-left:22px;position:relative;top:8px}.menu-toggle{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--border);border-radius:10px;background:rgba(10,12,13,.45);color:#fff}.page-content,.home-content{position:relative;z-index:1;padding:clamp(118px,14vh,150px) var(--gutter) 70px;max-width:1450px;margin:0 auto}.home-content{min-height:100svh;padding-top:clamp(210px,30vh,310px);padding-bottom:50px}.eyebrow{font-size:11px;letter-spacing:.2em;font-weight:600;color:rgba(255,255,255,.72);margin-bottom:20px}.home-content h1,.page-content h1{font-family:"Reference Display","Reference Sans",sans-serif;font-size:clamp(56px,7.4vw,104px);line-height:.93;font-weight:500;letter-spacing:-.035em;margin:0;text-shadow:0 2px 5px rgba(0,0,0,.45)}.hero-copy,.lead{font-size:clamp(15px,1.2vw,18px);line-height:1.55;color:var(--copy);max-width:590px;margin:25px 0}.home-actions{display:flex;align-items:center;gap:24px;margin-top:28px}.light-button{display:inline-flex;align-items:center;justify-content:center;gap:16px;min-height:44px;padding:0 18px;border-radius:7px;background:#f4f4f4;color:#101313;font-size:15px;font-weight:520;box-shadow:0 2px 9px rgba(0,0,0,.3);transition:transform .18s,filter .18s}.light-button:hover{transform:translateY(-2px);filter:brightness(1.04)}.text-button{background:none;color:#fff;padding:8px 0;font-size:14px}.text-button:hover{text-decoration:underline}.sample-row{display:flex;gap:14px;margin-top:42px}.sample-row a{display:block;width:clamp(120px,12vw,165px)}.sample-row img{display:block;width:100%;height:86px;object-fit:cover;border-radius:10px;border:1px solid rgba(255,255,255,.2);transition:transform .2s}.sample-row a:hover img{transform:translateY(-3px)}.sample-row span{display:block;font-size:11px;margin-top:8px;color:rgba(255,255,255,.75)}.scan-layout{max-width:1280px}.scan-workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,.72fr);gap:42px;align-items:start;margin-top:40px}.scan-zone,.translation-panel{border:1px solid var(--border);background:rgba(8,10,11,.22);padding:30px}.scan-zone{min-height:390px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}.scan-zone h2{font-size:24px;margin:8px 0}.scan-zone p{color:var(--muted);margin:0 0 20px}.scan-icon{font-size:54px;line-height:1;transform:rotate(90deg);opacity:.9}.scan-preview{display:none;width:100%;max-height:390px;object-fit:contain}.scan-zone.has-image .scan-preview{display:block}.scan-zone.has-image>*:not(.scan-preview){display:none}.language-row{display:flex;align-items:center;gap:10px}.language-select,.swap-button{background:transparent;border:1px solid var(--border);color:#fff;min-height:42px;padding:0 14px;border-radius:6px}.language-select{flex:1;text-align:left;display:flex;justify-content:space-between}.swap-button{width:46px}.detected-label{font-size:11px;letter-spacing:.14em;color:rgba(255,255,255,.62);margin:30px 0 12px;text-transform:uppercase}.translation-output{min-height:190px;font-size:24px;line-height:1.35;color:#fff}.action-row{display:flex;align-items:center;gap:18px;margin-top:24px}.status{min-height:20px;color:rgba(255,255,255,.72);font-size:13px;margin:16px 0}.split-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}.phrase-tools{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:36px 0 20px}.search-input{width:min(420px,100%);height:44px;border:1px solid var(--border);background:rgba(8,10,11,.25);color:#fff;padding:0 14px;border-radius:6px;outline:none}.filter-buttons{display:flex;gap:12px}.filter{background:none;color:rgba(255,255,255,.64);padding:7px 0}.filter.active{color:#fff;border-bottom:1px solid #fff}.phrase-list{max-width:900px}.phrase-item{position:relative;padding:24px 60px 24px 0;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:5px}.phrase-item strong{font-size:22px;font-weight:500}.phrase-item>span:not(.phrase-category){color:var(--muted)}.phrase-category{font-size:10px;letter-spacing:.16em;color:rgba(255,255,255,.52)}.play-phrase{position:absolute;right:0;top:50%;transform:translateY(-50%);width:40px;height:40px;border:1px solid var(--border);background:transparent;color:#fff;border-radius:50%}.conversation-page{max-width:1180px}.conversation-top{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}.language-pair{display:flex;align-items:center;gap:8px}.language-pair button{border:1px solid var(--border);background:rgba(8,10,11,.2);color:#fff;padding:11px 14px}.conversation-stream{margin-top:42px;min-height:340px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:30px 0;display:flex;flex-direction:column;gap:18px}.bubble{max-width:62%;padding:16px 18px;border:1px solid var(--border);font-size:18px;line-height:1.4}.bubble.left{align-self:flex-start}.bubble.right{align-self:flex-end;text-align:right}.bubble span{display:block;font-size:9px;letter-spacing:.18em;color:rgba(255,255,255,.48);margin-bottom:8px}.conversation-controls{display:flex;gap:12px;align-items:center;margin-top:22px}.conversation-input{flex:1;height:46px;background:rgba(8,10,11,.25);border:1px solid var(--border);color:#fff;padding:0 14px}.round-button{width:46px;height:46px;border-radius:50%;background:#fff;color:#111}.library-grid{margin-top:42px;display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-auto-rows:220px;gap:16px}.library-image{position:relative;overflow:hidden;display:block;border:1px solid var(--border)}.library-image.tall{grid-row:span 2}.library-image.wide{grid-column:2/4}.library-image img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}.library-image:hover img{transform:scale(1.035)}.library-image span{position:absolute;left:14px;bottom:12px;font-size:12px;text-shadow:0 2px 8px #000}.source-note{font-size:11px;color:rgba(255,255,255,.48);margin-top:16px}.settings-grid{display:grid;grid-template-columns:.7fr 1fr;gap:70px;margin-top:46px;max-width:1100px}.profile-area{display:flex;gap:20px;align-items:center}.profile-area h2{font-size:24px;margin:0 0 6px}.profile-area p{margin:0 0 12px;color:var(--muted);font-size:14px}.profile-photo-wrap{position:relative;width:100px;height:100px;flex:none}.profile-photo-wrap img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:1px solid var(--border)}.photo-button{position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:10px;background:#fff;color:#111;padding:5px 8px;border-radius:4px;cursor:pointer}.settings-list{border-top:1px solid var(--border)}.setting-row{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 0;background:none;color:#fff;border-bottom:1px solid var(--border);text-align:left}.setting-row span{font-size:15px}.setting-row small{display:block;font-size:9px;letter-spacing:.15em;color:rgba(255,255,255,.45);margin-bottom:5px}.setting-row b{font-size:12px;font-weight:400;color:rgba(255,255,255,.6)}.settings-detail{margin-top:26px;border-top:1px solid var(--border);padding-top:20px;max-width:700px}.settings-detail h3{font-size:18px}.history-line{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);font-size:13px}.auth-content{max-width:560px;padding:22vh var(--gutter) 60px}.auth-form{max-width:420px;margin-top:34px;display:grid;gap:18px}.auth-form label{font-size:12px;color:var(--muted)}.auth-form input{display:block;width:100%;height:46px;margin-top:7px;background:rgba(8,10,11,.25);border:1px solid var(--border);color:#fff;padding:0 13px}.pricing-content{max-width:1000px}.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}.price-option{border-top:1px solid var(--border);padding:24px 0 0}.price-option.featured{border-top-color:#fff}.price-option>span{font-size:10px;letter-spacing:.18em;color:rgba(255,255,255,.55)}.price-option strong{display:block;font-family:"Reference Display",sans-serif;font-size:64px;font-weight:500;margin:12px 0}.price-option strong span{font-family:"Reference Sans";font-size:15px;color:var(--muted)}.price-option p{color:var(--muted);max-width:400px;line-height:1.5}.price-option ul{list-style:none;padding:0;margin:22px 0;display:grid;gap:10px;color:rgba(255,255,255,.78);font-size:14px}.price-option li:before{content:"✓";margin-right:10px}.pricing-page @media(max-width:1100px){.nav{gap:16px}.nav a{font-size:12px}.scan-workspace,.settings-grid{grid-template-columns:1fr}.library-grid{grid-template-columns:1fr 1fr;grid-auto-rows:220px}.library-image.tall{grid-row:auto}.library-image.wide{grid-column:1/3}.settings-grid{gap:35px}}@media(max-width:800px){.header-actions{position:absolute;top:58px;right:0;width:min(360px,calc(100vw - 2 * var(--gutter)));padding:24px;border:1px solid var(--border);background:rgba(7,9,10,.72);display:flex;flex-direction:column;gap:18px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:.18s}.header.menu-open .header-actions{opacity:1;visibility:visible;transform:none}.nav{flex-direction:column;margin:0;gap:18px;top:0}.nav a.active:after{display:none}.header-link,.signin-link{top:0;margin:0}.menu-toggle{display:block}.home-content{padding-top:190px}.sample-row{margin-top:30px}.split-heading,.conversation-top{flex-direction:column;align-items:flex-start}.phrase-tools{align-items:flex-start;flex-direction:column}.conversation-stream{min-height:300px}.bubble{max-width:85%}}@media(max-width:600px){.page-content,.home-content{padding-left:24px;padding-right:24px}.home-content h1,.page-content h1{font-size:clamp(48px,15vw,72px)}.sample-row{gap:8px}.sample-row a{width:31%}.sample-row img{height:72px}.scan-workspace{gap:22px}.scan-zone,.translation-panel{padding:20px}.library-grid{grid-template-columns:1fr;grid-auto-rows:230px}.library-image.wide{grid-column:auto}.pricing-grid{grid-template-columns:1fr}.pricing-content{padding-top:140px}.auth-content{padding-top:160px}.conversation-controls{flex-wrap:wrap}.conversation-input{flex-basis:100%}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}.background{animation:none}}
+
+/* ===== Revision: shared layout, nav, type scale ===== */
+:root{--nav-h:56px;--h1:clamp(40px,4.6vw,72px);--lead:clamp(15px,1.1vw,17px);--page-top:clamp(120px,15vh,150px);--card-bg:linear-gradient(135deg,rgba(31,24,20,.75),rgba(56,32,20,.75));--card-border:rgba(255,150,100,.25)}
+.header{height:var(--nav-h);align-items:stretch}
+.header:after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.32);pointer-events:none}
+.brand{top:0;width:auto;height:auto;display:flex;align-items:center;font-family:"Reference Display","Reference Sans",sans-serif;font-size:20px;font-weight:600;letter-spacing:.02em;color:#fff}
+.header-actions{align-items:stretch}
+.nav{top:0;align-items:stretch;gap:clamp(20px,2.4vw,40px);margin-left:clamp(32px,3.4vw,56px)}
+.nav a,.header-link,.signin-link{position:relative;top:0;display:flex;align-items:center;font-size:14px;line-height:1}
+.nav a.active:after,.header-link.active:after,.signin-link.active:after{content:"";position:absolute;left:-8px;right:-8px;bottom:0;margin:0;width:auto;height:2px;background:#fff;display:block}
+.header-link{margin-left:auto}.signin-link{margin-left:auto}
+.page-content,.home-content{padding:var(--page-top) var(--gutter) 60px}
+.home-content h1,.page-content h1{font-size:var(--h1);line-height:1;letter-spacing:-.03em}
+.hero-copy,.lead{font-size:var(--lead);line-height:1.6;margin:22px 0}
+.eyebrow{margin-bottom:18px}
+.light-button{min-height:44px;font-size:15px}
+.page{display:flex;flex-direction:column}.page>section{flex:1;width:100%}
+/* hamburger */
+.menu-toggle{position:relative;align-self:center;padding:0}
+.burger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:20px;margin:auto}
+.burger i{display:block;height:1.5px;width:100%;background:#fff;border-radius:2px}
+/* footer */
+.site-footer{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:0 var(--gutter);padding:22px 0 26px;border-top:1px solid rgba(255,255,255,.18);font-size:12px;color:rgba(255,255,255,.6)}
+.footer-brand{font-family:"Reference Display","Reference Sans",sans-serif;font-weight:600;font-size:15px;color:#fff}
+/* cards (reference style) */
+.card{position:relative;background:var(--card-bg);border:1px solid var(--card-border);border-radius:22px;box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(255,110,60,.08),inset 0 1px 0 rgba(255,170,120,.08)}
+.card-icon{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;background:radial-gradient(circle at 35% 30%,#f0734a,#a8321c 60%,#5a1c10);box-shadow:0 0 28px rgba(240,100,60,.35);margin-bottom:12px}
+.card-arrow{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,190,160,.6);display:inline-flex;align-items:center;justify-content:center;color:#fff;background:transparent}
+/* ===== Home ===== */
+.home-content{display:grid;grid-template-columns:minmax(0,1fr) clamp(220px,22vw,320px);gap:clamp(40px,6vw,110px);align-items:center;max-width:1450px;min-height:auto;padding-top:var(--page-top)}
+.home-hero{max-width:640px}
+.sample-row{flex-direction:column;gap:16px;margin:0}
+.sample-row a{width:100%;position:relative}
+.sample-row img{height:clamp(130px,15vh,170px);border-radius:14px}
+.sample-row span{position:absolute;left:12px;bottom:10px;margin:0;font-size:12px;color:#fff;text-shadow:0 1px 6px #000}
+/* ===== Scan ===== */
+.scan-layout{max-width:1450px;display:grid;grid-template-columns:minmax(240px,.8fr) minmax(0,1.1fr) minmax(0,1fr);gap:clamp(28px,3vw,48px);align-items:start}
+.scan-heading h1{font-size:clamp(36px,3.4vw,54px)}
+.scan-heading h1{
+  font-size:clamp(52px,5vw,78px);
+  line-height:.98;
+  max-width:500px;
+  margin:0;
+}
+
+.scan-input-area{margin-top:0}
+.scan-zone{min-height:360px;padding:30px;border:1px solid var(--card-border)}
+.scan-zone.has-image{padding:14px}
+.scan-zone.has-image>*:not(.scan-preview):not(.change-image){display:none}
+.change-image{display:none}.scan-zone.has-image .change-image{display:inline-block}
+.scan-preview{border-radius:12px}
+.scan-lead{margin-top:20px}
+.translation-panel{margin-top:clamp(60px,9vh,110px);padding:28px;border:1px solid var(--card-border)}
+.language-select,.swap-button{border-color:rgba(255,170,130,.28)}
+/* ===== Conversation ===== */
+.conversation-page{max-width:1450px;display:grid;grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr);gap:clamp(40px,5vw,90px);align-items:start}
+.conversation-top{display:block}
+.conversation-top h1{
+  font-size:82px;
+  line-height:.95;
+}
+.language-pair{margin-top:8px}
+.conversation-app{min-width:0}
+.app-tabs{display:flex;gap:28px;border-bottom:1px solid var(--border)}
+.app-tab{background:none;color:rgba(255,255,255,.62);padding:12px 0;font-size:15px;position:relative}
+.app-tab.active{color:#fff}.app-tab.active:after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#fff}
+.conversation-stream{margin-top:0;border-top:0;min-height:320px;max-height:420px;overflow-y:auto}
+#phrasebook .phrase-tools{margin:24px 0 14px}
+#phrasebook .filter-buttons{margin-bottom:12px}
+.phrase-list{max-width:none}
+/* ===== Library ===== */
+.library-page{max-width:1450px}
+.library-grid{margin-top:0;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:18px;grid-template-areas:"a b c d" "e t t f" "g h i j"}
+.library-image{border-radius:14px;grid-row:auto!important;grid-column:auto!important}
+.p0{grid-area:a}.p1{grid-area:b}.p2{grid-area:c}.p3{grid-area:d}.p4{grid-area:e}.p5{grid-area:f}.p6{grid-area:g}.p7{grid-area:h}.p8{grid-area:i}.p9{grid-area:j}
+.library-center{grid-area:t;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px 20px}
+.library-center h1{font-size:clamp(32px,3vw,48px)}
+.library-center .lead{margin:14px auto 18px;max-width:460px}
+.library-center .eyebrow{margin-bottom:12px}
+/* ===== Settings ===== */
+.settings-page{max-width:1100px}
+.settings-head{display:flex;align-items:center;gap:clamp(30px,5vw,80px);flex-wrap:wrap}
+.profile-area{flex-direction:column;align-items:center;text-align:center;gap:4px}
+.profile-initial{width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:"Reference Display","Reference Sans",sans-serif;font-size:26px;font-weight:600;color:#fff;background:radial-gradient(circle at 30% 25%,#f28a5c,#b2391f 55%,#4a160c);border:1px solid rgba(255,170,130,.5);box-shadow:0 0 22px rgba(240,100,60,.3);margin-bottom:8px}
+.profile-area h2{font-size:16px;margin:0}
+.profile-area p{font-size:13px;margin:0}
+.profile-area .text-button{font-size:12px;padding:4px 0}
+.settings-list{margin-top:44px;max-width:820px}
+.setting-row{padding:24px 0}
+.setting-row span{font-size:20px}
+.setting-row small{font-size:10px}
+.setting-row b{font-size:14px}
+/* ===== Pricing ===== */
+.pricing-content{max-width:1000px;text-align:left}
+.pricing-head{text-align:center}
+.pricing-head h1{white-space:nowrap;font-size:clamp(28px,4.4vw,64px)}
+.pricing-head .lead{margin:16px auto 0}
+.pricing-grid{gap:24px}
+.price-option{padding:30px;border-top:1px solid var(--card-border)}
+.price-option.featured{border-color:rgba(255,150,100,.5);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 50px rgba(255,110,60,.16)}
+/* ===== Sign in ===== */
+.auth-content {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.auth-content h1 {
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.auth-content > .eyebrow {
+  text-align: center;
+}
+
+.auth-content > h1 {
+  text-align: center;
+}
+
+.auth-form {
+  gap: 18px;
+}
+.auth-form input:not([type=checkbox]){height:48px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(8,10,11,.35);transition:border-color .2s}
+.auth-form input:focus{border-color:rgba(255,150,100,.7);outline:none}
+.password-wrap{position:relative;display:block}
+.show-pass{position:absolute;right:10px;top:50%;transform:translateY(-50%);margin-top:3px;background:none;color:rgba(255,255,255,.7);font-size:12px}
+.auth-row{display:flex;justify-content:space-between;align-items:center}
+.check{display:flex;align-items:center;gap:8px}
+.auth-row .text-button{font-size:12px}
+.auth-form .light-button{width:100%;border-radius:10px}
+.auth-alt{margin:0;font-size:13px;color:var(--muted);text-align:center}.auth-alt a{color:#fff;text-decoration:underline}
+/* ===== Responsive ===== */
+@media(max-width:1100px){
+ .scan-layout{grid-template-columns:1fr 1fr}.scan-heading{grid-column:1/-1}.translation-panel{margin-top:60px}
+ .conversation-page{grid-template-columns:1fr}
+ .settings-grid{grid-template-columns:1fr}
+}
+@media(max-width:900px){
+ .library-grid{grid-template-columns:1fr 1fr;grid-auto-rows:180px;grid-template-areas:"a b" "c d" "t t" "e f" "g h" "i j"}
+ .library-center{padding:30px 10px}
+}
+@media(max-width:800px){
+ :root{--h1:clamp(34px,8vw,46px);--page-top:110px}
+ .header-actions{top:calc(var(--nav-h) + 8px);align-items:flex-start;border-radius:14px}
+ .nav{align-items:flex-start}.nav a,.header-link,.signin-link{font-size:15px}
+ .nav a.active:after,.header-link.active:after,.signin-link.active:after{left:0;right:auto;width:28px;bottom:-6px}
+ .home-content{grid-template-columns:1fr;gap:36px}
+ .sample-row{flex-direction:column}
+ .sample-row img{height:180px}
+ .scan-layout{grid-template-columns:1fr}.translation-panel{margin-top:0}
+ .settings-head{align-items:flex-start}
+}
+@media(max-width:600px){
+ .library-grid{grid-auto-rows:140px;gap:12px}
+ .sample-row a{width:100%}
+ .scan-zone{min-height:300px}
+ .scan-heading h1,.library-center h1{font-size:clamp(30px,8vw,40px)}
+ .setting-row span{font-size:17px}
+ .pricing-head h1{white-space:normal}
+ .site-footer{justify-content:center;text-align:center}
+}
+@media(max-width:420px){.pricing-head h1{font-size:28px}}
+.library-grid{grid-template-rows:180px minmax(260px,auto) 180px;grid-auto-rows:auto}
+@media(max-width:900px){.library-grid{grid-template-rows:none;grid-auto-rows:170px}.library-center{grid-row:auto}}
+@media(max-width:900px){.library-grid>.library-center{height:auto}.library-grid{grid-template-rows:170px 170px auto 170px 170px 170px}}
+@media(max-width:600px){.library-grid{grid-template-rows:130px 130px auto 130px 130px 130px}}
+.auth-form input[type=checkbox]{display:inline-block;width:16px;height:16px;margin:0;padding:0;accent-color:#e0643c}
+.check{white-space:nowrap}
+.signin-link.active:after{right:0;left:0}
+@media(max-width:800px){.header-actions .header-link,.header-actions .signin-link{margin:0}.nav a{padding:0}.header-actions{align-items:flex-start}}
+/* =========================================
+   LINGOLENS — UNIVERSAL REFERENCE CARD
+   ========================================= */
+
+.card,
+.scan-card,
+.scan-upload-card,
+.translation-card,
+.settings-card,
+.signin-card,
+.conversation-card,
+.phrasebook-card,
+.pricing-card,
+.feature-card,
+.visual-card,
+.template-card {
+  position: relative;
+  overflow: hidden;
+
+  /* DARK GLASS + YELLOW / ORANGE GRADIENT */
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(255, 224, 125, 0.62) 0%,
+      rgba(255, 177, 55, 0.48) 15%,
+      rgba(255, 112, 30, 0.30) 32%,
+      transparent 58%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(18, 13, 11, 0.72) 0%,
+      rgba(48, 22, 16, 0.68) 38%,
+      rgba(82, 31, 18, 0.62) 62%,
+      rgba(20, 10, 9, 0.76) 100%
+    );
+
+  /* ACTUAL GLASS EFFECT */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  /* ORANGE REFERENCE BORDER */
+  border: 1px solid rgba(255, 145, 65, 0.65);
+
+  border-radius: 18px;
+
+  /* SOFT ORANGE / AMBER GLOW */
+  box-shadow:
+    0 0 8px rgba(255, 126, 40, 0.18),
+    0 0 24px rgba(255, 110, 30, 0.12),
+    inset 0 1px 0 rgba(255, 220, 145, 0.20);
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   GLASS HIGHLIGHT
+   ========================================= */
+
+.card::before,
+.scan-card::before,
+.scan-upload-card::before,
+.translation-card::before,
+.settings-card::before,
+.signin-card::before,
+.conversation-card::before,
+.phrasebook-card::before,
+.pricing-card::before,
+.feature-card::before,
+.visual-card::before,
+.template-card::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 78% 0%,
+      rgba(255, 232, 155, 0.20) 0%,
+      rgba(255, 170, 60, 0.13) 22%,
+      transparent 48%
+    );
+
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* =========================================
+   CONTENT ABOVE GLASS
+   ========================================= */
+
+.card > *,
+.scan-card > *,
+.scan-upload-card > *,
+.translation-card > *,
+.settings-card > *,
+.signin-card > *,
+.conversation-card > *,
+.phrasebook-card > *,
+.pricing-card > *,
+.feature-card > *,
+.visual-card > *,
+.template-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================
+   CONVERSATION APPLICATION CARD
+   ========================================= */
+
+.conversation-app-card {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+
+  background:
+    radial-gradient(
+      circle at 82% 5%,
+      rgba(255, 225, 120, 0.65) 0%,
+      rgba(255, 175, 55, 0.52) 14%,
+      rgba(255, 105, 30, 0.34) 30%,
+      transparent 55%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(15, 11, 9, 0.78) 0%,
+      rgba(58, 25, 16, 0.72) 45%,
+      rgba(91, 31, 17, 0.64) 68%,
+      rgba(13, 8, 8, 0.82) 100%
+    );
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 150, 70, 0.62);
+  border-radius: 20px;
+
+  box-shadow:
+    0 0 12px rgba(255, 120, 40, 0.16),
+    0 0 30px rgba(255, 100, 30, 0.10),
+    inset 0 1px 0 rgba(255, 225, 145, 0.18);
+
+  color: #fff;
+}
+
+
+/* warm glass highlight */
+
+.conversation-app-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 78% 0%,
+      rgba(255, 235, 160, 0.22),
+      rgba(255, 165, 55, 0.12) 25%,
+      transparent 50%
+    );
+
+  pointer-events: none;
+}
+
+
+/* keep everything inside above the glow */
+
+.conversation-app-card > * {
+  position: relative;
+  z-index: 1;
+}
+/* =========================================
+   SETTINGS CARD
+   ========================================= */
+
+.settings-list {
+  position: relative;
+  overflow: hidden;
+
+  padding: 12px;
+
+  border: 1px solid rgba(255, 166, 70, 0.45);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(255, 190, 80, 0.22) 0%,
+      rgba(255, 130, 35, 0.12) 22%,
+      rgba(20, 10, 6, 0.72) 55%,
+      rgba(5, 5, 5, 0.82) 100%
+    );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 140, 45, 0.08),
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(255, 130, 30, 0.10),
+    inset 0 1px 0 rgba(255, 200, 120, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* SETTINGS CARD HOVER */
+
+.settings-list:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 175, 75, 0.65);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 145, 45, 0.10),
+    0 22px 55px rgba(0, 0, 0, 0.50),
+    0 0 45px rgba(255, 135, 35, 0.16),
+    inset 0 1px 0 rgba(255, 210, 140, 0.10);
+}
+
+
+/* =========================================
+   SIGN IN CARD
+   ========================================= */
+
+.auth-form {
+  position: relative;
+  overflow: hidden;
+
+  padding: 30px;
+
+  border: 1px solid rgba(255, 166, 70, 0.45);
+  border-radius: 22px;
+
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(255, 190, 80, 0.22) 0%,
+      rgba(255, 130, 35, 0.12) 22%,
+      rgba(20, 10, 6, 0.72) 55%,
+      rgba(5, 5, 5, 0.82) 100%
+    );
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 140, 45, 0.08),
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(255, 130, 30, 0.10),
+    inset 0 1px 0 rgba(255, 200, 120, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* SIGN IN CARD HOVER */
+
+.auth-form:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(255, 175, 75, 0.65);
+
+  box-shadow:
+    0 0 0 1px rgba(255, 145, 45, 0.10),
+    0 22px 55px rgba(0, 0, 0, 0.50),
+    0 0 45px rgba(255, 135, 35, 0.16),
+    inset 0 1px 0 rgba(255, 210, 140, 0.10);
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .settings-list {
+    padding: 8px;
+    border-radius: 18px;
+  }
+
+  .auth-form {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+}
+/* SETTINGS LAYOUT */
+
+.settings-page {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.settings-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 60px;
+}
+
+.settings-head > div:first-child {
+  text-align: left;
+}
+
+.settings-head h1 {
+  text-align: left;
+  margin-left: 0;
+}
+
+.settings-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+  margin-top: 45px;
+}
+
+.settings-list-card,
+.settings-output-card {
+  min-height: 430px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 24px;
+  background: rgba(10, 10, 10, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.settings-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.settings-list .setting-row {
+  width: 100%;
+  min-height: 86px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 0;
+  background: transparent;
+}
+
+.settings-list .setting-row:last-child {
+  border-bottom: 0;
+}
+
+.settings-output-card {
+  padding: 30px;
+}
+
+.settings-output-card .settings-detail {
+  width: 100%;
+  min-height: 100%;
+}
+
+.settings-output-card .settings-detail[hidden] {
+  display: none;
+}
+
+.signout {
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .settings-page {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .settings-workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-list-card,
+  .settings-output-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 650px) {
+  .settings-head {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .profile-area {
+    text-align: left;
+  }
+
+  .settings-head h1 {
+    font-size: clamp(42px, 12vw, 70px);
+  }
+}
+/* =========================================
+   SETTINGS CARDS — BIGGER + SHARP EDGES
+   ========================================= */
+
+.settings-list {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 0;
+}
+
+.settings-list .setting-row {
+  min-height: 105px;
+  padding: 24px 30px;
+  border-radius: 0;
+}
+
+/* Right-side settings output card */
+.settings-detail {
+  min-height: 480px;
+  padding: 42px;
+  border-radius: 0;
+}
+
+/* Make the two main settings boxes larger */
+.settings-page {
+  max-width: 1320px;
+}
+
+.settings-list,
+.settings-detail {
+  border-radius: 0;
+}
+
+/* Sharp edges for every setting row */
+.setting-row {
+  border-radius: 0 !important;
+}
+
+/* Sharp edges for the output/detail card */
+.settings-detail {
+  border-radius: 0 !important;
+}
+
+/* Slightly more space between the two cards */
+.settings-list {
+  margin-right: 12px;
+}
+/* =========================================================
+   CONVERSATION — LARGE SHARP CARDS
+   ========================================================= */
+
+.conversation-page .conversation-app {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+
+/* =========================================================
+   CONVERSATION / PHRASEBOOK TAB BOX
+   ========================================================= */
+
+.conversation-page .app-tabs {
+  width: 100% !important;
+  min-height: 76px !important;
+
+  padding: 0 28px !important;
+
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   MAIN CONVERSATION / PHRASEBOOK BOX
+   ========================================================= */
+
+.conversation-page .app-panel {
+  width: 100% !important;
+  min-height: 570px !important;
+
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   CONVERSATION MESSAGE AREA
+   ========================================================= */
+
+.conversation-page .conversation-stream {
+  min-height: 410px !important;
+  width: 100% !important;
+}
+
+/* =========================================================
+   CONVERSATION CONTROLS
+   ========================================================= */
+
+.conversation-page .conversation-controls {
+  min-height: 82px !important;
+  width: 100% !important;
+}
+
+/* =========================================================
+   PHRASEBOOK
+   ========================================================= */
+
+.conversation-page #phrasebook {
+  min-height: 570px !important;
+  width: 100% !important;
+
+  border-radius: 0 !important;
+}
+
+/* =========================================================
+   PHRASEBOOK TOOLBAR
+   ========================================================= */
+
+.conversation-page .phrase-tools {
+  min-height: 88px !important;
+  padding: 24px 28px !important;
+
+  box-sizing: border-box !important;
+}
+
+/* Search box */
+.conversation-page .search-input {
+  min-height: 52px !important;
+}
+
+/* =========================================================
+   PHRASEBOOK FILTERS
+   ========================================================= */
+
+.conversation-page .filter-buttons {
+  min-height: 58px !important;
+  padding-left: 28px !important;
+}
+
+/* =========================================================
+   BIGGER PHRASE ROWS
+   ========================================================= */
+
+.conversation-page .phrase-item {
+  min-height: 135px !important;
+
+  padding: 28px 80px 28px 28px !important;
+
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* =========================================================
+   SHARP EDGES EVERYWHERE ON THESE CARDS
+   ========================================================= */
+
+.conversation-page .app-tabs,
+.conversation-page .app-panel,
+.conversation-page #phrasebook,
+.conversation-page .phrase-item {
+  border-radius: 0 !important;
+}
+
+/* =========================================================
+   LARGER PLAY BUTTON AREA
+   ========================================================= */
+
+.conversation-page .play-phrase {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .conversation-page .conversation-app {
+    width: 100% !important;
+  }
+
+  .conversation-page .app-panel {
+    min-height: 520px !important;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .conversation-page .app-tabs {
+    min-height: 64px !important;
+    padding: 0 18px !important;
+  }
+
+  .conversation-page .app-panel {
+    min-height: 480px !important;
+  }
+
+  .conversation-page .phrase-item {
+    min-height: 120px !important;
+    padding: 22px 60px 22px 20px !important;
+  }
+
+}
+/* =========================================================
+   CONVERSATION CARD — MATCH SCAN & TRANSLATE CARDS
+   ========================================================= */
+
+.conversation-page .app-tabs {
+  background: linear-gradient(
+    135deg,
+    rgba(70, 30, 15, 0.78),
+    rgba(105, 48, 18, 0.62),
+    rgba(35, 18, 12, 0.78)
+  ) !important;
+
+  border: 1px solid rgba(210, 145, 55, 0.55) !important;
+  border-radius: 0 !important;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 210, 130, 0.08);
+}
+
+
+/* MAIN CONVERSATION CARD */
+
+.conversation-page .app-panel {
+  background: linear-gradient(
+    135deg,
+    rgba(70, 35, 18, 0.82),
+    rgba(115, 57, 20, 0.68),
+    rgba(38, 20, 13, 0.82)
+  ) !important;
+
+  border: 1px solid rgba(210, 145, 55, 0.58) !important;
+  border-radius: 0 !important;
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 210, 130, 0.08);
+}
+
+
+/* KEEP THE INNER AREA TRANSPARENT
+   SO THE CARD HAS ONE CONSISTENT GLASS LOOK */
+
+.conversation-page .conversation-stream {
+  background: transparent !important;
+}
+
+
+/* INPUT AREA */
+
+.conversation-page .conversation-controls {
+  background: rgba(25, 14, 10, 0.18) !important;
+}
+
+
+/* INPUT */
+
+.conversation-page .conversation-input {
+  background: rgba(20, 12, 9, 0.28) !important;
+  border-color: rgba(210, 145, 55, 0.28) !important;
+}
+
+
+/* MESSAGE BOXES */
+
+.conversation-page .bubble {
+  background: rgba(50, 30, 18, 0.28) !important;
+  border-color: rgba(220, 165, 90, 0.28) !important;
+  border-radius: 0 !important;
+}
+
+
+/* KEEP THE CARD EDGES SHARP */
+
+.conversation-page .app-tabs,
+.conversation-page .app-panel,
+.conversation-page #talkPanel,
+.conversation-page #phrasebook {
+  border-radius: 0 !important;
+}
+/* =========================================
+   MOVE CONVERSATION / PHRASEBOOK TABS
+   UNDER THE LEFT HEADING
+   ========================================= */
+
+.conversation-page {
+  position: relative;
+}
+
+.conversation-page .conversation-app {
+  position: relative;
+}
+
+
+.conversation-tabs {
+  width: 620px;
+  max-width: 100%;
+}
+/* =========================================
+   LINGOLENS — CLEAN TYPEWRITER EFFECT
+   ========================================= */
+
+.type-char {
+  opacity: 0;
+  display: inline;
+}
+
+.type-char.is-typed {
+  opacity: 1;
+}
+
+/* Small typing cursor */
+.type-caret {
+  display: inline-block;
+  width: 1.5px;
+  height: 0.78em;
+  margin-left: 3px;
+  vertical-align: -0.08em;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Cursor appears only while typing / at the end */
+.type-caret.is-active {
+  opacity: 1;
+  animation: typeCaretBlink 0.75s step-end infinite;
+}
+
+@keyframes typeCaretBlink {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .type-char {
+    opacity: 1 !important;
+  }
+
+  .type-caret {
+    display: none !important;
+  }
+}
+/* =========================================================
+   LINGOLENS — GLOBAL CLEAN TYPEWRITER
+   Works across all pages
+   Does NOT resize, move, or reflow text
+   ========================================================= */
+
+/* Every animated text element keeps its original layout */
+.typewriter-target {
+  position: relative;
+}
+
+/* Individual characters */
+.typewriter-character {
+  opacity: 0;
+}
+
+/* Character becomes visible when typed */
+.typewriter-character.is-visible {
+  opacity: 1;
+}
+
+/* Small, clean typing caret */
+.typewriter-caret {
+  position: absolute;
+  width: 1.5px;
+  height: 0.82em;
+
+  background: currentColor;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  transform: translateY(-50%);
+
+  transition: opacity 0.12s ease;
+
+  z-index: 2;
+}
+
+/* Blinking */
+.typewriter-caret.is-active {
+  opacity: 0.85;
+
+  animation: lingolensCaretBlink 0.75s ease-in-out infinite;
+}
+
+@keyframes lingolensCaretBlink {
+
+  0%,
+  45% {
+    opacity: 0.85;
+  }
+
+  46%,
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* ---------------------------------------------------------
+   IMPORTANT:
+   Do NOT allow the animation to affect existing typography
+   --------------------------------------------------------- */
+
+.typewriter-target,
+.typewriter-target * {
+  box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------
+   Reduced motion
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .typewriter-character {
+    opacity: 1 !important;
+  }
+
+  .typewriter-caret {
+    display: none !important;
+  }
+
+}
+
+/* ===== Scan & Translate — requested layout ===== */
+@media (min-width: 1101px) {
+  .scan-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
+    grid-template-areas:
+      "upload heading"
+      "translation heading";
+    column-gap: clamp(40px, 5vw, 90px);
+    row-gap: 28px;
+    align-items: start;
+  }
+
+  .scan-input-area {
+    grid-area: upload;
+    margin-top: 0;
+  }
+
+  .scan-heading {
+    grid-area: heading;
+    align-self: center;
+    padding-top: 20px;
+  }
+
+  .scan-heading h1 {
+    max-width: 620px;
+  }
+
+  .scan-lead {
+    max-width: 560px;
+    margin: 22px 0 0;
+  }
+
+  .translation-panel {
+    grid-area: translation;
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1100px) {
+  .scan-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, .9fr);
+    grid-template-areas:
+      "upload heading"
+      "translation heading";
+    column-gap: 34px;
+    row-gap: 24px;
+  }
+
+  .scan-input-area { grid-area: upload; }
+  .scan-heading { grid-area: heading; align-self: center; }
+  .translation-panel { grid-area: translation; margin-top: 0; }
+}
+
+@media (max-width: 800px) {
+  .scan-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scan-heading { order: 1; }
+  .scan-input-area { order: 2; width: 100%; }
+  .translation-panel { order: 3; width: 100%; }
+}
+
+/* =========================================================
+   Scan & Translate — final requested composition
+   Two boxes first, heading centered underneath.
+   ========================================================= */
+@media (min-width: 801px) {
+  .scan-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      "upload translation"
+      "heading heading";
+    gap: 34px clamp(28px, 4vw, 64px);
+    align-items: stretch;
+    max-width: 1280px;
+    padding-top: clamp(125px, 16vh, 170px);
+  }
+
+  .scan-input-area {
+    grid-area: upload;
+    margin: 0;
+  }
+
+  .scan-input-area .scan-zone {
+    min-height: 430px;
+    height: 100%;
+  }
+
+  .translation-panel {
+    grid-area: translation;
+    margin: 0;
+    min-height: 430px;
+    height: 100%;
+  }
+
+  .scan-heading {
+    grid-area: heading;
+    order: 3;
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+    margin: 10px auto 0;
+    padding: 8px 0 30px;
+  }
+
+  .scan-heading .eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .scan-heading h1 {
+    max-width: none;
+    margin: 0 auto;
+  }
+
+  .scan-heading .scan-lead {
+    max-width: 680px;
+    margin: 22px auto 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .scan-layout {
+    display: flex;
+    flex-direction: column;
+    padding-top: 130px;
+  }
+
+  .scan-input-area {
+    order: 1;
+    width: 100%;
+  }
+
+  .translation-panel {
+    order: 2;
+    width: 100%;
+    margin: 0;
+  }
+
+  .scan-heading {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+    padding-bottom: 30px;
+  }
+
+  .scan-heading h1 {
+    max-width: none;
+  }
+
+  .scan-heading .scan-lead {
+    max-width: 620px;
+    margin: 18px auto 0;
+  }
+}
+
+
+/* =========================================================
+   Scan & Translate — heading ABOVE the two workspace boxes
+   ========================================================= */
+@media (min-width: 801px) {
+  .scan-layout {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-areas:
+      "heading heading"
+      "upload translation" !important;
+    gap: 28px clamp(28px, 4vw, 64px) !important;
+    align-items: start !important;
+    max-width: 1280px !important;
+    padding-top: clamp(110px, 14vh, 150px) !important;
+  }
+
+  .scan-heading {
+    grid-area: heading !important;
+    text-align: center !important;
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+    padding: 0 0 4px !important;
+  }
+
+  .scan-heading h1 {
+    max-width: none !important;
+    margin: 0 auto !important;
+  }
+
+  .scan-heading .scan-lead {
+    max-width: 700px !important;
+    margin: 18px auto 0 !important;
+  }
+
+  .scan-input-area {
+    grid-area: upload !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .translation-panel {
+    grid-area: translation !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: 430px;
+  }
+
+  .scan-input-area .scan-zone {
+    min-height: 430px;
+    height: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .scan-layout {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .scan-heading { order: 1 !important; }
+  .scan-input-area { order: 2 !important; width: 100% !important; }
+  .translation-panel { order: 3 !important; width: 100% !important; }
+}
+
+/* Scan & Translate — make both workspace cards exactly the same size */
+@media (min-width: 801px) {
+  .scan-input-area,
+  .translation-panel {
+    width: 100% !important;
+    height: 430px !important;
+    min-height: 430px !important;
+    align-self: stretch !important;
+  }
+
+  .scan-input-area .scan-zone {
+    width: 100% !important;
+    height: 430px !important;
+    min-height: 430px !important;
+  }
+}
+
+/* =========================================================
+   CONVERSATION — CLEAN CONTENT SPACING
+   Keep the outer card, but make all content breathe inside it.
+   ========================================================= */
+
+.conversation-page .app-panel {
+  padding: 28px !important;
+  overflow: hidden !important;
+}
+
+.conversation-page .conversation-stream {
+  min-height: 350px !important;
+  max-height: 430px !important;
+  padding: 28px !important;
+  margin: 0 !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 16px !important;
+  background: rgba(12, 10, 9, .16) !important;
+  gap: 24px !important;
+}
+
+/* Message bubbles should float inside the conversation area,
+   not touch the card edges. */
+.conversation-page .bubble {
+  max-width: min(72%, 560px) !important;
+  padding: 16px 20px !important;
+  border: 1px solid rgba(255, 190, 110, .25) !important;
+  border-radius: 14px !important;
+  background: rgba(18, 12, 9, .32) !important;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12) !important;
+}
+
+.conversation-page .bubble.left {
+  align-self: flex-start !important;
+}
+
+.conversation-page .bubble.right {
+  align-self: flex-end !important;
+}
+
+/* Give the language labels and message text a clean hierarchy. */
+.conversation-page .bubble span {
+  margin-bottom: 7px !important;
+  opacity: .7;
+}
+
+/* Input controls sit inside their own inset row. */
+.conversation-page .conversation-controls {
+  margin-top: 22px !important;
+  padding: 10px !important;
+  min-height: 66px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 14px !important;
+  background: rgba(10, 8, 7, .20) !important;
+  gap: 10px !important;
+}
+
+.conversation-page .conversation-input {
+  height: 46px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 9px !important;
+  background: rgba(8, 7, 6, .30) !important;
+  padding: 0 15px !important;
+}
+
+.conversation-page .conversation-controls .light-button {
+  min-height: 46px !important;
+  border-radius: 9px !important;
+  padding: 0 20px !important;
+}
+
+.conversation-page .conversation-controls .round-button {
+  width: 46px !important;
+  height: 46px !important;
+  flex: 0 0 46px !important;
+}
+
+/* Keep status text away from the controls. */
+.conversation-page .conversation-card > .status {
+  margin: 12px 4px 0 !important;
+}
+
+/* Phrasebook contents get the same inset treatment. */
+.conversation-page #phrasebook {
+  padding: 28px !important;
+}
+
+.conversation-page #phrasebook .phrase-tools {
+  min-height: auto !important;
+  padding: 0 !important;
+  margin: 0 0 18px !important;
+  gap: 12px !important;
+}
+
+.conversation-page #phrasebook .search-input {
+  height: 46px !important;
+  border-radius: 9px !important;
+}
+
+.conversation-page #phrasebook .filter-buttons {
+  min-height: auto !important;
+  padding: 0 !important;
+  margin: 0 0 18px !important;
+  gap: 18px !important;
+}
+
+.conversation-page #phrasebook .phrase-list {
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 14px !important;
+  overflow: hidden !important;
+  background: rgba(10, 8, 7, .12) !important;
+}
+
+.conversation-page #phrasebook .phrase-item {
+  min-height: 112px !important;
+  padding: 22px 70px 22px 22px !important;
+  border-radius: 0 !important;
+  border-top: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.conversation-page #phrasebook .phrase-item:first-child {
+  border-top: 0 !important;
+}
+
+.conversation-page #phrasebook .play-phrase {
+  right: 20px !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+}
+
+@media (max-width: 700px) {
+  .conversation-page .app-panel,
+  .conversation-page #phrasebook {
+    padding: 18px !important;
+  }
+
+  .conversation-page .conversation-stream {
+    padding: 18px !important;
+    min-height: 320px !important;
+  }
+
+  .conversation-page .bubble {
+    max-width: 88% !important;
+  }
+
+  .conversation-page .conversation-controls {
+    flex-wrap: wrap !important;
+  }
+
+  .conversation-page .conversation-input {
+    flex-basis: 100% !important;
+  }
+}
+
+/* =========================================================
+   CONVERSATION — FINAL ROUNDING + REMOVE EXTRA SPACE
+   ========================================================= */
+.conversation-page .app-tabs {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+.conversation-page .app-panel,
+.conversation-page .conversation-card,
+.conversation-page #phrasebook {
+  min-height: 0 !important;
+  height: auto !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+}
+
+.conversation-page .conversation-card {
+  padding-bottom: 28px !important;
+}
+
+.conversation-page .conversation-stream {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+.conversation-page .conversation-controls {
+  border-radius: 18px !important;
+  margin-bottom: 0 !important;
+}
+
+.conversation-page .conversation-input,
+.conversation-page .conversation-controls .light-button,
+.conversation-page .conversation-controls .round-button {
+  border-radius: 12px !important;
+}
+
+.conversation-page .conversation-controls .round-button {
+  border-radius: 50% !important;
+}
+
+/* =========================================================
+   GLOBAL GLASSMORPHISM — MATCH SETTINGS CARD EXACTLY
+   Applied to every major card/panel without changing layout.
+   ========================================================= */
+
+.scan-zone.card,
+.translation-panel.card,
+.conversation-page .app-panel.conversation-card,
+.conversation-page .app-panel.phrasebook-card,
+.settings-list-card,
+.settings-output-card,
+.pricing-page .price-option.card,
+.auth-form,
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 166, 70, 0.45) !important;
+  border-radius: 22px !important;
+  background:
+    radial-gradient(
+      circle at 82% 8%,
+      rgba(255, 190, 80, 0.22) 0%,
+      rgba(255, 130, 35, 0.12) 22%,
+      rgba(20, 10, 6, 0.72) 55%,
+      rgba(5, 5, 5, 0.82) 100%
+    ) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 140, 45, 0.08),
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(255, 130, 30, 0.10),
+    inset 0 1px 0 rgba(255, 200, 120, 0.08) !important;
+  color: #fff;
+}
+
+/* Keep content above the glass surface. */
+.scan-zone.card > *,
+.translation-panel.card > *,
+.conversation-page .app-panel.conversation-card > *,
+.conversation-page .app-panel.phrasebook-card > *,
+.settings-list-card > *,
+.settings-output-card > *,
+.pricing-page .price-option.card > *,
+.auth-form > *,
+.card > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Same soft warm highlight used by the Settings card. */
+.scan-zone.card::before,
+.translation-panel.card::before,
+.conversation-page .app-panel.conversation-card::before,
+.conversation-page .app-panel.phrasebook-card::before,
+.settings-list-card::before,
+.settings-output-card::before,
+.pricing-page .price-option.card::before,
+.auth-form::before,
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 82% 0%,
+      rgba(255, 232, 155, 0.20) 0%,
+      rgba(255, 170, 60, 0.13) 22%,
+      transparent 48%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Preserve the Settings card's restrained hover behavior on all cards. */
+.scan-zone.card:hover,
+.translation-panel.card:hover,
+.conversation-page .app-panel.conversation-card:hover,
+.conversation-page .app-panel.phrasebook-card:hover,
+.settings-list-card:hover,
+.settings-output-card:hover,
+.pricing-page .price-option.card:hover,
+.auth-form:hover,
+.card:hover {
+  border-color: rgba(255, 175, 75, 0.65) !important;
+  box-shadow:
+    0 0 0 1px rgba(255, 145, 45, 0.10),
+    0 22px 55px rgba(0, 0, 0, 0.50),
+    0 0 45px rgba(255, 135, 35, 0.16),
+    inset 0 1px 0 rgba(255, 210, 140, 0.10) !important;
+}
+
+/* Do not let the global card hover move functional panels. */
+.scan-zone.card:hover,
+.translation-panel.card:hover,
+.conversation-page .app-panel.conversation-card:hover,
+.conversation-page .app-panel.phrasebook-card:hover,
+.settings-list-card:hover,
+.settings-output-card:hover,
+.pricing-page .price-option.card:hover {
+  transform: none !important;
+}
+
+@media (max-width: 700px) {
+  .scan-zone.card,
+  .translation-panel.card,
+  .conversation-page .app-panel.conversation-card,
+  .conversation-page .app-panel.phrasebook-card,
+  .settings-list-card,
+  .settings-output-card,
+  .pricing-page .price-option.card,
+  .auth-form,
+  .card {
+    border-radius: 18px !important;
+  }
+}
+
+/* =========================================================
+   CLEAN BLENDED GLASS — FINAL CARD TREATMENT
+   No gradients, glow, heavy shadows, or decorative overlays.
+   The background video remains visible through every surface.
+   ========================================================= */
+.scan-zone.card,
+.translation-panel.card,
+.conversation-page .app-panel.conversation-card,
+.conversation-page .app-panel.phrasebook-card,
+.settings-list-card,
+.settings-output-card,
+.pricing-page .price-option.card,
+.auth-form,
+.card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 22px !important;
+  background: rgba(20,15,12,.20) !important;
+  background-image: none !important;
+  backdrop-filter: blur(14px) saturate(105%) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(105%) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,.12) !important;
+}
+
+/* Remove the warm spotlight/gradient overlay that was making the cards look lit. */
+.scan-zone.card::before,
+.translation-panel.card::before,
+.conversation-page .app-panel.conversation-card::before,
+.conversation-page .app-panel.phrasebook-card::before,
+.settings-list-card::before,
+.settings-output-card::before,
+.pricing-page .price-option.card::before,
+.auth-form::before,
+.card::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* No glow/brightness change when hovering. */
+.scan-zone.card:hover,
+.translation-panel.card:hover,
+.conversation-page .app-panel.conversation-card:hover,
+.conversation-page .app-panel.phrasebook-card:hover,
+.settings-list-card:hover,
+.settings-output-card:hover,
+.pricing-page .price-option.card:hover,
+.auth-form:hover,
+.card:hover {
+  border-color: rgba(255,255,255,.18) !important;
+  background: rgba(20,15,12,.20) !important;
+  background-image: none !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,.12) !important;
+  transform: none !important;
+}
+
+/* Featured pricing card: same glass surface, no special glow. */
+.pricing-page .price-option.featured,
+.pricing-page .price-option.featured:hover {
+  background: rgba(20,15,12,.20) !important;
+  background-image: none !important;
+  border-color: rgba(255,255,255,.18) !important;
+  box-shadow: 0 8px 28px rgba(0,0,0,.12) !important;
+}
+
+@media (max-width:700px) {
+  .scan-zone.card,
+  .translation-panel.card,
+  .conversation-page .app-panel.conversation-card,
+  .conversation-page .app-panel.phrasebook-card,
+  .settings-list-card,
+  .settings-output-card,
+  .pricing-page .price-option.card,
+  .auth-form,
+  .card {
+    border-radius: 18px !important;
+  }
+}
+
+/* =========================================================
+   FINAL REFERENCE GLASS — BLENDED WITH BACKGROUND
+   No gradients, no glow, no spotlight, no hover lift.
+   ========================================================= */
+.card,
+.scan-card,
+.scan-upload-card,
+.translation-card,
+.settings-card,
+.signin-card,
+.conversation-card,
+.phrasebook-card,
+.pricing-card,
+.feature-card,
+.visual-card,
+.template-card,
+.settings-list,
+.settings-detail,
+.auth-form,
+.conversation-page .app-tabs,
+.conversation-page .app-panel,
+.conversation-page #phrasebook {
+  background: rgba(24, 13, 10, 0.22) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 22px !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  transition: none !important;
+}
+
+.card::before,
+.scan-card::before,
+.scan-upload-card::before,
+.translation-card::before,
+.settings-card::before,
+.signin-card::before,
+.conversation-card::before,
+.phrasebook-card::before,
+.pricing-card::before,
+.feature-card::before,
+.visual-card::before,
+.template-card::before,
+.conversation-app-card::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+.card:hover,
+.scan-card:hover,
+.scan-upload-card:hover,
+.translation-card:hover,
+.settings-card:hover,
+.signin-card:hover,
+.conversation-card:hover,
+.phrasebook-card:hover,
+.pricing-card:hover,
+.feature-card:hover,
+.visual-card:hover,
+.template-card:hover,
+.settings-list:hover,
+.auth-form:hover {
+  transform: none !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Settings rows stay open inside the single glass panel. */
+.settings-list .setting-row,
+.setting-row {
+  background: transparent !important;
+  background-image: none !important;
+  border-radius: 0 !important;
+}
+
+/* Conversation internals stay transparent so only the main glass surfaces show. */
+.conversation-page .conversation-stream,
+.conversation-page .conversation-controls,
+.conversation-page .phrase-tools,
+.conversation-page .phrase-item {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Scan controls remain readable without creating extra glowing cards. */
+.scan-zone,
+.translation-panel {
+  background: rgba(24, 13, 10, 0.22) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 22px !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+/* Pricing cards use the same quiet glass surface; featured status is only structural. */
+.price-option.featured {
+  background: rgba(24, 13, 10, 0.22) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* =========================================================
+   TRUE BLENDED GLASS — FINAL REFERENCE
+   The background supplies the color. The surface only blurs it.
+   ========================================================= */
+.card,
+.scan-card,
+.scan-upload-card,
+.translation-card,
+.scan-zone,
+.translation-panel,
+.settings-card,
+.settings-list,
+.settings-list-card,
+.settings-output-card,
+.settings-detail,
+.signin-card,
+.auth-form,
+.conversation-card,
+.phrasebook-card,
+.conversation-app-card,
+.conversation-page .app-tabs,
+.conversation-page .app-panel,
+.conversation-page #phrasebook,
+.pricing-card,
+.pricing-page .price-option,
+.feature-card,
+.visual-card,
+.template-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(10, 10, 10, 0.18) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 22px !important;
+  backdrop-filter: blur(24px) saturate(112%) !important;
+  -webkit-backdrop-filter: blur(24px) saturate(112%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055) !important;
+  transition: none !important;
+}
+
+/* Remove every decorative card overlay. */
+.card::before,
+.scan-card::before,
+.scan-upload-card::before,
+.translation-card::before,
+.scan-zone::before,
+.translation-panel::before,
+.settings-card::before,
+.settings-list::before,
+.settings-list-card::before,
+.settings-output-card::before,
+.signin-card::before,
+.auth-form::before,
+.conversation-card::before,
+.phrasebook-card::before,
+.conversation-app-card::before,
+.conversation-page .app-tabs::before,
+.conversation-page .app-panel::before,
+.conversation-page #phrasebook::before,
+.pricing-card::before,
+.pricing-page .price-option::before,
+.feature-card::before,
+.visual-card::before,
+.template-card::before {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+}
+
+/* No orange glow, shadow, lift, brightness, or gradient on hover. */
+.card:hover,
+.scan-card:hover,
+.scan-upload-card:hover,
+.translation-card:hover,
+.scan-zone:hover,
+.translation-panel:hover,
+.settings-card:hover,
+.settings-list:hover,
+.settings-list-card:hover,
+.settings-output-card:hover,
+.settings-detail:hover,
+.signin-card:hover,
+.auth-form:hover,
+.conversation-card:hover,
+.phrasebook-card:hover,
+.conversation-app-card:hover,
+.conversation-page .app-tabs:hover,
+.conversation-page .app-panel:hover,
+.conversation-page #phrasebook:hover,
+.pricing-card:hover,
+.pricing-page .price-option:hover,
+.feature-card:hover,
+.visual-card:hover,
+.template-card:hover {
+  background: rgba(10, 10, 10, 0.18) !important;
+  background-image: none !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055) !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+/* Keep all inner content transparent so the background continues through the glass. */
+.conversation-page .conversation-stream,
+.conversation-page .conversation-controls,
+.conversation-page .phrase-tools,
+.conversation-page .phrase-item,
+.settings-list .setting-row,
+.setting-row {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* Only the message bubbles get a very light glass surface of their own. */
+.conversation-page .bubble {
+  background: rgba(10,10,10,.12) !important;
+  background-image: none !important;
+  border: 1px solid rgba(255,255,255,.13) !important;
+  border-radius: 18px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.045) !important;
+}
+
+/* Keep the featured pricing card visually identical; its content marks it as featured. */
+.pricing-page .price-option.featured,
+.pricing-page .price-option.featured:hover {
+  background: rgba(10,10,10,.18) !important;
+  background-image: none !important;
+  border-color: rgba(255,255,255,.20) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055) !important;
+}
+
+@media (max-width: 700px) {
+  .card,
+  .scan-card,
+  .scan-upload-card,
+  .translation-card,
+  .scan-zone,
+  .translation-panel,
+  .settings-card,
+  .settings-list,
+  .settings-list-card,
+  .settings-output-card,
+  .settings-detail,
+  .signin-card,
+  .auth-form,
+  .conversation-card,
+  .phrasebook-card,
+  .conversation-app-card,
+  .conversation-page .app-tabs,
+  .conversation-page .app-panel,
+  .conversation-page #phrasebook,
+  .pricing-card,
+  .pricing-page .price-option,
+  .feature-card,
+  .visual-card,
+  .template-card {
+    border-radius: 18px !important;
+  }
+}
+
+/* Scan language controls — centered, clean dropdowns */
+.scan-layout .language-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.scan-layout .language-select-wrap {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  height: 48px;
+}
+
+.scan-layout .language-select {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  width: 100% !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 0 40px 0 15px !important;
+  display: block !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  border-radius: 10px !important;
+  background: rgba(8,10,11,.14) !important;
+  color: #fff !important;
+  font: inherit !important;
+  font-size: 15px !important;
+  line-height: 48px !important;
+  text-align: left !important;
+  outline: none !important;
+  cursor: pointer !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.scan-layout .language-select:focus {
+  border-color: rgba(255,255,255,.28) !important;
+}
+
+.scan-layout .language-select option {
+  background: #171311;
+  color: #fff;
+}
+
+.scan-layout .language-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-55%);
+  pointer-events: none;
+  color: rgba(255,255,255,.72);
+  font-size: 15px;
+  line-height: 1;
+}
+
+.scan-layout .swap-button {
+  flex: 0 0 48px;
+  width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+}
+
+/* Inline phrase creation — opens inside the Phrasebook card instead of a browser prompt. */
+.conversation-page #phraseAddInline {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  margin: 0 0 16px !important;
+  padding: 10px !important;
+  border: 1px solid rgba(255,255,255,.13) !important;
+  border-radius: 14px !important;
+  background: rgba(10,10,10,.12) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+}
+
+.conversation-page #phraseAddInline[hidden] {
+  display: none !important;
+}
+
+.conversation-page .phrase-add-input {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  height: 44px !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.conversation-page .phrase-save-btn,
+.conversation-page .phrase-cancel-btn {
+  flex: 0 0 auto !important;
+  height: 44px !important;
+  padding: 0 18px !important;
+  border-radius: 12px !important;
+}
+
+.conversation-page .phrase-cancel-btn {
+  border: 1px solid rgba(255,255,255,.15) !important;
+  background: transparent !important;
+  color: rgba(255,255,255,.82) !important;
+  cursor: pointer !important;
+}
+
+@media (max-width: 700px) {
+  .conversation-page #phraseAddInline {
+    flex-wrap: wrap !important;
+  }
+  .conversation-page .phrase-add-input {
+    flex-basis: 100% !important;
+  }
+}

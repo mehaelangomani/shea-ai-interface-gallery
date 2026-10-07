@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Imag — Imagine Without Limits</title>
+
+    <meta
+        name="description"
+        content="AI Imag — a futuristic AI image generation and discovery experience."
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+<div class="background-grid"></div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="navbar" id="navbar">
+
+    <a href="#home" class="logo">
+        <span>AI</span> Imag
+    </a>
+
+    <nav class="desktop-nav">
+
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#generate" class="nav-link">Generate</a>
+        <a href="#discover" class="nav-link">Discover</a>
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="settings.html" class="nav-link">Settings</a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button class="login-btn" onclick="window.location.href='login.html'">
+            Login
+        </button>
+
+        <button class="nav-start-btn" onclick="scrollToSection('generate')">
+            Get Started
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </button>
+
+    </div>
+
+    <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open navigation menu"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
+
+
+<!-- =========================================================
+     MOBILE NAVIGATION
+========================================================= -->
+
+<div class="mobile-menu" id="mobileMenu">
+
+    <a href="#home">Home</a>
+    <a href="#generate">Generate</a>
+    <a href="#discover">Discover</a>
+    <a href="#features">Features</a>
+    <a href="#pricing">Pricing</a>
+    <a href="settings.html">Settings</a>
+
+    <div class="mobile-actions">
+
+        <button class="mobile-login" onclick="window.location.href='login.html'">
+            Login
+        </button>
+
+        <button
+            class="mobile-start"
+            onclick="scrollToSection('generate')"
+        >
+            Get Started
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section class="hero section" id="home">
+
+    <div class="hero-content reveal">
+
+        <div class="hero-badge">
+
+            <span class="badge-dot"></span>
+
+            THE FUTURE OF AI IMAGINATION
+
+        </div>
+
+        <h1>
+
+            Discover
+            <br>
+
+            Amazing Images
+
+            <span class="gradient-text">
+                With AI.
+            </span>
+
+        </h1>
+
+        <p class="hero-description">
+
+            Turn simple ideas into stunning visuals with the
+            power of artificial intelligence.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="scrollToSection('generate')"
+            >
+
+                Generate Now
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="scrollToSection('discover')"
+            >
+
+                Explore Gallery
+
+            </button>
+
+        </div>
+
+        <div class="hero-meta">
+
+            <div>
+                <strong>10K+</strong>
+                <span>Creations</span>
+            </div>
+
+            <div class="meta-line"></div>
+
+            <div>
+                <strong>40+</strong>
+                <span>Styles</span>
+            </div>
+
+            <div class="meta-line"></div>
+
+            <div>
+                <strong>∞</strong>
+                <span>Ideas</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HERO ART -->
+
+    <div class="hero-art reveal">
+
+        <div class="art-glow"></div>
+
+        <div class="image-card card-back">
+
+            <img
+                src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85"
+                alt="Futuristic landscape"
+            >
+
+        </div>
+
+        <div class="image-card card-main">
+
+            <img
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1000&q=90"
+                alt="Futuristic robot"
+            >
+
+            <div class="image-overlay">
+
+                <span>
+                    AI GENERATED
+                </span>
+
+                <i class="fa-solid fa-sparkles"></i>
+
+            </div>
+
+        </div>
+
+        <div class="image-card card-front">
+
+            <img
+                src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=800&q=85"
+                alt="Creative futuristic artwork"
+            >
+
+        </div>
+
+        <div class="floating-pill pill-one">
+
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            AI Creativity
+
+        </div>
+
+        <div class="floating-pill pill-two">
+
+            <i class="fa-solid fa-bolt"></i>
+
+            Instant Ideas
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GENERATOR
+========================================================= -->
+
+<section class="generator-section section" id="generate">
+
+    <div class="section-heading centered reveal">
+
+        <span class="eyebrow">
+            AI CREATIVE WORKSPACE
+        </span>
+
+        <h2>
+            Explain Your
+            <span>Image.</span>
+        </h2>
+
+        <p>
+            Describe your idea and let AI transform it into an image.
+        </p>
+
+    </div>
+
+
+    <div class="generator-wrapper reveal">
+
+        <div class="generator-panel">
+
+            <div class="generator-header">
+
+                <div>
+
+                    <span class="panel-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Create something extraordinary
+                    </h3>
+
+                </div>
+
+                <span class="status-dot">
+                    READY
+                </span>
+
+            </div>
+
+
+            <!-- PROMPT -->
+
+            <div class="form-group prompt-group">
+
+                <label for="prompt">
+                    Prompt
+                </label>
+
+                <textarea
+                    id="prompt"
+                    placeholder="Describe the image you want to create..."
+                    rows="6"
+                ></textarea>
+
+                <div class="prompt-footer">
+
+                    <span>
+                        <i class="fa-solid fa-sparkles"></i>
+                        Be descriptive
+                    </span>
+
+                    <span id="characterCount">
+                        0 / 500
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+
+            <div class="generator-controls">
+
+                <div class="form-group">
+
+                    <label for="style">
+                        Style
+                    </label>
+
+                    <select id="style">
+
+                        <option>Realistic</option>
+                        <option>Cinematic</option>
+                        <option>Anime</option>
+                        <option>Fantasy</option>
+                        <option>3D</option>
+                        <option>Digital Art</option>
+                        <option>Illustration</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="ratio">
+                        Aspect Ratio
+                    </label>
+
+                    <select id="ratio">
+
+                        <option value="1:1">
+                            1:1
+                        </option>
+
+                        <option value="16:9">
+                            16:9
+                        </option>
+
+                        <option value="4:3">
+                            4:3
+                        </option>
+
+                        <option value="9:16">
+                            9:16
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="quantity">
+                        Images
+                    </label>
+
+                    <select id="quantity">
+
+                        <option>
+                            1
+                        </option>
+
+                        <option>
+                            2
+                        </option>
+
+                        <option>
+                            4
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="quality">
+                        Quality
+                    </label>
+
+                    <select id="quality">
+
+                        <option>Standard</option>
+                        <option>High</option>
+                        <option>Ultra</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- GENERATE -->
+
+            <button
+                class="generate-button"
+                id="generateButton"
+            >
+
+                <span>
+                    Generate Image
+                </span>
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            </button>
+
+
+            <!-- LOADING -->
+
+            <div
+                class="generation-loading"
+                id="generationLoading"
+            >
+
+                <div class="loader"></div>
+
+                <h4>
+                    Creating your image...
+                </h4>
+
+                <p>
+                    AI Imag is preparing something beautiful.
+                </p>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div
+                class="generation-result"
+                id="generationResult"
+            >
+
+                <div class="result-image-wrapper">
+
+                    <img
+                        id="resultImage"
+                        src=""
+                        alt="Generated result"
+                    >
+
+                    <div class="result-badge">
+                        AI IMAG
+                    </div>
+
+                </div>
+
+
+                <div class="result-details">
+
+                    <div class="result-title-row">
+
+                        <div>
+
+                            <span class="eyebrow">
+                                GENERATED RESULT
+                            </span>
+
+                            <h3>
+                                Your creation
+                            </h3>
+
+                        </div>
+
+                        <button
+                            class="result-heart"
+                            id="resultFavorite"
+                        >
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="result-prompt">
+
+                        <span>
+                            Prompt
+                        </span>
+
+                        <p id="resultPrompt">
+                        </p>
+
+                    </div>
+
+
+                    <div class="result-tags">
+
+                        <span id="resultStyle">
+                            Cinematic
+                        </span>
+
+                        <span id="resultRatio">
+                            1:1
+                        </span>
+
+                        <span id="resultQuality">
+                            High
+                        </span>
+
+                    </div>
+
+
+                    <div class="result-actions">
+
+                        <button
+                            class="result-action"
+                            id="downloadButton"
+                        >
+                            <i class="fa-solid fa-download"></i>
+                            Download
+                        </button>
+
+                        <button
+                            class="result-action"
+                            id="regenerateButton"
+                        >
+                            <i class="fa-solid fa-rotate"></i>
+                            Regenerate
+                        </button>
+
+                        <button
+                            class="result-action"
+                            id="variationButton"
+                        >
+                            <i class="fa-solid fa-wand-magic"></i>
+                            Create Variation
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =========================================================
+     DISCOVER
+========================================================= -->
+
+<section class="discover-section section" id="discover">
+
+    <div class="section-top reveal">
+
+        <div>
+
+            <span class="eyebrow">
+                VISUAL DISCOVERY
+            </span>
+
+            <h2>
+                Discover
+            </h2>
+
+            <p>
+                Explore what creators are imagining with AI.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="gallery-toolbar reveal">
+
+        <div class="search-box">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input
+                type="text"
+                id="gallerySearch"
+                placeholder="Search AI images..."
+                aria-label="Search AI images"
+            >
+
+        </div>
+
+
+        <button class="filter-button">
+
+            <i class="fa-solid fa-sliders"></i>
+
+            Filter
+
+        </button>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="category-list reveal">
+
+        <button class="category active" data-category="All">
+            All
+        </button>
+
+        <button class="category" data-category="Characters">
+            Characters
+        </button>
+
+        <button class="category" data-category="Fantasy">
+            Fantasy
+        </button>
+
+        <button class="category" data-category="Anime">
+            Anime
+        </button>
+
+        <button class="category" data-category="Nature">
+            Nature
+        </button>
+
+        <button class="category" data-category="Sci-Fi">
+            Sci-Fi
+        </button>
+
+        <button class="category" data-category="Vehicles">
+            Vehicles
+        </button>
+
+        <button class="category" data-category="Abstract">
+            Abstract
+        </button>
+
+        <button class="category" data-category="Architecture">
+            Architecture
+        </button>
+
+    </div>
+
+
+    <!-- GALLERY -->
+
+    <div class="gallery-grid" id="gallery">
+
+        <!-- CARD 1 -->
+
+        <article
+            class="gallery-card tall reveal"
+            data-category="Characters"
+            data-title="Cybernetic Guardian"
+            data-prompt="A futuristic cybernetic guardian standing in a neon city"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=85"
+                alt="Cybernetic Guardian"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Characters</span>
+
+                    <h3>
+                        Cybernetic Guardian
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+
+        <!-- CARD 2 -->
+
+        <article
+            class="gallery-card reveal"
+            data-category="Nature"
+            data-title="Neon Mountains"
+            data-prompt="Mystical mountains glowing beneath an alien night sky"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?auto=format&fit=crop&w=900&q=85"
+                alt="Neon Mountains"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Nature</span>
+
+                    <h3>
+                        Neon Mountains
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+
+        <!-- CARD 3 -->
+
+        <article
+            class="gallery-card wide reveal"
+            data-category="Architecture"
+            data-title="Future City"
+            data-prompt="A massive futuristic city with glowing architecture"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1100&q=85"
+                alt="Future City"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Architecture</span>
+
+                    <h3>
+                        Future City
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+
+        <!-- CARD 4 -->
+
+        <article
+            class="gallery-card reveal"
+            data-category="Sci-Fi"
+            data-title="Orbital Station"
+            data-prompt="A cinematic orbital station floating above a futuristic planet"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1446776877081-d282a0f896e2?auto=format&fit=crop&w=900&q=85"
+                alt="Orbital Station"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Sci-Fi</span>
+
+                    <h3>
+                        Orbital Station
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+
+        <!-- CARD 5 -->
+
+        <article
+            class="gallery-card tall reveal"
+            data-category="Fantasy"
+            data-title="Mystic Forest"
+            data-prompt="A magical forest filled with glowing plants and mysterious fog"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=85"
+                alt="Mystic Forest"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Fantasy</span>
+
+                    <h3>
+                        Mystic Forest
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+
+        <!-- CARD 6 -->
+
+        <article
+            class="gallery-card reveal"
+            data-category="Vehicles"
+            data-title="Future Racer"
+            data-prompt="A futuristic sports car racing through a neon city"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=85"
+                alt="Future Racer"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Vehicles</span>
+
+                    <h3>
+                        Future Racer
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+
+        <!-- CARD 7 -->
+
+        <article
+            class="gallery-card wide reveal"
+            data-category="Abstract"
+            data-title="Digital Dreams"
+            data-prompt="Abstract digital waves flowing through a dark futuristic environment"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=1100&q=85"
+                alt="Digital Dreams"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Abstract</span>
+
+                    <h3>
+                        Digital Dreams
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+
+        <!-- CARD 8 -->
+
+        <article
+            class="gallery-card reveal"
+            data-category="Anime"
+            data-title="Neon Warrior"
+            data-prompt="Anime-inspired futuristic warrior with glowing armor"
+        >
+
+            <img
+                src="https://images.unsplash.com/photo-1578632767115-351597cf2477?auto=format&fit=crop&w=900&q=85"
+                alt="Neon Warrior"
+            >
+
+            <div class="gallery-overlay">
+
+                <div>
+
+                    <span>Anime</span>
+
+                    <h3>
+                        Neon Warrior
+                    </h3>
+
+                </div>
+
+                <button
+                    class="gallery-open"
+                    aria-label="Open image"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </button>
+
+            </div>
+
+            <button class="favorite-btn" aria-label="Favorite image">
+                <i class="fa-regular fa-heart"></i>
+            </button>
+
+        </article>
+
+    </div>
+
+
+    <div
+        class="no-results"
+        id="noResults"
+    >
+        No images found. Try another search.
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURES
+========================================================= -->
+
+<section class="full-features section" id="features">
+
+    <div class="section-heading reveal">
+
+        <span class="eyebrow">
+            BUILT FOR CREATORS
+        </span>
+
+        <h2>
+            Everything you need
+            <span>to imagine.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="features-large-grid">
+
+        <article class="feature-large reveal">
+
+            <div class="feature-number">
+                01
+            </div>
+
+            <div class="feature-large-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <h3>
+                AI Image Generation
+            </h3>
+
+            <p>
+                Transform natural language into visually
+                compelling artwork.
+            </p>
+
+        </article>
+
+
+        <article class="feature-large reveal">
+
+            <div class="feature-number">
+                02
+            </div>
+
+            <div class="feature-large-icon">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+
+            <h3>
+                Multiple Styles
+            </h3>
+
+            <p>
+                Experiment with cinematic, realistic,
+                anime, fantasy and more.
+            </p>
+
+        </article>
+
+
+        <article class="feature-large reveal">
+
+            <div class="feature-number">
+                03
+            </div>
+
+            <div class="feature-large-icon">
+                <i class="fa-solid fa-clone"></i>
+            </div>
+
+            <h3>
+                Image Variations
+            </h3>
+
+            <p>
+                Explore alternate versions of your
+                favorite visual concepts.
+            </p>
+
+        </article>
+
+
+        <article class="feature-large reveal">
+
+            <div class="feature-number">
+                04
+            </div>
+
+            <div class="feature-large-icon">
+                <i class="fa-solid fa-gem"></i>
+            </div>
+
+            <h3>
+                High Quality
+            </h3>
+
+            <p>
+                Create detailed visuals designed to
+                look polished and cinematic.
+            </p>
+
+        </article>
+
+
+        <article class="feature-large reveal">
+
+            <div class="feature-number">
+                05
+            </div>
+
+            <div class="feature-large-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <h3>
+                Fast Generation
+            </h3>
+
+            <p>
+                Move quickly from your first idea
+                to a finished visual concept.
+            </p>
+
+        </article>
+
+
+        <article class="feature-large reveal">
+
+            <div class="feature-number">
+                06
+            </div>
+
+            <div class="feature-large-icon">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+
+            <h3>
+                Creative Discovery
+            </h3>
+
+            <p>
+                Browse a visual universe of inspiration
+                and creative experiments.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     PRICING
+========================================================= -->
+
+<section class="pricing-section section" id="pricing">
+
+    <div class="section-heading centered reveal">
+
+        <span class="eyebrow">
+            SIMPLE PRICING
+        </span>
+
+        <h2>
+            Choose your
+            <span>creative mode.</span>
+        </h2>
+
+        <p>
+            A frontend demo of how AI Imag plans could look.
+        </p>
+
+    </div>
+
+
+    <div class="pricing-grid">
+
+        <article class="price-card reveal">
+
+            <span class="plan-label">
+                FREE
+            </span>
+
+            <h3>
+                Free
+            </h3>
+
+            <p>
+                For exploring AI creativity.
+            </p>
+
+            <div class="price">
+                $0
+                <small>/month</small>
+            </div>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    10 creations
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Basic styles
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Gallery access
+                </li>
+
+            </ul>
+
+            <button
+                class="price-button"
+                onclick="demoMessage()"
+            >
+                Start Free
+            </button>
+
+        </article>
+
+
+        <article class="price-card featured reveal">
+
+            <div class="popular">
+                MOST POPULAR
+            </div>
+
+            <span class="plan-label">
+                CREATOR
+            </span>
+
+            <h3>
+                Creator
+            </h3>
+
+            <p>
+                For regular AI image generation.
+            </p>
+
+            <div class="price">
+                $12
+                <small>/month</small>
+            </div>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    500 creations
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Premium styles
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    High quality
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Image variations
+                </li>
+
+            </ul>
+
+            <button
+                class="price-button bright"
+                onclick="demoMessage()"
+            >
+                Choose Creator
+            </button>
+
+        </article>
+
+
+        <article class="price-card reveal">
+
+            <span class="plan-label">
+                PRO
+            </span>
+
+            <h3>
+                Pro
+            </h3>
+
+            <p>
+                For advanced creators.
+            </p>
+
+            <div class="price">
+                $29
+                <small>/month</small>
+            </div>
+
+            <ul>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Unlimited ideas
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Ultra quality
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Advanced styles
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Priority generation
+                </li>
+
+            </ul>
+
+            <button
+                class="price-button"
+                onclick="demoMessage()"
+            >
+                Go Pro
+            </button>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section class="cta-section section reveal">
+
+    <div class="cta-glow"></div>
+
+    <span class="eyebrow">
+        START CREATING
+    </span>
+
+    <h2>
+        Your imagination
+        <br>
+        <span>is the prompt.</span>
+    </h2>
+
+    <p>
+        Start creating something extraordinary.
+    </p>
+
+    <button
+        class="primary-btn large"
+        onclick="scrollToSection('generate')"
+    >
+
+        Start Creating
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </button>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     IMAGE MODAL
+========================================================= -->
+
+<div class="image-modal" id="imageModal">
+
+    <div class="modal-backdrop"></div>
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            id="modalClose"
+            aria-label="Close image"
+        >
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-image">
+
+            <img
+                id="modalImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+        <div class="modal-info">
+
+            <span id="modalCategory">
+                Category
+            </span>
+
+            <h2 id="modalTitle">
+                Image title
+            </h2>
+
+            <p id="modalPrompt">
+                Prompt
+            </p>
+
+            <div class="modal-actions">
+
+                <button
+                    class="modal-action"
+                    id="modalFavorite"
+                >
+                    <i class="fa-regular fa-heart"></i>
+                    Favorite
+                </button>
+
+                <button
+                    class="modal-action"
+                    id="modalDownload"
+                >
+                    <i class="fa-solid fa-download"></i>
+                    Download
+                </button>
+
+                <button
+                    class="modal-action"
+                    onclick="scrollToSection('generate')"
+                >
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Create Variation
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     DEMO TOAST
+========================================================= -->
+
+<div class="toast" id="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span>
+        This is a frontend demo template.
+    </span>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div class="footer-top-line"></div>
+
+
+    <!-- BIG FOOTER NAVIGATION -->
+
+    <div class="footer-navigation">
+
+        <a href="#home">
+            Home
+        </a>
+
+        <a href="#generate">
+            Generate
+        </a>
+
+        <a href="#discover">
+            Discover
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#pricing">
+            Pricing
+        </a>
+
+    </div>
+
+
+    <div class="footer-main">
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <a href="#home" class="footer-logo">
+                <span>AI</span> Imag
+            </a>
+
+            <p>
+                Turn your imagination into stunning
+                visuals with AI.
+            </p>
+
+            <div class="social-links">
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#" aria-label="GitHub">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <a href="#" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EXPLORE -->
+
+        <div class="footer-column">
+
+            <h4>
+                Explore
+            </h4>
+
+            <a href="#home">Home</a>
+            <a href="#generate">Generate</a>
+            <a href="#discover">Discover</a>
+            <a href="#discover">Gallery</a>
+            <a href="#discover">Trending</a>
+
+        </div>
+
+
+        <!-- PRODUCT -->
+
+        <div class="footer-column">
+            <a href="settings.html">Settings</a>
+
+            <h4>
+                Product
+            </h4>
+
+            <a href="#generate">AI Image Generator</a>
+            <a href="#discover">AI Art</a>
+            <a href="#generate">Image Variations</a>
+            <a href="#features">Styles</a>
+            <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
+
+        </div>
+
+
+        <!-- RESOURCES -->
+
+        <div class="footer-column">
+
+            <h4>
+                Resources
+            </h4>
+
+            <a href="#about">About Us</a>
+            <a href="#">Documentation</a>
+            <a href="#">Community</a>
+            <a href="#">FAQs</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+
+        <!-- LEGAL -->
+
+        <div class="footer-column">
+
+            <h4>
+                Legal
+            </h4>
+
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 AI Imag. All rights reserved.
+        </span>
+
+        <span>
+            Made for creators who imagine beyond limits.
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

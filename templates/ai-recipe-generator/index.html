@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home — FlavorAI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page-bg home-bg"></div>
+<div class="shell">
+<header class="nav glass">
+  <a class="brand" href="index.html"><span class="brand-mark">✦</span>FlavorAI</a>
+  <nav class="nav-links" id="navLinks"><a class="active" href="index.html">Home</a><a class="" href="discover.html">Discover</a><a class="" href="scanner.html">Scanner</a><a class="" href="studio.html">Recipe Studio</a><a class="" href="recipes.html">My Recipes</a><a class="" href="profile.html">Profile</a><a class="" href="settings.html">Settings</a></nav>
+  <div class="nav-actions">
+    <a class="btn small hide-tablet" href="pricing.html">Upgrade</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+<main>
+<section class="hero glass">
+  <div class="hero-content">
+    <span class="eyebrow">✦ AI Recipe Generator</span>
+    <h1>Turn Your Ingredients Into <span>Amazing Recipes.</span></h1>
+    <p>Snap a photo of what you have or type your ingredients. FlavorAI turns whatever is in your kitchen into a recipe you will actually want to make.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="scanner.html">⌁ Upload Ingredients</a>
+      <a class="btn ghost" href="studio.html">⌨ Type Ingredients</a>
+    </div>
+    <div class="hero-input">
+      <div class="input-row">
+        <input id="ingredientInput" placeholder="What's in your kitchen? e.g. eggs, tomato, spinach">
+        <button class="btn primary" id="addIngredient" type="button" onclick="window.location.href='studio.html'">Add</button>
+      </div>
+      <div class="chips" id="ingredientChips">
+        <span class="chip">Chicken</span><span class="chip">Broccoli</span><span class="chip">Eggs</span><span class="chip">Tomatoes</span>
+      </div>
+      <div class="hero-note">Your ingredients stay at the center of the experience. No complicated setup.</div>
+    </div>
+  </div>
+</section>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

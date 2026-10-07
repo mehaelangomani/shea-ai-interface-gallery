@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recipe Studio — FlavorAI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="motion-page">
+<div class="page-bg studio-bg"></div>
+<div class="shell">
+<header class="nav glass">
+  <a class="brand" href="index.html"><span class="brand-mark">✦</span>FlavorAI</a>
+  <nav class="nav-links" id="navLinks"><a class="" href="index.html">Home</a><a class="" href="discover.html">Discover</a><a class="" href="scanner.html">Scanner</a><a class="active" href="studio.html">Recipe Studio</a><a class="" href="recipes.html">My Recipes</a><a class="" href="profile.html">Profile</a><a class="" href="settings.html">Settings</a></nav>
+  <div class="nav-actions">
+    <a class="btn small hide-tablet" href="pricing.html">Upgrade</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+<main>
+<section class="page-head glass">
+  <span class="eyebrow">Recipe Studio</span>
+  <h1>Create your <span>recipe.</span></h1>
+  <p>Enter what you have, choose a few preferences, and generate a complete recipe. The generated food image stays medium-sized beside the recipe instead of taking over the page.</p>
+</section>
+<section class="studio-grid">
+  <section class="card glass form-card">
+    <h2 class="section-title">Your ingredients</h2>
+    <p class="section-sub">Type ingredients manually or bring them over from Ingredient Scanner.</p>
+    <div class="form-group">
+      <input class="text-input" id="studioIngredients" placeholder="Tomato, spinach, eggs, garlic...">
+    </div>
+    <div class="form-group">
+      <div class="form-label"><span>Diet</span><strong>Vegetarian</strong></div>
+      <div class="option-row">
+        <button class="option selected" data-option>Vegetarian</button><button class="option" data-option>Anything</button><button class="option" data-option>Vegan</button><button class="option" data-option>High Protein</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-label"><span>Cooking time</span><strong>20 min</strong></div>
+      <div class="option-row"><button class="option selected" data-option>Under 20 min</button><button class="option" data-option>30 min</button><button class="option" data-option>45+ min</button></div>
+    </div>
+    <div class="form-group">
+      <div class="form-label"><span>Difficulty</span><strong>Easy</strong></div>
+      <div class="option-row"><button class="option selected" data-option>Easy</button><button class="option" data-option>Medium</button><button class="option" data-option>Advanced</button></div>
+    </div>
+    <div class="form-group"><button class="btn primary" id="generateRecipe">✦ Generate Recipe</button></div>
+  </section>
+  <section class="card glass preview-panel">
+    <div id="emptyPreview" class="empty-preview"><div><div class="spark">✦</div><h2>Your recipe preview</h2><p class="section-sub">Generate a recipe and your result will appear here.</p></div></div>
+    <div class="generated" id="generatedRecipe">
+      <div class="generated-top">
+        <div class="recipe-detail">
+          <span class="eyebrow">AI Generated</span>
+          <h2>Creamy Spinach & Tomato Pasta</h2>
+          <p class="description">A quick, comforting bowl built around the ingredients you already have.</p>
+          <div class="meta"><span>20 min</span><span>Easy</span><span>Vegetarian</span></div>
+          <div class="detail-list"><ul><li>Tomato</li><li>Spinach</li><li>Egg</li><li>Garlic</li><li>Pasta</li></ul></div>
+          <div class="recipe-actions"><button class="btn primary" data-toast="Recipe saved to My Recipes">♡ Save Recipe</button><button class="btn" data-toast="Generating another variation…">Generate Again</button></div>
+        </div>
+        <img class="generated-image" src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1000&q=85" alt="Generated recipe">
+      </div>
+    </div>
+  </section>
+</section>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>

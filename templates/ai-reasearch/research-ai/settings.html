@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | ResearchAI</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================================================
+           SETTINGS PAGE ONLY
+        ========================================================= */
+
+        body.settings-page {
+            min-height: 100vh;
+            margin: 0;
+            color: #ffffff;
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("assets/background.png") center top / cover fixed no-repeat;
+            background-color: #030305;
+        }
+
+
+        /* =========================================================
+           SETTINGS MAIN
+        ========================================================= */
+
+        .settings-main {
+            width: min(1420px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 150px 0 80px;
+        }
+
+
+        /* =========================================================
+           PAGE INTRO
+        ========================================================= */
+
+        .settings-hero {
+            margin-bottom: 38px;
+            padding: 0 34px;
+        }
+
+        .settings-eyebrow {
+            display: inline-block;
+            margin-bottom: 14px;
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+
+            color: #8f78ff;
+        }
+
+        .settings-hero h1 {
+            margin: 0 0 14px;
+
+            font-size: clamp(42px, 5vw, 68px);
+            line-height: 0.98;
+            font-weight: 750;
+            letter-spacing: -2.5px;
+
+            color: #ffffff;
+        }
+
+        .settings-hero h1 span {
+            color: #8666ff;
+        }
+
+        .settings-hero p {
+            max-width: 720px;
+            margin: 0;
+
+            font-size: 17px;
+            line-height: 1.7;
+
+            color: rgba(255,255,255,.62);
+        }
+
+
+        /* =========================================================
+           MAIN SETTINGS WORKSPACE
+        ========================================================= */
+
+        .settings-workspace {
+            position: relative;
+
+            padding: 38px;
+
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(10,10,24,.88),
+                    rgba(17,16,45,.76)
+                );
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,.45),
+                inset 0 1px 0 rgba(255,255,255,.04);
+
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+
+            overflow: hidden;
+        }
+
+        .settings-workspace::before {
+            content: "";
+
+            position: absolute;
+
+            width: 520px;
+            height: 520px;
+
+            right: -220px;
+            top: -220px;
+
+            border-radius: 50%;
+
+            background: rgba(91,72,255,.18);
+
+            filter: blur(100px);
+
+            pointer-events: none;
+        }
+
+        .settings-workspace::after {
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+            height: 420px;
+
+            left: -220px;
+            bottom: -220px;
+
+            border-radius: 50%;
+
+            background: rgba(39,91,255,.10);
+
+            filter: blur(100px);
+
+            pointer-events: none;
+        }
+
+
+        /* =========================================================
+           SETTINGS CARDS
+        ========================================================= */
+
+        .settings-card {
+            position: relative;
+            z-index: 1;
+
+            margin-bottom: 22px;
+            padding: 30px;
+
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,.045),
+                    rgba(255,255,255,.018)
+                );
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.035);
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                background .25s ease;
+        }
+
+        .settings-card:hover {
+            transform: translateY(-2px);
+
+            border-color: rgba(132,103,255,.28);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(132,103,255,.07),
+                    rgba(255,255,255,.025)
+                );
+        }
+
+        .settings-card:last-of-type {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================================================
+           CARD HEADER
+        ========================================================= */
+
+        .settings-card-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 44px;
+            height: 44px;
+
+            margin-bottom: 22px;
+
+            border: 1px solid rgba(132,103,255,.35);
+            border-radius: 14px;
+
+            background: rgba(106,80,255,.12);
+
+            color: #9b82ff;
+
+            font-size: 19px;
+
+            box-shadow:
+                0 0 30px rgba(103,75,255,.08);
+        }
+
+        .settings-card-content {
+            margin-bottom: 28px;
+        }
+
+        .card-label {
+            display: block;
+
+            margin-bottom: 9px;
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+
+            color: #8d76ff;
+        }
+
+        .settings-card h2 {
+            margin: 0 0 9px;
+
+            font-size: 24px;
+            line-height: 1.2;
+            letter-spacing: -.5px;
+
+            color: #ffffff;
+        }
+
+        .settings-card p {
+            max-width: 760px;
+
+            margin: 0;
+
+            font-size: 14px;
+            line-height: 1.7;
+
+            color: rgba(255,255,255,.56);
+        }
+
+
+        /* =========================================================
+           OPTIONS
+        ========================================================= */
+
+        .settings-option,
+        .settings-toggle-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+
+            padding: 22px 0;
+
+            border-top: 1px solid rgba(255,255,255,.075);
+        }
+
+        .settings-option strong,
+        .settings-toggle-row strong {
+            display: block;
+
+            margin-bottom: 6px;
+
+            font-size: 15px;
+            font-weight: 650;
+
+            color: rgba(255,255,255,.92);
+        }
+
+        .settings-option span,
+        .settings-toggle-row span {
+            display: block;
+
+            font-size: 13px;
+            line-height: 1.55;
+
+            color: rgba(255,255,255,.48);
+        }
+
+
+        /* =========================================================
+           SELECT
+        ========================================================= */
+
+        .settings-option select {
+            min-width: 145px;
+
+            padding: 12px 38px 12px 15px;
+
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 12px;
+
+            outline: none;
+
+            background: rgba(255,255,255,.045);
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            cursor: pointer;
+        }
+
+        .settings-option select:focus {
+            border-color: rgba(132,103,255,.65);
+        }
+
+        .settings-option select option {
+            background: #11111b;
+            color: #ffffff;
+        }
+
+
+        /* =========================================================
+           SMALL BUTTON
+        ========================================================= */
+
+        .settings-small-btn {
+            padding: 10px 17px;
+
+            border: 1px solid rgba(255,255,255,.13);
+            border-radius: 10px;
+
+            background: rgba(255,255,255,.045);
+
+            color: #ffffff;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            transition: .2s ease;
+        }
+
+        .settings-small-btn:hover {
+            border-color: rgba(132,103,255,.55);
+            background: rgba(132,103,255,.12);
+        }
+
+
+        /* =========================================================
+           TOGGLE SWITCH
+        ========================================================= */
+
+        .settings-switch {
+            position: relative;
+
+            flex-shrink: 0;
+
+            width: 50px;
+            height: 28px;
+        }
+
+        .settings-switch input {
+            position: absolute;
+
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .settings-switch span {
+            position: absolute;
+            inset: 0;
+
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 999px;
+
+            background: rgba(255,255,255,.09);
+
+            cursor: pointer;
+
+            transition: .25s ease;
+        }
+
+        .settings-switch span::before {
+            content: "";
+
+            position: absolute;
+
+            width: 20px;
+            height: 20px;
+
+            left: 3px;
+            top: 3px;
+
+            border-radius: 50%;
+
+            background: #ffffff;
+
+            box-shadow: 0 2px 8px rgba(0,0,0,.35);
+
+            transition: .25s ease;
+        }
+
+        .settings-switch input:checked + span {
+            border-color: #7658ff;
+            background: #7658ff;
+        }
+
+        .settings-switch input:checked + span::before {
+            transform: translateX(22px);
+        }
+
+
+        /* =========================================================
+           APPEARANCE / THEMES
+        ========================================================= */
+
+        .theme-options {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 14px;
+        }
+
+        .theme-option {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            padding: 15px;
+
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 16px;
+
+            background: rgba(255,255,255,.025);
+
+            color: #ffffff;
+
+            text-align: left;
+
+            cursor: pointer;
+
+            transition: .25s ease;
+        }
+
+        .theme-option:hover {
+            border-color: rgba(132,103,255,.4);
+            transform: translateY(-2px);
+        }
+
+        .theme-option.active {
+            border-color: rgba(132,103,255,.75);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(119,88,255,.14),
+                    rgba(255,255,255,.035)
+                );
+
+            box-shadow:
+                0 0 30px rgba(100,75,255,.08);
+        }
+
+        .theme-option strong {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .theme-preview {
+            display: block;
+
+            width: 100%;
+            height: 75px;
+
+            border-radius: 11px;
+
+            border: 1px solid rgba(255,255,255,.10);
+        }
+
+        .dark-preview {
+            background:
+                linear-gradient(
+                    135deg,
+                    #050507,
+                    #17152a
+                );
+        }
+
+        .midnight-preview {
+            background:
+                linear-gradient(
+                    135deg,
+                    #05091a,
+                    #121b48
+                );
+        }
+
+        .system-preview {
+            background:
+                linear-gradient(
+                    135deg,
+                    #111111 0 50%,
+                    #eeeeee 50% 100%
+                );
+        }
+
+
+        /* =========================================================
+           DANGER ZONE
+        ========================================================= */
+
+        .danger-card {
+            border-color: rgba(255,90,110,.15);
+        }
+
+        .danger-card:hover {
+            border-color: rgba(255,90,110,.3);
+        }
+
+        .danger-label {
+            color: #ff7184;
+        }
+
+        .danger-actions {
+            display: flex;
+
+            gap: 12px;
+
+            margin-top: 24px;
+        }
+
+        .settings-outline-btn,
+        .delete-account-btn {
+            padding: 12px 18px;
+
+            border-radius: 11px;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            transition: .2s ease;
+        }
+
+        .settings-outline-btn {
+            border: 1px solid rgba(255,255,255,.13);
+            background: rgba(255,255,255,.035);
+            color: #ffffff;
+        }
+
+        .settings-outline-btn:hover {
+            background: rgba(255,255,255,.08);
+        }
+
+        .delete-account-btn {
+            border: 1px solid rgba(255,90,110,.28);
+            background: rgba(255,70,90,.06);
+            color: #ff8494;
+        }
+
+        .delete-account-btn:hover {
+            background: rgba(255,70,90,.12);
+        }
+
+
+        /* =========================================================
+           SAVE
+        ========================================================= */
+
+        .settings-save-area {
+            position: relative;
+            z-index: 2;
+
+            display: flex;
+            justify-content: flex-end;
+
+            padding-top: 28px;
+        }
+
+        .save-settings-btn {
+            padding: 14px 25px;
+
+            border: none;
+            border-radius: 13px;
+
+            background: #ffffff;
+
+            color: #08080c;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,.3);
+
+            transition: .25s ease;
+        }
+
+        .save-settings-btn:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 14px 40px rgba(0,0,0,.4);
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 800px) {
+
+            .settings-main {
+                width: calc(100% - 28px);
+                padding-top: 125px;
+                padding-bottom: 50px;
+            }
+
+            .settings-hero {
+                padding: 0 8px;
+            }
+
+            .settings-hero h1 {
+                font-size: 45px;
+            }
+
+            .settings-workspace {
+                padding: 18px;
+                border-radius: 22px;
+            }
+
+            .settings-card {
+                padding: 22px 18px;
+                border-radius: 18px;
+            }
+
+            .settings-option,
+            .settings-toggle-row {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .settings-option select,
+            .settings-small-btn {
+                width: 100%;
+            }
+
+            .theme-options {
+                grid-template-columns: 1fr;
+            }
+
+            .theme-preview {
+                height: 65px;
+            }
+
+            .danger-actions {
+                flex-direction: column;
+            }
+
+            .settings-outline-btn,
+            .delete-account-btn {
+                width: 100%;
+            }
+
+            .settings-save-area {
+                justify-content: stretch;
+            }
+
+            .save-settings-btn {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body class="settings-page">
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <header class="navbar">
+
+        <a href="index.html" class="logo">
+            <span class="logo-mark">
+                <span></span>
+            </span>
+
+            <span>
+                Research<span class="logo-ai">AI</span>
+            </span>
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html" class="nav-link">
+                Home
+            </a>
+
+            <a href="index.html#resources" class="nav-link">
+    Resources
+</a>
+
+            <a
+                href="index.html#pricing"
+                class="nav-link"
+            >
+                Pricing
+            </a>
+            <a href="solutions.html" class="nav-link">
+                Solutions
+            </a>
+            <a href="settings.html"
+               class="nav-link settings-nav-link active">
+                Settings
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button class="search-button"
+                    id="openSearch"
+                    aria-label="Search">
+
+                <span>⌕</span>
+
+            </button>
+
+
+            <button class="signin-button" id="settingsSignInBtn">
+    Sign in
+</button>
+
+
+            <button class="primary-small"
+                    id="getStartedBtn">
+
+                Get started
+
+            </button>
+
+
+            <a href="profile.html"
+               class="profile-nav-link"
+               id="profileButton"
+               aria-label="Open profile">
+
+                <span class="profile-avatar">
+                    S
+                </span>
+
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         SETTINGS PAGE
+    ========================================================= -->
+
+    <main class="settings-main">
+
+
+        <!-- Page heading -->
+         <!-- Page heading -->
+
+<section class="settings-hero">
+
+    <span class="settings-eyebrow settings-hero-reveal">
+        WORKSPACE SETTINGS
+    </span>
+
+    <h1 class="settings-hero-reveal">
+        Make ResearchAI
+        <span>yours.</span>
+    </h1>
+
+    <p class="settings-hero-reveal">
+        Customize your research experience, notifications,
+        appearance, privacy and account preferences.
+    </p>
+
+</section>
+
+        </section>
+
+
+
+        <!-- Main glass workspace -->
+
+        <section class="settings-workspace">
+
+
+            <!-- =================================================
+                 RESEARCH PREFERENCES
+            ================================================= -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-icon">
+                    ✦
+                </div>
+
+                <div class="settings-card-content">
+
+                    <span class="card-label">
+                        RESEARCH PREFERENCES
+                    </span>
+
+                    <h2>
+                        Customize your research experience
+                    </h2>
+
+                    <p>
+                        Tell ResearchAI how you prefer to discover,
+                        analyze, and organize information.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+
+                        <strong>
+                            Research depth
+                        </strong>
+
+                        <span>
+                            Choose how detailed your AI research should be.
+                        </span>
+
+                    </div>
+
+
+                    <select>
+
+                        <option>
+                            Deep
+                        </option>
+
+                        <option>
+                            Balanced
+                        </option>
+
+                        <option>
+                            Quick
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+
+                        <strong>
+                            Preferred research fields
+                        </strong>
+
+                        <span>
+                            AI, Machine Learning, Data Science
+                        </span>
+
+                    </div>
+
+
+                    <button class="settings-small-btn">
+                        Edit
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NOTIFICATIONS
+            ================================================= -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-icon">
+                    ◉
+                </div>
+
+
+                <div class="settings-card-content">
+
+                    <span class="card-label">
+                        NOTIFICATIONS
+                    </span>
+
+                    <h2>
+                        Stay up to date
+                    </h2>
+
+                    <p>
+                        Choose which updates and research alerts
+                        you want to receive.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-toggle-row">
+
+                    <div>
+
+                        <strong>
+                            New research alerts
+                        </strong>
+
+                        <span>
+                            Notify me about papers related to my interests.
+                        </span>
+
+                    </div>
+
+
+                    <label class="settings-switch">
+
+                        <input type="checkbox" checked>
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="settings-toggle-row">
+
+                    <div>
+
+                        <strong>
+                            Weekly research digest
+                        </strong>
+
+                        <span>
+                            Receive a summary of important research each week.
+                        </span>
+
+                    </div>
+
+
+                    <label class="settings-switch">
+
+                        <input type="checkbox" checked>
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="settings-toggle-row">
+
+                    <div>
+
+                        <strong>
+                            Product updates
+                        </strong>
+
+                        <span>
+                            Get notified about new ResearchAI features.
+                        </span>
+
+                    </div>
+
+
+                    <label class="settings-switch">
+
+                        <input type="checkbox">
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 APPEARANCE
+            ================================================= -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-icon">
+                    ◐
+                </div>
+
+
+                <div class="settings-card-content">
+
+                    <span class="card-label">
+                        APPEARANCE
+                    </span>
+
+                    <h2>
+                        Make ResearchAI yours
+                    </h2>
+
+                    <p>
+                        Customize how the workspace looks during
+                        your research sessions.
+                    </p>
+
+                </div>
+
+
+                <div class="theme-options">
+
+                    <button class="theme-option active">
+
+                        <span class="theme-preview dark-preview">
+                        </span>
+
+                        <strong>
+                            Dark
+                        </strong>
+
+                    </button>
+
+
+                    <button class="theme-option">
+
+                        <span class="theme-preview midnight-preview">
+                        </span>
+
+                        <strong>
+                            Midnight
+                        </strong>
+
+                    </button>
+
+
+                    <button class="theme-option">
+
+                        <span class="theme-preview system-preview">
+                        </span>
+
+                        <strong>
+                            System
+                        </strong>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 PRIVACY
+            ================================================= -->
+
+            <div class="settings-card">
+
+                <div class="settings-card-icon">
+                    ◇
+                </div>
+
+
+                <div class="settings-card-content">
+
+                    <span class="card-label">
+                        PRIVACY & DATA
+                    </span>
+
+                    <h2>
+                        Your research, your control
+                    </h2>
+
+                    <p>
+                        Manage how your research activity and saved
+                        information are handled.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+
+                        <strong>
+                            Private research mode
+                        </strong>
+
+                        <span>
+                            Keep your research activity private from
+                            your shared workspace.
+                        </span>
+
+                    </div>
+
+
+                    <label class="settings-switch">
+
+                        <input type="checkbox" checked>
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="settings-option">
+
+                    <div>
+
+                        <strong>
+                            Save search history
+                        </strong>
+
+                        <span>
+                            Keep your previous research questions available.
+                        </span>
+
+                    </div>
+
+
+                    <label class="settings-switch">
+
+                        <input type="checkbox" checked>
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 ACCOUNT
+            ================================================= -->
+
+            <div class="settings-card danger-card">
+
+                <span class="card-label danger-label">
+                    ACCOUNT
+                </span>
+
+                <h2>
+                    Account management
+                </h2>
+
+                <p>
+                    Manage your account or permanently remove
+                    your ResearchAI data.
+                </p>
+
+
+                <div class="danger-actions">
+
+                    <button class="settings-outline-btn">
+                        Export my data
+                    </button>
+
+
+                    <button class="delete-account-btn">
+                        Delete account
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SAVE
+            ================================================= -->
+
+            <div class="settings-save-area">
+
+                <button class="save-settings-btn">
+                    Save Changes
+                </button>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         SETTINGS PAGE JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+        /* Save button */
+
+        const saveButton =
+            document.querySelector(".save-settings-btn");
+
+        if (saveButton) {
+
+            saveButton.addEventListener("click", function () {
+
+                const originalText =
+                    saveButton.textContent;
+
+                saveButton.textContent =
+                    "Saved ✓";
+
+                setTimeout(function () {
+
+                    saveButton.textContent =
+                        originalText;
+
+                }, 1800);
+
+            });
+
+        }
+
+
+
+        /* Theme buttons */
+
+        const themeButtons =
+            document.querySelectorAll(".theme-option");
+
+        themeButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                themeButtons.forEach(function (item) {
+
+                    item.classList.remove("active");
+
+                });
+
+                button.classList.add("active");
+
+            });
+
+        });
+
+
+
+        /* Edit research fields */
+
+        const editButton =
+            document.querySelector(".settings-small-btn");
+
+        if (editButton) {
+
+            editButton.addEventListener("click", function () {
+
+                const fields =
+                    prompt(
+                        "Enter your preferred research fields:",
+                        "AI, Machine Learning, Data Science"
+                    );
+
+                if (fields && fields.trim() !== "") {
+
+                    const fieldText =
+                        editButton
+                            .parentElement
+                            .querySelector("span");
+
+                    if (fieldText) {
+
+                        fieldText.textContent =
+                            fields.trim();
+
+                    }
+
+                }
+
+            });
+
+        }
+
+
+
+        /* Export data */
+
+        const exportButton =
+            document.querySelector(".settings-outline-btn");
+
+        if (exportButton) {
+
+            exportButton.addEventListener("click", function () {
+
+                alert(
+                    "Your ResearchAI data export has been prepared."
+                );
+
+            });
+
+        }
+
+
+
+        /* Delete account */
+
+        const deleteButton =
+            document.querySelector(".delete-account-btn");
+
+        if (deleteButton) {
+
+            deleteButton.addEventListener("click", function () {
+
+                const confirmed =
+                    confirm(
+                        "Are you sure you want to delete your ResearchAI account?"
+                    );
+
+                if (confirmed) {
+
+                    alert(
+                        "Account deletion request submitted."
+                    );
+
+                }
+
+            });
+
+        }
+
+    </script>
+
+<script>
+    const settingsSignInBtn = document.getElementById("settingsSignInBtn");
+
+    if (settingsSignInBtn) {
+        settingsSignInBtn.addEventListener("click", function () {
+            window.location.href = "index.html?openSignIn=true";
+        });
+    }
+</script>
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        Research<span>AI</span>
+    </div>
+
+    <p>
+        Research smarter. Discover deeper.
+    </p>
+
+    <span>
+        © 2026 ResearchAI
+    </span>
+
+</footer>
+</body>
+
+</html>

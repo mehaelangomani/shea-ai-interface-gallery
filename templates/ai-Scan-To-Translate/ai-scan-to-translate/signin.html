@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#000"
+  >
+
+  <title>
+    Sign In — LingoLens
+  </title>
+
+  <meta
+    name="description"
+    content="Sign in to LingoLens."
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <script
+    src="script.js"
+    defer
+  ></script>
+
+</head>
+
+
+<body>
+
+  <main class="page auth-page">
+
+
+    <!-- BACKGROUND VIDEO -->
+
+    <video
+      class="background"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+
+      <source
+        src="assets/background.webm"
+        type="video/webm"
+      >
+
+      <source
+        src="assets/background.mp4"
+        type="video/mp4"
+      >
+
+    </video>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="LingoLens home"
+      >
+        LL
+      </a>
+
+
+      <div
+        class="header-actions"
+        id="headerActions"
+      >
+
+        <nav
+          class="nav"
+          aria-label="Main navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="scan.html">
+            Scan &amp; Translate
+          </a>
+
+          <a href="conversation.html">
+            Conversation
+          </a>
+
+          <a href="pricing.html">
+            Premium
+          </a>
+
+          <a href="settings.html">
+            Settings
+          </a>
+
+        </nav>
+<a
+          class="signin-link active"
+          href="signin.html"
+        >
+          Sign In
+        </a>
+
+      </div>
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="headerActions"
+      >
+
+        <span
+          class="burger"
+          aria-hidden="true"
+        >
+
+          <i></i>
+          <i></i>
+          <i></i>
+
+        </span>
+
+      </button>
+
+    </header>
+
+
+    <!-- SIGN IN CONTENT -->
+
+    <section class="page-content auth-content">
+
+      <div class="eyebrow">
+        WELCOME BACK
+      </div>
+
+
+      <h1>
+        Pick up where you left off.
+      </h1>
+
+
+      <!-- SIGN IN FORM -->
+
+      <form
+        id="signinForm"
+        class="auth-form"
+        novalidate
+      >
+
+
+        <!-- EMAIL -->
+
+        <label>
+
+          Email
+
+          <input
+            id="signinEmail"
+            type="email"
+            required
+            placeholder="you@example.com"
+            autocomplete="email"
+          >
+
+        </label>
+
+
+        <!-- PASSWORD -->
+
+        <label>
+
+          Password
+
+          <span class="password-wrap">
+
+            <input
+              id="signinPassword"
+              type="password"
+              required
+              placeholder="••••••••"
+              autocomplete="current-password"
+            >
+
+            <button
+              type="button"
+              class="show-pass"
+              id="showPass"
+            >
+              Show
+            </button>
+
+          </span>
+
+        </label>
+
+
+        <!-- REMEMBER / FORGOT -->
+
+        <div class="auth-row">
+
+          <label class="check">
+
+            <input
+              type="checkbox"
+              id="remember"
+            >
+
+            Remember me
+
+          </label>
+
+
+          <button
+            type="button"
+            class="text-button"
+            id="forgotPass"
+          >
+            Forgot password?
+          </button>
+
+        </div>
+
+
+        <!-- SIGN IN BUTTON -->
+
+        <button
+          class="light-button"
+          type="submit"
+        >
+          Sign In
+        </button>
+
+
+        <!-- ALTERNATIVE -->
+
+        <p class="auth-alt">
+
+          New to LingoLens?
+
+          <a href="pricing.html">
+            See plans
+          </a>
+
+        </p>
+
+
+        <!-- STATUS -->
+
+        <p
+          class="status"
+          id="signinStatus"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <span class="footer-brand">
+        LL
+      </span>
+
+      <span>
+        © 2026 LingoLens · Scan to translate
+      </span>
+
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

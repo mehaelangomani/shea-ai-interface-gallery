@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResearchAI — Insights</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .workspace-page-content {
+            padding: 42px;
+        }
+
+        .page-intro {
+            margin-bottom: 30px;
+        }
+
+        .page-intro .small-label {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .page-intro h3 {
+            font-size: 34px;
+            margin: 0 0 10px;
+        }
+
+        .page-intro p {
+            color: #a5a5b3;
+            max-width: 700px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .insight-card {
+            padding: 26px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.10);
+            background: rgba(255,255,255,.035);
+            transition: .25s ease;
+        }
+
+        .insight-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(130,100,255,.45);
+        }
+
+        .insight-card .label {
+            color: #9a7cff;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .insight-card h4 {
+            font-size: 21px;
+            margin: 12px 0;
+        }
+
+        .insight-card p {
+            color: #9999a6;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .insight-score {
+            margin-top: 20px;
+            height: 5px;
+            border-radius: 10px;
+            background: rgba(255,255,255,.08);
+            overflow: hidden;
+        }
+
+        .insight-score span {
+            display: block;
+            height: 100%;
+            width: 82%;
+            border-radius: inherit;
+            background: linear-gradient(90deg, #6d5cff, #a477ff);
+        }
+
+        .insight-full {
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 800px) {
+            .workspace-page-content {
+                padding: 24px;
+            }
+
+            .insights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insight-full {
+                grid-column: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="background-layer"></div>
+<div class="background-overlay"></div>
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <span class="logo-text">
+            Research<span>AI</span>
+        </span>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html" class="nav-link">
+            Home
+        </a>
+
+        <a href="index.html#resources" class="nav-link">
+            Resources
+        </a>
+
+        <a href="index.html#pricing" class="nav-link">
+            Pricing
+        </a>
+
+        <a href="solutions.html" class="nav-link active">
+            Solutions
+        </a>
+        <a href="settings.html" class="nav-link">
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+        <button class="search-button">⌕</button>
+        <button class="signin-button">Sign in</button>
+        <button class="primary-small">Get started</button>
+        <a href="profile.html" class="profile-nav-link" aria-label="Open profile">
+                <span class="profile-avatar">
+                    S
+                </span>
+            </a>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="workspace-section">
+
+    <div class="section-heading">
+
+        <span>AI RESEARCH WORKSPACE</span>
+
+        <h2>
+            Turn research into
+            <em>insights.</em>
+        </h2>
+
+        <p>
+            Understand patterns, identify research gaps and connect findings
+            across the sources in your workspace.
+        </p>
+
+    </div>
+
+
+    <div class="workspace">
+
+
+    <div class="workspace">
+        <aside class="workspace-sidebar">
+
+            <div class="workspace-title">
+                Research
+            </div>
+
+            <a href="solutions.html" class="workspace-item">
+                ✦ Overview
+            </a>
+
+            <a href="discover.html" class="workspace-item">
+                ⌕ Discover
+            </a>
+
+            <a href="sources.html" class="workspace-item">
+                ◈ Sources
+            </a>
+
+            <a href="notes.html" class="workspace-item">
+                ✎ Notes
+            </a>
+
+            <a href="insights.html" class="workspace-item active">
+                ◉ Insights
+            </a>
+
+        </aside>
+
+
+        <div class="workspace-main">
+
+            <div class="workspace-page-content">
+
+                <div class="page-intro">
+
+                    <span class="small-label">
+                        AI INSIGHTS
+                    </span>
+
+                    <h3>
+                        What your research is telling you.
+                    </h3>
+
+                    <p>
+                        AI-generated observations that help you identify
+                        patterns, gaps and emerging opportunities.
+                    </p>
+
+                </div>
+
+
+                <div class="insights-grid">
+
+                    <div class="insight-card">
+
+                        <span class="label">
+                            AI Summary
+                        </span>
+
+                        <h4>
+                            Generative AI is reshaping education.
+                        </h4>
+
+                        <p>
+                            Current research indicates that generative AI is
+                            changing how students interact with educational
+                            content, assessment systems and personalized
+                            learning environments.
+                        </p>
+
+                        <div class="insight-score">
+                            <span></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <span class="label">
+                            Research Gap
+                        </span>
+
+                        <h4>
+                            Long-term evidence remains limited.
+                        </h4>
+
+                        <p>
+                            More longitudinal research is needed to understand
+                            the lasting effects of AI-assisted learning.
+                        </p>
+
+                        <div class="insight-score">
+                            <span style="width: 68%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <span class="label">
+                            Emerging Trend
+                        </span>
+
+                        <h4>
+                            Human-AI collaboration is growing.
+                        </h4>
+
+                        <p>
+                            Researchers are increasingly studying workflows
+                            where AI supports discovery while humans remain
+                            responsible for interpretation and decisions.
+                        </p>
+
+                        <div class="insight-score">
+                            <span style="width: 76%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <span class="label">
+                            Opportunity
+                        </span>
+
+                        <h4>
+                            Personalized research workflows.
+                        </h4>
+
+                        <p>
+                            AI systems could combine discovery, source
+                            organization, notes and analysis into one
+                            continuous research experience.
+                        </p>
+
+                        <div class="insight-score">
+                            <span style="width: 88%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="insight-card insight-full">
+
+                        <span class="label">
+                            Connected Insight
+                        </span>
+
+                        <h4>
+                            Research is becoming increasingly AI-assisted.
+                        </h4>
+
+                        <p>
+                            Across the sources in this workspace, a common
+                            pattern is emerging: AI is moving beyond simple
+                            information retrieval toward assisting researchers
+                            throughout discovery, analysis, organization and
+                            knowledge creation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        Research<span>AI</span>
+    </div>
+
+    <p>
+        Research smarter. Discover deeper.
+    </p>
+
+    <span>
+        © 2026 ResearchAI
+    </span>
+
+</footer>
+
+</body>
+</html>

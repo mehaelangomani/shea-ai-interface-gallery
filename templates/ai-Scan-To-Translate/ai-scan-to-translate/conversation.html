@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000">
+  <title>Conversation — LingoLens</title>
+  <meta name="description" content="Live two-way translation with a built-in phrasebook.">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+
+  <!-- GRADIENT DARK CARD STYLE -->
+  <style>
+    .conversation-app .app-panel {
+      background:
+        radial-gradient(
+          circle at 85% 8%,
+          rgba(255, 185, 55, 0.28),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 70% 0%,
+          rgba(255, 135, 35, 0.22),
+          transparent 42%
+        ),
+        linear-gradient(
+          135deg,
+          rgba(31, 24, 20, 0.78),
+          rgba(56, 32, 20, 0.76)
+        );
+
+      border: 1px solid rgba(255, 150, 70, 0.32);
+      box-shadow:
+        0 0 35px rgba(255, 120, 35, 0.10),
+        inset 0 1px 0 rgba(255, 190, 90, 0.10);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .conversation-app .app-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 190, 70, 0.06),
+          transparent 38%,
+          rgba(255, 110, 35, 0.05)
+        );
+
+      border-radius: inherit;
+    }
+
+    .conversation-app .app-panel {
+      position: relative;
+    }
+
+    .conversation-app .app-panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .conversation-app .app-tabs {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(255, 150, 55, 0.08),
+          rgba(35, 22, 17, 0.18)
+        );
+
+      border: 1px solid rgba(255, 150, 70, 0.16);
+      border-radius: 14px;
+      padding: 6px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- BACKGROUND -->
+    <video
+      class="background"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+      <source src="assets/background.webm" type="video/webm">
+      <source src="assets/background.mp4" type="video/mp4">
+    </video>
+
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="LingoLens home"
+      >
+        LL
+      </a>
+
+      <div
+        class="header-actions"
+        id="headerActions"
+      >
+
+        <nav
+          class="nav"
+          aria-label="Main navigation"
+        >
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="scan.html">
+            Scan &amp; Translate
+          </a>
+
+          <a
+            class="active"
+            aria-current="page"
+            href="conversation.html"
+          >
+            Conversation
+          </a>
+
+          <a href="pricing.html">
+            Premium
+          </a>
+
+          <a href="settings.html">
+            Settings
+          </a>
+        </nav>
+<a
+          class="signin-link"
+          href="signin.html"
+        >
+          Sign In
+        </a>
+
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="headerActions"
+      >
+        <span
+          class="burger"
+          aria-hidden="true"
+        >
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+      </button>
+
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+    <section class="page-content conversation-page">
+
+      <!-- LEFT INTRODUCTION -->
+      <div class="conversation-top">
+
+        <div class="eyebrow">
+          CONVERSATION
+        </div>
+
+        <h1>
+          Speak naturally.<br>
+          Understand instantly.
+        </h1>
+
+        <p class="lead">
+          A live translation space for two people speaking different languages.
+        </p>
+
+        <div class="language-pair">
+
+          <button
+            id="convSource"
+            type="button"
+          >
+            English
+          </button>
+
+          <button
+            id="convSwap"
+            type="button"
+            aria-label="Swap languages"
+          >
+            ↔
+          </button>
+
+          <button
+            id="convTarget"
+            type="button"
+          >
+            Spanish
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- CONVERSATION + PHRASEBOOK -->
+      <div class="conversation-app">
+
+        <!-- TABS -->
+        <div
+          class="app-tabs"
+          role="tablist"
+        >
+
+          <button
+            class="app-tab active"
+            data-panel="talkPanel"
+            role="tab"
+            type="button"
+          >
+            Conversation
+          </button>
+
+          <button
+            class="app-tab"
+            data-panel="phrasebook"
+            id="openPhrasebook"
+            role="tab"
+            type="button"
+          >
+            Phrasebook
+          </button>
+
+        </div>
+
+
+        <!-- CONVERSATION CARD -->
+        <div
+          class="app-panel conversation-card"
+          id="talkPanel"
+        >
+
+          <div
+            class="conversation-stream"
+            id="conversationStream"
+          >
+
+            <div class="bubble left">
+              <span>
+                ENGLISH
+              </span>
+
+              Where is the nearest station?
+            </div>
+
+            <div class="bubble right">
+              <span>
+                SPANISH
+              </span>
+
+              ¿Dónde está la estación más cercana?
+            </div>
+
+          </div>
+
+
+          <!-- CONVERSATION CONTROLS -->
+          <div class="conversation-controls">
+
+            <input
+              id="conversationInput"
+              class="conversation-input"
+              placeholder="Type something to translate..."
+            >
+
+            <button
+              class="light-button"
+              id="sendConversation"
+              type="button"
+            >
+              Translate
+            </button>
+
+            <button
+              class="round-button"
+              id="speakConversation"
+              aria-label="Speak"
+              type="button"
+            >
+              ●
+            </button>
+
+          </div>
+
+          <p
+            class="status"
+            id="conversationStatus"
+            aria-live="polite"
+          ></p>
+
+        </div>
+
+
+        <!-- PHRASEBOOK CARD -->
+        <div
+          class="app-panel phrasebook-card"
+          id="phrasebook"
+          hidden
+        >
+
+          <div class="phrase-tools">
+
+            <input
+              id="phraseSearch"
+              class="search-input"
+              placeholder="Search your phrases..."
+            >
+
+            <button
+              class="light-button"
+              id="addPhrase"
+              type="button"
+            >
+              + Add phrase
+            </button>
+
+          </div>
+
+
+          <!-- PHRASE FILTERS -->
+          <div class="filter-buttons">
+
+            <button
+              class="filter active"
+              data-filter="all"
+              type="button"
+            >
+              All
+            </button>
+
+            <button
+              class="filter"
+              data-filter="travel"
+              type="button"
+            >
+              Travel
+            </button>
+
+            <button
+              class="filter"
+              data-filter="food"
+              type="button"
+            >
+              Food
+            </button>
+
+            <button
+              class="filter"
+              data-filter="daily"
+              type="button"
+            >
+              Daily
+            </button>
+
+          </div>
+
+
+          <!-- INLINE ADD PHRASE AREA -->
+          <div class="phrase-add-inline" id="phraseAddInline" hidden>
+            <input
+              id="newPhraseInput"
+              class="search-input phrase-add-input"
+              type="text"
+              placeholder="Type a new phrase..."
+              aria-label="New phrase"
+            >
+            <button class="light-button phrase-save-btn" id="savePhrase" type="button">Save</button>
+            <button class="phrase-cancel-btn" id="cancelPhrase" type="button">Cancel</button>
+          </div>
+
+
+          <!-- PHRASE LIST -->
+          <div
+            class="phrase-list"
+            id="phraseList"
+          >
+
+            <article class="phrase-item" data-category="travel">
+              <span class="phrase-category">TRAVEL · JAPANESE → ENGLISH</span>
+              <strong>駅はどこですか？</strong>
+              <span>Where is the station?</span>
+              <button class="play-phrase" data-phrase="Where is the station?" aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="travel">
+              <span class="phrase-category">TRAVEL · SPANISH → ENGLISH</span>
+              <strong>¿Dónde está el hotel?</strong>
+              <span>Where is the hotel?</span>
+              <button class="play-phrase" data-phrase="Where is the hotel?" aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="travel">
+              <span class="phrase-category">TRAVEL · FRENCH → ENGLISH</span>
+              <strong>Où est la gare ?</strong>
+              <span>Where is the train station?</span>
+              <button class="play-phrase" data-phrase="Where is the train station?" aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="food">
+              <span class="phrase-category">FOOD · FRENCH → ENGLISH</span>
+              <strong>Je suis végétarien.</strong>
+              <span>I am vegetarian.</span>
+              <button class="play-phrase" data-phrase="I am vegetarian." aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="food">
+              <span class="phrase-category">FOOD · SPANISH → ENGLISH</span>
+              <strong>¿Qué recomienda?</strong>
+              <span>What do you recommend?</span>
+              <button class="play-phrase" data-phrase="What do you recommend?" aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="food">
+              <span class="phrase-category">FOOD · ENGLISH → JAPANESE</span>
+              <strong>お水をください。</strong>
+              <span>Water, please.</span>
+              <button class="play-phrase" data-phrase="Water, please." aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="daily">
+              <span class="phrase-category">DAILY · SPANISH → ENGLISH</span>
+              <strong>¿Cuánto cuesta?</strong>
+              <span>How much does it cost?</span>
+              <button class="play-phrase" data-phrase="How much does it cost?" aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="daily">
+              <span class="phrase-category">DAILY · FRENCH → ENGLISH</span>
+              <strong>Quelle heure est-il ?</strong>
+              <span>What time is it?</span>
+              <button class="play-phrase" data-phrase="What time is it?" aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+            <article class="phrase-item" data-category="daily">
+              <span class="phrase-category">DAILY · ENGLISH → SPANISH</span>
+              <strong>Necesito ayuda.</strong>
+              <span>I need help.</span>
+              <button class="play-phrase" data-phrase="I need help." aria-label="Play phrase" type="button">▶</button>
+            </article>
+
+          </div>
+
+
+          <p
+            class="status"
+            id="phraseStatus"
+            aria-live="polite"
+          ></p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+
+      <span class="footer-brand">
+        LL
+      </span>
+
+      <span>
+        © 2026 LingoLens · Scan to translate
+      </span>
+
+    </footer>
+
+  </main>
+
+</body>
+</html>

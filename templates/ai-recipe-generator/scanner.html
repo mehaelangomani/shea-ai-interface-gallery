@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ingredient Scanner — FlavorAI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="motion-page">
+<div class="page-bg scanner-bg"></div>
+<div class="shell">
+<header class="nav glass">
+  <a class="brand" href="index.html"><span class="brand-mark">✦</span>FlavorAI</a>
+  <nav class="nav-links" id="navLinks"><a class="" href="index.html">Home</a><a class="" href="discover.html">Discover</a><a class="active" href="scanner.html">Scanner</a><a class="" href="studio.html">Recipe Studio</a><a class="" href="recipes.html">My Recipes</a><a class="" href="profile.html">Profile</a><a class="" href="settings.html">Settings</a></nav>
+  <div class="nav-actions">
+    <a class="btn small hide-tablet" href="pricing.html">Upgrade</a>
+    <button class="menu-btn" id="menuBtn">☰</button>
+  </div>
+</header>
+<main>
+<section class="page-head glass">
+  <span class="eyebrow">Ingredient Scanner</span>
+  <h1>Show us what's <span>in your kitchen.</span></h1>
+  <p>Upload a photo of your ingredients. This UI prototype visually simulates ingredient recognition, then sends the detected list to Recipe Studio.</p>
+</section>
+<section class="scanner">
+  <div class="card glass">
+    <div class="dropzone" id="dropzone">
+      <div><div class="drop-icon">⌁</div><h2>Drop a food photo here</h2><p>Upload a clear photo of your ingredients, fridge shelf, counter or grocery haul.</p><label class="btn primary" for="ingredientPhoto">Choose Photo</label><input id="ingredientPhoto" type="file" accept="image/*" hidden></div>
+    </div>
+    <div class="preview-box" id="scannerPreview">
+      <img id="previewImage" alt="Uploaded ingredients">
+      <button class="btn primary" id="scanBtn">✦ Scan Ingredients</button>
+    </div>
+  </div>
+  <aside class="card glass" id="scanResult">
+    <h2 class="section-title">Detected ingredients</h2>
+    <p class="section-sub">Review the AI result before creating your recipe.</p>
+    <div class="detected" id="detectedIngredients"><span class="chip">Your scan will appear here</span></div>
+    <button class="btn primary" data-go="studio.html">Continue to Recipe Studio →</button>
+  </aside>
+</section>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body>
+</html>
