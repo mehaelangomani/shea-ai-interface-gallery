@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResearchAI — Sources</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .workspace-page-content {
+            padding: 42px;
+        }
+
+        .page-intro {
+            margin-bottom: 30px;
+        }
+
+        .page-intro .small-label {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .page-intro h3 {
+            font-size: 34px;
+            margin: 0 0 10px;
+        }
+
+        .page-intro p {
+            color: #a5a5b3;
+            max-width: 700px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .source-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .source-actions button {
+            border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.05);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .source-actions button:hover {
+            background: rgba(255,255,255,.1);
+        }
+
+        .sources-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .source-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px;
+            border: 1px solid rgba(255,255,255,.10);
+            border-radius: 16px;
+            background: rgba(255,255,255,.035);
+        }
+
+        .source-card h4 {
+            margin: 0 0 8px;
+            font-size: 18px;
+        }
+
+        .source-card p {
+            margin: 0;
+            color: #9696a4;
+            line-height: 1.5;
+        }
+
+        .source-type {
+            color: #9a7cff;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+            display: block;
+        }
+
+        .source-status {
+            padding: 8px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: #bcb0ff;
+            background: rgba(125,90,255,.12);
+            border: 1px solid rgba(125,90,255,.2);
+        }
+
+        @media (max-width: 800px) {
+            .workspace-page-content {
+                padding: 24px;
+            }
+
+            .source-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="background-layer"></div>
+<div class="background-overlay"></div>
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <span class="logo-text">
+            Research<span>AI</span>
+        </span>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html" class="nav-link">Home</a>
+
+
+        <a href="index.html#resources" class="nav-link">
+            Resources
+        </a>
+
+        <a href="index.html#pricing" class="nav-link">
+            Pricing
+        </a>
+
+        <a href="solutions.html" class="nav-link active">
+            Solutions
+        </a>
+        <a href="settings.html" class="nav-link">
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+        <button class="search-button">⌕</button>
+        <button class="signin-button">Sign in</button>
+        <button class="primary-small">Get started</button>
+        <a href="profile.html" class="profile-nav-link" aria-label="Open profile">
+                <span class="profile-avatar">
+                    S
+                </span>
+            </a>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="workspace-section">
+
+    <div class="section-heading">
+
+        <span>AI RESEARCH WORKSPACE</span>
+
+        <h2>
+            Manage your
+            <em>sources.</em>
+        </h2>
+
+        <p>
+            Keep papers, articles, reports and research material organized
+            in one central workspace.
+        </p>
+
+    </div>
+
+
+    <div class="workspace">
+
+        <aside class="workspace-sidebar">
+
+            <div class="workspace-title">
+                Research
+            </div>
+
+            <a href="solutions.html" class="workspace-item">
+                ✦ Overview
+            </a>
+
+            <a href="discover.html" class="workspace-item">
+                ⌕ Discover
+            </a>
+
+            <a href="sources.html" class="workspace-item active">
+                ◈ Sources
+            </a>
+
+            <a href="notes.html" class="workspace-item">
+                ✎ Notes
+            </a>
+
+            <a href="insights.html" class="workspace-item">
+                ◉ Insights
+            </a>
+
+        </aside>
+
+
+        <div class="workspace-main">
+
+            <div class="workspace-page-content">
+
+                <div class="page-intro">
+
+                    <span class="small-label">
+                        RESEARCH SOURCES
+                    </span>
+
+                    <h3>
+                        Your research library.
+                    </h3>
+
+                    <p>
+                        Store and organize the sources that support your
+                        research projects.
+                    </p>
+
+                </div>
+
+
+                <div class="source-actions">
+
+                    <span class="small-label">
+                        4 SAVED SOURCES
+                    </span>
+
+                    <button id="addSource">
+                        + Add source
+                    </button>
+
+                </div>
+
+
+                <div class="sources-list">
+
+                    <div class="source-card">
+
+                        <div>
+                            <span class="source-type">
+                                Research Paper
+                            </span>
+
+                            <h4>
+                                The Impact of Generative AI on Higher Education
+                            </h4>
+
+                            <p>
+                                AI-assisted learning, assessment and academic
+                                research workflows.
+                            </p>
+                        </div>
+
+                        <span class="source-status">
+                            Saved
+                        </span>
+
+                    </div>
+
+
+                    <div class="source-card">
+
+                        <div>
+                            <span class="source-type">
+                                Research Paper
+                            </span>
+
+                            <h4>
+                                Large Language Models for Scientific Discovery
+                            </h4>
+
+                            <p>
+                                Literature review, hypothesis generation and
+                                scientific analysis.
+                            </p>
+                        </div>
+
+                        <span class="source-status">
+                            Saved
+                        </span>
+
+                    </div>
+
+
+                    <div class="source-card">
+
+                        <div>
+                            <span class="source-type">
+                                Research Report
+                            </span>
+
+                            <h4>
+                                The Future of Human-AI Collaboration
+                            </h4>
+
+                            <p>
+                                Research into collaboration between humans
+                                and intelligent systems.
+                            </p>
+                        </div>
+
+                        <span class="source-status">
+                            Saved
+                        </span>
+
+                    </div>
+
+
+                    <div class="source-card">
+
+                        <div>
+                            <span class="source-type">
+                                Journal Article
+                            </span>
+
+                            <h4>
+                                AI-Assisted Learning in Universities
+                            </h4>
+
+                            <p>
+                                Personalized learning systems and AI in
+                                higher education.
+                            </p>
+                        </div>
+
+                        <span class="source-status">
+                            Saved
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        Research<span>AI</span>
+    </div>
+
+    <p>
+        Research smarter. Discover deeper.
+    </p>
+
+    <span>
+        © 2026 ResearchAI
+    </span>
+
+</footer>
+
+
+<script>
+
+document.getElementById("addSource").addEventListener("click", () => {
+    alert("Add Source feature is ready for your research workflow.");
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#000"
+  >
+
+  <title>
+    Scan &amp; Translate — LingoLens
+  </title>
+
+  <meta
+    name="description"
+    content="Upload or drop an image and translate the text in it."
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <script
+    src="script.js"
+    defer
+  ></script>
+
+</head>
+
+
+<body>
+
+  <main class="page">
+
+
+    <!-- BACKGROUND VIDEO -->
+
+    <video
+      class="background"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+
+      <source
+        src="assets/background.webm"
+        type="video/webm"
+      >
+
+      <source
+        src="assets/background.mp4"
+        type="video/mp4"
+      >
+
+    </video>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="LingoLens home"
+      >
+        LL
+      </a>
+
+
+      <div
+        class="header-actions"
+        id="headerActions"
+      >
+
+        <nav
+          class="nav"
+          aria-label="Main navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a
+            class="active"
+            aria-current="page"
+            href="scan.html"
+          >
+            Scan &amp; Translate
+          </a>
+
+          <a href="conversation.html">
+            Conversation
+          </a>
+
+          <a href="pricing.html">
+            Premium
+          </a>
+
+          <a href="settings.html">
+            Settings
+          </a>
+
+        </nav>
+<a
+          class="signin-link"
+          href="signin.html"
+        >
+          Sign In
+        </a>
+
+      </div>
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="headerActions"
+      >
+
+        <span
+          class="burger"
+          aria-hidden="true"
+        >
+
+          <i></i>
+          <i></i>
+          <i></i>
+
+        </span>
+
+      </button>
+
+    </header>
+
+
+    <!-- SCAN & TRANSLATE CONTENT -->
+
+    <section class="page-content scan-layout">
+
+
+      <!-- HEADING -->
+
+      <div class="scan-heading">
+
+        <div class="eyebrow">
+          SCAN &amp; TRANSLATE
+        </div>
+
+        <h1>
+          Turn what you see
+          <br>
+          into what you understand.
+        </h1>
+
+        <p class="lead scan-lead">
+          Point, upload, or drop an image.
+          Detect the language and translate the text
+          without leaving the page.
+        </p>
+
+      </div>
+
+
+      <!-- IMAGE INPUT AREA -->
+
+      <div class="scan-input-area">
+
+        <input
+          id="imageInput"
+          type="file"
+          accept="image/*"
+          hidden
+        >
+
+
+        <!-- DROP IMAGE CARD -->
+
+        <div
+          id="dropZone"
+          class="scan-zone card"
+          tabindex="0"
+        >
+
+          <div
+            class="card-icon"
+            aria-hidden="true"
+          >
+
+            <svg
+              viewBox="0 0 24 24"
+              width="26"
+              height="26"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+            >
+
+              <path
+                d="M4 8h3l2-3h6l2 3h3v11H4z"
+              />
+
+              <circle
+                cx="12"
+                cy="13"
+                r="3.5"
+              />
+
+            </svg>
+
+          </div>
+
+
+          <h2>
+            Drop an image here
+          </h2>
+
+
+          <p>
+            or choose a photo from your device
+          </p>
+
+
+          <button
+            class="light-button"
+            id="chooseImage"
+            type="button"
+          >
+            Choose image
+          </button>
+
+
+          <button
+            class="text-button"
+            id="useSample"
+            type="button"
+          >
+            Use sample image
+          </button>
+
+
+          <img
+            id="scanPreview"
+            class="scan-preview"
+            alt="Selected image preview"
+          >
+
+
+          <button
+            class="text-button change-image"
+            id="changeImage"
+            type="button"
+          >
+            Change image
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- TRANSLATION PANEL -->
+
+      <div class="translation-panel card">
+
+
+        <!-- LANGUAGE ROW -->
+
+        <div class="language-row">
+
+          <div class="language-select-wrap">
+            <select
+              class="language-select"
+              data-language="source"
+              aria-label="Source language"
+            >
+              <option value="auto">Auto detect</option>
+              <option value="English">English</option>
+              <option value="Spanish">Spanish</option>
+              <option value="French">French</option>
+              <option value="German">German</option>
+              <option value="Italian">Italian</option>
+              <option value="Portuguese">Portuguese</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Korean">Korean</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Telugu">Telugu</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Arabic">Arabic</option>
+            </select>
+            <span class="language-chevron" aria-hidden="true">⌄</span>
+          </div>
+
+
+          <button
+            class="swap-button"
+            id="swapLanguages"
+            aria-label="Swap languages"
+            type="button"
+          >
+            ↔
+          </button>
+
+
+          <div class="language-select-wrap">
+            <select
+              class="language-select"
+              data-language="target"
+              aria-label="Target language"
+            >
+              <option value="English" selected>English</option>
+              <option value="Spanish">Spanish</option>
+              <option value="French">French</option>
+              <option value="German">German</option>
+              <option value="Italian">Italian</option>
+              <option value="Portuguese">Portuguese</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Korean">Korean</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Telugu">Telugu</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Arabic">Arabic</option>
+              <option value="auto">Auto detect</option>
+            </select>
+            <span class="language-chevron" aria-hidden="true">⌄</span>
+          </div>
+
+        </div>
+
+
+        <!-- DETECTED LANGUAGE -->
+
+        <div
+          class="detected-label"
+          id="detectedLabel"
+        >
+          Ready to scan
+        </div>
+
+
+        <!-- TRANSLATION OUTPUT -->
+
+        <div
+          class="translation-output"
+          id="translationOutput"
+        >
+          Your translated text will appear here.
+        </div>
+
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="action-row">
+
+          <button
+            class="light-button"
+            id="translateBtn"
+            type="button"
+          >
+            Translate
+          </button>
+
+
+          <button
+            class="text-button"
+            id="copyBtn"
+            type="button"
+          >
+            Copy
+          </button>
+
+
+          <button
+            class="text-button"
+            id="saveScanBtn"
+            type="button"
+          >
+            Save
+          </button>
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <p
+          class="status"
+          id="scanStatus"
+          aria-live="polite"
+        ></p>
+
+      </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <span class="footer-brand">
+        LL
+      </span>
+
+      <span>
+        © 2026 LingoLens · Scan to translate
+      </span>
+
+    </footer>
+
+  </main>
+
+</body>
+
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ResearchAI — Notes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .workspace-page-content {
+            padding: 42px;
+        }
+
+        .page-intro {
+            margin-bottom: 30px;
+        }
+
+        .page-intro .small-label {
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .page-intro h3 {
+            font-size: 34px;
+            margin: 0 0 10px;
+        }
+
+        .page-intro p {
+            color: #a5a5b3;
+            max-width: 700px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .notes-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .notes-toolbar button {
+            border: none;
+            background: white;
+            color: #111;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .note-card {
+            padding: 24px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.10);
+            background: rgba(255,255,255,.035);
+            min-height: 180px;
+            transition: .25s ease;
+        }
+
+        .note-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(130,100,255,.4);
+        }
+
+        .note-card span {
+            font-size: 12px;
+            color: #9a7cff;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+        }
+
+        .note-card h4 {
+            font-size: 20px;
+            margin: 12px 0 10px;
+        }
+
+        .note-card p {
+            color: #9696a4;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .note-date {
+            display: block;
+            margin-top: 20px;
+            color: #686875 !important;
+            font-size: 12px !important;
+        }
+
+        @media (max-width: 800px) {
+            .workspace-page-content {
+                padding: 24px;
+            }
+
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="background-layer"></div>
+<div class="background-overlay"></div>
+
+<header class="navbar">
+
+    <div class="logo">
+        <div class="logo-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <span class="logo-text">
+            Research<span>AI</span>
+        </span>
+    </div>
+
+    <nav class="nav-links">
+
+        <a href="index.html" class="nav-link">Home</a>
+
+        <a href="index.html#resources" class="nav-link">
+            Resources
+        </a>
+
+        <a href="index.html#pricing" class="nav-link">
+            Pricing
+        </a>
+        <a href="solutions.html" class="nav-link active">
+            Solutions
+        </a>
+        <a href="settings.html" class="nav-link">
+            Settings
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+        <button class="search-button">⌕</button>
+        <button class="signin-button">Sign in</button>
+        <button class="primary-small">Get started</button>
+        <a href="profile.html" class="profile-nav-link" aria-label="Open profile">
+                <span class="profile-avatar">
+                    S
+                </span>
+            </a>
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="workspace-section">
+
+    <div class="section-heading">
+
+        <span>AI RESEARCH WORKSPACE</span>
+
+        <h2>
+            Capture your
+            <em>ideas.</em>
+        </h2>
+
+        <p>
+            Save important thoughts, observations and research findings
+            while you explore your sources.
+        </p>
+
+    </div>
+
+
+    <div class="workspace">
+
+        <aside class="workspace-sidebar">
+
+            <div class="workspace-title">
+                Research
+            </div>
+
+            <a href="solutions.html" class="workspace-item">
+                ✦ Overview
+            </a>
+
+            <a href="discover.html" class="workspace-item">
+                ⌕ Discover
+            </a>
+
+            <a href="sources.html" class="workspace-item">
+                ◈ Sources
+            </a>
+
+            <a href="notes.html" class="workspace-item active">
+                ✎ Notes
+            </a>
+
+            <a href="insights.html" class="workspace-item">
+                ◉ Insights
+            </a>
+
+        </aside>
+
+
+        <div class="workspace-main">
+
+            <div class="workspace-page-content">
+
+                <div class="page-intro">
+
+                    <span class="small-label">
+                        RESEARCH NOTES
+                    </span>
+
+                    <h3>
+                        Your thinking, organized.
+                    </h3>
+
+                    <p>
+                        Keep important observations and ideas connected
+                        to the research you're exploring.
+                    </p>
+
+                </div>
+
+
+                <div class="notes-toolbar">
+
+                    <span class="small-label">
+                        3 RECENT NOTES
+                    </span>
+
+                    <button id="newNote">
+                        + New note
+                    </button>
+
+                </div>
+
+
+                <div class="notes-grid">
+
+                    <div class="note-card">
+
+                        <span>AI + Education</span>
+
+                        <h4>
+                            Important research gap
+                        </h4>
+
+                        <p>
+                            More longitudinal studies are needed to understand
+                            the long-term impact of AI-assisted learning.
+                        </p>
+
+                        <span class="note-date">
+                            Updated today
+                        </span>
+
+                    </div>
+
+
+                    <div class="note-card">
+
+                        <span>Literature Review</span>
+
+                        <h4>
+                            Sources to compare
+                        </h4>
+
+                        <p>
+                            Compare findings from recent research on
+                            personalized AI learning systems.
+                        </p>
+
+                        <span class="note-date">
+                            Updated yesterday
+                        </span>
+
+                    </div>
+
+
+                    <div class="note-card">
+
+                        <span>Research Idea</span>
+
+                        <h4>
+                            Possible research direction
+                        </h4>
+
+                        <p>
+                            Explore how researchers can combine AI discovery
+                            tools with traditional literature review methods.
+                        </p>
+
+                        <span class="note-date">
+                            Updated 2 days ago
+                        </span>
+
+                    </div>
+
+
+                    <div class="note-card">
+
+                        <span>Observation</span>
+
+                        <h4>
+                            Human-AI collaboration
+                        </h4>
+
+                        <p>
+                            Investigate where human judgment remains essential
+                            when AI is used during research workflows.
+                        </p>
+
+                        <span class="note-date">
+                            Updated 3 days ago
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-logo">
+        Research<span>AI</span>
+    </div>
+
+    <p>
+        Research smarter. Discover deeper.
+    </p>
+
+    <span>
+        © 2026 ResearchAI
+    </span>
+
+</footer>
+
+
+<script>
+
+document.getElementById("newNote").addEventListener("click", () => {
+    alert("New research note created.");
+});
+
+</script>
+
+</body>
+</html>

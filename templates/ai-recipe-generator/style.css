@@ -1,0 +1,1017 @@
+
+:root{
+  --bg:#0b0e0c;
+  --panel:rgba(14,18,15,.72);
+  --panel-strong:rgba(11,15,12,.88);
+  --line:rgba(255,255,255,.15);
+  --line-soft:rgba(255,255,255,.09);
+  --text:#f7f8f5;
+  --muted:#b7beb8;
+  --green:#c9e8b0;
+  --green-strong:#a9d38b;
+  --green-dark:#17251a;
+  --danger:#ff9b9b;
+  --shadow:0 30px 90px rgba(0,0,0,.38);
+  --radius:26px;
+  --max:1320px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  color:var(--text);
+  background:#090b0a;
+  overflow-x:hidden;
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+
+.page-bg{
+  position:fixed;
+  inset:-35px;
+  z-index: -1;
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.08);
+  filter:blur(8px) brightness(.58) saturate(.78);
+  opacity:.82;
+
+    pointer-events:none;
+  
+}
+.page-bg::after{
+  display:none;
+}
+.page-bg.home-bg{background-image:url("assets/hero-ingredients.png")}
+.page-bg.discover-bg{background-image:url("https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=2200&q=80")}
+.page-bg.scanner-bg{background-image:url("https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=2200&q=80")}
+.page-bg.studio-bg{background-image:url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=2200&q=80")}
+.page-bg.recipes-bg{background-image:url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=2200&q=80")}
+.page-bg.profile-bg{background-image:url("https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=2200&q=80")}
+.page-bg.settings-bg{background-image:url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=80")}
+.page-bg.pricing-bg{background-image:url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=2200&q=80")}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 20%,rgba(201,232,176,.08),transparent 28%),
+    radial-gradient(circle at 85% 75%,rgba(201,232,176,.05),transparent 30%);
+}
+
+.shell{
+  width:min(var(--max),calc(100% - 44px));
+  margin:22px auto 60px;
+}
+
+.glass{
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
+}
+
+.nav{
+  position:sticky;
+  top:18px;
+  z-index:50;
+  min-height:74px;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  border-radius:22px;
+}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:20px;white-space:nowrap}
+.brand-mark{
+  width:36px;height:36px;border-radius:12px;
+  display:grid;place-items:center;
+  background:rgba(201,232,176,.13);
+  color:var(--green);
+  border:1px solid rgba(201,232,176,.28);
+}
+.nav-links{display:flex;align-items:center;gap:5px}
+.nav-links a{
+  padding:11px 13px;border-radius:12px;color:#d6dbd6;font-size:14px;
+  transition:.2s ease;
+}
+.nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,.08);color:#fff}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.icon-btn,.menu-btn{
+  width:42px;height:42px;border-radius:13px;border:1px solid var(--line);
+  background:rgba(255,255,255,.045);color:#fff;
+}
+.menu-btn{display:none}
+.btn{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+  color:#fff;
+  border-radius:14px;
+  padding:12px 17px;
+  font-weight:700;
+  transition:transform .2s,background .2s,border .2s;
+}
+.btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.09)}
+.btn.primary{background:var(--green);color:#10140f;border-color:transparent}
+.btn.primary:hover{background:#d7f0c4}
+.btn.ghost{background:transparent}
+.btn.small{padding:9px 13px;font-size:13px}
+
+main{padding-top:34px}
+.hero{
+  min-height:calc(100vh - 140px);
+  display:grid;
+  align-items:center;
+  padding:70px 74px;
+  border-radius:30px;
+  position:relative;
+  overflow:hidden;
+
+  /* Transparent glass */
+  background:rgba(255,255,255,0.055);
+
+  /* Thin but visible glass frame */
+  border:2px solid rgba(255,255,255,0.24);
+
+  /* Frosted glass */
+  backdrop-filter:blur(10px) saturate(120%);
+  -webkit-backdrop-filter:blur(10px) saturate(120%);
+
+  /* Soft glass depth */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.30),
+    inset 0 -1px 0 rgba(255,255,255,0.10),
+    inset 1px 0 0 rgba(255,255,255,0.12),
+    inset -1px 0 0 rgba(255,255,255,0.08),
+    0 20px 60px rgba(0,0,0,0.12);
+}
+
+/* Food image INSIDE the glass card */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+
+  background-image:url("assets/hero-ingredients.png");
+  background-size:cover;
+  background-position:center right;
+}
+
+/* Transparent readability gradient — NOT a black layer */
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  z-index:1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10,13,11,.88) 0%,
+      rgba(10,13,11,.45) 38%,
+      rgba(10,13,11,.05) 70%,
+      rgba(10,13,11,0) 100%
+    ),
+
+    linear-gradient(
+      110deg,
+      rgba(255,255,255,0.07),
+      transparent 30%,
+      transparent 72%,
+      rgba(255,255,255,0.035)
+    );
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:720px;
+}
+.hero-content{position:relative;z-index:2;max-width:720px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 12px;border:1px solid rgba(201,232,176,.28);
+  border-radius:999px;color:var(--green);font-size:12px;font-weight:800;
+  letter-spacing:.08em;text-transform:uppercase;background:rgba(10,14,10,.42);
+}
+h1{font-size:clamp(48px,6vw,82px);line-height:.98;letter-spacing:-.055em;margin:24px 0 22px}
+h1 span{color:var(--green)}
+.hero p{max-width:620px;font-size:18px;line-height:1.65;color:#d0d5d0}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-input{
+  margin-top:32px;
+  padding:18px;
+  width:min(620px,100%);
+  border-radius:22px;
+  background:rgba(8,11,9,.64);
+  border:1px solid var(--line);
+  backdrop-filter:blur(18px);
+}
+.input-row{display:flex;gap:10px}
+.input-row input{
+  flex:1;min-width:0;background:transparent;border:0;outline:0;color:#fff;
+  padding:10px;font-size:15px;
+}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.chip{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 11px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid var(--line-soft);
+  color:#e4e8e4;font-size:12px;
+}
+.hero-note{margin-top:13px;color:#aeb5ae;font-size:12px}
+
+.page-head{
+  padding:46px 50px;
+  border-radius:28px;
+  margin-bottom:20px;
+}
+.page-head h1{font-size:clamp(38px,5vw,62px);margin:15px 0 12px}
+.page-head p{max-width:700px;color:var(--muted);line-height:1.65}
+
+.card{border-radius:var(--radius);padding:26px}
+.section-title{font-size:21px;margin-bottom:7px}
+.section-sub{color:var(--muted);font-size:14px;line-height:1.6}
+
+.grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+
+.recipe-card{overflow:hidden;padding:0}
+.recipe-img{
+  height:220px;background-size:cover;background-position:center;
+  position:relative;
+}
+.recipe-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.5))}
+.recipe-body{padding:20px}
+.recipe-body h3{font-size:18px;margin-bottom:8px}
+.recipe-body p{font-size:13px;color:var(--muted);line-height:1.55}
+.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:13px}
+.meta span{font-size:11px;padding:7px 9px;border-radius:999px;background:rgba(255,255,255,.07);color:#d8ddd8}
+
+.tabs{display:flex;gap:7px;margin:20px 0}
+.tab{padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid var(--line-soft);color:#c8cec8}
+.tab.active{background:var(--green);color:#10140f;border-color:transparent}
+
+.scanner{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}
+.dropzone{
+  min-height:460px;border:1px dashed rgba(201,232,176,.35);
+  border-radius:24px;display:grid;place-items:center;text-align:center;
+  background:rgba(5,8,6,.36);padding:30px;transition:.2s;
+}
+.dropzone.drag{background:rgba(201,232,176,.08);border-color:var(--green)}
+.drop-icon{font-size:48px;margin-bottom:15px}
+.dropzone h2{margin-bottom:8px}
+.dropzone p{color:var(--muted);max-width:430px;line-height:1.6;margin:0 auto 20px}
+.preview-box{display:none}
+.preview-box.show{display:block}
+.preview-box img{width:100%;max-height:300px;object-fit:cover;border-radius:18px;margin-bottom:15px}
+.detected{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0 20px}
+
+.studio-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-card{min-height:620px}
+.form-group{margin-top:22px}
+.form-label{display:flex;justify-content:space-between;margin-bottom:9px;font-size:13px;color:#dce1dc}
+.text-input,.select-input,.textarea{
+  width:100%;padding:14px 15px;border-radius:14px;border:1px solid var(--line);
+  background:rgba(0,0,0,.2);color:#fff;outline:0;
+}
+.textarea{min-height:100px;resize:vertical}
+.option-row{display:flex;gap:8px;flex-wrap:wrap}
+.option{
+  padding:10px 13px;border-radius:12px;border:1px solid var(--line);
+  background:rgba(255,255,255,.045);color:#d8ddd8;
+}
+.option.selected{background:rgba(201,232,176,.18);border-color:rgba(201,232,176,.45);color:var(--green)}
+.preview-panel{display:flex;flex-direction:column;min-height:620px}
+.empty-preview{
+  flex:1;display:grid;place-items:center;text-align:center;
+  min-height:450px;border-radius:22px;border:1px dashed var(--line);
+  background:rgba(0,0,0,.18);padding:35px;
+}
+.empty-preview .spark{font-size:40px;margin-bottom:15px}
+.generated{display:none}
+.generated.show{display:block}
+.generated-top{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;align-items:start}
+.generated-image{width:100%;height:290px;border-radius:20px;object-fit:cover}
+.recipe-detail h2{font-size:31px;line-height:1.1;margin:10px 0}
+.recipe-detail .description{color:var(--muted);line-height:1.6;font-size:14px}
+.detail-list{margin-top:20px}
+.detail-list li{list-style:none;padding:10px 0;border-bottom:1px solid var(--line-soft);color:#dce0dc;font-size:14px}
+.recipe-actions{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+
+.profile-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:18px}
+.avatar-card{text-align:center}
+.avatar{
+  width:118px;height:118px;margin:10px auto 20px;border-radius:50%;
+  display:grid;place-items:center;font-size:36px;font-weight:800;
+  background:linear-gradient(135deg,#d5edc1,#738b6b);color:#142016;
+}
+.profile-name{font-size:25px;font-weight:800}
+.profile-bio{color:var(--muted);margin-top:7px;line-height:1.6}
+.preference{margin-top:23px}
+.preference h3{font-size:14px;margin-bottom:10px}
+.range{width:100%;accent-color:var(--green)}
+
+.setting-row{
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:18px 0;border-bottom:1px solid var(--line-soft)
+}
+.setting-row:last-child{border-bottom:0}
+.setting-row h3{font-size:15px;margin-bottom:5px}
+.setting-row p{color:var(--muted);font-size:12px;line-height:1.5}
+.toggle{
+  width:48px;height:28px;border-radius:99px;background:#303631;border:1px solid var(--line);
+  position:relative;flex:0 0 auto;
+}
+.toggle::after{
+  content:"";width:20px;height:20px;border-radius:50%;background:#fff;
+  position:absolute;top:3px;left:3px;transition:.2s;
+}
+.toggle.on{background:#9fc685}
+.toggle.on::after{left:23px;background:#10200f}
+
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch}
+.price-card{position:relative}
+.price-card.featured{border-color:rgba(201,232,176,.45);transform:translateY(-8px)}
+.badge{
+  position:absolute;top:18px;right:18px;
+  padding:6px 9px;border-radius:999px;background:var(--green);color:#11170f;
+  font-size:10px;font-weight:900;text-transform:uppercase
+}
+.price{font-size:48px;font-weight:850;letter-spacing:-.05em;margin:20px 0 6px}
+.price small{font-size:13px;color:var(--muted);font-weight:500}
+.features{margin:24px 0}
+.features li{list-style:none;padding:10px 0;color:#d9ded9;border-bottom:1px solid var(--line-soft);font-size:13px}
+.features li::before{content:"✓";color:var(--green);margin-right:9px;font-weight:900}
+
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(0,0,0,.66);z-index:100;
+  display:none;place-items:center;padding:20px;
+}
+.modal-backdrop.show{display:grid}
+.modal{width:min(520px,100%);border-radius:24px;padding:26px}
+.modal h2{margin-bottom:18px}
+.modal-actions{display:flex;justify-content:flex-end;gap:9px;margin-top:20px}
+.toast{
+  position:fixed;right:22px;bottom:22px;z-index:150;
+  background:#eef6e9;color:#10150e;padding:13px 16px;border-radius:13px;
+  box-shadow:0 15px 40px rgba(0,0,0,.3);font-weight:700;font-size:13px;
+  transform:translateY(20px);opacity:0;pointer-events:none;transition:.25s;
+}
+.toast.show{transform:translateY(0);opacity:1}
+
+.mobile-only{display:none}
+
+@media(max-width:1050px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav-actions .hide-tablet{display:none}
+  .hero{padding:60px 45px}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .pricing{grid-template-columns:1fr}
+  .price-card.featured{transform:none}
+}
+@media(max-width:800px){
+  .shell{width:min(100% - 24px,680px);margin-top:12px}
+  .nav{top:10px}
+  .hero{min-height:auto;padding:45px 26px}
+  .hero::after{background:rgba(5,7,6,.64)}
+  h1{font-size:48px}
+  .page-head{padding:34px 26px}
+  .scanner,.studio-grid,.profile-grid,.generated-top{grid-template-columns:1fr}
+  .form-card,.preview-panel{min-height:auto}
+  .empty-preview{min-height:300px}
+  .grid-3,.grid-2{grid-template-columns:1fr}
+  .grid-4{grid-template-columns:1fr}
+  .generated-image{height:260px}
+  .mobile-only{display:block}
+}
+@media(max-width:520px){
+  .shell{width:calc(100% - 16px)}
+  .nav{padding:0 12px}
+  .brand{font-size:17px}
+  .brand-mark{width:32px;height:32px}
+  .nav-actions .btn{display:none}
+  h1{font-size:40px}
+  .hero{padding:36px 20px}
+  .input-row{flex-direction:column}
+  .page-head{padding:28px 20px}
+  .card{padding:20px}
+}
+/* Glass ingredient panel */
+.ingredient-box,
+.kitchen-box,
+.ingredient-panel{
+  background:rgba(255,255,255,0.07) !important;
+  border:1px solid rgba(255,255,255,0.20) !important;
+  backdrop-filter:blur(12px) saturate(115%);
+  -webkit-backdrop-filter:blur(12px) saturate(115%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 10px 30px rgba(0,0,0,0.10);
+}
+.hero-input{
+  position:relative;
+  z-index:3;
+
+  /* Clear glass */
+  background:rgba(255,255,255,0.07);
+
+  /* Glass border */
+  border:1px solid rgba(255,255,255,0.22);
+  border-radius:22px;
+
+  /* Frosted glass */
+  backdrop-filter:blur(14px) saturate(120%);
+  -webkit-backdrop-filter:blur(14px) saturate(120%);
+
+  /* Soft glass depth */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    inset 0 -1px 0 rgba(255,255,255,0.05),
+    0 12px 35px rgba(0,0,0,0.12);
+
+  overflow:hidden;
+}
+.hero-input,
+.hero-input input,
+.hero-input .hero-note,
+.hero-input .chip{
+  color:#111 !important;
+}
+
+.hero-input input::placeholder{
+  color:rgba(17,17,17,0.60) !important;
+}
+
+.hero-input .chip{
+  background:rgba(255,255,255,0.28);
+  border-color:rgba(0,0,0,0.12);
+}
+/* =========================================
+   DESKTOP NAV — DARKER GLASS
+   ========================================= */
+
+@media (min-width: 1051px) {
+  .nav {
+    background: rgba(12, 16, 14, 0.52) !important;
+    border: 1px solid rgba(255, 255, 255, 0.14) !important;
+
+    backdrop-filter: blur(16px) saturate(105%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(105%) !important;
+
+    box-shadow:
+      0 8px 30px rgba(0, 0, 0, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  }
+
+  .nav-links a {
+    color: rgba(230, 233, 230, 0.82) !important;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(255, 255, 255, 0.07) !important;
+    color: #fff !important;
+  }
+}
+/* Desktop navigation glass — same background feel as mobile */
+
+@media (min-width:1051px){
+  .nav{
+    background:rgba(8,11,9,.28) !important;
+
+    border:1px solid rgba(255,255,255,.16) !important;
+
+    backdrop-filter:blur(6px) saturate(105%) !important;
+    -webkit-backdrop-filter:blur(6px) saturate(105%) !important;
+
+    box-shadow:
+      inset 0 1px 0 rgba(255,255,255,.10),
+      0 10px 30px rgba(0,0,0,.16) !important;
+  }
+}
+
+@media (min-width: 1051px) {
+  .hero {
+    background-color: rgba(0, 0, 0, 0.28);
+    background-blend-mode: multiply;
+  }
+}
+/* =========================================================
+   MOTION PASS — PAGE TEXT + NON-HERO CARDS
+   Keeps the hero card itself completely still.
+   ========================================================= */
+
+@keyframes pageTextIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes softCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes eyebrowFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Main page headings and supporting text */
+main .page-head .eyebrow,
+main .page-head h1,
+main .page-head p,
+main > .shell > section > .eyebrow,
+main .section-title,
+main .section-sub,
+main .form-label,
+main .form-group > label,
+main .recipe-detail > .eyebrow {
+  animation: pageTextIn .72s cubic-bezier(.22,1,.36,1) both;
+}
+
+main .page-head .eyebrow { animation-delay:.04s; }
+main .page-head h1 { animation-delay:.12s; }
+main .page-head p { animation-delay:.22s; }
+main .section-title { animation-delay:.10s; }
+main .section-sub { animation-delay:.18s; }
+main .form-label,
+main .form-group > label { animation-delay:.14s; }
+
+/* Hero text gets a gentle entrance, but the hero card itself is untouched. */
+.hero-content > .eyebrow { animation: pageTextIn .7s cubic-bezier(.22,1,.36,1) .05s both; }
+.hero-content > h1 { animation: pageTextIn .8s cubic-bezier(.22,1,.36,1) .14s both; }
+.hero-content > p { animation: pageTextIn .75s cubic-bezier(.22,1,.36,1) .24s both; }
+.hero-content > .hero-actions { animation: pageTextIn .7s cubic-bezier(.22,1,.36,1) .34s both; }
+.hero-content > .hero-input { animation: pageTextIn .75s cubic-bezier(.22,1,.36,1) .42s both; }
+
+/* Small breathing motion for eyebrow pills — no layout shift. */
+.page-head .eyebrow,
+.recipe-detail > .eyebrow {
+  animation-name: pageTextIn, eyebrowFloat;
+  animation-duration: .72s, 4.5s;
+  animation-delay: .04s, 1.2s;
+  animation-timing-function: cubic-bezier(.22,1,.36,1), ease-in-out;
+  animation-iteration-count: 1, infinite;
+}
+
+/* Every actual card moves except the hero. */
+.card:not(.hero),
+.price-card:not(.hero),
+.recipe-card:not(.hero),
+.form-card:not(.hero),
+.preview-panel:not(.hero),
+.avatar-card:not(.hero) {
+  animation: softCardIn .72s cubic-bezier(.22,1,.36,1) both;
+  transform-origin: center bottom;
+  transition:
+    transform .35s cubic-bezier(.22,1,.36,1),
+    box-shadow .35s ease,
+    border-color .35s ease,
+    background .35s ease;
+  will-change: transform;
+}
+
+/* Stagger cards so they don't all arrive at once. */
+.grid > :nth-child(1),
+.pricing > :nth-child(1),
+.profile-grid > :nth-child(1),
+.scanner > :nth-child(1),
+.studio-grid > :nth-child(1),
+.grid-2 > :nth-child(1) { animation-delay:.08s; }
+
+.grid > :nth-child(2),
+.pricing > :nth-child(2),
+.profile-grid > :nth-child(2),
+.scanner > :nth-child(2),
+.studio-grid > :nth-child(2),
+.grid-2 > :nth-child(2) { animation-delay:.18s; }
+
+.grid > :nth-child(3),
+.pricing > :nth-child(3),
+.grid-2 > :nth-child(3) { animation-delay:.28s; }
+
+.grid > :nth-child(4),
+.pricing > :nth-child(4),
+.grid-2 > :nth-child(4) { animation-delay:.38s; }
+
+/* Interactive lift — deliberately excludes .hero. */
+.card:not(.hero):hover,
+.price-card:not(.hero):hover,
+.recipe-card:not(.hero):hover,
+.form-card:not(.hero):hover,
+.preview-panel:not(.hero):hover,
+.avatar-card:not(.hero):hover {
+  transform: translateY(-7px) scale(1.015);
+  border-color: rgba(201,232,176,.30);
+  box-shadow:
+    0 34px 80px rgba(0,0,0,.34),
+    0 0 0 1px rgba(201,232,176,.035);
+}
+
+/* Recipe image gets a little depth when its card moves. */
+.recipe-card .recipe-img {
+  transition: transform .55s cubic-bezier(.22,1,.36,1), filter .55s ease;
+}
+.recipe-card:hover .recipe-img {
+  transform: scale(1.045);
+  filter: saturate(1.08) brightness(1.04);
+}
+
+/* Text inside cards rises slightly after the card settles. */
+.card:not(.hero) .section-title,
+.card:not(.hero) .section-sub,
+.card:not(.hero) h2,
+.card:not(.hero) h3,
+.card:not(.hero) p,
+.card:not(.hero) .description,
+.card:not(.hero) .detail-list,
+.card:not(.hero) .meta {
+  animation: pageTextIn .62s cubic-bezier(.22,1,.36,1) .22s both;
+}
+
+/* Buttons and chips feel responsive without becoming distracting. */
+.card:not(.hero) .btn,
+.card:not(.hero) .chip,
+.card:not(.hero) .option,
+.card:not(.hero) .meta span {
+  transition:
+    transform .25s cubic-bezier(.22,1,.36,1),
+    background .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.card:not(.hero) .btn:hover,
+.card:not(.hero) .option:hover,
+.card:not(.hero) .chip:hover,
+.card:not(.hero) .meta span:hover {
+  transform: translateY(-2px);
+}
+
+/* Pricing cards retain their featured lift while still moving on hover. */
+.price-card.featured:not(.hero) {
+  transform: translateY(-8px);
+}
+.price-card.featured:not(.hero):hover {
+  transform: translateY(-15px) scale(1.015);
+}
+
+/* Do not introduce motion for users who request reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.motion-refresh {
+  animation: softCardIn .65s cubic-bezier(.22,1,.36,1) both;
+}
+
+
+/* FINAL CARD HOVER FIX — NON-HOME PAGES ONLY */
+/* Every card on every inner page gets a small, unmistakable lift.
+   Home is excluded by the .motion-page body class. */
+.motion-page .card,
+.motion-page .price-card,
+.motion-page .recipe-card,
+.motion-page .form-card,
+.motion-page .preview-panel,
+.motion-page .avatar-card {
+  transition: transform 420ms cubic-bezier(.22, 1, .36, 1),
+              box-shadow 420ms cubic-bezier(.22, 1, .36, 1),
+              border-color 300ms ease,
+              background-color 300ms ease !important;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.motion-page .card:hover,
+.motion-page .price-card:hover,
+.motion-page .recipe-card:hover,
+.motion-page .form-card:hover,
+.motion-page .preview-panel:hover,
+.motion-page .avatar-card:hover {
+  transform: translate3d(0, -8px, 0) scale(1.018) !important;
+  box-shadow: 0 26px 60px rgba(0,0,0,.32),
+              0 8px 24px rgba(0,0,0,.18) !important;
+  border-color: rgba(201,232,176,.34) !important;
+}
+
+/* Featured pricing card starts slightly higher, then lifts a little farther. */
+.motion-page .price-card.featured:hover {
+  transform: translate3d(0, -15px, 0) scale(1.018) !important;
+}
+
+/* Tiny image depth on recipe/discover cards. */
+.motion-page .recipe-card:hover .recipe-img,
+.motion-page .card:hover img {
+  transform: scale(1.035);
+}
+
+.motion-page .recipe-card .recipe-img,
+.motion-page .card img {
+  transition: transform 500ms cubic-bezier(.22,1,.36,1), filter 500ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-page .card,
+  .motion-page .price-card,
+  .motion-page .recipe-card,
+  .motion-page .form-card,
+  .motion-page .preview-panel,
+  .motion-page .avatar-card {
+    transition: none !important;
+  }
+  .motion-page .card:hover,
+  .motion-page .price-card:hover,
+  .motion-page .recipe-card:hover,
+  .motion-page .form-card:hover,
+  .motion-page .preview-panel:hover,
+  .motion-page .avatar-card:hover {
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   SMOOTHER PAGE-HEAD / HEADING-CARD HOVER MOTION
+   Applies to every inner page only. Home remains untouched.
+   ========================================================= */
+
+.motion-page .page-head.glass {
+  transform: translate3d(0, 0, 0) scale(1);
+  transform-origin: center center;
+  transition:
+    transform 620ms cubic-bezier(.16, 1, .3, 1),
+    box-shadow 620ms cubic-bezier(.16, 1, .3, 1),
+    border-color 620ms ease;
+  will-change: transform;
+}
+
+.motion-page .page-head.glass:hover {
+  transform: translate3d(0, -6px, 0) scale(1.008);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, .16);
+}
+
+/* Make every non-hero card feel softer and less mechanical. */
+.motion-page .card:not(.hero),
+.motion-page .price-card:not(.hero),
+.motion-page .recipe-card:not(.hero),
+.motion-page .form-card:not(.hero),
+.motion-page .preview-panel:not(.hero),
+.motion-page .avatar-card:not(.hero) {
+  transition:
+    transform 620ms cubic-bezier(.16, 1, .3, 1),
+    box-shadow 620ms cubic-bezier(.16, 1, .3, 1),
+    border-color 500ms ease;
+}
+
+.motion-page .card:not(.hero):hover,
+.motion-page .price-card:not(.hero):hover,
+.motion-page .recipe-card:not(.hero):hover,
+.motion-page .form-card:not(.hero):hover,
+.motion-page .preview-panel:not(.hero):hover,
+.motion-page .avatar-card:not(.hero):hover {
+  transform: translate3d(0, -7px, 0) scale(1.012) !important;
+  box-shadow: 0 22px 48px rgba(0, 0, 0, .14);
+}
+
+/* Featured pricing cards keep their natural raised position. */
+.motion-page .price-card.featured:not(.hero) {
+  transform: translate3d(0, -8px, 0) scale(1);
+}
+
+.motion-page .price-card.featured:not(.hero):hover {
+  transform: translate3d(0, -14px, 0) scale(1.012) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-page .page-head.glass,
+  .motion-page .card:not(.hero),
+  .motion-page .price-card:not(.hero),
+  .motion-page .recipe-card:not(.hero),
+  .motion-page .form-card:not(.hero),
+  .motion-page .preview-panel:not(.hero),
+  .motion-page .avatar-card:not(.hero) {
+    transition: none !important;
+  }
+
+  .motion-page .page-head.glass:hover,
+  .motion-page .card:not(.hero):hover,
+  .motion-page .price-card:not(.hero):hover,
+  .motion-page .recipe-card:not(.hero):hover,
+  .motion-page .form-card:not(.hero):hover,
+  .motion-page .preview-panel:not(.hero):hover,
+  .motion-page .avatar-card:not(.hero):hover {
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   FINAL UNIVERSAL CARD HOVER MOTION — INNER PAGES ONLY
+   Smooth, soft lift for EVERY card. Home remains untouched.
+   ========================================================= */
+.motion-page .card:not(.hero),
+.motion-page .price-card:not(.hero),
+.motion-page .recipe-card:not(.hero),
+.motion-page .form-card:not(.hero),
+.motion-page .preview-panel:not(.hero),
+.motion-page .avatar-card:not(.hero),
+.motion-page .page-head.glass {
+  transition:
+    transform 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 760ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 500ms ease;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+/* Every ordinary card gently floats upward and grows just a touch. */
+.motion-page .card:not(.hero):hover,
+.motion-page .price-card:not(.hero):hover,
+.motion-page .recipe-card:not(.hero):hover,
+.motion-page .form-card:not(.hero):hover,
+.motion-page .preview-panel:not(.hero):hover,
+.motion-page .avatar-card:not(.hero):hover {
+  transform: translate3d(0, -7px, 0) scale(1.012) !important;
+  box-shadow:
+    0 24px 55px rgba(0,0,0,.18),
+    0 5px 18px rgba(0,0,0,.10) !important;
+  border-color: rgba(201,232,176,.30) !important;
+}
+
+/* Heading cards use the exact same smooth motion, just slightly gentler. */
+.motion-page .page-head.glass:hover {
+  transform: translate3d(0, -6px, 0) scale(1.008) !important;
+  box-shadow: 0 22px 52px rgba(0,0,0,.16) !important;
+}
+
+/* Keep the featured pricing card's existing raised position, then lift it smoothly. */
+.motion-page .price-card.featured:not(.hero) {
+  transform: translate3d(0, -8px, 0) scale(1) !important;
+}
+
+.motion-page .price-card.featured:not(.hero):hover {
+  transform: translate3d(0, -14px, 0) scale(1.012) !important;
+}
+
+/* Image depth follows the same gentle timing instead of snapping. */
+.motion-page .card:not(.hero) img,
+.motion-page .recipe-card:not(.hero) .recipe-img {
+  transition: transform 760ms cubic-bezier(0.16, 1, 0.3, 1), filter 760ms ease;
+}
+
+.motion-page .card:not(.hero):hover img,
+.motion-page .recipe-card:not(.hero):hover .recipe-img {
+  transform: scale(1.025);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-page .card:not(.hero),
+  .motion-page .price-card:not(.hero),
+  .motion-page .recipe-card:not(.hero),
+  .motion-page .form-card:not(.hero),
+  .motion-page .preview-panel:not(.hero),
+  .motion-page .avatar-card:not(.hero),
+  .motion-page .page-head.glass {
+    transition: none !important;
+    will-change: auto;
+  }
+
+  .motion-page .card:not(.hero):hover,
+  .motion-page .price-card:not(.hero):hover,
+  .motion-page .recipe-card:not(.hero):hover,
+  .motion-page .form-card:not(.hero):hover,
+  .motion-page .preview-panel:not(.hero):hover,
+  .motion-page .avatar-card:not(.hero):hover,
+  .motion-page .page-head.glass:hover {
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   FINAL SMOOTH HOVER — EXACT SAME FEEL AS THE HEADING CARD
+   Inner pages only. Home is intentionally untouched.
+   Every card uses the same easing, duration, lift and scale
+   as .page-head.glass so all hover motion feels identical.
+   ========================================================= */
+
+.motion-page .card:not(.hero),
+.motion-page .price-card:not(.hero),
+.motion-page .recipe-card:not(.hero),
+.motion-page .form-card:not(.hero),
+.motion-page .preview-panel:not(.hero),
+.motion-page .avatar-card:not(.hero),
+.motion-page .page-head.glass {
+  transition:
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1) !important,
+    box-shadow 620ms cubic-bezier(0.16, 1, 0.3, 1) !important,
+    border-color 620ms ease !important;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+/* Every card now moves exactly like the heading card. */
+.motion-page .card:not(.hero):hover,
+.motion-page .price-card:not(.hero):hover,
+.motion-page .recipe-card:not(.hero):hover,
+.motion-page .form-card:not(.hero):hover,
+.motion-page .preview-panel:not(.hero):hover,
+.motion-page .avatar-card:not(.hero):hover,
+.motion-page .page-head.glass:hover {
+  transform: translate3d(0, -6px, 0) scale(1.008) !important;
+  box-shadow: 0 22px 52px rgba(0, 0, 0, 0.16) !important;
+  border-color: rgba(201, 232, 176, 0.30) !important;
+}
+
+/* Featured pricing card keeps its visual resting offset, but its
+   hover movement is the same smooth 6px lift as every other card. */
+.motion-page .price-card.featured:not(.hero) {
+  transform: translate3d(0, -8px, 0) scale(1) !important;
+}
+
+.motion-page .price-card.featured:not(.hero):hover {
+  transform: translate3d(0, -14px, 0) scale(1.008) !important;
+}
+
+/* Keep image movement gentle and synchronized with the card. */
+.motion-page .card:not(.hero) img,
+.motion-page .recipe-card:not(.hero) .recipe-img {
+  transition:
+    transform 620ms cubic-bezier(0.16, 1, 0.3, 1),
+    filter 620ms ease;
+}
+
+.motion-page .card:not(.hero):hover img,
+.motion-page .recipe-card:not(.hero):hover .recipe-img {
+  transform: scale(1.02);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-page .card:not(.hero),
+  .motion-page .price-card:not(.hero),
+  .motion-page .recipe-card:not(.hero),
+  .motion-page .form-card:not(.hero),
+  .motion-page .preview-panel:not(.hero),
+  .motion-page .avatar-card:not(.hero),
+  .motion-page .page-head.glass {
+    transition: none !important;
+    will-change: auto;
+  }
+
+  .motion-page .card:not(.hero):hover,
+  .motion-page .price-card:not(.hero):hover,
+  .motion-page .recipe-card:not(.hero):hover,
+  .motion-page .form-card:not(.hero):hover,
+  .motion-page .preview-panel:not(.hero):hover,
+  .motion-page .avatar-card:not(.hero):hover,
+  .motion-page .page-head.glass:hover {
+    transform: none !important;
+  }
+}
+
+/* =========================================================
+   HOME INGREDIENT CARD — MAXIMUM DARK TEXT CONTRAST
+   Keeps the existing glass card unchanged; only darkens the
+   placeholder and supporting note text.
+   ========================================================= */
+.hero-input input::placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+.hero-input .hero-note {
+  color: #000000 !important;
+  opacity: 1 !important;
+}

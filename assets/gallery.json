@@ -28,5 +28,30 @@
     "name": "AI Object Identifier",
     "page": "templates/ai-object-identifier/index.html",
     "previewVideo": "templates/ai-object-identifier/preview.mp4"
+  },
+  {
+    "name": "AI Scan To Translate",
+    "page": "templates/ai-Scan-To-Translate/ai-scan-to-translate/index.html",
+    "previewVideo": "templates/ai-Scan-To-Translate/ai-scan-to-translate/preview.mp4"
+  },
+  {
+    "name": "AI Video Generator",
+    "page": "templates/ai-Video_Generator/aiwork/index.html",
+    "previewVideo": "templates/ai-Video_Generator/aiwork/preview.mp4"
+  },
+  {
+    "name": "AI Image Generator",
+    "page": "templates/ai-image-generator/aiimag-index.html",
+    "previewVideo": "templates/ai-image-generator/preview.mp4"
+  },
+  {
+    "name": "AI Research",
+    "page": "templates/ai-reasearch/research-ai/index.html",
+    "previewVideo": "templates/ai-reasearch/research-ai/preview.mp4"
+  },
+  {
+    "name": "AI Recipe Generator",
+    "page": "templates/ai-recipe-generator/index.html",
+    "previewVideo": "templates/ai-recipe-generator/preview.mp4"
   }
 ]

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Settings — AI Imag</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <link rel="stylesheet" href="settings.css">
+
+</head>
+
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="settings-glow glow-one"></div>
+    <div class="settings-glow glow-two"></div>
+
+    <div class="settings-grid"></div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="settings-navbar">
+
+        <a href="index.html" class="settings-logo">
+            <span>AI</span> Imag
+        </a>
+
+
+        <div class="settings-nav-right">
+
+        </div>
+
+    </header>
+
+
+    <!-- PAGE -->
+
+    <main class="settings-page">
+
+        <!-- SIDEBAR -->
+
+        <aside class="settings-sidebar">
+
+            <div class="settings-sidebar-title">
+
+                <span class="settings-small-label">
+                    ACCOUNT
+                </span>
+
+                <h1>Settings</h1>
+
+                <p>
+                    Manage your AI Imag workspace.
+                </p>
+
+            </div>
+
+
+            <nav class="settings-menu">
+
+                <button
+                    class="settings-menu-item active"
+                    data-target="profile"
+                >
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </button>
+
+                <button
+                    class="settings-menu-item"
+                    data-target="notifications"
+                >
+                    <i class="fa-regular fa-bell"></i>
+                    <span>Notifications</span>
+                </button>
+
+
+                <button
+                    class="settings-menu-item"
+                    data-target="privacy"
+                >
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Privacy</span>
+                </button>
+
+
+                <button
+                    class="settings-menu-item"
+                    data-target="account"
+                >
+                    <i class="fa-solid fa-user-gear"></i>
+                    <span>Account</span>
+                </button>
+
+            </nav>
+
+
+            <button
+                class="sidebar-signout"
+                id="sidebarSignOut"
+            >
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                Sign Out
+            </button>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+
+        <section class="settings-content">
+
+
+            <!-- PROFILE -->
+
+            <div
+                class="settings-section active"
+                id="profile"
+            >
+
+                <div class="settings-heading">
+
+                    <span>PROFILE</span>
+
+                    <h2>Your profile</h2>
+
+                    <p>
+                        Manage the information associated
+                        with your AI Imag account.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="profile-header">
+
+                        <div class="profile-avatar">
+                            <span id="profileInitial">
+                                A
+                            </span>
+                        </div>
+
+                        <div>
+
+                            <h3 id="profileDisplayName">
+                                AI Imag User
+                            </h3>
+
+                            <p id="profileDisplayEmail">
+                                user@example.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <div class="settings-form-grid">
+
+                        <div class="settings-field">
+
+                            <label>
+                                Display name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="displayName"
+                                placeholder="Your name"
+                            >
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>
+                                Email address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="displayEmail"
+                                placeholder="you@example.com"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-actions">
+
+                        <button
+                            class="save-button"
+                            id="saveProfile"
+                        >
+                            Save changes
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- APPEARANCE -->
+
+            <div
+                class="settings-section"
+                id="appearance"
+            >
+
+                <div class="settings-heading">
+
+                    <span>APPEARANCE</span>
+
+                    <h2>Make it yours.</h2>
+
+                    <p>
+                        Control how AI Imag looks and feels.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Dark interface</h3>
+
+                            <p>
+                                Keep the futuristic dark
+                                AI Imag interface.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                checked
+                                disabled
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Animations</h3>
+
+                            <p>
+                                Enable smooth interface
+                                animations.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="animationsToggle"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- GENERATION -->
+
+            <div
+                class="settings-section"
+                id="generation"
+            >
+
+                <div class="settings-heading">
+
+                    <span>GENERATION</span>
+
+                    <h2>Generation defaults.</h2>
+
+                    <p>
+                        Choose the defaults used by your
+                        image generator.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="settings-form-grid">
+
+
+                        <div class="settings-field">
+
+                            <label>
+                                Default style
+                            </label>
+
+                            <select id="defaultStyle">
+
+                                <option>
+                                    Realistic
+                                </option>
+
+                                <option>
+                                    Cinematic
+                                </option>
+
+                                <option>
+                                    Anime
+                                </option>
+
+                                <option>
+                                    Fantasy
+                                </option>
+
+                                <option>
+                                    3D
+                                </option>
+
+                                <option>
+                                    Digital Art
+                                </option>
+
+                                <option>
+                                    Illustration
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>
+                                Aspect ratio
+                            </label>
+
+                            <select id="defaultRatio">
+
+                                <option value="1:1">
+                                    1:1
+                                </option>
+
+                                <option value="16:9">
+                                    16:9
+                                </option>
+
+                                <option value="4:3">
+                                    4:3
+                                </option>
+
+                                <option value="9:16">
+                                    9:16
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>
+                                Images per generation
+                            </label>
+
+                            <select id="defaultQuantity">
+
+                                <option>
+                                    1
+                                </option>
+
+                                <option>
+                                    2
+                                </option>
+
+                                <option>
+                                    4
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label>
+                                Quality
+                            </label>
+
+                            <select id="defaultQuality">
+
+                                <option>
+                                    Standard
+                                </option>
+
+                                <option>
+                                    High
+                                </option>
+
+                                <option>
+                                    Ultra
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-actions">
+
+                        <button
+                            class="save-button"
+                            id="saveGeneration"
+                        >
+                            Save defaults
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NOTIFICATIONS -->
+
+            <div
+                class="settings-section"
+                id="notifications"
+            >
+
+                <div class="settings-heading">
+
+                    <span>NOTIFICATIONS</span>
+
+                    <h2>Stay in the loop.</h2>
+
+                    <p>
+                        Choose what AI Imag should notify
+                        you about.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Generation complete</h3>
+
+                            <p>
+                                Notify me when an image
+                                finishes generating.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="generationNotification"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Product updates</h3>
+
+                            <p>
+                                Receive news about new
+                                AI Imag features.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="productNotification"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Email notifications</h3>
+
+                            <p>
+                                Receive important account
+                                emails.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="emailNotification"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRIVACY -->
+
+            <div
+                class="settings-section"
+                id="privacy"
+            >
+
+                <div class="settings-heading">
+
+                    <span>PRIVACY</span>
+
+                    <h2>Your creative space.</h2>
+
+                    <p>
+                        Control how your generated content
+                        is handled.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Generation history</h3>
+
+                            <p>
+                                Save generated images in
+                                your workspace history.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="historyToggle"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Public profile</h3>
+
+                            <p>
+                                Allow your profile to be
+                                visible to other creators.
+                            </p>
+
+                        </div>
+
+                        <label class="switch">
+
+                            <input
+                                type="checkbox"
+                                id="publicProfile"
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACCOUNT -->
+
+            <div
+                class="settings-section"
+                id="account"
+            >
+
+                <div class="settings-heading">
+
+                    <span>ACCOUNT</span>
+
+                    <h2>Account controls.</h2>
+
+                    <p>
+                        Manage your account session and
+                        account data.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-card danger-card">
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Sign out</h3>
+
+                            <p>
+                                Sign out of this AI Imag
+                                workspace.
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="outline-button"
+                            id="accountSignOut"
+                        >
+                            Sign Out
+                        </button>
+
+                    </div>
+
+
+                    <div class="settings-divider"></div>
+
+
+                    <div class="setting-row">
+
+                        <div class="setting-info">
+
+                            <h3>Delete account</h3>
+
+                            <p>
+                                Permanently remove local
+                                AI Imag account data.
+                            </p>
+
+                        </div>
+
+                        <button
+                            class="delete-button"
+                            id="deleteAccount"
+                        >
+                            Delete
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- TOAST -->
+
+    <div
+        class="settings-toast"
+        id="settingsToast"
+    >
+        <i class="fa-solid fa-check"></i>
+
+        <span>Changes saved.</span>
+    </div>
+
+
+    <script src="settings.js"></script>
+
+</body>
+
+</html>

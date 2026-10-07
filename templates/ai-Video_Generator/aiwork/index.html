@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FrameFlow — turn ideas into cinematic stories.">
+  <title>FrameFlow — Cinematic Video Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header" id="siteHeader">
+      <a class="brand" href="#home" data-route="home" aria-label="FrameFlow home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none">
+            <rect x="3" y="3" width="26" height="26" rx="9" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 9.8L23 16L12 22.2V9.8Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span>FrameFlow</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <button data-route="home">Home</button>
+        <button data-route="create">Create</button>
+        <button data-route="director">AI Director</button>
+        <button data-route="storyboard">Storyboard</button>
+        <button data-route="timeline">Timeline</button>
+        <button data-route="camera">Camera</button>
+        <button data-route="discover">Discover</button>
+        <button data-route="pricing">Pricing</button>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-ghost compact" data-route="login">Log in</button>
+        <button class="btn btn-dark compact" data-route="create">Get Started</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-top">
+          <span class="eyebrow">FRAMEFLOW</span>
+          <button class="menu-close" id="menuClose" aria-label="Close menu">×</button>
+        </div>
+        <nav aria-label="Mobile navigation">
+          <button data-route="home">Home</button>
+          <button data-route="create">Create</button>
+          <button data-route="director">AI Director</button>
+          <button data-route="storyboard">Storyboard</button>
+          <button data-route="timeline">Timeline</button>
+          <button data-route="camera">Camera</button>
+            <button data-route="projects">My Projects</button>
+          <button data-route="discover">Discover</button>
+          <button data-route="pricing">Pricing</button>
+          <button data-route="login">Log in</button>
+          <button class="mobile-cta" data-route="create">Get Started <span>→</span></button>
+        </nav>
+      </div>
+    </div>
+
+    <main id="app"></main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><span class="brand-dot"></span> FrameFlow</div>
+      <span>© 2026 FrameFlow</span>
+    </footer>
+  </div>
+
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+  <div class="modal-root" id="modalRoot"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

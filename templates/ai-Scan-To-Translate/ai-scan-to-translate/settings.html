@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  >
+
+  <meta
+    name="theme-color"
+    content="#000"
+  >
+
+  <title>
+    Settings — LingoLens
+  </title>
+
+  <meta
+    name="description"
+    content="Manage your LingoLens profile and preferences."
+  >
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+  <script
+    src="script.js"
+    defer
+  ></script>
+
+</head>
+
+
+<body>
+
+  <main class="page">
+
+
+    <!-- BACKGROUND VIDEO -->
+
+    <video
+      class="background"
+      autoplay
+      muted
+      loop
+      playsinline
+      aria-hidden="true"
+    >
+
+      <source
+        src="assets/background.webm"
+        type="video/webm"
+      >
+
+      <source
+        src="assets/background.mp4"
+        type="video/mp4"
+      >
+
+    </video>
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+      <a
+        href="index.html"
+        class="brand"
+        aria-label="LingoLens home"
+      >
+        LL
+      </a>
+
+
+      <div
+        class="header-actions"
+        id="headerActions"
+      >
+
+        <nav
+          class="nav"
+          aria-label="Main navigation"
+        >
+
+          <a href="index.html">
+            Home
+          </a>
+
+          <a href="scan.html">
+            Scan &amp; Translate
+          </a>
+
+          <a href="conversation.html">
+            Conversation
+          </a>
+
+          <a href="pricing.html">
+            Premium
+          </a>
+
+          <a
+            class="active"
+            aria-current="page"
+            href="settings.html"
+          >
+            Settings
+          </a>
+
+        </nav>
+<a
+          class="signin-link"
+          href="signin.html"
+        >
+          Sign In
+        </a>
+
+      </div>
+
+
+      <!-- MOBILE MENU -->
+
+      <button
+        class="menu-toggle"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="headerActions"
+      >
+
+        <span
+          class="burger"
+          aria-hidden="true"
+        >
+
+          <i></i>
+          <i></i>
+          <i></i>
+
+        </span>
+
+      </button>
+
+    </header>
+
+
+    <!-- SETTINGS CONTENT -->
+
+    <section class="page-content settings-page">
+
+
+      <!-- SETTINGS HEADING + PROFILE -->
+
+      <div class="settings-head">
+
+
+        <!-- HEADING -->
+
+        <div>
+
+          <div class="eyebrow">
+            SETTINGS
+          </div>
+
+          <h1>
+            Your space,
+            <br>
+            your preferences.
+          </h1>
+
+        </div>
+
+
+        <!-- PROFILE -->
+
+        <div class="profile-area">
+
+          <div
+            class="profile-initial"
+            aria-hidden="true"
+          >
+            S
+          </div>
+
+          <h2>
+            Sweenija Reddy
+          </h2>
+
+          <p>
+            sweenija@example.com
+          </p>
+
+          <a
+            href="signin.html"
+            class="text-button"
+          >
+            Switch account
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- SETTINGS WORKSPACE -->
+
+      <div class="settings-workspace">
+
+
+        <!-- SETTINGS LIST CARD -->
+
+        <section class="settings-list">
+
+
+          <!-- TRANSLATION HISTORY -->
+
+          <button
+            class="setting-row"
+            data-setting="history"
+            type="button"
+          >
+
+            <span>
+
+              <small>
+                ACCOUNT
+              </small>
+
+              Translation History
+
+            </span>
+
+            <b>
+              →
+            </b>
+
+          </button>
+
+
+          <!-- DEFAULT LANGUAGES -->
+
+          <button
+            class="setting-row"
+            data-setting="languages"
+            type="button"
+          >
+
+            <span>
+
+              <small>
+                PREFERENCES
+              </small>
+
+              Default Languages
+
+            </span>
+
+            <b>
+              English → Spanish
+            </b>
+
+          </button>
+
+
+          <!-- TRANSLATION STYLE -->
+
+          <button
+            class="setting-row"
+            data-setting="translation-style"
+            type="button"
+          >
+
+            <span>
+
+              <small>
+                TRANSLATION
+              </small>
+
+              Translation Style
+
+            </span>
+
+            <b id="translationStyleValue">
+              Natural
+            </b>
+
+          </button>
+
+
+          <!-- NOTIFICATIONS -->
+
+          <button
+            class="setting-row"
+            data-setting="notifications"
+            type="button"
+          >
+
+            <span>
+
+              <small>
+                ALERTS
+              </small>
+
+              Notifications
+
+            </span>
+
+            <b id="notificationValue">
+              On
+            </b>
+
+          </button>
+
+
+          <!-- PREMIUM -->
+
+          <button
+            class="setting-row"
+            data-setting="premium"
+            type="button"
+          >
+
+            <span>
+
+              <small>
+                PLAN
+              </small>
+
+              Premium
+
+            </span>
+
+            <b>
+              View plans →
+            </b>
+
+          </button>
+
+        </section>
+
+        <!-- SETTINGS OUTPUT CARD -->
+
+<div class="settings-output-card">
+
+  <div class="settings-detail" id="settingsDetail">
+    <p class="settings-empty-text">
+      Select a setting to view its details.
+    </p>
+  </div>
+
+</div>
+
+    
+
+
+      <!-- SIGN OUT -->
+
+      <button
+        class="text-button signout"
+        id="signOut"
+        type="button"
+      >
+        Sign out
+      </button>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+      <span class="footer-brand">
+        LL
+      </span>
+
+      <span>
+        © 2026 LingoLens · Scan to translate
+      </span>
+
+    </footer>
+
+  </main>
+
+</body>
+
+</html>
